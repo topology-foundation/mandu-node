@@ -12,23 +12,1291 @@ import (
 	sync "sync"
 )
 
+var _ protoreflect.List = (*_SubscriptionRequest_9_list)(nil)
+
+type _SubscriptionRequest_9_list struct {
+	list *[]string
+}
+
+func (x *_SubscriptionRequest_9_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_SubscriptionRequest_9_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfString((*x.list)[i])
+}
+
+func (x *_SubscriptionRequest_9_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_SubscriptionRequest_9_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_SubscriptionRequest_9_list) AppendMutable() protoreflect.Value {
+	panic(fmt.Errorf("AppendMutable can not be called on message SubscriptionRequest at list field DrpIds as it is not of Message kind"))
+}
+
+func (x *_SubscriptionRequest_9_list) Truncate(n int) {
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_SubscriptionRequest_9_list) NewElement() protoreflect.Value {
+	v := ""
+	return protoreflect.ValueOfString(v)
+}
+
+func (x *_SubscriptionRequest_9_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_SubscriptionRequest_10_list)(nil)
+
+type _SubscriptionRequest_10_list struct {
+	list *[]string
+}
+
+func (x *_SubscriptionRequest_10_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_SubscriptionRequest_10_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfString((*x.list)[i])
+}
+
+func (x *_SubscriptionRequest_10_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_SubscriptionRequest_10_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_SubscriptionRequest_10_list) AppendMutable() protoreflect.Value {
+	panic(fmt.Errorf("AppendMutable can not be called on message SubscriptionRequest at list field Writers as it is not of Message kind"))
+}
+
+func (x *_SubscriptionRequest_10_list) Truncate(n int) {
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_SubscriptionRequest_10_list) NewElement() protoreflect.Value {
+	v := ""
+	return protoreflect.ValueOfString(v)
+}
+
+func (x *_SubscriptionRequest_10_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_SubscriptionRequest_11_list)(nil)
+
+type _SubscriptionRequest_11_list struct {
+	list *[]string
+}
+
+func (x *_SubscriptionRequest_11_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_SubscriptionRequest_11_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfString((*x.list)[i])
+}
+
+func (x *_SubscriptionRequest_11_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_SubscriptionRequest_11_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_SubscriptionRequest_11_list) AppendMutable() protoreflect.Value {
+	panic(fmt.Errorf("AppendMutable can not be called on message SubscriptionRequest at list field InitialFrontier as it is not of Message kind"))
+}
+
+func (x *_SubscriptionRequest_11_list) Truncate(n int) {
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_SubscriptionRequest_11_list) NewElement() protoreflect.Value {
+	v := ""
+	return protoreflect.ValueOfString(v)
+}
+
+func (x *_SubscriptionRequest_11_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_SubscriptionRequest_12_list)(nil)
+
+type _SubscriptionRequest_12_list struct {
+	list *[]string
+}
+
+func (x *_SubscriptionRequest_12_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_SubscriptionRequest_12_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfString((*x.list)[i])
+}
+
+func (x *_SubscriptionRequest_12_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_SubscriptionRequest_12_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_SubscriptionRequest_12_list) AppendMutable() protoreflect.Value {
+	panic(fmt.Errorf("AppendMutable can not be called on message SubscriptionRequest at list field SubscriptionIds as it is not of Message kind"))
+}
+
+func (x *_SubscriptionRequest_12_list) Truncate(n int) {
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_SubscriptionRequest_12_list) NewElement() protoreflect.Value {
+	v := ""
+	return protoreflect.ValueOfString(v)
+}
+
+func (x *_SubscriptionRequest_12_list) IsValid() bool {
+	return x.list != nil
+}
+
 var (
-	md_Subscription             protoreflect.MessageDescriptor
-	fd_Subscription_id          protoreflect.FieldDescriptor
-	fd_Subscription_deal_id     protoreflect.FieldDescriptor
-	fd_Subscription_provider    protoreflect.FieldDescriptor
-	fd_Subscription_start_block protoreflect.FieldDescriptor
-	fd_Subscription_end_block   protoreflect.FieldDescriptor
+	md_SubscriptionRequest                  protoreflect.MessageDescriptor
+	fd_SubscriptionRequest_id               protoreflect.FieldDescriptor
+	fd_SubscriptionRequest_requester        protoreflect.FieldDescriptor
+	fd_SubscriptionRequest_status           protoreflect.FieldDescriptor
+	fd_SubscriptionRequest_total_amount     protoreflect.FieldDescriptor
+	fd_SubscriptionRequest_available_amount protoreflect.FieldDescriptor
+	fd_SubscriptionRequest_start_block      protoreflect.FieldDescriptor
+	fd_SubscriptionRequest_epoch_size       protoreflect.FieldDescriptor
+	fd_SubscriptionRequest_duration         protoreflect.FieldDescriptor
+	fd_SubscriptionRequest_drp_ids          protoreflect.FieldDescriptor
+	fd_SubscriptionRequest_writers          protoreflect.FieldDescriptor
+	fd_SubscriptionRequest_initial_frontier protoreflect.FieldDescriptor
+	fd_SubscriptionRequest_subscription_ids protoreflect.FieldDescriptor
+)
+
+func init() {
+	file_mandu_subscription_subscription_proto_init()
+	md_SubscriptionRequest = File_mandu_subscription_subscription_proto.Messages().ByName("SubscriptionRequest")
+	fd_SubscriptionRequest_id = md_SubscriptionRequest.Fields().ByName("id")
+	fd_SubscriptionRequest_requester = md_SubscriptionRequest.Fields().ByName("requester")
+	fd_SubscriptionRequest_status = md_SubscriptionRequest.Fields().ByName("status")
+	fd_SubscriptionRequest_total_amount = md_SubscriptionRequest.Fields().ByName("total_amount")
+	fd_SubscriptionRequest_available_amount = md_SubscriptionRequest.Fields().ByName("available_amount")
+	fd_SubscriptionRequest_start_block = md_SubscriptionRequest.Fields().ByName("start_block")
+	fd_SubscriptionRequest_epoch_size = md_SubscriptionRequest.Fields().ByName("epoch_size")
+	fd_SubscriptionRequest_duration = md_SubscriptionRequest.Fields().ByName("duration")
+	fd_SubscriptionRequest_drp_ids = md_SubscriptionRequest.Fields().ByName("drp_ids")
+	fd_SubscriptionRequest_writers = md_SubscriptionRequest.Fields().ByName("writers")
+	fd_SubscriptionRequest_initial_frontier = md_SubscriptionRequest.Fields().ByName("initial_frontier")
+	fd_SubscriptionRequest_subscription_ids = md_SubscriptionRequest.Fields().ByName("subscription_ids")
+}
+
+var _ protoreflect.Message = (*fastReflection_SubscriptionRequest)(nil)
+
+type fastReflection_SubscriptionRequest SubscriptionRequest
+
+func (x *SubscriptionRequest) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_SubscriptionRequest)(x)
+}
+
+func (x *SubscriptionRequest) slowProtoReflect() protoreflect.Message {
+	mi := &file_mandu_subscription_subscription_proto_msgTypes[0]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_SubscriptionRequest_messageType fastReflection_SubscriptionRequest_messageType
+var _ protoreflect.MessageType = fastReflection_SubscriptionRequest_messageType{}
+
+type fastReflection_SubscriptionRequest_messageType struct{}
+
+func (x fastReflection_SubscriptionRequest_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_SubscriptionRequest)(nil)
+}
+func (x fastReflection_SubscriptionRequest_messageType) New() protoreflect.Message {
+	return new(fastReflection_SubscriptionRequest)
+}
+func (x fastReflection_SubscriptionRequest_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_SubscriptionRequest
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_SubscriptionRequest) Descriptor() protoreflect.MessageDescriptor {
+	return md_SubscriptionRequest
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_SubscriptionRequest) Type() protoreflect.MessageType {
+	return _fastReflection_SubscriptionRequest_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_SubscriptionRequest) New() protoreflect.Message {
+	return new(fastReflection_SubscriptionRequest)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_SubscriptionRequest) Interface() protoreflect.ProtoMessage {
+	return (*SubscriptionRequest)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_SubscriptionRequest) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.Id != "" {
+		value := protoreflect.ValueOfString(x.Id)
+		if !f(fd_SubscriptionRequest_id, value) {
+			return
+		}
+	}
+	if x.Requester != "" {
+		value := protoreflect.ValueOfString(x.Requester)
+		if !f(fd_SubscriptionRequest_requester, value) {
+			return
+		}
+	}
+	if x.Status != 0 {
+		value := protoreflect.ValueOfEnum((protoreflect.EnumNumber)(x.Status))
+		if !f(fd_SubscriptionRequest_status, value) {
+			return
+		}
+	}
+	if x.TotalAmount != int64(0) {
+		value := protoreflect.ValueOfInt64(x.TotalAmount)
+		if !f(fd_SubscriptionRequest_total_amount, value) {
+			return
+		}
+	}
+	if x.AvailableAmount != int64(0) {
+		value := protoreflect.ValueOfInt64(x.AvailableAmount)
+		if !f(fd_SubscriptionRequest_available_amount, value) {
+			return
+		}
+	}
+	if x.StartBlock != int64(0) {
+		value := protoreflect.ValueOfInt64(x.StartBlock)
+		if !f(fd_SubscriptionRequest_start_block, value) {
+			return
+		}
+	}
+	if x.EpochSize != int64(0) {
+		value := protoreflect.ValueOfInt64(x.EpochSize)
+		if !f(fd_SubscriptionRequest_epoch_size, value) {
+			return
+		}
+	}
+	if x.Duration != int64(0) {
+		value := protoreflect.ValueOfInt64(x.Duration)
+		if !f(fd_SubscriptionRequest_duration, value) {
+			return
+		}
+	}
+	if len(x.DrpIds) != 0 {
+		value := protoreflect.ValueOfList(&_SubscriptionRequest_9_list{list: &x.DrpIds})
+		if !f(fd_SubscriptionRequest_drp_ids, value) {
+			return
+		}
+	}
+	if len(x.Writers) != 0 {
+		value := protoreflect.ValueOfList(&_SubscriptionRequest_10_list{list: &x.Writers})
+		if !f(fd_SubscriptionRequest_writers, value) {
+			return
+		}
+	}
+	if len(x.InitialFrontier) != 0 {
+		value := protoreflect.ValueOfList(&_SubscriptionRequest_11_list{list: &x.InitialFrontier})
+		if !f(fd_SubscriptionRequest_initial_frontier, value) {
+			return
+		}
+	}
+	if len(x.SubscriptionIds) != 0 {
+		value := protoreflect.ValueOfList(&_SubscriptionRequest_12_list{list: &x.SubscriptionIds})
+		if !f(fd_SubscriptionRequest_subscription_ids, value) {
+			return
+		}
+	}
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_SubscriptionRequest) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	case "mandu.subscription.SubscriptionRequest.id":
+		return x.Id != ""
+	case "mandu.subscription.SubscriptionRequest.requester":
+		return x.Requester != ""
+	case "mandu.subscription.SubscriptionRequest.status":
+		return x.Status != 0
+	case "mandu.subscription.SubscriptionRequest.total_amount":
+		return x.TotalAmount != int64(0)
+	case "mandu.subscription.SubscriptionRequest.available_amount":
+		return x.AvailableAmount != int64(0)
+	case "mandu.subscription.SubscriptionRequest.start_block":
+		return x.StartBlock != int64(0)
+	case "mandu.subscription.SubscriptionRequest.epoch_size":
+		return x.EpochSize != int64(0)
+	case "mandu.subscription.SubscriptionRequest.duration":
+		return x.Duration != int64(0)
+	case "mandu.subscription.SubscriptionRequest.drp_ids":
+		return len(x.DrpIds) != 0
+	case "mandu.subscription.SubscriptionRequest.writers":
+		return len(x.Writers) != 0
+	case "mandu.subscription.SubscriptionRequest.initial_frontier":
+		return len(x.InitialFrontier) != 0
+	case "mandu.subscription.SubscriptionRequest.subscription_ids":
+		return len(x.SubscriptionIds) != 0
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.SubscriptionRequest"))
+		}
+		panic(fmt.Errorf("message mandu.subscription.SubscriptionRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_SubscriptionRequest) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	case "mandu.subscription.SubscriptionRequest.id":
+		x.Id = ""
+	case "mandu.subscription.SubscriptionRequest.requester":
+		x.Requester = ""
+	case "mandu.subscription.SubscriptionRequest.status":
+		x.Status = 0
+	case "mandu.subscription.SubscriptionRequest.total_amount":
+		x.TotalAmount = int64(0)
+	case "mandu.subscription.SubscriptionRequest.available_amount":
+		x.AvailableAmount = int64(0)
+	case "mandu.subscription.SubscriptionRequest.start_block":
+		x.StartBlock = int64(0)
+	case "mandu.subscription.SubscriptionRequest.epoch_size":
+		x.EpochSize = int64(0)
+	case "mandu.subscription.SubscriptionRequest.duration":
+		x.Duration = int64(0)
+	case "mandu.subscription.SubscriptionRequest.drp_ids":
+		x.DrpIds = nil
+	case "mandu.subscription.SubscriptionRequest.writers":
+		x.Writers = nil
+	case "mandu.subscription.SubscriptionRequest.initial_frontier":
+		x.InitialFrontier = nil
+	case "mandu.subscription.SubscriptionRequest.subscription_ids":
+		x.SubscriptionIds = nil
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.SubscriptionRequest"))
+		}
+		panic(fmt.Errorf("message mandu.subscription.SubscriptionRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_SubscriptionRequest) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	case "mandu.subscription.SubscriptionRequest.id":
+		value := x.Id
+		return protoreflect.ValueOfString(value)
+	case "mandu.subscription.SubscriptionRequest.requester":
+		value := x.Requester
+		return protoreflect.ValueOfString(value)
+	case "mandu.subscription.SubscriptionRequest.status":
+		value := x.Status
+		return protoreflect.ValueOfEnum((protoreflect.EnumNumber)(value))
+	case "mandu.subscription.SubscriptionRequest.total_amount":
+		value := x.TotalAmount
+		return protoreflect.ValueOfInt64(value)
+	case "mandu.subscription.SubscriptionRequest.available_amount":
+		value := x.AvailableAmount
+		return protoreflect.ValueOfInt64(value)
+	case "mandu.subscription.SubscriptionRequest.start_block":
+		value := x.StartBlock
+		return protoreflect.ValueOfInt64(value)
+	case "mandu.subscription.SubscriptionRequest.epoch_size":
+		value := x.EpochSize
+		return protoreflect.ValueOfInt64(value)
+	case "mandu.subscription.SubscriptionRequest.duration":
+		value := x.Duration
+		return protoreflect.ValueOfInt64(value)
+	case "mandu.subscription.SubscriptionRequest.drp_ids":
+		if len(x.DrpIds) == 0 {
+			return protoreflect.ValueOfList(&_SubscriptionRequest_9_list{})
+		}
+		listValue := &_SubscriptionRequest_9_list{list: &x.DrpIds}
+		return protoreflect.ValueOfList(listValue)
+	case "mandu.subscription.SubscriptionRequest.writers":
+		if len(x.Writers) == 0 {
+			return protoreflect.ValueOfList(&_SubscriptionRequest_10_list{})
+		}
+		listValue := &_SubscriptionRequest_10_list{list: &x.Writers}
+		return protoreflect.ValueOfList(listValue)
+	case "mandu.subscription.SubscriptionRequest.initial_frontier":
+		if len(x.InitialFrontier) == 0 {
+			return protoreflect.ValueOfList(&_SubscriptionRequest_11_list{})
+		}
+		listValue := &_SubscriptionRequest_11_list{list: &x.InitialFrontier}
+		return protoreflect.ValueOfList(listValue)
+	case "mandu.subscription.SubscriptionRequest.subscription_ids":
+		if len(x.SubscriptionIds) == 0 {
+			return protoreflect.ValueOfList(&_SubscriptionRequest_12_list{})
+		}
+		listValue := &_SubscriptionRequest_12_list{list: &x.SubscriptionIds}
+		return protoreflect.ValueOfList(listValue)
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.SubscriptionRequest"))
+		}
+		panic(fmt.Errorf("message mandu.subscription.SubscriptionRequest does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_SubscriptionRequest) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	case "mandu.subscription.SubscriptionRequest.id":
+		x.Id = value.Interface().(string)
+	case "mandu.subscription.SubscriptionRequest.requester":
+		x.Requester = value.Interface().(string)
+	case "mandu.subscription.SubscriptionRequest.status":
+		x.Status = (SubscriptionRequest_Status)(value.Enum())
+	case "mandu.subscription.SubscriptionRequest.total_amount":
+		x.TotalAmount = value.Int()
+	case "mandu.subscription.SubscriptionRequest.available_amount":
+		x.AvailableAmount = value.Int()
+	case "mandu.subscription.SubscriptionRequest.start_block":
+		x.StartBlock = value.Int()
+	case "mandu.subscription.SubscriptionRequest.epoch_size":
+		x.EpochSize = value.Int()
+	case "mandu.subscription.SubscriptionRequest.duration":
+		x.Duration = value.Int()
+	case "mandu.subscription.SubscriptionRequest.drp_ids":
+		lv := value.List()
+		clv := lv.(*_SubscriptionRequest_9_list)
+		x.DrpIds = *clv.list
+	case "mandu.subscription.SubscriptionRequest.writers":
+		lv := value.List()
+		clv := lv.(*_SubscriptionRequest_10_list)
+		x.Writers = *clv.list
+	case "mandu.subscription.SubscriptionRequest.initial_frontier":
+		lv := value.List()
+		clv := lv.(*_SubscriptionRequest_11_list)
+		x.InitialFrontier = *clv.list
+	case "mandu.subscription.SubscriptionRequest.subscription_ids":
+		lv := value.List()
+		clv := lv.(*_SubscriptionRequest_12_list)
+		x.SubscriptionIds = *clv.list
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.SubscriptionRequest"))
+		}
+		panic(fmt.Errorf("message mandu.subscription.SubscriptionRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_SubscriptionRequest) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "mandu.subscription.SubscriptionRequest.drp_ids":
+		if x.DrpIds == nil {
+			x.DrpIds = []string{}
+		}
+		value := &_SubscriptionRequest_9_list{list: &x.DrpIds}
+		return protoreflect.ValueOfList(value)
+	case "mandu.subscription.SubscriptionRequest.writers":
+		if x.Writers == nil {
+			x.Writers = []string{}
+		}
+		value := &_SubscriptionRequest_10_list{list: &x.Writers}
+		return protoreflect.ValueOfList(value)
+	case "mandu.subscription.SubscriptionRequest.initial_frontier":
+		if x.InitialFrontier == nil {
+			x.InitialFrontier = []string{}
+		}
+		value := &_SubscriptionRequest_11_list{list: &x.InitialFrontier}
+		return protoreflect.ValueOfList(value)
+	case "mandu.subscription.SubscriptionRequest.subscription_ids":
+		if x.SubscriptionIds == nil {
+			x.SubscriptionIds = []string{}
+		}
+		value := &_SubscriptionRequest_12_list{list: &x.SubscriptionIds}
+		return protoreflect.ValueOfList(value)
+	case "mandu.subscription.SubscriptionRequest.id":
+		panic(fmt.Errorf("field id of message mandu.subscription.SubscriptionRequest is not mutable"))
+	case "mandu.subscription.SubscriptionRequest.requester":
+		panic(fmt.Errorf("field requester of message mandu.subscription.SubscriptionRequest is not mutable"))
+	case "mandu.subscription.SubscriptionRequest.status":
+		panic(fmt.Errorf("field status of message mandu.subscription.SubscriptionRequest is not mutable"))
+	case "mandu.subscription.SubscriptionRequest.total_amount":
+		panic(fmt.Errorf("field total_amount of message mandu.subscription.SubscriptionRequest is not mutable"))
+	case "mandu.subscription.SubscriptionRequest.available_amount":
+		panic(fmt.Errorf("field available_amount of message mandu.subscription.SubscriptionRequest is not mutable"))
+	case "mandu.subscription.SubscriptionRequest.start_block":
+		panic(fmt.Errorf("field start_block of message mandu.subscription.SubscriptionRequest is not mutable"))
+	case "mandu.subscription.SubscriptionRequest.epoch_size":
+		panic(fmt.Errorf("field epoch_size of message mandu.subscription.SubscriptionRequest is not mutable"))
+	case "mandu.subscription.SubscriptionRequest.duration":
+		panic(fmt.Errorf("field duration of message mandu.subscription.SubscriptionRequest is not mutable"))
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.SubscriptionRequest"))
+		}
+		panic(fmt.Errorf("message mandu.subscription.SubscriptionRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_SubscriptionRequest) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "mandu.subscription.SubscriptionRequest.id":
+		return protoreflect.ValueOfString("")
+	case "mandu.subscription.SubscriptionRequest.requester":
+		return protoreflect.ValueOfString("")
+	case "mandu.subscription.SubscriptionRequest.status":
+		return protoreflect.ValueOfEnum(0)
+	case "mandu.subscription.SubscriptionRequest.total_amount":
+		return protoreflect.ValueOfInt64(int64(0))
+	case "mandu.subscription.SubscriptionRequest.available_amount":
+		return protoreflect.ValueOfInt64(int64(0))
+	case "mandu.subscription.SubscriptionRequest.start_block":
+		return protoreflect.ValueOfInt64(int64(0))
+	case "mandu.subscription.SubscriptionRequest.epoch_size":
+		return protoreflect.ValueOfInt64(int64(0))
+	case "mandu.subscription.SubscriptionRequest.duration":
+		return protoreflect.ValueOfInt64(int64(0))
+	case "mandu.subscription.SubscriptionRequest.drp_ids":
+		list := []string{}
+		return protoreflect.ValueOfList(&_SubscriptionRequest_9_list{list: &list})
+	case "mandu.subscription.SubscriptionRequest.writers":
+		list := []string{}
+		return protoreflect.ValueOfList(&_SubscriptionRequest_10_list{list: &list})
+	case "mandu.subscription.SubscriptionRequest.initial_frontier":
+		list := []string{}
+		return protoreflect.ValueOfList(&_SubscriptionRequest_11_list{list: &list})
+	case "mandu.subscription.SubscriptionRequest.subscription_ids":
+		list := []string{}
+		return protoreflect.ValueOfList(&_SubscriptionRequest_12_list{list: &list})
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.SubscriptionRequest"))
+		}
+		panic(fmt.Errorf("message mandu.subscription.SubscriptionRequest does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_SubscriptionRequest) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.SubscriptionRequest", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_SubscriptionRequest) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_SubscriptionRequest) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_SubscriptionRequest) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_SubscriptionRequest) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*SubscriptionRequest)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		l = len(x.Id)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.Requester)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if x.Status != 0 {
+			n += 1 + runtime.Sov(uint64(x.Status))
+		}
+		if x.TotalAmount != 0 {
+			n += 1 + runtime.Sov(uint64(x.TotalAmount))
+		}
+		if x.AvailableAmount != 0 {
+			n += 1 + runtime.Sov(uint64(x.AvailableAmount))
+		}
+		if x.StartBlock != 0 {
+			n += 1 + runtime.Sov(uint64(x.StartBlock))
+		}
+		if x.EpochSize != 0 {
+			n += 1 + runtime.Sov(uint64(x.EpochSize))
+		}
+		if x.Duration != 0 {
+			n += 1 + runtime.Sov(uint64(x.Duration))
+		}
+		if len(x.DrpIds) > 0 {
+			for _, s := range x.DrpIds {
+				l = len(s)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if len(x.Writers) > 0 {
+			for _, s := range x.Writers {
+				l = len(s)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if len(x.InitialFrontier) > 0 {
+			for _, s := range x.InitialFrontier {
+				l = len(s)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if len(x.SubscriptionIds) > 0 {
+			for _, s := range x.SubscriptionIds {
+				l = len(s)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*SubscriptionRequest)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if len(x.SubscriptionIds) > 0 {
+			for iNdEx := len(x.SubscriptionIds) - 1; iNdEx >= 0; iNdEx-- {
+				i -= len(x.SubscriptionIds[iNdEx])
+				copy(dAtA[i:], x.SubscriptionIds[iNdEx])
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.SubscriptionIds[iNdEx])))
+				i--
+				dAtA[i] = 0x62
+			}
+		}
+		if len(x.InitialFrontier) > 0 {
+			for iNdEx := len(x.InitialFrontier) - 1; iNdEx >= 0; iNdEx-- {
+				i -= len(x.InitialFrontier[iNdEx])
+				copy(dAtA[i:], x.InitialFrontier[iNdEx])
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.InitialFrontier[iNdEx])))
+				i--
+				dAtA[i] = 0x5a
+			}
+		}
+		if len(x.Writers) > 0 {
+			for iNdEx := len(x.Writers) - 1; iNdEx >= 0; iNdEx-- {
+				i -= len(x.Writers[iNdEx])
+				copy(dAtA[i:], x.Writers[iNdEx])
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Writers[iNdEx])))
+				i--
+				dAtA[i] = 0x52
+			}
+		}
+		if len(x.DrpIds) > 0 {
+			for iNdEx := len(x.DrpIds) - 1; iNdEx >= 0; iNdEx-- {
+				i -= len(x.DrpIds[iNdEx])
+				copy(dAtA[i:], x.DrpIds[iNdEx])
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.DrpIds[iNdEx])))
+				i--
+				dAtA[i] = 0x4a
+			}
+		}
+		if x.Duration != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.Duration))
+			i--
+			dAtA[i] = 0x40
+		}
+		if x.EpochSize != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.EpochSize))
+			i--
+			dAtA[i] = 0x38
+		}
+		if x.StartBlock != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.StartBlock))
+			i--
+			dAtA[i] = 0x30
+		}
+		if x.AvailableAmount != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.AvailableAmount))
+			i--
+			dAtA[i] = 0x28
+		}
+		if x.TotalAmount != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.TotalAmount))
+			i--
+			dAtA[i] = 0x20
+		}
+		if x.Status != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.Status))
+			i--
+			dAtA[i] = 0x18
+		}
+		if len(x.Requester) > 0 {
+			i -= len(x.Requester)
+			copy(dAtA[i:], x.Requester)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Requester)))
+			i--
+			dAtA[i] = 0x12
+		}
+		if len(x.Id) > 0 {
+			i -= len(x.Id)
+			copy(dAtA[i:], x.Id)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Id)))
+			i--
+			dAtA[i] = 0xa
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*SubscriptionRequest)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: SubscriptionRequest: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: SubscriptionRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			case 1:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Id = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 2:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Requester", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Requester = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 3:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
+				}
+				x.Status = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.Status |= SubscriptionRequest_Status(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			case 4:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field TotalAmount", wireType)
+				}
+				x.TotalAmount = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.TotalAmount |= int64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			case 5:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field AvailableAmount", wireType)
+				}
+				x.AvailableAmount = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.AvailableAmount |= int64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			case 6:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field StartBlock", wireType)
+				}
+				x.StartBlock = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.StartBlock |= int64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			case 7:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field EpochSize", wireType)
+				}
+				x.EpochSize = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.EpochSize |= int64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			case 8:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Duration", wireType)
+				}
+				x.Duration = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.Duration |= int64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			case 9:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field DrpIds", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.DrpIds = append(x.DrpIds, string(dAtA[iNdEx:postIndex]))
+				iNdEx = postIndex
+			case 10:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Writers", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Writers = append(x.Writers, string(dAtA[iNdEx:postIndex]))
+				iNdEx = postIndex
+			case 11:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field InitialFrontier", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.InitialFrontier = append(x.InitialFrontier, string(dAtA[iNdEx:postIndex]))
+				iNdEx = postIndex
+			case 12:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field SubscriptionIds", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.SubscriptionIds = append(x.SubscriptionIds, string(dAtA[iNdEx:postIndex]))
+				iNdEx = postIndex
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
+var (
+	md_Subscription                         protoreflect.MessageDescriptor
+	fd_Subscription_id                      protoreflect.FieldDescriptor
+	fd_Subscription_subscription_request_id protoreflect.FieldDescriptor
+	fd_Subscription_subscriber              protoreflect.FieldDescriptor
+	fd_Subscription_start_epoch             protoreflect.FieldDescriptor
+	fd_Subscription_end_epoch               protoreflect.FieldDescriptor
 )
 
 func init() {
 	file_mandu_subscription_subscription_proto_init()
 	md_Subscription = File_mandu_subscription_subscription_proto.Messages().ByName("Subscription")
 	fd_Subscription_id = md_Subscription.Fields().ByName("id")
-	fd_Subscription_deal_id = md_Subscription.Fields().ByName("deal_id")
-	fd_Subscription_provider = md_Subscription.Fields().ByName("provider")
-	fd_Subscription_start_block = md_Subscription.Fields().ByName("start_block")
-	fd_Subscription_end_block = md_Subscription.Fields().ByName("end_block")
+	fd_Subscription_subscription_request_id = md_Subscription.Fields().ByName("subscription_request_id")
+	fd_Subscription_subscriber = md_Subscription.Fields().ByName("subscriber")
+	fd_Subscription_start_epoch = md_Subscription.Fields().ByName("start_epoch")
+	fd_Subscription_end_epoch = md_Subscription.Fields().ByName("end_epoch")
 }
 
 var _ protoreflect.Message = (*fastReflection_Subscription)(nil)
@@ -40,7 +1308,7 @@ func (x *Subscription) ProtoReflect() protoreflect.Message {
 }
 
 func (x *Subscription) slowProtoReflect() protoreflect.Message {
-	mi := &file_mandu_subscription_subscription_proto_msgTypes[0]
+	mi := &file_mandu_subscription_subscription_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -102,27 +1370,27 @@ func (x *fastReflection_Subscription) Range(f func(protoreflect.FieldDescriptor,
 			return
 		}
 	}
-	if x.DealId != "" {
-		value := protoreflect.ValueOfString(x.DealId)
-		if !f(fd_Subscription_deal_id, value) {
+	if x.SubscriptionRequestId != "" {
+		value := protoreflect.ValueOfString(x.SubscriptionRequestId)
+		if !f(fd_Subscription_subscription_request_id, value) {
 			return
 		}
 	}
-	if x.Provider != "" {
-		value := protoreflect.ValueOfString(x.Provider)
-		if !f(fd_Subscription_provider, value) {
+	if x.Subscriber != "" {
+		value := protoreflect.ValueOfString(x.Subscriber)
+		if !f(fd_Subscription_subscriber, value) {
 			return
 		}
 	}
-	if x.StartBlock != uint64(0) {
-		value := protoreflect.ValueOfUint64(x.StartBlock)
-		if !f(fd_Subscription_start_block, value) {
+	if x.StartEpoch != int64(0) {
+		value := protoreflect.ValueOfInt64(x.StartEpoch)
+		if !f(fd_Subscription_start_epoch, value) {
 			return
 		}
 	}
-	if x.EndBlock != uint64(0) {
-		value := protoreflect.ValueOfUint64(x.EndBlock)
-		if !f(fd_Subscription_end_block, value) {
+	if x.EndEpoch != int64(0) {
+		value := protoreflect.ValueOfInt64(x.EndEpoch)
+		if !f(fd_Subscription_end_epoch, value) {
 			return
 		}
 	}
@@ -143,14 +1411,14 @@ func (x *fastReflection_Subscription) Has(fd protoreflect.FieldDescriptor) bool 
 	switch fd.FullName() {
 	case "mandu.subscription.Subscription.id":
 		return x.Id != ""
-	case "mandu.subscription.Subscription.deal_id":
-		return x.DealId != ""
-	case "mandu.subscription.Subscription.provider":
-		return x.Provider != ""
-	case "mandu.subscription.Subscription.start_block":
-		return x.StartBlock != uint64(0)
-	case "mandu.subscription.Subscription.end_block":
-		return x.EndBlock != uint64(0)
+	case "mandu.subscription.Subscription.subscription_request_id":
+		return x.SubscriptionRequestId != ""
+	case "mandu.subscription.Subscription.subscriber":
+		return x.Subscriber != ""
+	case "mandu.subscription.Subscription.start_epoch":
+		return x.StartEpoch != int64(0)
+	case "mandu.subscription.Subscription.end_epoch":
+		return x.EndEpoch != int64(0)
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.Subscription"))
@@ -169,14 +1437,14 @@ func (x *fastReflection_Subscription) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
 	case "mandu.subscription.Subscription.id":
 		x.Id = ""
-	case "mandu.subscription.Subscription.deal_id":
-		x.DealId = ""
-	case "mandu.subscription.Subscription.provider":
-		x.Provider = ""
-	case "mandu.subscription.Subscription.start_block":
-		x.StartBlock = uint64(0)
-	case "mandu.subscription.Subscription.end_block":
-		x.EndBlock = uint64(0)
+	case "mandu.subscription.Subscription.subscription_request_id":
+		x.SubscriptionRequestId = ""
+	case "mandu.subscription.Subscription.subscriber":
+		x.Subscriber = ""
+	case "mandu.subscription.Subscription.start_epoch":
+		x.StartEpoch = int64(0)
+	case "mandu.subscription.Subscription.end_epoch":
+		x.EndEpoch = int64(0)
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.Subscription"))
@@ -196,18 +1464,18 @@ func (x *fastReflection_Subscription) Get(descriptor protoreflect.FieldDescripto
 	case "mandu.subscription.Subscription.id":
 		value := x.Id
 		return protoreflect.ValueOfString(value)
-	case "mandu.subscription.Subscription.deal_id":
-		value := x.DealId
+	case "mandu.subscription.Subscription.subscription_request_id":
+		value := x.SubscriptionRequestId
 		return protoreflect.ValueOfString(value)
-	case "mandu.subscription.Subscription.provider":
-		value := x.Provider
+	case "mandu.subscription.Subscription.subscriber":
+		value := x.Subscriber
 		return protoreflect.ValueOfString(value)
-	case "mandu.subscription.Subscription.start_block":
-		value := x.StartBlock
-		return protoreflect.ValueOfUint64(value)
-	case "mandu.subscription.Subscription.end_block":
-		value := x.EndBlock
-		return protoreflect.ValueOfUint64(value)
+	case "mandu.subscription.Subscription.start_epoch":
+		value := x.StartEpoch
+		return protoreflect.ValueOfInt64(value)
+	case "mandu.subscription.Subscription.end_epoch":
+		value := x.EndEpoch
+		return protoreflect.ValueOfInt64(value)
 	default:
 		if descriptor.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.Subscription"))
@@ -230,14 +1498,14 @@ func (x *fastReflection_Subscription) Set(fd protoreflect.FieldDescriptor, value
 	switch fd.FullName() {
 	case "mandu.subscription.Subscription.id":
 		x.Id = value.Interface().(string)
-	case "mandu.subscription.Subscription.deal_id":
-		x.DealId = value.Interface().(string)
-	case "mandu.subscription.Subscription.provider":
-		x.Provider = value.Interface().(string)
-	case "mandu.subscription.Subscription.start_block":
-		x.StartBlock = value.Uint()
-	case "mandu.subscription.Subscription.end_block":
-		x.EndBlock = value.Uint()
+	case "mandu.subscription.Subscription.subscription_request_id":
+		x.SubscriptionRequestId = value.Interface().(string)
+	case "mandu.subscription.Subscription.subscriber":
+		x.Subscriber = value.Interface().(string)
+	case "mandu.subscription.Subscription.start_epoch":
+		x.StartEpoch = value.Int()
+	case "mandu.subscription.Subscription.end_epoch":
+		x.EndEpoch = value.Int()
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.Subscription"))
@@ -260,14 +1528,14 @@ func (x *fastReflection_Subscription) Mutable(fd protoreflect.FieldDescriptor) p
 	switch fd.FullName() {
 	case "mandu.subscription.Subscription.id":
 		panic(fmt.Errorf("field id of message mandu.subscription.Subscription is not mutable"))
-	case "mandu.subscription.Subscription.deal_id":
-		panic(fmt.Errorf("field deal_id of message mandu.subscription.Subscription is not mutable"))
-	case "mandu.subscription.Subscription.provider":
-		panic(fmt.Errorf("field provider of message mandu.subscription.Subscription is not mutable"))
-	case "mandu.subscription.Subscription.start_block":
-		panic(fmt.Errorf("field start_block of message mandu.subscription.Subscription is not mutable"))
-	case "mandu.subscription.Subscription.end_block":
-		panic(fmt.Errorf("field end_block of message mandu.subscription.Subscription is not mutable"))
+	case "mandu.subscription.Subscription.subscription_request_id":
+		panic(fmt.Errorf("field subscription_request_id of message mandu.subscription.Subscription is not mutable"))
+	case "mandu.subscription.Subscription.subscriber":
+		panic(fmt.Errorf("field subscriber of message mandu.subscription.Subscription is not mutable"))
+	case "mandu.subscription.Subscription.start_epoch":
+		panic(fmt.Errorf("field start_epoch of message mandu.subscription.Subscription is not mutable"))
+	case "mandu.subscription.Subscription.end_epoch":
+		panic(fmt.Errorf("field end_epoch of message mandu.subscription.Subscription is not mutable"))
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.Subscription"))
@@ -283,14 +1551,14 @@ func (x *fastReflection_Subscription) NewField(fd protoreflect.FieldDescriptor) 
 	switch fd.FullName() {
 	case "mandu.subscription.Subscription.id":
 		return protoreflect.ValueOfString("")
-	case "mandu.subscription.Subscription.deal_id":
+	case "mandu.subscription.Subscription.subscription_request_id":
 		return protoreflect.ValueOfString("")
-	case "mandu.subscription.Subscription.provider":
+	case "mandu.subscription.Subscription.subscriber":
 		return protoreflect.ValueOfString("")
-	case "mandu.subscription.Subscription.start_block":
-		return protoreflect.ValueOfUint64(uint64(0))
-	case "mandu.subscription.Subscription.end_block":
-		return protoreflect.ValueOfUint64(uint64(0))
+	case "mandu.subscription.Subscription.start_epoch":
+		return protoreflect.ValueOfInt64(int64(0))
+	case "mandu.subscription.Subscription.end_epoch":
+		return protoreflect.ValueOfInt64(int64(0))
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.Subscription"))
@@ -364,19 +1632,19 @@ func (x *fastReflection_Subscription) ProtoMethods() *protoiface.Methods {
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
-		l = len(x.DealId)
+		l = len(x.SubscriptionRequestId)
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
-		l = len(x.Provider)
+		l = len(x.Subscriber)
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
-		if x.StartBlock != 0 {
-			n += 1 + runtime.Sov(uint64(x.StartBlock))
+		if x.StartEpoch != 0 {
+			n += 1 + runtime.Sov(uint64(x.StartEpoch))
 		}
-		if x.EndBlock != 0 {
-			n += 1 + runtime.Sov(uint64(x.EndBlock))
+		if x.EndEpoch != 0 {
+			n += 1 + runtime.Sov(uint64(x.EndEpoch))
 		}
 		if x.unknownFields != nil {
 			n += len(x.unknownFields)
@@ -407,27 +1675,27 @@ func (x *fastReflection_Subscription) ProtoMethods() *protoiface.Methods {
 			i -= len(x.unknownFields)
 			copy(dAtA[i:], x.unknownFields)
 		}
-		if x.EndBlock != 0 {
-			i = runtime.EncodeVarint(dAtA, i, uint64(x.EndBlock))
+		if x.EndEpoch != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.EndEpoch))
 			i--
 			dAtA[i] = 0x28
 		}
-		if x.StartBlock != 0 {
-			i = runtime.EncodeVarint(dAtA, i, uint64(x.StartBlock))
+		if x.StartEpoch != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.StartEpoch))
 			i--
 			dAtA[i] = 0x20
 		}
-		if len(x.Provider) > 0 {
-			i -= len(x.Provider)
-			copy(dAtA[i:], x.Provider)
-			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Provider)))
+		if len(x.Subscriber) > 0 {
+			i -= len(x.Subscriber)
+			copy(dAtA[i:], x.Subscriber)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Subscriber)))
 			i--
 			dAtA[i] = 0x1a
 		}
-		if len(x.DealId) > 0 {
-			i -= len(x.DealId)
-			copy(dAtA[i:], x.DealId)
-			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.DealId)))
+		if len(x.SubscriptionRequestId) > 0 {
+			i -= len(x.SubscriptionRequestId)
+			copy(dAtA[i:], x.SubscriptionRequestId)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.SubscriptionRequestId)))
 			i--
 			dAtA[i] = 0x12
 		}
@@ -521,7 +1789,7 @@ func (x *fastReflection_Subscription) ProtoMethods() *protoiface.Methods {
 				iNdEx = postIndex
 			case 2:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field DealId", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field SubscriptionRequestId", wireType)
 				}
 				var stringLen uint64
 				for shift := uint(0); ; shift += 7 {
@@ -549,11 +1817,11 @@ func (x *fastReflection_Subscription) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.DealId = string(dAtA[iNdEx:postIndex])
+				x.SubscriptionRequestId = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
 			case 3:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Provider", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Subscriber", wireType)
 				}
 				var stringLen uint64
 				for shift := uint(0); ; shift += 7 {
@@ -581,13 +1849,13 @@ func (x *fastReflection_Subscription) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.Provider = string(dAtA[iNdEx:postIndex])
+				x.Subscriber = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
 			case 4:
 				if wireType != 0 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field StartBlock", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field StartEpoch", wireType)
 				}
-				x.StartBlock = 0
+				x.StartEpoch = 0
 				for shift := uint(0); ; shift += 7 {
 					if shift >= 64 {
 						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
@@ -597,16 +1865,16 @@ func (x *fastReflection_Subscription) ProtoMethods() *protoiface.Methods {
 					}
 					b := dAtA[iNdEx]
 					iNdEx++
-					x.StartBlock |= uint64(b&0x7F) << shift
+					x.StartEpoch |= int64(b&0x7F) << shift
 					if b < 0x80 {
 						break
 					}
 				}
 			case 5:
 				if wireType != 0 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field EndBlock", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field EndEpoch", wireType)
 				}
-				x.EndBlock = 0
+				x.EndEpoch = 0
 				for shift := uint(0); ; shift += 7 {
 					if shift >= 64 {
 						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
@@ -616,7 +1884,7 @@ func (x *fastReflection_Subscription) ProtoMethods() *protoiface.Methods {
 					}
 					b := dAtA[iNdEx]
 					iNdEx++
-					x.EndBlock |= uint64(b&0x7F) << shift
+					x.EndEpoch |= int64(b&0x7F) << shift
 					if b < 0x80 {
 						break
 					}
@@ -669,22 +1937,206 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type SubscriptionRequest_Status int32
+
+const (
+	SubscriptionRequest_UNDEFINED   SubscriptionRequest_Status = 0
+	SubscriptionRequest_SCHEDULED   SubscriptionRequest_Status = 1
+	SubscriptionRequest_INITIALIZED SubscriptionRequest_Status = 2
+	SubscriptionRequest_ACTIVE      SubscriptionRequest_Status = 3
+	SubscriptionRequest_INACTIVE    SubscriptionRequest_Status = 4
+	SubscriptionRequest_CANCELLED   SubscriptionRequest_Status = 5
+	SubscriptionRequest_EXPIRED     SubscriptionRequest_Status = 6
+)
+
+// Enum value maps for SubscriptionRequest_Status.
+var (
+	SubscriptionRequest_Status_name = map[int32]string{
+		0: "UNDEFINED",
+		1: "SCHEDULED",
+		2: "INITIALIZED",
+		3: "ACTIVE",
+		4: "INACTIVE",
+		5: "CANCELLED",
+		6: "EXPIRED",
+	}
+	SubscriptionRequest_Status_value = map[string]int32{
+		"UNDEFINED":   0,
+		"SCHEDULED":   1,
+		"INITIALIZED": 2,
+		"ACTIVE":      3,
+		"INACTIVE":    4,
+		"CANCELLED":   5,
+		"EXPIRED":     6,
+	}
+)
+
+func (x SubscriptionRequest_Status) Enum() *SubscriptionRequest_Status {
+	p := new(SubscriptionRequest_Status)
+	*p = x
+	return p
+}
+
+func (x SubscriptionRequest_Status) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SubscriptionRequest_Status) Descriptor() protoreflect.EnumDescriptor {
+	return file_mandu_subscription_subscription_proto_enumTypes[0].Descriptor()
+}
+
+func (SubscriptionRequest_Status) Type() protoreflect.EnumType {
+	return &file_mandu_subscription_subscription_proto_enumTypes[0]
+}
+
+func (x SubscriptionRequest_Status) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use SubscriptionRequest_Status.Descriptor instead.
+func (SubscriptionRequest_Status) EnumDescriptor() ([]byte, []int) {
+	return file_mandu_subscription_subscription_proto_rawDescGZIP(), []int{0, 0}
+}
+
+type SubscriptionRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id              string                     `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`                                                             // id of the request
+	Requester       string                     `protobuf:"bytes,2,opt,name=requester,proto3" json:"requester,omitempty"`                                               // address of the requester
+	Status          SubscriptionRequest_Status `protobuf:"varint,3,opt,name=status,proto3,enum=mandu.subscription.SubscriptionRequest_Status" json:"status,omitempty"` // status of the request
+	TotalAmount     int64                      `protobuf:"varint,4,opt,name=total_amount,json=totalAmount,proto3" json:"total_amount,omitempty"`                       // total amount added to the request
+	AvailableAmount int64                      `protobuf:"varint,5,opt,name=available_amount,json=availableAmount,proto3" json:"available_amount,omitempty"`           // total amount - rewards already provided
+	StartBlock      int64                      `protobuf:"varint,6,opt,name=start_block,json=startBlock,proto3" json:"start_block,omitempty"`                          // when does the request start
+	EpochSize       int64                      `protobuf:"varint,7,opt,name=epoch_size,json=epochSize,proto3" json:"epoch_size,omitempty"`                             // size of the epochs (number of blocks)
+	Duration        int64                      `protobuf:"varint,8,opt,name=duration,proto3" json:"duration,omitempty"`                                                // number of epochs where the deal is valid
+	DrpIds          []string                   `protobuf:"bytes,9,rep,name=drp_ids,json=drpIds,proto3" json:"drp_ids,omitempty"`                                       // all the DRPs that must be subscribed to
+	Writers         []string                   `protobuf:"bytes,10,rep,name=writers,proto3" json:"writers,omitempty"`                                                  // set of writers that will be counted towards progress
+	InitialFrontier []string                   `protobuf:"bytes,11,rep,name=initial_frontier,json=initialFrontier,proto3" json:"initial_frontier,omitempty"`           // minimal frontier that every subscriber must have in their hash graph
+	SubscriptionIds []string                   `protobuf:"bytes,12,rep,name=subscription_ids,json=subscriptionIds,proto3" json:"subscription_ids,omitempty"`           // list of all active subscriptions
+}
+
+func (x *SubscriptionRequest) Reset() {
+	*x = SubscriptionRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_mandu_subscription_subscription_proto_msgTypes[0]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *SubscriptionRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubscriptionRequest) ProtoMessage() {}
+
+// Deprecated: Use SubscriptionRequest.ProtoReflect.Descriptor instead.
+func (*SubscriptionRequest) Descriptor() ([]byte, []int) {
+	return file_mandu_subscription_subscription_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *SubscriptionRequest) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *SubscriptionRequest) GetRequester() string {
+	if x != nil {
+		return x.Requester
+	}
+	return ""
+}
+
+func (x *SubscriptionRequest) GetStatus() SubscriptionRequest_Status {
+	if x != nil {
+		return x.Status
+	}
+	return SubscriptionRequest_UNDEFINED
+}
+
+func (x *SubscriptionRequest) GetTotalAmount() int64 {
+	if x != nil {
+		return x.TotalAmount
+	}
+	return 0
+}
+
+func (x *SubscriptionRequest) GetAvailableAmount() int64 {
+	if x != nil {
+		return x.AvailableAmount
+	}
+	return 0
+}
+
+func (x *SubscriptionRequest) GetStartBlock() int64 {
+	if x != nil {
+		return x.StartBlock
+	}
+	return 0
+}
+
+func (x *SubscriptionRequest) GetEpochSize() int64 {
+	if x != nil {
+		return x.EpochSize
+	}
+	return 0
+}
+
+func (x *SubscriptionRequest) GetDuration() int64 {
+	if x != nil {
+		return x.Duration
+	}
+	return 0
+}
+
+func (x *SubscriptionRequest) GetDrpIds() []string {
+	if x != nil {
+		return x.DrpIds
+	}
+	return nil
+}
+
+func (x *SubscriptionRequest) GetWriters() []string {
+	if x != nil {
+		return x.Writers
+	}
+	return nil
+}
+
+func (x *SubscriptionRequest) GetInitialFrontier() []string {
+	if x != nil {
+		return x.InitialFrontier
+	}
+	return nil
+}
+
+func (x *SubscriptionRequest) GetSubscriptionIds() []string {
+	if x != nil {
+		return x.SubscriptionIds
+	}
+	return nil
+}
+
 type Subscription struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id         string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	DealId     string `protobuf:"bytes,2,opt,name=deal_id,json=dealId,proto3" json:"deal_id,omitempty"`
-	Provider   string `protobuf:"bytes,3,opt,name=provider,proto3" json:"provider,omitempty"`
-	StartBlock uint64 `protobuf:"varint,4,opt,name=start_block,json=startBlock,proto3" json:"start_block,omitempty"`
-	EndBlock   uint64 `protobuf:"varint,5,opt,name=end_block,json=endBlock,proto3" json:"end_block,omitempty"`
+	Id                    string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`                                                                      // id of the subscription
+	SubscriptionRequestId string `protobuf:"bytes,2,opt,name=subscription_request_id,json=subscriptionRequestId,proto3" json:"subscription_request_id,omitempty"` // id of the parent subscription request
+	Subscriber            string `protobuf:"bytes,3,opt,name=subscriber,proto3" json:"subscriber,omitempty"`                                                      // address of the subscriber
+	StartEpoch            int64  `protobuf:"varint,4,opt,name=start_epoch,json=startEpoch,proto3" json:"start_epoch,omitempty"`                                   // epoch where the subscriber started the subscription
+	EndEpoch              int64  `protobuf:"varint,5,opt,name=end_epoch,json=endEpoch,proto3" json:"end_epoch,omitempty"`                                         // epoch where the subscriber stopped the subscription (can be before the end on the request)
 }
 
 func (x *Subscription) Reset() {
 	*x = Subscription{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_mandu_subscription_subscription_proto_msgTypes[0]
+		mi := &file_mandu_subscription_subscription_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -698,7 +2150,7 @@ func (*Subscription) ProtoMessage() {}
 
 // Deprecated: Use Subscription.ProtoReflect.Descriptor instead.
 func (*Subscription) Descriptor() ([]byte, []int) {
-	return file_mandu_subscription_subscription_proto_rawDescGZIP(), []int{0}
+	return file_mandu_subscription_subscription_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Subscription) GetId() string {
@@ -708,30 +2160,30 @@ func (x *Subscription) GetId() string {
 	return ""
 }
 
-func (x *Subscription) GetDealId() string {
+func (x *Subscription) GetSubscriptionRequestId() string {
 	if x != nil {
-		return x.DealId
+		return x.SubscriptionRequestId
 	}
 	return ""
 }
 
-func (x *Subscription) GetProvider() string {
+func (x *Subscription) GetSubscriber() string {
 	if x != nil {
-		return x.Provider
+		return x.Subscriber
 	}
 	return ""
 }
 
-func (x *Subscription) GetStartBlock() uint64 {
+func (x *Subscription) GetStartEpoch() int64 {
 	if x != nil {
-		return x.StartBlock
+		return x.StartEpoch
 	}
 	return 0
 }
 
-func (x *Subscription) GetEndBlock() uint64 {
+func (x *Subscription) GetEndEpoch() int64 {
 	if x != nil {
-		return x.EndBlock
+		return x.EndEpoch
 	}
 	return 0
 }
@@ -742,28 +2194,65 @@ var file_mandu_subscription_subscription_proto_rawDesc = []byte{
 	0x0a, 0x25, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2f, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70,
 	0x74, 0x69, 0x6f, 0x6e, 0x2f, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f,
 	0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x12, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73,
-	0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x91, 0x01, 0x0a, 0x0c,
+	0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0xad, 0x04, 0x0a, 0x13,
+	0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x02, 0x69, 0x64, 0x12, 0x1c, 0x0a, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65,
+	0x72, 0x12, 0x46, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28,
+	0x0e, 0x32, 0x2e, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72,
+	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x75,
+	0x73, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x21, 0x0a, 0x0c, 0x74, 0x6f, 0x74,
+	0x61, 0x6c, 0x5f, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03, 0x52,
+	0x0b, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x29, 0x0a, 0x10,
+	0x61, 0x76, 0x61, 0x69, 0x6c, 0x61, 0x62, 0x6c, 0x65, 0x5f, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74,
+	0x18, 0x05, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0f, 0x61, 0x76, 0x61, 0x69, 0x6c, 0x61, 0x62, 0x6c,
+	0x65, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x1f, 0x0a, 0x0b, 0x73, 0x74, 0x61, 0x72, 0x74,
+	0x5f, 0x62, 0x6c, 0x6f, 0x63, 0x6b, 0x18, 0x06, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0a, 0x73, 0x74,
+	0x61, 0x72, 0x74, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x12, 0x1d, 0x0a, 0x0a, 0x65, 0x70, 0x6f, 0x63,
+	0x68, 0x5f, 0x73, 0x69, 0x7a, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x65, 0x70,
+	0x6f, 0x63, 0x68, 0x53, 0x69, 0x7a, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x64, 0x75, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x18, 0x08, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x64, 0x75, 0x72, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x12, 0x17, 0x0a, 0x07, 0x64, 0x72, 0x70, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x09,
+	0x20, 0x03, 0x28, 0x09, 0x52, 0x06, 0x64, 0x72, 0x70, 0x49, 0x64, 0x73, 0x12, 0x18, 0x0a, 0x07,
+	0x77, 0x72, 0x69, 0x74, 0x65, 0x72, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x09, 0x52, 0x07, 0x77,
+	0x72, 0x69, 0x74, 0x65, 0x72, 0x73, 0x12, 0x29, 0x0a, 0x10, 0x69, 0x6e, 0x69, 0x74, 0x69, 0x61,
+	0x6c, 0x5f, 0x66, 0x72, 0x6f, 0x6e, 0x74, 0x69, 0x65, 0x72, 0x18, 0x0b, 0x20, 0x03, 0x28, 0x09,
+	0x52, 0x0f, 0x69, 0x6e, 0x69, 0x74, 0x69, 0x61, 0x6c, 0x46, 0x72, 0x6f, 0x6e, 0x74, 0x69, 0x65,
+	0x72, 0x12, 0x29, 0x0a, 0x10, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f,
+	0x6e, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x0c, 0x20, 0x03, 0x28, 0x09, 0x52, 0x0f, 0x73, 0x75, 0x62,
+	0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x73, 0x22, 0x6d, 0x0a, 0x06,
+	0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x0d, 0x0a, 0x09, 0x55, 0x4e, 0x44, 0x45, 0x46, 0x49,
+	0x4e, 0x45, 0x44, 0x10, 0x00, 0x12, 0x0d, 0x0a, 0x09, 0x53, 0x43, 0x48, 0x45, 0x44, 0x55, 0x4c,
+	0x45, 0x44, 0x10, 0x01, 0x12, 0x0f, 0x0a, 0x0b, 0x49, 0x4e, 0x49, 0x54, 0x49, 0x41, 0x4c, 0x49,
+	0x5a, 0x45, 0x44, 0x10, 0x02, 0x12, 0x0a, 0x0a, 0x06, 0x41, 0x43, 0x54, 0x49, 0x56, 0x45, 0x10,
+	0x03, 0x12, 0x0c, 0x0a, 0x08, 0x49, 0x4e, 0x41, 0x43, 0x54, 0x49, 0x56, 0x45, 0x10, 0x04, 0x12,
+	0x0d, 0x0a, 0x09, 0x43, 0x41, 0x4e, 0x43, 0x45, 0x4c, 0x4c, 0x45, 0x44, 0x10, 0x05, 0x12, 0x0b,
+	0x0a, 0x07, 0x45, 0x58, 0x50, 0x49, 0x52, 0x45, 0x44, 0x10, 0x06, 0x22, 0xb4, 0x01, 0x0a, 0x0c,
 	0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x0e, 0x0a, 0x02,
-	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x17, 0x0a, 0x07,
-	0x64, 0x65, 0x61, 0x6c, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x64,
-	0x65, 0x61, 0x6c, 0x49, 0x64, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x64, 0x65,
-	0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x64, 0x65,
-	0x72, 0x12, 0x1f, 0x0a, 0x0b, 0x73, 0x74, 0x61, 0x72, 0x74, 0x5f, 0x62, 0x6c, 0x6f, 0x63, 0x6b,
-	0x18, 0x04, 0x20, 0x01, 0x28, 0x04, 0x52, 0x0a, 0x73, 0x74, 0x61, 0x72, 0x74, 0x42, 0x6c, 0x6f,
-	0x63, 0x6b, 0x12, 0x1b, 0x0a, 0x09, 0x65, 0x6e, 0x64, 0x5f, 0x62, 0x6c, 0x6f, 0x63, 0x6b, 0x18,
-	0x05, 0x20, 0x01, 0x28, 0x04, 0x52, 0x08, 0x65, 0x6e, 0x64, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x42,
-	0xb2, 0x01, 0x0a, 0x16, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75,
-	0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x42, 0x11, 0x53, 0x75, 0x62, 0x73,
-	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a,
-	0x1c, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x6d, 0x61, 0x6e, 0x64, 0x75,
-	0x2f, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0xa2, 0x02, 0x03,
-	0x4d, 0x53, 0x58, 0xaa, 0x02, 0x12, 0x4d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x53, 0x75, 0x62, 0x73,
-	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0xca, 0x02, 0x12, 0x4d, 0x61, 0x6e, 0x64, 0x75,
-	0x5c, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0xe2, 0x02, 0x1e,
-	0x4d, 0x61, 0x6e, 0x64, 0x75, 0x5c, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69,
-	0x6f, 0x6e, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02,
-	0x13, 0x4d, 0x61, 0x6e, 0x64, 0x75, 0x3a, 0x3a, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70,
-	0x74, 0x69, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x36, 0x0a, 0x17,
+	0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x72, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x15, 0x73,
+	0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x49, 0x64, 0x12, 0x1e, 0x0a, 0x0a, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62,
+	0x65, 0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72,
+	0x69, 0x62, 0x65, 0x72, 0x12, 0x1f, 0x0a, 0x0b, 0x73, 0x74, 0x61, 0x72, 0x74, 0x5f, 0x65, 0x70,
+	0x6f, 0x63, 0x68, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0a, 0x73, 0x74, 0x61, 0x72, 0x74,
+	0x45, 0x70, 0x6f, 0x63, 0x68, 0x12, 0x1b, 0x0a, 0x09, 0x65, 0x6e, 0x64, 0x5f, 0x65, 0x70, 0x6f,
+	0x63, 0x68, 0x18, 0x05, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x65, 0x6e, 0x64, 0x45, 0x70, 0x6f,
+	0x63, 0x68, 0x42, 0xb2, 0x01, 0x0a, 0x16, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75,
+	0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x42, 0x11, 0x53,
+	0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x72, 0x6f, 0x74, 0x6f,
+	0x50, 0x01, 0x5a, 0x1c, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x6d, 0x61,
+	0x6e, 0x64, 0x75, 0x2f, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e,
+	0xa2, 0x02, 0x03, 0x4d, 0x53, 0x58, 0xaa, 0x02, 0x12, 0x4d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x53,
+	0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0xca, 0x02, 0x12, 0x4d, 0x61,
+	0x6e, 0x64, 0x75, 0x5c, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e,
+	0xe2, 0x02, 0x1e, 0x4d, 0x61, 0x6e, 0x64, 0x75, 0x5c, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69,
+	0x70, 0x74, 0x69, 0x6f, 0x6e, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74,
+	0x61, 0xea, 0x02, 0x13, 0x4d, 0x61, 0x6e, 0x64, 0x75, 0x3a, 0x3a, 0x53, 0x75, 0x62, 0x73, 0x63,
+	0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -778,16 +2267,20 @@ func file_mandu_subscription_subscription_proto_rawDescGZIP() []byte {
 	return file_mandu_subscription_subscription_proto_rawDescData
 }
 
-var file_mandu_subscription_subscription_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_mandu_subscription_subscription_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_mandu_subscription_subscription_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_mandu_subscription_subscription_proto_goTypes = []interface{}{
-	(*Subscription)(nil), // 0: mandu.subscription.Subscription
+	(SubscriptionRequest_Status)(0), // 0: mandu.subscription.SubscriptionRequest.Status
+	(*SubscriptionRequest)(nil),     // 1: mandu.subscription.SubscriptionRequest
+	(*Subscription)(nil),            // 2: mandu.subscription.Subscription
 }
 var file_mandu_subscription_subscription_proto_depIdxs = []int32{
-	0, // [0:0] is the sub-list for method output_type
-	0, // [0:0] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	0, // 0: mandu.subscription.SubscriptionRequest.status:type_name -> mandu.subscription.SubscriptionRequest.Status
+	1, // [1:1] is the sub-list for method output_type
+	1, // [1:1] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_mandu_subscription_subscription_proto_init() }
@@ -797,6 +2290,18 @@ func file_mandu_subscription_subscription_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_mandu_subscription_subscription_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*SubscriptionRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_mandu_subscription_subscription_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Subscription); i {
 			case 0:
 				return &v.state
@@ -814,13 +2319,14 @@ func file_mandu_subscription_subscription_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_mandu_subscription_subscription_proto_rawDesc,
-			NumEnums:      0,
-			NumMessages:   1,
+			NumEnums:      1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_mandu_subscription_subscription_proto_goTypes,
 		DependencyIndexes: file_mandu_subscription_subscription_proto_depIdxs,
+		EnumInfos:         file_mandu_subscription_subscription_proto_enumTypes,
 		MessageInfos:      file_mandu_subscription_subscription_proto_msgTypes,
 	}.Build()
 	File_mandu_subscription_subscription_proto = out.File

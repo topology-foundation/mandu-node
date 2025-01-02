@@ -7,7 +7,7 @@ option go_package = "mandu/x/challenge/types";
 
 message Vertex {
   message Operation {
-    string type = 1;
+    string op_type = 1;
     google.protobuf.Value value = 2;
   }
 

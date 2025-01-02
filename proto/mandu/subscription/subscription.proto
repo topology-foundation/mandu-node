@@ -3,10 +3,35 @@ package mandu.subscription;
 
 option go_package = "mandu/x/subscription/types";
 
-message Subscription {
-  string id = 1;
-  string deal_id = 2;
-  string provider = 3;
-  uint64 start_block = 4;
-  uint64 end_block = 5;
+message SubscriptionRequest { // request made by anyone
+  enum Status {
+	UNDEFINED   = 0;
+    SCHEDULED   = 1;
+    INITIALIZED = 2;
+    ACTIVE      = 3;
+    INACTIVE    = 4;
+    CANCELLED   = 5;
+    EXPIRED     = 6;
+  }
+
+  string id                        = 1; // id of the request
+  string requester                 = 2; // address of the requester
+  Status status                    = 3; // status of the request
+  int64 total_amount               = 4; // total amount added to the request
+  int64 available_amount           = 5; // total amount - rewards already provided
+  int64 start_block                = 6; // when does the request start
+  int64 epoch_size                 = 7; // size of the epochs (number of blocks)
+  int64 duration                   = 8; // number of epochs where the deal is valid
+  repeated string drp_ids          = 9; // all the DRPs that must be subscribed to
+  repeated string writers          = 10; // set of writers that will be counted towards progress
+  repeated string initial_frontier = 11; // minimal frontier that every subscriber must have in their hash graph
+  repeated string subscription_ids = 12; // list of all active subscriptions
+}
+
+message Subscription { // metadata on the subscription made by a subscriber
+  string id                      = 1; // id of the subscription
+  string subscription_request_id = 2; // id of the parent subscription request
+  string subscriber              = 3; // address of the subscriber
+  int64 start_epoch              = 4; // epoch where the subscriber started the subscription
+  int64 end_epoch                = 5; // epoch where the subscriber stopped the subscription (can be before the end on the request)
 }
