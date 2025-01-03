@@ -14,7 +14,7 @@ import (
 func (k msgServer) SubmitProgress(goCtx context.Context, msg *types.MsgSubmitProgress) (*types.MsgSubmitProgressResponse, error) {
 	ctx := sdk.UnwrapSDKContext(goCtx)
 
-	provider := msg.Provider
+	subscriber := msg.Subscriber
 	subscriptionId := msg.SubscriptionId
 	obfuscatedVerticesHash := msg.ObfuscatedVerticesHash
 	blockHeight := ctx.BlockHeight()
@@ -25,7 +25,7 @@ func (k msgServer) SubmitProgress(goCtx context.Context, msg *types.MsgSubmitPro
 	if !found {
 		return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, "subscription with id "+subscriptionId+" not found")
 	}
-	if subscription.Provider != provider {
+	if subscription.Subscriber != subscriber {
 		return nil, errorsmod.Wrap(sdkerrors.ErrUnauthorized, "only the provider can submit progress")
 	}
 
@@ -37,7 +37,7 @@ func (k msgServer) SubmitProgress(goCtx context.Context, msg *types.MsgSubmitPro
 
 	// Validate that the obfuscated vertex hashes submitted in the previous epoch match the current vertex hashes
 	obfuscatedProgressData, _ := k.GetObfuscatedProgress(ctx, subscriptionId)
-	err := validateObfuscatedProgress(obfuscatedProgressData, submittedHashes, provider, epochNumber)
+	err := validateObfuscatedProgress(obfuscatedProgressData, submittedHashes, subscriber, epochNumber)
 	if err != nil {
 		return nil, errorsmod.Wrap(err, "vertices hashes / obfuscated data validation failed")
 	}
@@ -46,7 +46,7 @@ func (k msgServer) SubmitProgress(goCtx context.Context, msg *types.MsgSubmitPro
 	if !found {
 		hashesSet := types.SetFrom(submittedHashes...)
 		for hash := range hashesSet {
-			k.SetHashSubmissionBlock(ctx, provider, hash, blockHeight)
+			k.SetHashSubmissionBlock(ctx, subscriber, hash, blockHeight)
 		}
 		k.SetProgress(ctx, subscriptionId, hashesSet)
 		k.SetProgressSize(ctx, subscriptionId, blockHeight, len(hashesSet))
@@ -57,7 +57,7 @@ func (k msgServer) SubmitProgress(goCtx context.Context, msg *types.MsgSubmitPro
 	for _, hash := range submittedHashes {
 		if !progress.Has(hash) {
 			progress = progress.Add(hash)
-			k.SetHashSubmissionBlock(ctx, provider, hash, blockHeight)
+			k.SetHashSubmissionBlock(ctx, subscriber, hash, blockHeight)
 		}
 	}
 

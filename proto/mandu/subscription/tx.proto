@@ -18,12 +18,12 @@ service Msg {
   // parameters. The authority defaults to the x/gov module account.
   rpc UpdateParams(MsgUpdateParams) returns (MsgUpdateParamsResponse);
 
-  rpc CreateDeal(MsgCreateDeal) returns (MsgCreateDealResponse);
-  rpc CancelDeal(MsgCancelDeal) returns (MsgCancelDealResponse);
-  rpc UpdateDeal(MsgUpdateDeal) returns (MsgUpdateDealResponse);
-  rpc IncrementDealAmount(MsgIncrementDealAmount) returns (MsgIncrementDealAmountResponse);
-  rpc JoinDeal(MsgJoinDeal) returns (MsgJoinDealResponse);
-  rpc LeaveDeal(MsgLeaveDeal) returns (MsgLeaveDealResponse);
+  rpc CreateSubscriptionRequest(MsgCreateSubscriptionRequest) returns (MsgCreateSubscriptionRequestResponse);
+  rpc CancelSubscriptionRequest(MsgCancelSubscriptionRequest) returns (MsgCancelSubscriptionRequestResponse);
+  rpc UpdateSubscriptionRequest(MsgUpdateSubscriptionRequest) returns (MsgUpdateSubscriptionRequestResponse);
+  rpc IncrementSubscriptionRequestAmount(MsgIncrementSubscriptionRequestAmount) returns (MsgIncrementSubscriptionRequestAmountResponse);
+  rpc JoinSubscriptionRequest(MsgJoinSubscriptionRequest) returns (MsgJoinSubscriptionRequestResponse);
+  rpc LeaveSubscriptionRequest(MsgLeaveSubscriptionRequest) returns (MsgLeaveSubscriptionRequestResponse);
   rpc SubmitProgress(MsgSubmitProgress) returns (MsgSubmitProgressResponse);
 }
 
@@ -49,70 +49,73 @@ message MsgUpdateParams {
 // MsgUpdateParams message.
 message MsgUpdateParamsResponse {}
 
-message MsgCreateDeal {
+message MsgCreateSubscriptionRequest {
   option (cosmos.msg.v1.signer) = "requester";
   string requester = 1;
-  string cro_id = 2;
-  uint64 amount = 3;
-  uint64 start_block = 4;
-  uint64 end_block = 5;
-  repeated string initial_frontier = 6;
+  int64 amount = 2;
+  int64 start_block = 3;
+  int64 epoch_size = 4;
+  int64 duration = 5;
+  repeated string drp_ids = 6;
+  repeated string writers = 7;
+  repeated string initial_frontier = 8;
 }
 
-message MsgCreateDealResponse {
-  string deal_id = 1;
+message MsgCreateSubscriptionRequestResponse {
+  string subscription_request_id = 1;
 }
 
-message MsgCancelDeal {
+message MsgCancelSubscriptionRequest {
   option (cosmos.msg.v1.signer) = "requester";
   string requester = 1;
-  string deal_id = 2;
+  string subscription_request_id = 2;
 }
 
-message MsgCancelDealResponse {}
+message MsgCancelSubscriptionRequestResponse {}
 
-message MsgUpdateDeal {
+message MsgUpdateSubscriptionRequest {
   option (cosmos.msg.v1.signer) = "requester";
   string requester = 1;
-  string deal_id = 2;
+  string subscription_request_id = 2;
   // these fields should be optional, errors with pulsar
-  uint64 amount = 3;
-  uint64 start_block = 4;
-  uint64 end_block = 5;
+  int64 amount = 3;
+  int64 start_block = 4;
+  int64 duration = 5;
+  repeated string writers = 7;
 }
 
-message MsgUpdateDealResponse {}
+message MsgUpdateSubscriptionRequestResponse {}
 
-message MsgIncrementDealAmount {
+message MsgIncrementSubscriptionRequestAmount {
   option (cosmos.msg.v1.signer) = "requester";
   string requester = 1;
-  string deal_id = 2;
-  uint64 amount = 3;
+  string subscription_request_id = 2;
+  int64 amount = 3;
 }
 
-message MsgIncrementDealAmountResponse {}
+message MsgIncrementSubscriptionRequestAmountResponse {}
 
-message MsgJoinDeal {
-  option (cosmos.msg.v1.signer) = "provider";
-  string provider = 1;
-  string deal_id = 2;
+message MsgJoinSubscriptionRequest {
+  option (cosmos.msg.v1.signer) = "subscriber";
+  string subscriber = 1;
+  string subscription_request_id = 2;
 }
 
-message MsgJoinDealResponse {
+message MsgJoinSubscriptionRequestResponse {
   string subscription_id = 1;
 }
 
-message MsgLeaveDeal {
-  option (cosmos.msg.v1.signer) = "provider";
-  string provider = 1;
-  string deal_id = 2;
+message MsgLeaveSubscriptionRequest {
+  option (cosmos.msg.v1.signer) = "subscriber";
+  string subscriber = 1;
+  string subscription_request_id = 2;
 }
 
-message MsgLeaveDealResponse {}
+message MsgLeaveSubscriptionRequestResponse {}
 
 message MsgSubmitProgress {
-  option (cosmos.msg.v1.signer) = "provider";
-  string provider = 1;
+  option (cosmos.msg.v1.signer) = "subscriber";
+  string subscriber = 1;
   string subscription_id = 2;
   repeated string previous_vertices_hashes = 3;
   string obfuscated_vertices_hash = 4;

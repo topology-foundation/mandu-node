@@ -871,82 +871,178 @@ func (x *fastReflection_MsgUpdateParamsResponse) ProtoMethods() *protoiface.Meth
 	}
 }
 
-var _ protoreflect.List = (*_MsgCreateDeal_6_list)(nil)
+var _ protoreflect.List = (*_MsgCreateSubscriptionRequest_6_list)(nil)
 
-type _MsgCreateDeal_6_list struct {
+type _MsgCreateSubscriptionRequest_6_list struct {
 	list *[]string
 }
 
-func (x *_MsgCreateDeal_6_list) Len() int {
+func (x *_MsgCreateSubscriptionRequest_6_list) Len() int {
 	if x.list == nil {
 		return 0
 	}
 	return len(*x.list)
 }
 
-func (x *_MsgCreateDeal_6_list) Get(i int) protoreflect.Value {
+func (x *_MsgCreateSubscriptionRequest_6_list) Get(i int) protoreflect.Value {
 	return protoreflect.ValueOfString((*x.list)[i])
 }
 
-func (x *_MsgCreateDeal_6_list) Set(i int, value protoreflect.Value) {
+func (x *_MsgCreateSubscriptionRequest_6_list) Set(i int, value protoreflect.Value) {
 	valueUnwrapped := value.String()
 	concreteValue := valueUnwrapped
 	(*x.list)[i] = concreteValue
 }
 
-func (x *_MsgCreateDeal_6_list) Append(value protoreflect.Value) {
+func (x *_MsgCreateSubscriptionRequest_6_list) Append(value protoreflect.Value) {
 	valueUnwrapped := value.String()
 	concreteValue := valueUnwrapped
 	*x.list = append(*x.list, concreteValue)
 }
 
-func (x *_MsgCreateDeal_6_list) AppendMutable() protoreflect.Value {
-	panic(fmt.Errorf("AppendMutable can not be called on message MsgCreateDeal at list field InitialFrontier as it is not of Message kind"))
+func (x *_MsgCreateSubscriptionRequest_6_list) AppendMutable() protoreflect.Value {
+	panic(fmt.Errorf("AppendMutable can not be called on message MsgCreateSubscriptionRequest at list field DrpIds as it is not of Message kind"))
 }
 
-func (x *_MsgCreateDeal_6_list) Truncate(n int) {
+func (x *_MsgCreateSubscriptionRequest_6_list) Truncate(n int) {
 	*x.list = (*x.list)[:n]
 }
 
-func (x *_MsgCreateDeal_6_list) NewElement() protoreflect.Value {
+func (x *_MsgCreateSubscriptionRequest_6_list) NewElement() protoreflect.Value {
 	v := ""
 	return protoreflect.ValueOfString(v)
 }
 
-func (x *_MsgCreateDeal_6_list) IsValid() bool {
+func (x *_MsgCreateSubscriptionRequest_6_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_MsgCreateSubscriptionRequest_7_list)(nil)
+
+type _MsgCreateSubscriptionRequest_7_list struct {
+	list *[]string
+}
+
+func (x *_MsgCreateSubscriptionRequest_7_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_MsgCreateSubscriptionRequest_7_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfString((*x.list)[i])
+}
+
+func (x *_MsgCreateSubscriptionRequest_7_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_MsgCreateSubscriptionRequest_7_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_MsgCreateSubscriptionRequest_7_list) AppendMutable() protoreflect.Value {
+	panic(fmt.Errorf("AppendMutable can not be called on message MsgCreateSubscriptionRequest at list field Writers as it is not of Message kind"))
+}
+
+func (x *_MsgCreateSubscriptionRequest_7_list) Truncate(n int) {
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_MsgCreateSubscriptionRequest_7_list) NewElement() protoreflect.Value {
+	v := ""
+	return protoreflect.ValueOfString(v)
+}
+
+func (x *_MsgCreateSubscriptionRequest_7_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_MsgCreateSubscriptionRequest_8_list)(nil)
+
+type _MsgCreateSubscriptionRequest_8_list struct {
+	list *[]string
+}
+
+func (x *_MsgCreateSubscriptionRequest_8_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_MsgCreateSubscriptionRequest_8_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfString((*x.list)[i])
+}
+
+func (x *_MsgCreateSubscriptionRequest_8_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_MsgCreateSubscriptionRequest_8_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_MsgCreateSubscriptionRequest_8_list) AppendMutable() protoreflect.Value {
+	panic(fmt.Errorf("AppendMutable can not be called on message MsgCreateSubscriptionRequest at list field InitialFrontier as it is not of Message kind"))
+}
+
+func (x *_MsgCreateSubscriptionRequest_8_list) Truncate(n int) {
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_MsgCreateSubscriptionRequest_8_list) NewElement() protoreflect.Value {
+	v := ""
+	return protoreflect.ValueOfString(v)
+}
+
+func (x *_MsgCreateSubscriptionRequest_8_list) IsValid() bool {
 	return x.list != nil
 }
 
 var (
-	md_MsgCreateDeal                  protoreflect.MessageDescriptor
-	fd_MsgCreateDeal_requester        protoreflect.FieldDescriptor
-	fd_MsgCreateDeal_cro_id           protoreflect.FieldDescriptor
-	fd_MsgCreateDeal_amount           protoreflect.FieldDescriptor
-	fd_MsgCreateDeal_start_block      protoreflect.FieldDescriptor
-	fd_MsgCreateDeal_end_block        protoreflect.FieldDescriptor
-	fd_MsgCreateDeal_initial_frontier protoreflect.FieldDescriptor
+	md_MsgCreateSubscriptionRequest                  protoreflect.MessageDescriptor
+	fd_MsgCreateSubscriptionRequest_requester        protoreflect.FieldDescriptor
+	fd_MsgCreateSubscriptionRequest_amount           protoreflect.FieldDescriptor
+	fd_MsgCreateSubscriptionRequest_start_block      protoreflect.FieldDescriptor
+	fd_MsgCreateSubscriptionRequest_epoch_size       protoreflect.FieldDescriptor
+	fd_MsgCreateSubscriptionRequest_duration         protoreflect.FieldDescriptor
+	fd_MsgCreateSubscriptionRequest_drp_ids          protoreflect.FieldDescriptor
+	fd_MsgCreateSubscriptionRequest_writers          protoreflect.FieldDescriptor
+	fd_MsgCreateSubscriptionRequest_initial_frontier protoreflect.FieldDescriptor
 )
 
 func init() {
 	file_mandu_subscription_tx_proto_init()
-	md_MsgCreateDeal = File_mandu_subscription_tx_proto.Messages().ByName("MsgCreateDeal")
-	fd_MsgCreateDeal_requester = md_MsgCreateDeal.Fields().ByName("requester")
-	fd_MsgCreateDeal_cro_id = md_MsgCreateDeal.Fields().ByName("cro_id")
-	fd_MsgCreateDeal_amount = md_MsgCreateDeal.Fields().ByName("amount")
-	fd_MsgCreateDeal_start_block = md_MsgCreateDeal.Fields().ByName("start_block")
-	fd_MsgCreateDeal_end_block = md_MsgCreateDeal.Fields().ByName("end_block")
-	fd_MsgCreateDeal_initial_frontier = md_MsgCreateDeal.Fields().ByName("initial_frontier")
+	md_MsgCreateSubscriptionRequest = File_mandu_subscription_tx_proto.Messages().ByName("MsgCreateSubscriptionRequest")
+	fd_MsgCreateSubscriptionRequest_requester = md_MsgCreateSubscriptionRequest.Fields().ByName("requester")
+	fd_MsgCreateSubscriptionRequest_amount = md_MsgCreateSubscriptionRequest.Fields().ByName("amount")
+	fd_MsgCreateSubscriptionRequest_start_block = md_MsgCreateSubscriptionRequest.Fields().ByName("start_block")
+	fd_MsgCreateSubscriptionRequest_epoch_size = md_MsgCreateSubscriptionRequest.Fields().ByName("epoch_size")
+	fd_MsgCreateSubscriptionRequest_duration = md_MsgCreateSubscriptionRequest.Fields().ByName("duration")
+	fd_MsgCreateSubscriptionRequest_drp_ids = md_MsgCreateSubscriptionRequest.Fields().ByName("drp_ids")
+	fd_MsgCreateSubscriptionRequest_writers = md_MsgCreateSubscriptionRequest.Fields().ByName("writers")
+	fd_MsgCreateSubscriptionRequest_initial_frontier = md_MsgCreateSubscriptionRequest.Fields().ByName("initial_frontier")
 }
 
-var _ protoreflect.Message = (*fastReflection_MsgCreateDeal)(nil)
+var _ protoreflect.Message = (*fastReflection_MsgCreateSubscriptionRequest)(nil)
 
-type fastReflection_MsgCreateDeal MsgCreateDeal
+type fastReflection_MsgCreateSubscriptionRequest MsgCreateSubscriptionRequest
 
-func (x *MsgCreateDeal) ProtoReflect() protoreflect.Message {
-	return (*fastReflection_MsgCreateDeal)(x)
+func (x *MsgCreateSubscriptionRequest) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgCreateSubscriptionRequest)(x)
 }
 
-func (x *MsgCreateDeal) slowProtoReflect() protoreflect.Message {
+func (x *MsgCreateSubscriptionRequest) slowProtoReflect() protoreflect.Message {
 	mi := &file_mandu_subscription_tx_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -958,43 +1054,43 @@ func (x *MsgCreateDeal) slowProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-var _fastReflection_MsgCreateDeal_messageType fastReflection_MsgCreateDeal_messageType
-var _ protoreflect.MessageType = fastReflection_MsgCreateDeal_messageType{}
+var _fastReflection_MsgCreateSubscriptionRequest_messageType fastReflection_MsgCreateSubscriptionRequest_messageType
+var _ protoreflect.MessageType = fastReflection_MsgCreateSubscriptionRequest_messageType{}
 
-type fastReflection_MsgCreateDeal_messageType struct{}
+type fastReflection_MsgCreateSubscriptionRequest_messageType struct{}
 
-func (x fastReflection_MsgCreateDeal_messageType) Zero() protoreflect.Message {
-	return (*fastReflection_MsgCreateDeal)(nil)
+func (x fastReflection_MsgCreateSubscriptionRequest_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgCreateSubscriptionRequest)(nil)
 }
-func (x fastReflection_MsgCreateDeal_messageType) New() protoreflect.Message {
-	return new(fastReflection_MsgCreateDeal)
+func (x fastReflection_MsgCreateSubscriptionRequest_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgCreateSubscriptionRequest)
 }
-func (x fastReflection_MsgCreateDeal_messageType) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgCreateDeal
+func (x fastReflection_MsgCreateSubscriptionRequest_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCreateSubscriptionRequest
 }
 
 // Descriptor returns message descriptor, which contains only the protobuf
 // type information for the message.
-func (x *fastReflection_MsgCreateDeal) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgCreateDeal
+func (x *fastReflection_MsgCreateSubscriptionRequest) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCreateSubscriptionRequest
 }
 
 // Type returns the message type, which encapsulates both Go and protobuf
 // type information. If the Go type information is not needed,
 // it is recommended that the message descriptor be used instead.
-func (x *fastReflection_MsgCreateDeal) Type() protoreflect.MessageType {
-	return _fastReflection_MsgCreateDeal_messageType
+func (x *fastReflection_MsgCreateSubscriptionRequest) Type() protoreflect.MessageType {
+	return _fastReflection_MsgCreateSubscriptionRequest_messageType
 }
 
 // New returns a newly allocated and mutable empty message.
-func (x *fastReflection_MsgCreateDeal) New() protoreflect.Message {
-	return new(fastReflection_MsgCreateDeal)
+func (x *fastReflection_MsgCreateSubscriptionRequest) New() protoreflect.Message {
+	return new(fastReflection_MsgCreateSubscriptionRequest)
 }
 
 // Interface unwraps the message reflection interface and
 // returns the underlying ProtoMessage interface.
-func (x *fastReflection_MsgCreateDeal) Interface() protoreflect.ProtoMessage {
-	return (*MsgCreateDeal)(x)
+func (x *fastReflection_MsgCreateSubscriptionRequest) Interface() protoreflect.ProtoMessage {
+	return (*MsgCreateSubscriptionRequest)(x)
 }
 
 // Range iterates over every populated field in an undefined order,
@@ -1002,40 +1098,52 @@ func (x *fastReflection_MsgCreateDeal) Interface() protoreflect.ProtoMessage {
 // Range returns immediately if f returns false.
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
-func (x *fastReflection_MsgCreateDeal) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+func (x *fastReflection_MsgCreateSubscriptionRequest) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
 	if x.Requester != "" {
 		value := protoreflect.ValueOfString(x.Requester)
-		if !f(fd_MsgCreateDeal_requester, value) {
+		if !f(fd_MsgCreateSubscriptionRequest_requester, value) {
 			return
 		}
 	}
-	if x.CroId != "" {
-		value := protoreflect.ValueOfString(x.CroId)
-		if !f(fd_MsgCreateDeal_cro_id, value) {
+	if x.Amount != int64(0) {
+		value := protoreflect.ValueOfInt64(x.Amount)
+		if !f(fd_MsgCreateSubscriptionRequest_amount, value) {
 			return
 		}
 	}
-	if x.Amount != uint64(0) {
-		value := protoreflect.ValueOfUint64(x.Amount)
-		if !f(fd_MsgCreateDeal_amount, value) {
+	if x.StartBlock != int64(0) {
+		value := protoreflect.ValueOfInt64(x.StartBlock)
+		if !f(fd_MsgCreateSubscriptionRequest_start_block, value) {
 			return
 		}
 	}
-	if x.StartBlock != uint64(0) {
-		value := protoreflect.ValueOfUint64(x.StartBlock)
-		if !f(fd_MsgCreateDeal_start_block, value) {
+	if x.EpochSize != int64(0) {
+		value := protoreflect.ValueOfInt64(x.EpochSize)
+		if !f(fd_MsgCreateSubscriptionRequest_epoch_size, value) {
 			return
 		}
 	}
-	if x.EndBlock != uint64(0) {
-		value := protoreflect.ValueOfUint64(x.EndBlock)
-		if !f(fd_MsgCreateDeal_end_block, value) {
+	if x.Duration != int64(0) {
+		value := protoreflect.ValueOfInt64(x.Duration)
+		if !f(fd_MsgCreateSubscriptionRequest_duration, value) {
+			return
+		}
+	}
+	if len(x.DrpIds) != 0 {
+		value := protoreflect.ValueOfList(&_MsgCreateSubscriptionRequest_6_list{list: &x.DrpIds})
+		if !f(fd_MsgCreateSubscriptionRequest_drp_ids, value) {
+			return
+		}
+	}
+	if len(x.Writers) != 0 {
+		value := protoreflect.ValueOfList(&_MsgCreateSubscriptionRequest_7_list{list: &x.Writers})
+		if !f(fd_MsgCreateSubscriptionRequest_writers, value) {
 			return
 		}
 	}
 	if len(x.InitialFrontier) != 0 {
-		value := protoreflect.ValueOfList(&_MsgCreateDeal_6_list{list: &x.InitialFrontier})
-		if !f(fd_MsgCreateDeal_initial_frontier, value) {
+		value := protoreflect.ValueOfList(&_MsgCreateSubscriptionRequest_8_list{list: &x.InitialFrontier})
+		if !f(fd_MsgCreateSubscriptionRequest_initial_frontier, value) {
 			return
 		}
 	}
@@ -1052,25 +1160,29 @@ func (x *fastReflection_MsgCreateDeal) Range(f func(protoreflect.FieldDescriptor
 // In other cases (aside from the nullable cases above),
 // a proto3 scalar field is populated if it contains a non-zero value, and
 // a repeated field is populated if it is non-empty.
-func (x *fastReflection_MsgCreateDeal) Has(fd protoreflect.FieldDescriptor) bool {
+func (x *fastReflection_MsgCreateSubscriptionRequest) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgCreateDeal.requester":
+	case "mandu.subscription.MsgCreateSubscriptionRequest.requester":
 		return x.Requester != ""
-	case "mandu.subscription.MsgCreateDeal.cro_id":
-		return x.CroId != ""
-	case "mandu.subscription.MsgCreateDeal.amount":
-		return x.Amount != uint64(0)
-	case "mandu.subscription.MsgCreateDeal.start_block":
-		return x.StartBlock != uint64(0)
-	case "mandu.subscription.MsgCreateDeal.end_block":
-		return x.EndBlock != uint64(0)
-	case "mandu.subscription.MsgCreateDeal.initial_frontier":
+	case "mandu.subscription.MsgCreateSubscriptionRequest.amount":
+		return x.Amount != int64(0)
+	case "mandu.subscription.MsgCreateSubscriptionRequest.start_block":
+		return x.StartBlock != int64(0)
+	case "mandu.subscription.MsgCreateSubscriptionRequest.epoch_size":
+		return x.EpochSize != int64(0)
+	case "mandu.subscription.MsgCreateSubscriptionRequest.duration":
+		return x.Duration != int64(0)
+	case "mandu.subscription.MsgCreateSubscriptionRequest.drp_ids":
+		return len(x.DrpIds) != 0
+	case "mandu.subscription.MsgCreateSubscriptionRequest.writers":
+		return len(x.Writers) != 0
+	case "mandu.subscription.MsgCreateSubscriptionRequest.initial_frontier":
 		return len(x.InitialFrontier) != 0
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCreateDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCreateSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -1080,25 +1192,29 @@ func (x *fastReflection_MsgCreateDeal) Has(fd protoreflect.FieldDescriptor) bool
 // associated with the given field number.
 //
 // Clear is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgCreateDeal) Clear(fd protoreflect.FieldDescriptor) {
+func (x *fastReflection_MsgCreateSubscriptionRequest) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgCreateDeal.requester":
+	case "mandu.subscription.MsgCreateSubscriptionRequest.requester":
 		x.Requester = ""
-	case "mandu.subscription.MsgCreateDeal.cro_id":
-		x.CroId = ""
-	case "mandu.subscription.MsgCreateDeal.amount":
-		x.Amount = uint64(0)
-	case "mandu.subscription.MsgCreateDeal.start_block":
-		x.StartBlock = uint64(0)
-	case "mandu.subscription.MsgCreateDeal.end_block":
-		x.EndBlock = uint64(0)
-	case "mandu.subscription.MsgCreateDeal.initial_frontier":
+	case "mandu.subscription.MsgCreateSubscriptionRequest.amount":
+		x.Amount = int64(0)
+	case "mandu.subscription.MsgCreateSubscriptionRequest.start_block":
+		x.StartBlock = int64(0)
+	case "mandu.subscription.MsgCreateSubscriptionRequest.epoch_size":
+		x.EpochSize = int64(0)
+	case "mandu.subscription.MsgCreateSubscriptionRequest.duration":
+		x.Duration = int64(0)
+	case "mandu.subscription.MsgCreateSubscriptionRequest.drp_ids":
+		x.DrpIds = nil
+	case "mandu.subscription.MsgCreateSubscriptionRequest.writers":
+		x.Writers = nil
+	case "mandu.subscription.MsgCreateSubscriptionRequest.initial_frontier":
 		x.InitialFrontier = nil
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCreateDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCreateSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -1108,34 +1224,46 @@ func (x *fastReflection_MsgCreateDeal) Clear(fd protoreflect.FieldDescriptor) {
 // the default value of a bytes scalar is guaranteed to be a copy.
 // For unpopulated composite types, it returns an empty, read-only view
 // of the value; to obtain a mutable reference, use Mutable.
-func (x *fastReflection_MsgCreateDeal) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgCreateSubscriptionRequest) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
-	case "mandu.subscription.MsgCreateDeal.requester":
+	case "mandu.subscription.MsgCreateSubscriptionRequest.requester":
 		value := x.Requester
 		return protoreflect.ValueOfString(value)
-	case "mandu.subscription.MsgCreateDeal.cro_id":
-		value := x.CroId
-		return protoreflect.ValueOfString(value)
-	case "mandu.subscription.MsgCreateDeal.amount":
+	case "mandu.subscription.MsgCreateSubscriptionRequest.amount":
 		value := x.Amount
-		return protoreflect.ValueOfUint64(value)
-	case "mandu.subscription.MsgCreateDeal.start_block":
+		return protoreflect.ValueOfInt64(value)
+	case "mandu.subscription.MsgCreateSubscriptionRequest.start_block":
 		value := x.StartBlock
-		return protoreflect.ValueOfUint64(value)
-	case "mandu.subscription.MsgCreateDeal.end_block":
-		value := x.EndBlock
-		return protoreflect.ValueOfUint64(value)
-	case "mandu.subscription.MsgCreateDeal.initial_frontier":
-		if len(x.InitialFrontier) == 0 {
-			return protoreflect.ValueOfList(&_MsgCreateDeal_6_list{})
+		return protoreflect.ValueOfInt64(value)
+	case "mandu.subscription.MsgCreateSubscriptionRequest.epoch_size":
+		value := x.EpochSize
+		return protoreflect.ValueOfInt64(value)
+	case "mandu.subscription.MsgCreateSubscriptionRequest.duration":
+		value := x.Duration
+		return protoreflect.ValueOfInt64(value)
+	case "mandu.subscription.MsgCreateSubscriptionRequest.drp_ids":
+		if len(x.DrpIds) == 0 {
+			return protoreflect.ValueOfList(&_MsgCreateSubscriptionRequest_6_list{})
 		}
-		listValue := &_MsgCreateDeal_6_list{list: &x.InitialFrontier}
+		listValue := &_MsgCreateSubscriptionRequest_6_list{list: &x.DrpIds}
+		return protoreflect.ValueOfList(listValue)
+	case "mandu.subscription.MsgCreateSubscriptionRequest.writers":
+		if len(x.Writers) == 0 {
+			return protoreflect.ValueOfList(&_MsgCreateSubscriptionRequest_7_list{})
+		}
+		listValue := &_MsgCreateSubscriptionRequest_7_list{list: &x.Writers}
+		return protoreflect.ValueOfList(listValue)
+	case "mandu.subscription.MsgCreateSubscriptionRequest.initial_frontier":
+		if len(x.InitialFrontier) == 0 {
+			return protoreflect.ValueOfList(&_MsgCreateSubscriptionRequest_8_list{})
+		}
+		listValue := &_MsgCreateSubscriptionRequest_8_list{list: &x.InitialFrontier}
 		return protoreflect.ValueOfList(listValue)
 	default:
 		if descriptor.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCreateDeal does not contain field %s", descriptor.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCreateSubscriptionRequest does not contain field %s", descriptor.FullName()))
 	}
 }
 
@@ -1149,27 +1277,35 @@ func (x *fastReflection_MsgCreateDeal) Get(descriptor protoreflect.FieldDescript
 // empty, read-only value, then it panics.
 //
 // Set is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgCreateDeal) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+func (x *fastReflection_MsgCreateSubscriptionRequest) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgCreateDeal.requester":
+	case "mandu.subscription.MsgCreateSubscriptionRequest.requester":
 		x.Requester = value.Interface().(string)
-	case "mandu.subscription.MsgCreateDeal.cro_id":
-		x.CroId = value.Interface().(string)
-	case "mandu.subscription.MsgCreateDeal.amount":
-		x.Amount = value.Uint()
-	case "mandu.subscription.MsgCreateDeal.start_block":
-		x.StartBlock = value.Uint()
-	case "mandu.subscription.MsgCreateDeal.end_block":
-		x.EndBlock = value.Uint()
-	case "mandu.subscription.MsgCreateDeal.initial_frontier":
+	case "mandu.subscription.MsgCreateSubscriptionRequest.amount":
+		x.Amount = value.Int()
+	case "mandu.subscription.MsgCreateSubscriptionRequest.start_block":
+		x.StartBlock = value.Int()
+	case "mandu.subscription.MsgCreateSubscriptionRequest.epoch_size":
+		x.EpochSize = value.Int()
+	case "mandu.subscription.MsgCreateSubscriptionRequest.duration":
+		x.Duration = value.Int()
+	case "mandu.subscription.MsgCreateSubscriptionRequest.drp_ids":
 		lv := value.List()
-		clv := lv.(*_MsgCreateDeal_6_list)
+		clv := lv.(*_MsgCreateSubscriptionRequest_6_list)
+		x.DrpIds = *clv.list
+	case "mandu.subscription.MsgCreateSubscriptionRequest.writers":
+		lv := value.List()
+		clv := lv.(*_MsgCreateSubscriptionRequest_7_list)
+		x.Writers = *clv.list
+	case "mandu.subscription.MsgCreateSubscriptionRequest.initial_frontier":
+		lv := value.List()
+		clv := lv.(*_MsgCreateSubscriptionRequest_8_list)
 		x.InitialFrontier = *clv.list
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCreateDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCreateSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -1183,65 +1319,83 @@ func (x *fastReflection_MsgCreateDeal) Set(fd protoreflect.FieldDescriptor, valu
 // It panics if the field does not contain a composite type.
 //
 // Mutable is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgCreateDeal) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgCreateSubscriptionRequest) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgCreateDeal.initial_frontier":
+	case "mandu.subscription.MsgCreateSubscriptionRequest.drp_ids":
+		if x.DrpIds == nil {
+			x.DrpIds = []string{}
+		}
+		value := &_MsgCreateSubscriptionRequest_6_list{list: &x.DrpIds}
+		return protoreflect.ValueOfList(value)
+	case "mandu.subscription.MsgCreateSubscriptionRequest.writers":
+		if x.Writers == nil {
+			x.Writers = []string{}
+		}
+		value := &_MsgCreateSubscriptionRequest_7_list{list: &x.Writers}
+		return protoreflect.ValueOfList(value)
+	case "mandu.subscription.MsgCreateSubscriptionRequest.initial_frontier":
 		if x.InitialFrontier == nil {
 			x.InitialFrontier = []string{}
 		}
-		value := &_MsgCreateDeal_6_list{list: &x.InitialFrontier}
+		value := &_MsgCreateSubscriptionRequest_8_list{list: &x.InitialFrontier}
 		return protoreflect.ValueOfList(value)
-	case "mandu.subscription.MsgCreateDeal.requester":
-		panic(fmt.Errorf("field requester of message mandu.subscription.MsgCreateDeal is not mutable"))
-	case "mandu.subscription.MsgCreateDeal.cro_id":
-		panic(fmt.Errorf("field cro_id of message mandu.subscription.MsgCreateDeal is not mutable"))
-	case "mandu.subscription.MsgCreateDeal.amount":
-		panic(fmt.Errorf("field amount of message mandu.subscription.MsgCreateDeal is not mutable"))
-	case "mandu.subscription.MsgCreateDeal.start_block":
-		panic(fmt.Errorf("field start_block of message mandu.subscription.MsgCreateDeal is not mutable"))
-	case "mandu.subscription.MsgCreateDeal.end_block":
-		panic(fmt.Errorf("field end_block of message mandu.subscription.MsgCreateDeal is not mutable"))
+	case "mandu.subscription.MsgCreateSubscriptionRequest.requester":
+		panic(fmt.Errorf("field requester of message mandu.subscription.MsgCreateSubscriptionRequest is not mutable"))
+	case "mandu.subscription.MsgCreateSubscriptionRequest.amount":
+		panic(fmt.Errorf("field amount of message mandu.subscription.MsgCreateSubscriptionRequest is not mutable"))
+	case "mandu.subscription.MsgCreateSubscriptionRequest.start_block":
+		panic(fmt.Errorf("field start_block of message mandu.subscription.MsgCreateSubscriptionRequest is not mutable"))
+	case "mandu.subscription.MsgCreateSubscriptionRequest.epoch_size":
+		panic(fmt.Errorf("field epoch_size of message mandu.subscription.MsgCreateSubscriptionRequest is not mutable"))
+	case "mandu.subscription.MsgCreateSubscriptionRequest.duration":
+		panic(fmt.Errorf("field duration of message mandu.subscription.MsgCreateSubscriptionRequest is not mutable"))
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCreateDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCreateSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
 // NewField returns a new value that is assignable to the field
 // for the given descriptor. For scalars, this returns the default value.
 // For lists, maps, and messages, this returns a new, empty, mutable value.
-func (x *fastReflection_MsgCreateDeal) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgCreateSubscriptionRequest) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgCreateDeal.requester":
+	case "mandu.subscription.MsgCreateSubscriptionRequest.requester":
 		return protoreflect.ValueOfString("")
-	case "mandu.subscription.MsgCreateDeal.cro_id":
-		return protoreflect.ValueOfString("")
-	case "mandu.subscription.MsgCreateDeal.amount":
-		return protoreflect.ValueOfUint64(uint64(0))
-	case "mandu.subscription.MsgCreateDeal.start_block":
-		return protoreflect.ValueOfUint64(uint64(0))
-	case "mandu.subscription.MsgCreateDeal.end_block":
-		return protoreflect.ValueOfUint64(uint64(0))
-	case "mandu.subscription.MsgCreateDeal.initial_frontier":
+	case "mandu.subscription.MsgCreateSubscriptionRequest.amount":
+		return protoreflect.ValueOfInt64(int64(0))
+	case "mandu.subscription.MsgCreateSubscriptionRequest.start_block":
+		return protoreflect.ValueOfInt64(int64(0))
+	case "mandu.subscription.MsgCreateSubscriptionRequest.epoch_size":
+		return protoreflect.ValueOfInt64(int64(0))
+	case "mandu.subscription.MsgCreateSubscriptionRequest.duration":
+		return protoreflect.ValueOfInt64(int64(0))
+	case "mandu.subscription.MsgCreateSubscriptionRequest.drp_ids":
 		list := []string{}
-		return protoreflect.ValueOfList(&_MsgCreateDeal_6_list{list: &list})
+		return protoreflect.ValueOfList(&_MsgCreateSubscriptionRequest_6_list{list: &list})
+	case "mandu.subscription.MsgCreateSubscriptionRequest.writers":
+		list := []string{}
+		return protoreflect.ValueOfList(&_MsgCreateSubscriptionRequest_7_list{list: &list})
+	case "mandu.subscription.MsgCreateSubscriptionRequest.initial_frontier":
+		list := []string{}
+		return protoreflect.ValueOfList(&_MsgCreateSubscriptionRequest_8_list{list: &list})
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCreateDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCreateSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
 // WhichOneof reports which field within the oneof is populated,
 // returning nil if none are populated.
 // It panics if the oneof descriptor does not belong to this message.
-func (x *fastReflection_MsgCreateDeal) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+func (x *fastReflection_MsgCreateSubscriptionRequest) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
 	switch d.FullName() {
 	default:
-		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgCreateDeal", d.FullName()))
+		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgCreateSubscriptionRequest", d.FullName()))
 	}
 	panic("unreachable")
 }
@@ -1249,7 +1403,7 @@ func (x *fastReflection_MsgCreateDeal) WhichOneof(d protoreflect.OneofDescriptor
 // GetUnknown retrieves the entire list of unknown fields.
 // The caller may only mutate the contents of the RawFields
 // if the mutated bytes are stored back into the message with SetUnknown.
-func (x *fastReflection_MsgCreateDeal) GetUnknown() protoreflect.RawFields {
+func (x *fastReflection_MsgCreateSubscriptionRequest) GetUnknown() protoreflect.RawFields {
 	return x.unknownFields
 }
 
@@ -1260,7 +1414,7 @@ func (x *fastReflection_MsgCreateDeal) GetUnknown() protoreflect.RawFields {
 // An empty RawFields may be passed to clear the fields.
 //
 // SetUnknown is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgCreateDeal) SetUnknown(fields protoreflect.RawFields) {
+func (x *fastReflection_MsgCreateSubscriptionRequest) SetUnknown(fields protoreflect.RawFields) {
 	x.unknownFields = fields
 }
 
@@ -1272,7 +1426,7 @@ func (x *fastReflection_MsgCreateDeal) SetUnknown(fields protoreflect.RawFields)
 // message type, but the details are implementation dependent.
 // Validity is not part of the protobuf data model, and may not
 // be preserved in marshaling or other operations.
-func (x *fastReflection_MsgCreateDeal) IsValid() bool {
+func (x *fastReflection_MsgCreateSubscriptionRequest) IsValid() bool {
 	return x != nil
 }
 
@@ -1282,9 +1436,9 @@ func (x *fastReflection_MsgCreateDeal) IsValid() bool {
 // The returned methods type is identical to
 // "google.golang.org/protobuf/runtime/protoiface".Methods.
 // Consult the protoiface package documentation for details.
-func (x *fastReflection_MsgCreateDeal) ProtoMethods() *protoiface.Methods {
+func (x *fastReflection_MsgCreateSubscriptionRequest) ProtoMethods() *protoiface.Methods {
 	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
-		x := input.Message.Interface().(*MsgCreateDeal)
+		x := input.Message.Interface().(*MsgCreateSubscriptionRequest)
 		if x == nil {
 			return protoiface.SizeOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -1300,18 +1454,29 @@ func (x *fastReflection_MsgCreateDeal) ProtoMethods() *protoiface.Methods {
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
-		l = len(x.CroId)
-		if l > 0 {
-			n += 1 + l + runtime.Sov(uint64(l))
-		}
 		if x.Amount != 0 {
 			n += 1 + runtime.Sov(uint64(x.Amount))
 		}
 		if x.StartBlock != 0 {
 			n += 1 + runtime.Sov(uint64(x.StartBlock))
 		}
-		if x.EndBlock != 0 {
-			n += 1 + runtime.Sov(uint64(x.EndBlock))
+		if x.EpochSize != 0 {
+			n += 1 + runtime.Sov(uint64(x.EpochSize))
+		}
+		if x.Duration != 0 {
+			n += 1 + runtime.Sov(uint64(x.Duration))
+		}
+		if len(x.DrpIds) > 0 {
+			for _, s := range x.DrpIds {
+				l = len(s)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if len(x.Writers) > 0 {
+			for _, s := range x.Writers {
+				l = len(s)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
 		}
 		if len(x.InitialFrontier) > 0 {
 			for _, s := range x.InitialFrontier {
@@ -1329,7 +1494,7 @@ func (x *fastReflection_MsgCreateDeal) ProtoMethods() *protoiface.Methods {
 	}
 
 	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
-		x := input.Message.Interface().(*MsgCreateDeal)
+		x := input.Message.Interface().(*MsgCreateSubscriptionRequest)
 		if x == nil {
 			return protoiface.MarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -1354,30 +1519,46 @@ func (x *fastReflection_MsgCreateDeal) ProtoMethods() *protoiface.Methods {
 				copy(dAtA[i:], x.InitialFrontier[iNdEx])
 				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.InitialFrontier[iNdEx])))
 				i--
+				dAtA[i] = 0x42
+			}
+		}
+		if len(x.Writers) > 0 {
+			for iNdEx := len(x.Writers) - 1; iNdEx >= 0; iNdEx-- {
+				i -= len(x.Writers[iNdEx])
+				copy(dAtA[i:], x.Writers[iNdEx])
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Writers[iNdEx])))
+				i--
+				dAtA[i] = 0x3a
+			}
+		}
+		if len(x.DrpIds) > 0 {
+			for iNdEx := len(x.DrpIds) - 1; iNdEx >= 0; iNdEx-- {
+				i -= len(x.DrpIds[iNdEx])
+				copy(dAtA[i:], x.DrpIds[iNdEx])
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.DrpIds[iNdEx])))
+				i--
 				dAtA[i] = 0x32
 			}
 		}
-		if x.EndBlock != 0 {
-			i = runtime.EncodeVarint(dAtA, i, uint64(x.EndBlock))
+		if x.Duration != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.Duration))
 			i--
 			dAtA[i] = 0x28
+		}
+		if x.EpochSize != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.EpochSize))
+			i--
+			dAtA[i] = 0x20
 		}
 		if x.StartBlock != 0 {
 			i = runtime.EncodeVarint(dAtA, i, uint64(x.StartBlock))
 			i--
-			dAtA[i] = 0x20
+			dAtA[i] = 0x18
 		}
 		if x.Amount != 0 {
 			i = runtime.EncodeVarint(dAtA, i, uint64(x.Amount))
 			i--
-			dAtA[i] = 0x18
-		}
-		if len(x.CroId) > 0 {
-			i -= len(x.CroId)
-			copy(dAtA[i:], x.CroId)
-			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.CroId)))
-			i--
-			dAtA[i] = 0x12
+			dAtA[i] = 0x10
 		}
 		if len(x.Requester) > 0 {
 			i -= len(x.Requester)
@@ -1397,7 +1578,7 @@ func (x *fastReflection_MsgCreateDeal) ProtoMethods() *protoiface.Methods {
 		}, nil
 	}
 	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
-		x := input.Message.Interface().(*MsgCreateDeal)
+		x := input.Message.Interface().(*MsgCreateSubscriptionRequest)
 		if x == nil {
 			return protoiface.UnmarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -1429,10 +1610,10 @@ func (x *fastReflection_MsgCreateDeal) ProtoMethods() *protoiface.Methods {
 			fieldNum := int32(wire >> 3)
 			wireType := int(wire & 0x7)
 			if wireType == 4 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCreateDeal: wiretype end group for non-group")
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCreateSubscriptionRequest: wiretype end group for non-group")
 			}
 			if fieldNum <= 0 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCreateDeal: illegal tag %d (wire type %d)", fieldNum, wire)
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCreateSubscriptionRequest: illegal tag %d (wire type %d)", fieldNum, wire)
 			}
 			switch fieldNum {
 			case 1:
@@ -1468,8 +1649,84 @@ func (x *fastReflection_MsgCreateDeal) ProtoMethods() *protoiface.Methods {
 				x.Requester = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
 			case 2:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Amount", wireType)
+				}
+				x.Amount = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.Amount |= int64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			case 3:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field StartBlock", wireType)
+				}
+				x.StartBlock = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.StartBlock |= int64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			case 4:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field EpochSize", wireType)
+				}
+				x.EpochSize = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.EpochSize |= int64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			case 5:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Duration", wireType)
+				}
+				x.Duration = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.Duration |= int64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			case 6:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field CroId", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field DrpIds", wireType)
 				}
 				var stringLen uint64
 				for shift := uint(0); ; shift += 7 {
@@ -1497,13 +1754,13 @@ func (x *fastReflection_MsgCreateDeal) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.CroId = string(dAtA[iNdEx:postIndex])
+				x.DrpIds = append(x.DrpIds, string(dAtA[iNdEx:postIndex]))
 				iNdEx = postIndex
-			case 3:
-				if wireType != 0 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Amount", wireType)
+			case 7:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Writers", wireType)
 				}
-				x.Amount = 0
+				var stringLen uint64
 				for shift := uint(0); ; shift += 7 {
 					if shift >= 64 {
 						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
@@ -1513,50 +1770,25 @@ func (x *fastReflection_MsgCreateDeal) ProtoMethods() *protoiface.Methods {
 					}
 					b := dAtA[iNdEx]
 					iNdEx++
-					x.Amount |= uint64(b&0x7F) << shift
+					stringLen |= uint64(b&0x7F) << shift
 					if b < 0x80 {
 						break
 					}
 				}
-			case 4:
-				if wireType != 0 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field StartBlock", wireType)
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
 				}
-				x.StartBlock = 0
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
-					}
-					if iNdEx >= l {
-						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					x.StartBlock |= uint64(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
 				}
-			case 5:
-				if wireType != 0 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field EndBlock", wireType)
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.EndBlock = 0
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
-					}
-					if iNdEx >= l {
-						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					x.EndBlock |= uint64(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-			case 6:
+				x.Writers = append(x.Writers, string(dAtA[iNdEx:postIndex]))
+				iNdEx = postIndex
+			case 8:
 				if wireType != 2 {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field InitialFrontier", wireType)
 				}
@@ -1624,25 +1856,25 @@ func (x *fastReflection_MsgCreateDeal) ProtoMethods() *protoiface.Methods {
 }
 
 var (
-	md_MsgCreateDealResponse         protoreflect.MessageDescriptor
-	fd_MsgCreateDealResponse_deal_id protoreflect.FieldDescriptor
+	md_MsgCreateSubscriptionRequestResponse                         protoreflect.MessageDescriptor
+	fd_MsgCreateSubscriptionRequestResponse_subscription_request_id protoreflect.FieldDescriptor
 )
 
 func init() {
 	file_mandu_subscription_tx_proto_init()
-	md_MsgCreateDealResponse = File_mandu_subscription_tx_proto.Messages().ByName("MsgCreateDealResponse")
-	fd_MsgCreateDealResponse_deal_id = md_MsgCreateDealResponse.Fields().ByName("deal_id")
+	md_MsgCreateSubscriptionRequestResponse = File_mandu_subscription_tx_proto.Messages().ByName("MsgCreateSubscriptionRequestResponse")
+	fd_MsgCreateSubscriptionRequestResponse_subscription_request_id = md_MsgCreateSubscriptionRequestResponse.Fields().ByName("subscription_request_id")
 }
 
-var _ protoreflect.Message = (*fastReflection_MsgCreateDealResponse)(nil)
+var _ protoreflect.Message = (*fastReflection_MsgCreateSubscriptionRequestResponse)(nil)
 
-type fastReflection_MsgCreateDealResponse MsgCreateDealResponse
+type fastReflection_MsgCreateSubscriptionRequestResponse MsgCreateSubscriptionRequestResponse
 
-func (x *MsgCreateDealResponse) ProtoReflect() protoreflect.Message {
-	return (*fastReflection_MsgCreateDealResponse)(x)
+func (x *MsgCreateSubscriptionRequestResponse) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgCreateSubscriptionRequestResponse)(x)
 }
 
-func (x *MsgCreateDealResponse) slowProtoReflect() protoreflect.Message {
+func (x *MsgCreateSubscriptionRequestResponse) slowProtoReflect() protoreflect.Message {
 	mi := &file_mandu_subscription_tx_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1654,43 +1886,43 @@ func (x *MsgCreateDealResponse) slowProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-var _fastReflection_MsgCreateDealResponse_messageType fastReflection_MsgCreateDealResponse_messageType
-var _ protoreflect.MessageType = fastReflection_MsgCreateDealResponse_messageType{}
+var _fastReflection_MsgCreateSubscriptionRequestResponse_messageType fastReflection_MsgCreateSubscriptionRequestResponse_messageType
+var _ protoreflect.MessageType = fastReflection_MsgCreateSubscriptionRequestResponse_messageType{}
 
-type fastReflection_MsgCreateDealResponse_messageType struct{}
+type fastReflection_MsgCreateSubscriptionRequestResponse_messageType struct{}
 
-func (x fastReflection_MsgCreateDealResponse_messageType) Zero() protoreflect.Message {
-	return (*fastReflection_MsgCreateDealResponse)(nil)
+func (x fastReflection_MsgCreateSubscriptionRequestResponse_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgCreateSubscriptionRequestResponse)(nil)
 }
-func (x fastReflection_MsgCreateDealResponse_messageType) New() protoreflect.Message {
-	return new(fastReflection_MsgCreateDealResponse)
+func (x fastReflection_MsgCreateSubscriptionRequestResponse_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgCreateSubscriptionRequestResponse)
 }
-func (x fastReflection_MsgCreateDealResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgCreateDealResponse
+func (x fastReflection_MsgCreateSubscriptionRequestResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCreateSubscriptionRequestResponse
 }
 
 // Descriptor returns message descriptor, which contains only the protobuf
 // type information for the message.
-func (x *fastReflection_MsgCreateDealResponse) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgCreateDealResponse
+func (x *fastReflection_MsgCreateSubscriptionRequestResponse) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCreateSubscriptionRequestResponse
 }
 
 // Type returns the message type, which encapsulates both Go and protobuf
 // type information. If the Go type information is not needed,
 // it is recommended that the message descriptor be used instead.
-func (x *fastReflection_MsgCreateDealResponse) Type() protoreflect.MessageType {
-	return _fastReflection_MsgCreateDealResponse_messageType
+func (x *fastReflection_MsgCreateSubscriptionRequestResponse) Type() protoreflect.MessageType {
+	return _fastReflection_MsgCreateSubscriptionRequestResponse_messageType
 }
 
 // New returns a newly allocated and mutable empty message.
-func (x *fastReflection_MsgCreateDealResponse) New() protoreflect.Message {
-	return new(fastReflection_MsgCreateDealResponse)
+func (x *fastReflection_MsgCreateSubscriptionRequestResponse) New() protoreflect.Message {
+	return new(fastReflection_MsgCreateSubscriptionRequestResponse)
 }
 
 // Interface unwraps the message reflection interface and
 // returns the underlying ProtoMessage interface.
-func (x *fastReflection_MsgCreateDealResponse) Interface() protoreflect.ProtoMessage {
-	return (*MsgCreateDealResponse)(x)
+func (x *fastReflection_MsgCreateSubscriptionRequestResponse) Interface() protoreflect.ProtoMessage {
+	return (*MsgCreateSubscriptionRequestResponse)(x)
 }
 
 // Range iterates over every populated field in an undefined order,
@@ -1698,10 +1930,10 @@ func (x *fastReflection_MsgCreateDealResponse) Interface() protoreflect.ProtoMes
 // Range returns immediately if f returns false.
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
-func (x *fastReflection_MsgCreateDealResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
-	if x.DealId != "" {
-		value := protoreflect.ValueOfString(x.DealId)
-		if !f(fd_MsgCreateDealResponse_deal_id, value) {
+func (x *fastReflection_MsgCreateSubscriptionRequestResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.SubscriptionRequestId != "" {
+		value := protoreflect.ValueOfString(x.SubscriptionRequestId)
+		if !f(fd_MsgCreateSubscriptionRequestResponse_subscription_request_id, value) {
 			return
 		}
 	}
@@ -1718,15 +1950,15 @@ func (x *fastReflection_MsgCreateDealResponse) Range(f func(protoreflect.FieldDe
 // In other cases (aside from the nullable cases above),
 // a proto3 scalar field is populated if it contains a non-zero value, and
 // a repeated field is populated if it is non-empty.
-func (x *fastReflection_MsgCreateDealResponse) Has(fd protoreflect.FieldDescriptor) bool {
+func (x *fastReflection_MsgCreateSubscriptionRequestResponse) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgCreateDealResponse.deal_id":
-		return x.DealId != ""
+	case "mandu.subscription.MsgCreateSubscriptionRequestResponse.subscription_request_id":
+		return x.SubscriptionRequestId != ""
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCreateDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCreateSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -1736,15 +1968,15 @@ func (x *fastReflection_MsgCreateDealResponse) Has(fd protoreflect.FieldDescript
 // associated with the given field number.
 //
 // Clear is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgCreateDealResponse) Clear(fd protoreflect.FieldDescriptor) {
+func (x *fastReflection_MsgCreateSubscriptionRequestResponse) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgCreateDealResponse.deal_id":
-		x.DealId = ""
+	case "mandu.subscription.MsgCreateSubscriptionRequestResponse.subscription_request_id":
+		x.SubscriptionRequestId = ""
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCreateDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCreateSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -1754,16 +1986,16 @@ func (x *fastReflection_MsgCreateDealResponse) Clear(fd protoreflect.FieldDescri
 // the default value of a bytes scalar is guaranteed to be a copy.
 // For unpopulated composite types, it returns an empty, read-only view
 // of the value; to obtain a mutable reference, use Mutable.
-func (x *fastReflection_MsgCreateDealResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgCreateSubscriptionRequestResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
-	case "mandu.subscription.MsgCreateDealResponse.deal_id":
-		value := x.DealId
+	case "mandu.subscription.MsgCreateSubscriptionRequestResponse.subscription_request_id":
+		value := x.SubscriptionRequestId
 		return protoreflect.ValueOfString(value)
 	default:
 		if descriptor.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCreateDealResponse does not contain field %s", descriptor.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCreateSubscriptionRequestResponse does not contain field %s", descriptor.FullName()))
 	}
 }
 
@@ -1777,15 +2009,15 @@ func (x *fastReflection_MsgCreateDealResponse) Get(descriptor protoreflect.Field
 // empty, read-only value, then it panics.
 //
 // Set is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgCreateDealResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+func (x *fastReflection_MsgCreateSubscriptionRequestResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgCreateDealResponse.deal_id":
-		x.DealId = value.Interface().(string)
+	case "mandu.subscription.MsgCreateSubscriptionRequestResponse.subscription_request_id":
+		x.SubscriptionRequestId = value.Interface().(string)
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCreateDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCreateSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -1799,40 +2031,40 @@ func (x *fastReflection_MsgCreateDealResponse) Set(fd protoreflect.FieldDescript
 // It panics if the field does not contain a composite type.
 //
 // Mutable is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgCreateDealResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgCreateSubscriptionRequestResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgCreateDealResponse.deal_id":
-		panic(fmt.Errorf("field deal_id of message mandu.subscription.MsgCreateDealResponse is not mutable"))
+	case "mandu.subscription.MsgCreateSubscriptionRequestResponse.subscription_request_id":
+		panic(fmt.Errorf("field subscription_request_id of message mandu.subscription.MsgCreateSubscriptionRequestResponse is not mutable"))
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCreateDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCreateSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
 // NewField returns a new value that is assignable to the field
 // for the given descriptor. For scalars, this returns the default value.
 // For lists, maps, and messages, this returns a new, empty, mutable value.
-func (x *fastReflection_MsgCreateDealResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgCreateSubscriptionRequestResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgCreateDealResponse.deal_id":
+	case "mandu.subscription.MsgCreateSubscriptionRequestResponse.subscription_request_id":
 		return protoreflect.ValueOfString("")
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCreateSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCreateDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCreateSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
 // WhichOneof reports which field within the oneof is populated,
 // returning nil if none are populated.
 // It panics if the oneof descriptor does not belong to this message.
-func (x *fastReflection_MsgCreateDealResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+func (x *fastReflection_MsgCreateSubscriptionRequestResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
 	switch d.FullName() {
 	default:
-		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgCreateDealResponse", d.FullName()))
+		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgCreateSubscriptionRequestResponse", d.FullName()))
 	}
 	panic("unreachable")
 }
@@ -1840,7 +2072,7 @@ func (x *fastReflection_MsgCreateDealResponse) WhichOneof(d protoreflect.OneofDe
 // GetUnknown retrieves the entire list of unknown fields.
 // The caller may only mutate the contents of the RawFields
 // if the mutated bytes are stored back into the message with SetUnknown.
-func (x *fastReflection_MsgCreateDealResponse) GetUnknown() protoreflect.RawFields {
+func (x *fastReflection_MsgCreateSubscriptionRequestResponse) GetUnknown() protoreflect.RawFields {
 	return x.unknownFields
 }
 
@@ -1851,7 +2083,7 @@ func (x *fastReflection_MsgCreateDealResponse) GetUnknown() protoreflect.RawFiel
 // An empty RawFields may be passed to clear the fields.
 //
 // SetUnknown is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgCreateDealResponse) SetUnknown(fields protoreflect.RawFields) {
+func (x *fastReflection_MsgCreateSubscriptionRequestResponse) SetUnknown(fields protoreflect.RawFields) {
 	x.unknownFields = fields
 }
 
@@ -1863,7 +2095,7 @@ func (x *fastReflection_MsgCreateDealResponse) SetUnknown(fields protoreflect.Ra
 // message type, but the details are implementation dependent.
 // Validity is not part of the protobuf data model, and may not
 // be preserved in marshaling or other operations.
-func (x *fastReflection_MsgCreateDealResponse) IsValid() bool {
+func (x *fastReflection_MsgCreateSubscriptionRequestResponse) IsValid() bool {
 	return x != nil
 }
 
@@ -1873,9 +2105,9 @@ func (x *fastReflection_MsgCreateDealResponse) IsValid() bool {
 // The returned methods type is identical to
 // "google.golang.org/protobuf/runtime/protoiface".Methods.
 // Consult the protoiface package documentation for details.
-func (x *fastReflection_MsgCreateDealResponse) ProtoMethods() *protoiface.Methods {
+func (x *fastReflection_MsgCreateSubscriptionRequestResponse) ProtoMethods() *protoiface.Methods {
 	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
-		x := input.Message.Interface().(*MsgCreateDealResponse)
+		x := input.Message.Interface().(*MsgCreateSubscriptionRequestResponse)
 		if x == nil {
 			return protoiface.SizeOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -1887,7 +2119,7 @@ func (x *fastReflection_MsgCreateDealResponse) ProtoMethods() *protoiface.Method
 		var n int
 		var l int
 		_ = l
-		l = len(x.DealId)
+		l = len(x.SubscriptionRequestId)
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
@@ -1901,7 +2133,7 @@ func (x *fastReflection_MsgCreateDealResponse) ProtoMethods() *protoiface.Method
 	}
 
 	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
-		x := input.Message.Interface().(*MsgCreateDealResponse)
+		x := input.Message.Interface().(*MsgCreateSubscriptionRequestResponse)
 		if x == nil {
 			return protoiface.MarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -1920,10 +2152,10 @@ func (x *fastReflection_MsgCreateDealResponse) ProtoMethods() *protoiface.Method
 			i -= len(x.unknownFields)
 			copy(dAtA[i:], x.unknownFields)
 		}
-		if len(x.DealId) > 0 {
-			i -= len(x.DealId)
-			copy(dAtA[i:], x.DealId)
-			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.DealId)))
+		if len(x.SubscriptionRequestId) > 0 {
+			i -= len(x.SubscriptionRequestId)
+			copy(dAtA[i:], x.SubscriptionRequestId)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.SubscriptionRequestId)))
 			i--
 			dAtA[i] = 0xa
 		}
@@ -1938,7 +2170,7 @@ func (x *fastReflection_MsgCreateDealResponse) ProtoMethods() *protoiface.Method
 		}, nil
 	}
 	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
-		x := input.Message.Interface().(*MsgCreateDealResponse)
+		x := input.Message.Interface().(*MsgCreateSubscriptionRequestResponse)
 		if x == nil {
 			return protoiface.UnmarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -1970,15 +2202,15 @@ func (x *fastReflection_MsgCreateDealResponse) ProtoMethods() *protoiface.Method
 			fieldNum := int32(wire >> 3)
 			wireType := int(wire & 0x7)
 			if wireType == 4 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCreateDealResponse: wiretype end group for non-group")
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCreateSubscriptionRequestResponse: wiretype end group for non-group")
 			}
 			if fieldNum <= 0 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCreateDealResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCreateSubscriptionRequestResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 			}
 			switch fieldNum {
 			case 1:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field DealId", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field SubscriptionRequestId", wireType)
 				}
 				var stringLen uint64
 				for shift := uint(0); ; shift += 7 {
@@ -2006,7 +2238,7 @@ func (x *fastReflection_MsgCreateDealResponse) ProtoMethods() *protoiface.Method
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.DealId = string(dAtA[iNdEx:postIndex])
+				x.SubscriptionRequestId = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
 			default:
 				iNdEx = preIndex
@@ -2044,27 +2276,27 @@ func (x *fastReflection_MsgCreateDealResponse) ProtoMethods() *protoiface.Method
 }
 
 var (
-	md_MsgCancelDeal           protoreflect.MessageDescriptor
-	fd_MsgCancelDeal_requester protoreflect.FieldDescriptor
-	fd_MsgCancelDeal_deal_id   protoreflect.FieldDescriptor
+	md_MsgCancelSubscriptionRequest                         protoreflect.MessageDescriptor
+	fd_MsgCancelSubscriptionRequest_requester               protoreflect.FieldDescriptor
+	fd_MsgCancelSubscriptionRequest_subscription_request_id protoreflect.FieldDescriptor
 )
 
 func init() {
 	file_mandu_subscription_tx_proto_init()
-	md_MsgCancelDeal = File_mandu_subscription_tx_proto.Messages().ByName("MsgCancelDeal")
-	fd_MsgCancelDeal_requester = md_MsgCancelDeal.Fields().ByName("requester")
-	fd_MsgCancelDeal_deal_id = md_MsgCancelDeal.Fields().ByName("deal_id")
+	md_MsgCancelSubscriptionRequest = File_mandu_subscription_tx_proto.Messages().ByName("MsgCancelSubscriptionRequest")
+	fd_MsgCancelSubscriptionRequest_requester = md_MsgCancelSubscriptionRequest.Fields().ByName("requester")
+	fd_MsgCancelSubscriptionRequest_subscription_request_id = md_MsgCancelSubscriptionRequest.Fields().ByName("subscription_request_id")
 }
 
-var _ protoreflect.Message = (*fastReflection_MsgCancelDeal)(nil)
+var _ protoreflect.Message = (*fastReflection_MsgCancelSubscriptionRequest)(nil)
 
-type fastReflection_MsgCancelDeal MsgCancelDeal
+type fastReflection_MsgCancelSubscriptionRequest MsgCancelSubscriptionRequest
 
-func (x *MsgCancelDeal) ProtoReflect() protoreflect.Message {
-	return (*fastReflection_MsgCancelDeal)(x)
+func (x *MsgCancelSubscriptionRequest) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgCancelSubscriptionRequest)(x)
 }
 
-func (x *MsgCancelDeal) slowProtoReflect() protoreflect.Message {
+func (x *MsgCancelSubscriptionRequest) slowProtoReflect() protoreflect.Message {
 	mi := &file_mandu_subscription_tx_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2076,43 +2308,43 @@ func (x *MsgCancelDeal) slowProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-var _fastReflection_MsgCancelDeal_messageType fastReflection_MsgCancelDeal_messageType
-var _ protoreflect.MessageType = fastReflection_MsgCancelDeal_messageType{}
+var _fastReflection_MsgCancelSubscriptionRequest_messageType fastReflection_MsgCancelSubscriptionRequest_messageType
+var _ protoreflect.MessageType = fastReflection_MsgCancelSubscriptionRequest_messageType{}
 
-type fastReflection_MsgCancelDeal_messageType struct{}
+type fastReflection_MsgCancelSubscriptionRequest_messageType struct{}
 
-func (x fastReflection_MsgCancelDeal_messageType) Zero() protoreflect.Message {
-	return (*fastReflection_MsgCancelDeal)(nil)
+func (x fastReflection_MsgCancelSubscriptionRequest_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgCancelSubscriptionRequest)(nil)
 }
-func (x fastReflection_MsgCancelDeal_messageType) New() protoreflect.Message {
-	return new(fastReflection_MsgCancelDeal)
+func (x fastReflection_MsgCancelSubscriptionRequest_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgCancelSubscriptionRequest)
 }
-func (x fastReflection_MsgCancelDeal_messageType) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgCancelDeal
+func (x fastReflection_MsgCancelSubscriptionRequest_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCancelSubscriptionRequest
 }
 
 // Descriptor returns message descriptor, which contains only the protobuf
 // type information for the message.
-func (x *fastReflection_MsgCancelDeal) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgCancelDeal
+func (x *fastReflection_MsgCancelSubscriptionRequest) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCancelSubscriptionRequest
 }
 
 // Type returns the message type, which encapsulates both Go and protobuf
 // type information. If the Go type information is not needed,
 // it is recommended that the message descriptor be used instead.
-func (x *fastReflection_MsgCancelDeal) Type() protoreflect.MessageType {
-	return _fastReflection_MsgCancelDeal_messageType
+func (x *fastReflection_MsgCancelSubscriptionRequest) Type() protoreflect.MessageType {
+	return _fastReflection_MsgCancelSubscriptionRequest_messageType
 }
 
 // New returns a newly allocated and mutable empty message.
-func (x *fastReflection_MsgCancelDeal) New() protoreflect.Message {
-	return new(fastReflection_MsgCancelDeal)
+func (x *fastReflection_MsgCancelSubscriptionRequest) New() protoreflect.Message {
+	return new(fastReflection_MsgCancelSubscriptionRequest)
 }
 
 // Interface unwraps the message reflection interface and
 // returns the underlying ProtoMessage interface.
-func (x *fastReflection_MsgCancelDeal) Interface() protoreflect.ProtoMessage {
-	return (*MsgCancelDeal)(x)
+func (x *fastReflection_MsgCancelSubscriptionRequest) Interface() protoreflect.ProtoMessage {
+	return (*MsgCancelSubscriptionRequest)(x)
 }
 
 // Range iterates over every populated field in an undefined order,
@@ -2120,16 +2352,16 @@ func (x *fastReflection_MsgCancelDeal) Interface() protoreflect.ProtoMessage {
 // Range returns immediately if f returns false.
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
-func (x *fastReflection_MsgCancelDeal) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+func (x *fastReflection_MsgCancelSubscriptionRequest) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
 	if x.Requester != "" {
 		value := protoreflect.ValueOfString(x.Requester)
-		if !f(fd_MsgCancelDeal_requester, value) {
+		if !f(fd_MsgCancelSubscriptionRequest_requester, value) {
 			return
 		}
 	}
-	if x.DealId != "" {
-		value := protoreflect.ValueOfString(x.DealId)
-		if !f(fd_MsgCancelDeal_deal_id, value) {
+	if x.SubscriptionRequestId != "" {
+		value := protoreflect.ValueOfString(x.SubscriptionRequestId)
+		if !f(fd_MsgCancelSubscriptionRequest_subscription_request_id, value) {
 			return
 		}
 	}
@@ -2146,17 +2378,17 @@ func (x *fastReflection_MsgCancelDeal) Range(f func(protoreflect.FieldDescriptor
 // In other cases (aside from the nullable cases above),
 // a proto3 scalar field is populated if it contains a non-zero value, and
 // a repeated field is populated if it is non-empty.
-func (x *fastReflection_MsgCancelDeal) Has(fd protoreflect.FieldDescriptor) bool {
+func (x *fastReflection_MsgCancelSubscriptionRequest) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgCancelDeal.requester":
+	case "mandu.subscription.MsgCancelSubscriptionRequest.requester":
 		return x.Requester != ""
-	case "mandu.subscription.MsgCancelDeal.deal_id":
-		return x.DealId != ""
+	case "mandu.subscription.MsgCancelSubscriptionRequest.subscription_request_id":
+		return x.SubscriptionRequestId != ""
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCancelDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCancelSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -2166,17 +2398,17 @@ func (x *fastReflection_MsgCancelDeal) Has(fd protoreflect.FieldDescriptor) bool
 // associated with the given field number.
 //
 // Clear is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgCancelDeal) Clear(fd protoreflect.FieldDescriptor) {
+func (x *fastReflection_MsgCancelSubscriptionRequest) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgCancelDeal.requester":
+	case "mandu.subscription.MsgCancelSubscriptionRequest.requester":
 		x.Requester = ""
-	case "mandu.subscription.MsgCancelDeal.deal_id":
-		x.DealId = ""
+	case "mandu.subscription.MsgCancelSubscriptionRequest.subscription_request_id":
+		x.SubscriptionRequestId = ""
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCancelDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCancelSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -2186,19 +2418,19 @@ func (x *fastReflection_MsgCancelDeal) Clear(fd protoreflect.FieldDescriptor) {
 // the default value of a bytes scalar is guaranteed to be a copy.
 // For unpopulated composite types, it returns an empty, read-only view
 // of the value; to obtain a mutable reference, use Mutable.
-func (x *fastReflection_MsgCancelDeal) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgCancelSubscriptionRequest) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
-	case "mandu.subscription.MsgCancelDeal.requester":
+	case "mandu.subscription.MsgCancelSubscriptionRequest.requester":
 		value := x.Requester
 		return protoreflect.ValueOfString(value)
-	case "mandu.subscription.MsgCancelDeal.deal_id":
-		value := x.DealId
+	case "mandu.subscription.MsgCancelSubscriptionRequest.subscription_request_id":
+		value := x.SubscriptionRequestId
 		return protoreflect.ValueOfString(value)
 	default:
 		if descriptor.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCancelDeal does not contain field %s", descriptor.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCancelSubscriptionRequest does not contain field %s", descriptor.FullName()))
 	}
 }
 
@@ -2212,17 +2444,17 @@ func (x *fastReflection_MsgCancelDeal) Get(descriptor protoreflect.FieldDescript
 // empty, read-only value, then it panics.
 //
 // Set is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgCancelDeal) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+func (x *fastReflection_MsgCancelSubscriptionRequest) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgCancelDeal.requester":
+	case "mandu.subscription.MsgCancelSubscriptionRequest.requester":
 		x.Requester = value.Interface().(string)
-	case "mandu.subscription.MsgCancelDeal.deal_id":
-		x.DealId = value.Interface().(string)
+	case "mandu.subscription.MsgCancelSubscriptionRequest.subscription_request_id":
+		x.SubscriptionRequestId = value.Interface().(string)
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCancelDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCancelSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -2236,44 +2468,44 @@ func (x *fastReflection_MsgCancelDeal) Set(fd protoreflect.FieldDescriptor, valu
 // It panics if the field does not contain a composite type.
 //
 // Mutable is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgCancelDeal) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgCancelSubscriptionRequest) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgCancelDeal.requester":
-		panic(fmt.Errorf("field requester of message mandu.subscription.MsgCancelDeal is not mutable"))
-	case "mandu.subscription.MsgCancelDeal.deal_id":
-		panic(fmt.Errorf("field deal_id of message mandu.subscription.MsgCancelDeal is not mutable"))
+	case "mandu.subscription.MsgCancelSubscriptionRequest.requester":
+		panic(fmt.Errorf("field requester of message mandu.subscription.MsgCancelSubscriptionRequest is not mutable"))
+	case "mandu.subscription.MsgCancelSubscriptionRequest.subscription_request_id":
+		panic(fmt.Errorf("field subscription_request_id of message mandu.subscription.MsgCancelSubscriptionRequest is not mutable"))
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCancelDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCancelSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
 // NewField returns a new value that is assignable to the field
 // for the given descriptor. For scalars, this returns the default value.
 // For lists, maps, and messages, this returns a new, empty, mutable value.
-func (x *fastReflection_MsgCancelDeal) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgCancelSubscriptionRequest) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgCancelDeal.requester":
+	case "mandu.subscription.MsgCancelSubscriptionRequest.requester":
 		return protoreflect.ValueOfString("")
-	case "mandu.subscription.MsgCancelDeal.deal_id":
+	case "mandu.subscription.MsgCancelSubscriptionRequest.subscription_request_id":
 		return protoreflect.ValueOfString("")
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCancelDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCancelSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
 // WhichOneof reports which field within the oneof is populated,
 // returning nil if none are populated.
 // It panics if the oneof descriptor does not belong to this message.
-func (x *fastReflection_MsgCancelDeal) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+func (x *fastReflection_MsgCancelSubscriptionRequest) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
 	switch d.FullName() {
 	default:
-		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgCancelDeal", d.FullName()))
+		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgCancelSubscriptionRequest", d.FullName()))
 	}
 	panic("unreachable")
 }
@@ -2281,7 +2513,7 @@ func (x *fastReflection_MsgCancelDeal) WhichOneof(d protoreflect.OneofDescriptor
 // GetUnknown retrieves the entire list of unknown fields.
 // The caller may only mutate the contents of the RawFields
 // if the mutated bytes are stored back into the message with SetUnknown.
-func (x *fastReflection_MsgCancelDeal) GetUnknown() protoreflect.RawFields {
+func (x *fastReflection_MsgCancelSubscriptionRequest) GetUnknown() protoreflect.RawFields {
 	return x.unknownFields
 }
 
@@ -2292,7 +2524,7 @@ func (x *fastReflection_MsgCancelDeal) GetUnknown() protoreflect.RawFields {
 // An empty RawFields may be passed to clear the fields.
 //
 // SetUnknown is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgCancelDeal) SetUnknown(fields protoreflect.RawFields) {
+func (x *fastReflection_MsgCancelSubscriptionRequest) SetUnknown(fields protoreflect.RawFields) {
 	x.unknownFields = fields
 }
 
@@ -2304,7 +2536,7 @@ func (x *fastReflection_MsgCancelDeal) SetUnknown(fields protoreflect.RawFields)
 // message type, but the details are implementation dependent.
 // Validity is not part of the protobuf data model, and may not
 // be preserved in marshaling or other operations.
-func (x *fastReflection_MsgCancelDeal) IsValid() bool {
+func (x *fastReflection_MsgCancelSubscriptionRequest) IsValid() bool {
 	return x != nil
 }
 
@@ -2314,9 +2546,9 @@ func (x *fastReflection_MsgCancelDeal) IsValid() bool {
 // The returned methods type is identical to
 // "google.golang.org/protobuf/runtime/protoiface".Methods.
 // Consult the protoiface package documentation for details.
-func (x *fastReflection_MsgCancelDeal) ProtoMethods() *protoiface.Methods {
+func (x *fastReflection_MsgCancelSubscriptionRequest) ProtoMethods() *protoiface.Methods {
 	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
-		x := input.Message.Interface().(*MsgCancelDeal)
+		x := input.Message.Interface().(*MsgCancelSubscriptionRequest)
 		if x == nil {
 			return protoiface.SizeOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -2332,7 +2564,7 @@ func (x *fastReflection_MsgCancelDeal) ProtoMethods() *protoiface.Methods {
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
-		l = len(x.DealId)
+		l = len(x.SubscriptionRequestId)
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
@@ -2346,7 +2578,7 @@ func (x *fastReflection_MsgCancelDeal) ProtoMethods() *protoiface.Methods {
 	}
 
 	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
-		x := input.Message.Interface().(*MsgCancelDeal)
+		x := input.Message.Interface().(*MsgCancelSubscriptionRequest)
 		if x == nil {
 			return protoiface.MarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -2365,10 +2597,10 @@ func (x *fastReflection_MsgCancelDeal) ProtoMethods() *protoiface.Methods {
 			i -= len(x.unknownFields)
 			copy(dAtA[i:], x.unknownFields)
 		}
-		if len(x.DealId) > 0 {
-			i -= len(x.DealId)
-			copy(dAtA[i:], x.DealId)
-			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.DealId)))
+		if len(x.SubscriptionRequestId) > 0 {
+			i -= len(x.SubscriptionRequestId)
+			copy(dAtA[i:], x.SubscriptionRequestId)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.SubscriptionRequestId)))
 			i--
 			dAtA[i] = 0x12
 		}
@@ -2390,7 +2622,7 @@ func (x *fastReflection_MsgCancelDeal) ProtoMethods() *protoiface.Methods {
 		}, nil
 	}
 	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
-		x := input.Message.Interface().(*MsgCancelDeal)
+		x := input.Message.Interface().(*MsgCancelSubscriptionRequest)
 		if x == nil {
 			return protoiface.UnmarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -2422,10 +2654,10 @@ func (x *fastReflection_MsgCancelDeal) ProtoMethods() *protoiface.Methods {
 			fieldNum := int32(wire >> 3)
 			wireType := int(wire & 0x7)
 			if wireType == 4 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCancelDeal: wiretype end group for non-group")
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCancelSubscriptionRequest: wiretype end group for non-group")
 			}
 			if fieldNum <= 0 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCancelDeal: illegal tag %d (wire type %d)", fieldNum, wire)
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCancelSubscriptionRequest: illegal tag %d (wire type %d)", fieldNum, wire)
 			}
 			switch fieldNum {
 			case 1:
@@ -2462,7 +2694,7 @@ func (x *fastReflection_MsgCancelDeal) ProtoMethods() *protoiface.Methods {
 				iNdEx = postIndex
 			case 2:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field DealId", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field SubscriptionRequestId", wireType)
 				}
 				var stringLen uint64
 				for shift := uint(0); ; shift += 7 {
@@ -2490,7 +2722,7 @@ func (x *fastReflection_MsgCancelDeal) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.DealId = string(dAtA[iNdEx:postIndex])
+				x.SubscriptionRequestId = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
 			default:
 				iNdEx = preIndex
@@ -2528,23 +2760,23 @@ func (x *fastReflection_MsgCancelDeal) ProtoMethods() *protoiface.Methods {
 }
 
 var (
-	md_MsgCancelDealResponse protoreflect.MessageDescriptor
+	md_MsgCancelSubscriptionRequestResponse protoreflect.MessageDescriptor
 )
 
 func init() {
 	file_mandu_subscription_tx_proto_init()
-	md_MsgCancelDealResponse = File_mandu_subscription_tx_proto.Messages().ByName("MsgCancelDealResponse")
+	md_MsgCancelSubscriptionRequestResponse = File_mandu_subscription_tx_proto.Messages().ByName("MsgCancelSubscriptionRequestResponse")
 }
 
-var _ protoreflect.Message = (*fastReflection_MsgCancelDealResponse)(nil)
+var _ protoreflect.Message = (*fastReflection_MsgCancelSubscriptionRequestResponse)(nil)
 
-type fastReflection_MsgCancelDealResponse MsgCancelDealResponse
+type fastReflection_MsgCancelSubscriptionRequestResponse MsgCancelSubscriptionRequestResponse
 
-func (x *MsgCancelDealResponse) ProtoReflect() protoreflect.Message {
-	return (*fastReflection_MsgCancelDealResponse)(x)
+func (x *MsgCancelSubscriptionRequestResponse) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgCancelSubscriptionRequestResponse)(x)
 }
 
-func (x *MsgCancelDealResponse) slowProtoReflect() protoreflect.Message {
+func (x *MsgCancelSubscriptionRequestResponse) slowProtoReflect() protoreflect.Message {
 	mi := &file_mandu_subscription_tx_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2556,43 +2788,43 @@ func (x *MsgCancelDealResponse) slowProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-var _fastReflection_MsgCancelDealResponse_messageType fastReflection_MsgCancelDealResponse_messageType
-var _ protoreflect.MessageType = fastReflection_MsgCancelDealResponse_messageType{}
+var _fastReflection_MsgCancelSubscriptionRequestResponse_messageType fastReflection_MsgCancelSubscriptionRequestResponse_messageType
+var _ protoreflect.MessageType = fastReflection_MsgCancelSubscriptionRequestResponse_messageType{}
 
-type fastReflection_MsgCancelDealResponse_messageType struct{}
+type fastReflection_MsgCancelSubscriptionRequestResponse_messageType struct{}
 
-func (x fastReflection_MsgCancelDealResponse_messageType) Zero() protoreflect.Message {
-	return (*fastReflection_MsgCancelDealResponse)(nil)
+func (x fastReflection_MsgCancelSubscriptionRequestResponse_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgCancelSubscriptionRequestResponse)(nil)
 }
-func (x fastReflection_MsgCancelDealResponse_messageType) New() protoreflect.Message {
-	return new(fastReflection_MsgCancelDealResponse)
+func (x fastReflection_MsgCancelSubscriptionRequestResponse_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgCancelSubscriptionRequestResponse)
 }
-func (x fastReflection_MsgCancelDealResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgCancelDealResponse
+func (x fastReflection_MsgCancelSubscriptionRequestResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCancelSubscriptionRequestResponse
 }
 
 // Descriptor returns message descriptor, which contains only the protobuf
 // type information for the message.
-func (x *fastReflection_MsgCancelDealResponse) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgCancelDealResponse
+func (x *fastReflection_MsgCancelSubscriptionRequestResponse) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCancelSubscriptionRequestResponse
 }
 
 // Type returns the message type, which encapsulates both Go and protobuf
 // type information. If the Go type information is not needed,
 // it is recommended that the message descriptor be used instead.
-func (x *fastReflection_MsgCancelDealResponse) Type() protoreflect.MessageType {
-	return _fastReflection_MsgCancelDealResponse_messageType
+func (x *fastReflection_MsgCancelSubscriptionRequestResponse) Type() protoreflect.MessageType {
+	return _fastReflection_MsgCancelSubscriptionRequestResponse_messageType
 }
 
 // New returns a newly allocated and mutable empty message.
-func (x *fastReflection_MsgCancelDealResponse) New() protoreflect.Message {
-	return new(fastReflection_MsgCancelDealResponse)
+func (x *fastReflection_MsgCancelSubscriptionRequestResponse) New() protoreflect.Message {
+	return new(fastReflection_MsgCancelSubscriptionRequestResponse)
 }
 
 // Interface unwraps the message reflection interface and
 // returns the underlying ProtoMessage interface.
-func (x *fastReflection_MsgCancelDealResponse) Interface() protoreflect.ProtoMessage {
-	return (*MsgCancelDealResponse)(x)
+func (x *fastReflection_MsgCancelSubscriptionRequestResponse) Interface() protoreflect.ProtoMessage {
+	return (*MsgCancelSubscriptionRequestResponse)(x)
 }
 
 // Range iterates over every populated field in an undefined order,
@@ -2600,7 +2832,7 @@ func (x *fastReflection_MsgCancelDealResponse) Interface() protoreflect.ProtoMes
 // Range returns immediately if f returns false.
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
-func (x *fastReflection_MsgCancelDealResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+func (x *fastReflection_MsgCancelSubscriptionRequestResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
 }
 
 // Has reports whether a field is populated.
@@ -2614,13 +2846,13 @@ func (x *fastReflection_MsgCancelDealResponse) Range(f func(protoreflect.FieldDe
 // In other cases (aside from the nullable cases above),
 // a proto3 scalar field is populated if it contains a non-zero value, and
 // a repeated field is populated if it is non-empty.
-func (x *fastReflection_MsgCancelDealResponse) Has(fd protoreflect.FieldDescriptor) bool {
+func (x *fastReflection_MsgCancelSubscriptionRequestResponse) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCancelDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCancelSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -2630,13 +2862,13 @@ func (x *fastReflection_MsgCancelDealResponse) Has(fd protoreflect.FieldDescript
 // associated with the given field number.
 //
 // Clear is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgCancelDealResponse) Clear(fd protoreflect.FieldDescriptor) {
+func (x *fastReflection_MsgCancelSubscriptionRequestResponse) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCancelDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCancelSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -2646,13 +2878,13 @@ func (x *fastReflection_MsgCancelDealResponse) Clear(fd protoreflect.FieldDescri
 // the default value of a bytes scalar is guaranteed to be a copy.
 // For unpopulated composite types, it returns an empty, read-only view
 // of the value; to obtain a mutable reference, use Mutable.
-func (x *fastReflection_MsgCancelDealResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgCancelSubscriptionRequestResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
 	default:
 		if descriptor.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCancelDealResponse does not contain field %s", descriptor.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCancelSubscriptionRequestResponse does not contain field %s", descriptor.FullName()))
 	}
 }
 
@@ -2666,13 +2898,13 @@ func (x *fastReflection_MsgCancelDealResponse) Get(descriptor protoreflect.Field
 // empty, read-only value, then it panics.
 //
 // Set is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgCancelDealResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+func (x *fastReflection_MsgCancelSubscriptionRequestResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCancelDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCancelSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -2686,36 +2918,36 @@ func (x *fastReflection_MsgCancelDealResponse) Set(fd protoreflect.FieldDescript
 // It panics if the field does not contain a composite type.
 //
 // Mutable is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgCancelDealResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgCancelSubscriptionRequestResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCancelDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCancelSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
 // NewField returns a new value that is assignable to the field
 // for the given descriptor. For scalars, this returns the default value.
 // For lists, maps, and messages, this returns a new, empty, mutable value.
-func (x *fastReflection_MsgCancelDealResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgCancelSubscriptionRequestResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgCancelSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgCancelDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgCancelSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
 // WhichOneof reports which field within the oneof is populated,
 // returning nil if none are populated.
 // It panics if the oneof descriptor does not belong to this message.
-func (x *fastReflection_MsgCancelDealResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+func (x *fastReflection_MsgCancelSubscriptionRequestResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
 	switch d.FullName() {
 	default:
-		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgCancelDealResponse", d.FullName()))
+		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgCancelSubscriptionRequestResponse", d.FullName()))
 	}
 	panic("unreachable")
 }
@@ -2723,7 +2955,7 @@ func (x *fastReflection_MsgCancelDealResponse) WhichOneof(d protoreflect.OneofDe
 // GetUnknown retrieves the entire list of unknown fields.
 // The caller may only mutate the contents of the RawFields
 // if the mutated bytes are stored back into the message with SetUnknown.
-func (x *fastReflection_MsgCancelDealResponse) GetUnknown() protoreflect.RawFields {
+func (x *fastReflection_MsgCancelSubscriptionRequestResponse) GetUnknown() protoreflect.RawFields {
 	return x.unknownFields
 }
 
@@ -2734,7 +2966,7 @@ func (x *fastReflection_MsgCancelDealResponse) GetUnknown() protoreflect.RawFiel
 // An empty RawFields may be passed to clear the fields.
 //
 // SetUnknown is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgCancelDealResponse) SetUnknown(fields protoreflect.RawFields) {
+func (x *fastReflection_MsgCancelSubscriptionRequestResponse) SetUnknown(fields protoreflect.RawFields) {
 	x.unknownFields = fields
 }
 
@@ -2746,7 +2978,7 @@ func (x *fastReflection_MsgCancelDealResponse) SetUnknown(fields protoreflect.Ra
 // message type, but the details are implementation dependent.
 // Validity is not part of the protobuf data model, and may not
 // be preserved in marshaling or other operations.
-func (x *fastReflection_MsgCancelDealResponse) IsValid() bool {
+func (x *fastReflection_MsgCancelSubscriptionRequestResponse) IsValid() bool {
 	return x != nil
 }
 
@@ -2756,9 +2988,9 @@ func (x *fastReflection_MsgCancelDealResponse) IsValid() bool {
 // The returned methods type is identical to
 // "google.golang.org/protobuf/runtime/protoiface".Methods.
 // Consult the protoiface package documentation for details.
-func (x *fastReflection_MsgCancelDealResponse) ProtoMethods() *protoiface.Methods {
+func (x *fastReflection_MsgCancelSubscriptionRequestResponse) ProtoMethods() *protoiface.Methods {
 	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
-		x := input.Message.Interface().(*MsgCancelDealResponse)
+		x := input.Message.Interface().(*MsgCancelSubscriptionRequestResponse)
 		if x == nil {
 			return protoiface.SizeOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -2780,7 +3012,7 @@ func (x *fastReflection_MsgCancelDealResponse) ProtoMethods() *protoiface.Method
 	}
 
 	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
-		x := input.Message.Interface().(*MsgCancelDealResponse)
+		x := input.Message.Interface().(*MsgCancelSubscriptionRequestResponse)
 		if x == nil {
 			return protoiface.MarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -2810,7 +3042,7 @@ func (x *fastReflection_MsgCancelDealResponse) ProtoMethods() *protoiface.Method
 		}, nil
 	}
 	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
-		x := input.Message.Interface().(*MsgCancelDealResponse)
+		x := input.Message.Interface().(*MsgCancelSubscriptionRequestResponse)
 		if x == nil {
 			return protoiface.UnmarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -2842,10 +3074,10 @@ func (x *fastReflection_MsgCancelDealResponse) ProtoMethods() *protoiface.Method
 			fieldNum := int32(wire >> 3)
 			wireType := int(wire & 0x7)
 			if wireType == 4 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCancelDealResponse: wiretype end group for non-group")
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCancelSubscriptionRequestResponse: wiretype end group for non-group")
 			}
 			if fieldNum <= 0 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCancelDealResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCancelSubscriptionRequestResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 			}
 			switch fieldNum {
 			default:
@@ -2883,34 +3115,82 @@ func (x *fastReflection_MsgCancelDealResponse) ProtoMethods() *protoiface.Method
 	}
 }
 
+var _ protoreflect.List = (*_MsgUpdateSubscriptionRequest_7_list)(nil)
+
+type _MsgUpdateSubscriptionRequest_7_list struct {
+	list *[]string
+}
+
+func (x *_MsgUpdateSubscriptionRequest_7_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_MsgUpdateSubscriptionRequest_7_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfString((*x.list)[i])
+}
+
+func (x *_MsgUpdateSubscriptionRequest_7_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_MsgUpdateSubscriptionRequest_7_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_MsgUpdateSubscriptionRequest_7_list) AppendMutable() protoreflect.Value {
+	panic(fmt.Errorf("AppendMutable can not be called on message MsgUpdateSubscriptionRequest at list field Writers as it is not of Message kind"))
+}
+
+func (x *_MsgUpdateSubscriptionRequest_7_list) Truncate(n int) {
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_MsgUpdateSubscriptionRequest_7_list) NewElement() protoreflect.Value {
+	v := ""
+	return protoreflect.ValueOfString(v)
+}
+
+func (x *_MsgUpdateSubscriptionRequest_7_list) IsValid() bool {
+	return x.list != nil
+}
+
 var (
-	md_MsgUpdateDeal             protoreflect.MessageDescriptor
-	fd_MsgUpdateDeal_requester   protoreflect.FieldDescriptor
-	fd_MsgUpdateDeal_deal_id     protoreflect.FieldDescriptor
-	fd_MsgUpdateDeal_amount      protoreflect.FieldDescriptor
-	fd_MsgUpdateDeal_start_block protoreflect.FieldDescriptor
-	fd_MsgUpdateDeal_end_block   protoreflect.FieldDescriptor
+	md_MsgUpdateSubscriptionRequest                         protoreflect.MessageDescriptor
+	fd_MsgUpdateSubscriptionRequest_requester               protoreflect.FieldDescriptor
+	fd_MsgUpdateSubscriptionRequest_subscription_request_id protoreflect.FieldDescriptor
+	fd_MsgUpdateSubscriptionRequest_amount                  protoreflect.FieldDescriptor
+	fd_MsgUpdateSubscriptionRequest_start_block             protoreflect.FieldDescriptor
+	fd_MsgUpdateSubscriptionRequest_duration                protoreflect.FieldDescriptor
+	fd_MsgUpdateSubscriptionRequest_writers                 protoreflect.FieldDescriptor
 )
 
 func init() {
 	file_mandu_subscription_tx_proto_init()
-	md_MsgUpdateDeal = File_mandu_subscription_tx_proto.Messages().ByName("MsgUpdateDeal")
-	fd_MsgUpdateDeal_requester = md_MsgUpdateDeal.Fields().ByName("requester")
-	fd_MsgUpdateDeal_deal_id = md_MsgUpdateDeal.Fields().ByName("deal_id")
-	fd_MsgUpdateDeal_amount = md_MsgUpdateDeal.Fields().ByName("amount")
-	fd_MsgUpdateDeal_start_block = md_MsgUpdateDeal.Fields().ByName("start_block")
-	fd_MsgUpdateDeal_end_block = md_MsgUpdateDeal.Fields().ByName("end_block")
+	md_MsgUpdateSubscriptionRequest = File_mandu_subscription_tx_proto.Messages().ByName("MsgUpdateSubscriptionRequest")
+	fd_MsgUpdateSubscriptionRequest_requester = md_MsgUpdateSubscriptionRequest.Fields().ByName("requester")
+	fd_MsgUpdateSubscriptionRequest_subscription_request_id = md_MsgUpdateSubscriptionRequest.Fields().ByName("subscription_request_id")
+	fd_MsgUpdateSubscriptionRequest_amount = md_MsgUpdateSubscriptionRequest.Fields().ByName("amount")
+	fd_MsgUpdateSubscriptionRequest_start_block = md_MsgUpdateSubscriptionRequest.Fields().ByName("start_block")
+	fd_MsgUpdateSubscriptionRequest_duration = md_MsgUpdateSubscriptionRequest.Fields().ByName("duration")
+	fd_MsgUpdateSubscriptionRequest_writers = md_MsgUpdateSubscriptionRequest.Fields().ByName("writers")
 }
 
-var _ protoreflect.Message = (*fastReflection_MsgUpdateDeal)(nil)
+var _ protoreflect.Message = (*fastReflection_MsgUpdateSubscriptionRequest)(nil)
 
-type fastReflection_MsgUpdateDeal MsgUpdateDeal
+type fastReflection_MsgUpdateSubscriptionRequest MsgUpdateSubscriptionRequest
 
-func (x *MsgUpdateDeal) ProtoReflect() protoreflect.Message {
-	return (*fastReflection_MsgUpdateDeal)(x)
+func (x *MsgUpdateSubscriptionRequest) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgUpdateSubscriptionRequest)(x)
 }
 
-func (x *MsgUpdateDeal) slowProtoReflect() protoreflect.Message {
+func (x *MsgUpdateSubscriptionRequest) slowProtoReflect() protoreflect.Message {
 	mi := &file_mandu_subscription_tx_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -2922,43 +3202,43 @@ func (x *MsgUpdateDeal) slowProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-var _fastReflection_MsgUpdateDeal_messageType fastReflection_MsgUpdateDeal_messageType
-var _ protoreflect.MessageType = fastReflection_MsgUpdateDeal_messageType{}
+var _fastReflection_MsgUpdateSubscriptionRequest_messageType fastReflection_MsgUpdateSubscriptionRequest_messageType
+var _ protoreflect.MessageType = fastReflection_MsgUpdateSubscriptionRequest_messageType{}
 
-type fastReflection_MsgUpdateDeal_messageType struct{}
+type fastReflection_MsgUpdateSubscriptionRequest_messageType struct{}
 
-func (x fastReflection_MsgUpdateDeal_messageType) Zero() protoreflect.Message {
-	return (*fastReflection_MsgUpdateDeal)(nil)
+func (x fastReflection_MsgUpdateSubscriptionRequest_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgUpdateSubscriptionRequest)(nil)
 }
-func (x fastReflection_MsgUpdateDeal_messageType) New() protoreflect.Message {
-	return new(fastReflection_MsgUpdateDeal)
+func (x fastReflection_MsgUpdateSubscriptionRequest_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgUpdateSubscriptionRequest)
 }
-func (x fastReflection_MsgUpdateDeal_messageType) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgUpdateDeal
+func (x fastReflection_MsgUpdateSubscriptionRequest_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgUpdateSubscriptionRequest
 }
 
 // Descriptor returns message descriptor, which contains only the protobuf
 // type information for the message.
-func (x *fastReflection_MsgUpdateDeal) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgUpdateDeal
+func (x *fastReflection_MsgUpdateSubscriptionRequest) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgUpdateSubscriptionRequest
 }
 
 // Type returns the message type, which encapsulates both Go and protobuf
 // type information. If the Go type information is not needed,
 // it is recommended that the message descriptor be used instead.
-func (x *fastReflection_MsgUpdateDeal) Type() protoreflect.MessageType {
-	return _fastReflection_MsgUpdateDeal_messageType
+func (x *fastReflection_MsgUpdateSubscriptionRequest) Type() protoreflect.MessageType {
+	return _fastReflection_MsgUpdateSubscriptionRequest_messageType
 }
 
 // New returns a newly allocated and mutable empty message.
-func (x *fastReflection_MsgUpdateDeal) New() protoreflect.Message {
-	return new(fastReflection_MsgUpdateDeal)
+func (x *fastReflection_MsgUpdateSubscriptionRequest) New() protoreflect.Message {
+	return new(fastReflection_MsgUpdateSubscriptionRequest)
 }
 
 // Interface unwraps the message reflection interface and
 // returns the underlying ProtoMessage interface.
-func (x *fastReflection_MsgUpdateDeal) Interface() protoreflect.ProtoMessage {
-	return (*MsgUpdateDeal)(x)
+func (x *fastReflection_MsgUpdateSubscriptionRequest) Interface() protoreflect.ProtoMessage {
+	return (*MsgUpdateSubscriptionRequest)(x)
 }
 
 // Range iterates over every populated field in an undefined order,
@@ -2966,34 +3246,40 @@ func (x *fastReflection_MsgUpdateDeal) Interface() protoreflect.ProtoMessage {
 // Range returns immediately if f returns false.
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
-func (x *fastReflection_MsgUpdateDeal) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+func (x *fastReflection_MsgUpdateSubscriptionRequest) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
 	if x.Requester != "" {
 		value := protoreflect.ValueOfString(x.Requester)
-		if !f(fd_MsgUpdateDeal_requester, value) {
+		if !f(fd_MsgUpdateSubscriptionRequest_requester, value) {
 			return
 		}
 	}
-	if x.DealId != "" {
-		value := protoreflect.ValueOfString(x.DealId)
-		if !f(fd_MsgUpdateDeal_deal_id, value) {
+	if x.SubscriptionRequestId != "" {
+		value := protoreflect.ValueOfString(x.SubscriptionRequestId)
+		if !f(fd_MsgUpdateSubscriptionRequest_subscription_request_id, value) {
 			return
 		}
 	}
-	if x.Amount != uint64(0) {
-		value := protoreflect.ValueOfUint64(x.Amount)
-		if !f(fd_MsgUpdateDeal_amount, value) {
+	if x.Amount != int64(0) {
+		value := protoreflect.ValueOfInt64(x.Amount)
+		if !f(fd_MsgUpdateSubscriptionRequest_amount, value) {
 			return
 		}
 	}
-	if x.StartBlock != uint64(0) {
-		value := protoreflect.ValueOfUint64(x.StartBlock)
-		if !f(fd_MsgUpdateDeal_start_block, value) {
+	if x.StartBlock != int64(0) {
+		value := protoreflect.ValueOfInt64(x.StartBlock)
+		if !f(fd_MsgUpdateSubscriptionRequest_start_block, value) {
 			return
 		}
 	}
-	if x.EndBlock != uint64(0) {
-		value := protoreflect.ValueOfUint64(x.EndBlock)
-		if !f(fd_MsgUpdateDeal_end_block, value) {
+	if x.Duration != int64(0) {
+		value := protoreflect.ValueOfInt64(x.Duration)
+		if !f(fd_MsgUpdateSubscriptionRequest_duration, value) {
+			return
+		}
+	}
+	if len(x.Writers) != 0 {
+		value := protoreflect.ValueOfList(&_MsgUpdateSubscriptionRequest_7_list{list: &x.Writers})
+		if !f(fd_MsgUpdateSubscriptionRequest_writers, value) {
 			return
 		}
 	}
@@ -3010,23 +3296,25 @@ func (x *fastReflection_MsgUpdateDeal) Range(f func(protoreflect.FieldDescriptor
 // In other cases (aside from the nullable cases above),
 // a proto3 scalar field is populated if it contains a non-zero value, and
 // a repeated field is populated if it is non-empty.
-func (x *fastReflection_MsgUpdateDeal) Has(fd protoreflect.FieldDescriptor) bool {
+func (x *fastReflection_MsgUpdateSubscriptionRequest) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgUpdateDeal.requester":
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.requester":
 		return x.Requester != ""
-	case "mandu.subscription.MsgUpdateDeal.deal_id":
-		return x.DealId != ""
-	case "mandu.subscription.MsgUpdateDeal.amount":
-		return x.Amount != uint64(0)
-	case "mandu.subscription.MsgUpdateDeal.start_block":
-		return x.StartBlock != uint64(0)
-	case "mandu.subscription.MsgUpdateDeal.end_block":
-		return x.EndBlock != uint64(0)
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.subscription_request_id":
+		return x.SubscriptionRequestId != ""
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.amount":
+		return x.Amount != int64(0)
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.start_block":
+		return x.StartBlock != int64(0)
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.duration":
+		return x.Duration != int64(0)
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.writers":
+		return len(x.Writers) != 0
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgUpdateDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgUpdateSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -3036,23 +3324,25 @@ func (x *fastReflection_MsgUpdateDeal) Has(fd protoreflect.FieldDescriptor) bool
 // associated with the given field number.
 //
 // Clear is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgUpdateDeal) Clear(fd protoreflect.FieldDescriptor) {
+func (x *fastReflection_MsgUpdateSubscriptionRequest) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgUpdateDeal.requester":
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.requester":
 		x.Requester = ""
-	case "mandu.subscription.MsgUpdateDeal.deal_id":
-		x.DealId = ""
-	case "mandu.subscription.MsgUpdateDeal.amount":
-		x.Amount = uint64(0)
-	case "mandu.subscription.MsgUpdateDeal.start_block":
-		x.StartBlock = uint64(0)
-	case "mandu.subscription.MsgUpdateDeal.end_block":
-		x.EndBlock = uint64(0)
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.subscription_request_id":
+		x.SubscriptionRequestId = ""
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.amount":
+		x.Amount = int64(0)
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.start_block":
+		x.StartBlock = int64(0)
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.duration":
+		x.Duration = int64(0)
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.writers":
+		x.Writers = nil
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgUpdateDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgUpdateSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -3062,28 +3352,34 @@ func (x *fastReflection_MsgUpdateDeal) Clear(fd protoreflect.FieldDescriptor) {
 // the default value of a bytes scalar is guaranteed to be a copy.
 // For unpopulated composite types, it returns an empty, read-only view
 // of the value; to obtain a mutable reference, use Mutable.
-func (x *fastReflection_MsgUpdateDeal) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgUpdateSubscriptionRequest) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
-	case "mandu.subscription.MsgUpdateDeal.requester":
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.requester":
 		value := x.Requester
 		return protoreflect.ValueOfString(value)
-	case "mandu.subscription.MsgUpdateDeal.deal_id":
-		value := x.DealId
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.subscription_request_id":
+		value := x.SubscriptionRequestId
 		return protoreflect.ValueOfString(value)
-	case "mandu.subscription.MsgUpdateDeal.amount":
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.amount":
 		value := x.Amount
-		return protoreflect.ValueOfUint64(value)
-	case "mandu.subscription.MsgUpdateDeal.start_block":
+		return protoreflect.ValueOfInt64(value)
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.start_block":
 		value := x.StartBlock
-		return protoreflect.ValueOfUint64(value)
-	case "mandu.subscription.MsgUpdateDeal.end_block":
-		value := x.EndBlock
-		return protoreflect.ValueOfUint64(value)
+		return protoreflect.ValueOfInt64(value)
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.duration":
+		value := x.Duration
+		return protoreflect.ValueOfInt64(value)
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.writers":
+		if len(x.Writers) == 0 {
+			return protoreflect.ValueOfList(&_MsgUpdateSubscriptionRequest_7_list{})
+		}
+		listValue := &_MsgUpdateSubscriptionRequest_7_list{list: &x.Writers}
+		return protoreflect.ValueOfList(listValue)
 	default:
 		if descriptor.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgUpdateDeal does not contain field %s", descriptor.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgUpdateSubscriptionRequest does not contain field %s", descriptor.FullName()))
 	}
 }
 
@@ -3097,23 +3393,27 @@ func (x *fastReflection_MsgUpdateDeal) Get(descriptor protoreflect.FieldDescript
 // empty, read-only value, then it panics.
 //
 // Set is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgUpdateDeal) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+func (x *fastReflection_MsgUpdateSubscriptionRequest) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgUpdateDeal.requester":
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.requester":
 		x.Requester = value.Interface().(string)
-	case "mandu.subscription.MsgUpdateDeal.deal_id":
-		x.DealId = value.Interface().(string)
-	case "mandu.subscription.MsgUpdateDeal.amount":
-		x.Amount = value.Uint()
-	case "mandu.subscription.MsgUpdateDeal.start_block":
-		x.StartBlock = value.Uint()
-	case "mandu.subscription.MsgUpdateDeal.end_block":
-		x.EndBlock = value.Uint()
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.subscription_request_id":
+		x.SubscriptionRequestId = value.Interface().(string)
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.amount":
+		x.Amount = value.Int()
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.start_block":
+		x.StartBlock = value.Int()
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.duration":
+		x.Duration = value.Int()
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.writers":
+		lv := value.List()
+		clv := lv.(*_MsgUpdateSubscriptionRequest_7_list)
+		x.Writers = *clv.list
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgUpdateDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgUpdateSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -3127,56 +3427,65 @@ func (x *fastReflection_MsgUpdateDeal) Set(fd protoreflect.FieldDescriptor, valu
 // It panics if the field does not contain a composite type.
 //
 // Mutable is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgUpdateDeal) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgUpdateSubscriptionRequest) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgUpdateDeal.requester":
-		panic(fmt.Errorf("field requester of message mandu.subscription.MsgUpdateDeal is not mutable"))
-	case "mandu.subscription.MsgUpdateDeal.deal_id":
-		panic(fmt.Errorf("field deal_id of message mandu.subscription.MsgUpdateDeal is not mutable"))
-	case "mandu.subscription.MsgUpdateDeal.amount":
-		panic(fmt.Errorf("field amount of message mandu.subscription.MsgUpdateDeal is not mutable"))
-	case "mandu.subscription.MsgUpdateDeal.start_block":
-		panic(fmt.Errorf("field start_block of message mandu.subscription.MsgUpdateDeal is not mutable"))
-	case "mandu.subscription.MsgUpdateDeal.end_block":
-		panic(fmt.Errorf("field end_block of message mandu.subscription.MsgUpdateDeal is not mutable"))
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.writers":
+		if x.Writers == nil {
+			x.Writers = []string{}
+		}
+		value := &_MsgUpdateSubscriptionRequest_7_list{list: &x.Writers}
+		return protoreflect.ValueOfList(value)
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.requester":
+		panic(fmt.Errorf("field requester of message mandu.subscription.MsgUpdateSubscriptionRequest is not mutable"))
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.subscription_request_id":
+		panic(fmt.Errorf("field subscription_request_id of message mandu.subscription.MsgUpdateSubscriptionRequest is not mutable"))
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.amount":
+		panic(fmt.Errorf("field amount of message mandu.subscription.MsgUpdateSubscriptionRequest is not mutable"))
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.start_block":
+		panic(fmt.Errorf("field start_block of message mandu.subscription.MsgUpdateSubscriptionRequest is not mutable"))
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.duration":
+		panic(fmt.Errorf("field duration of message mandu.subscription.MsgUpdateSubscriptionRequest is not mutable"))
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgUpdateDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgUpdateSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
 // NewField returns a new value that is assignable to the field
 // for the given descriptor. For scalars, this returns the default value.
 // For lists, maps, and messages, this returns a new, empty, mutable value.
-func (x *fastReflection_MsgUpdateDeal) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgUpdateSubscriptionRequest) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgUpdateDeal.requester":
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.requester":
 		return protoreflect.ValueOfString("")
-	case "mandu.subscription.MsgUpdateDeal.deal_id":
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.subscription_request_id":
 		return protoreflect.ValueOfString("")
-	case "mandu.subscription.MsgUpdateDeal.amount":
-		return protoreflect.ValueOfUint64(uint64(0))
-	case "mandu.subscription.MsgUpdateDeal.start_block":
-		return protoreflect.ValueOfUint64(uint64(0))
-	case "mandu.subscription.MsgUpdateDeal.end_block":
-		return protoreflect.ValueOfUint64(uint64(0))
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.amount":
+		return protoreflect.ValueOfInt64(int64(0))
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.start_block":
+		return protoreflect.ValueOfInt64(int64(0))
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.duration":
+		return protoreflect.ValueOfInt64(int64(0))
+	case "mandu.subscription.MsgUpdateSubscriptionRequest.writers":
+		list := []string{}
+		return protoreflect.ValueOfList(&_MsgUpdateSubscriptionRequest_7_list{list: &list})
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgUpdateDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgUpdateSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
 // WhichOneof reports which field within the oneof is populated,
 // returning nil if none are populated.
 // It panics if the oneof descriptor does not belong to this message.
-func (x *fastReflection_MsgUpdateDeal) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+func (x *fastReflection_MsgUpdateSubscriptionRequest) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
 	switch d.FullName() {
 	default:
-		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgUpdateDeal", d.FullName()))
+		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgUpdateSubscriptionRequest", d.FullName()))
 	}
 	panic("unreachable")
 }
@@ -3184,7 +3493,7 @@ func (x *fastReflection_MsgUpdateDeal) WhichOneof(d protoreflect.OneofDescriptor
 // GetUnknown retrieves the entire list of unknown fields.
 // The caller may only mutate the contents of the RawFields
 // if the mutated bytes are stored back into the message with SetUnknown.
-func (x *fastReflection_MsgUpdateDeal) GetUnknown() protoreflect.RawFields {
+func (x *fastReflection_MsgUpdateSubscriptionRequest) GetUnknown() protoreflect.RawFields {
 	return x.unknownFields
 }
 
@@ -3195,7 +3504,7 @@ func (x *fastReflection_MsgUpdateDeal) GetUnknown() protoreflect.RawFields {
 // An empty RawFields may be passed to clear the fields.
 //
 // SetUnknown is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgUpdateDeal) SetUnknown(fields protoreflect.RawFields) {
+func (x *fastReflection_MsgUpdateSubscriptionRequest) SetUnknown(fields protoreflect.RawFields) {
 	x.unknownFields = fields
 }
 
@@ -3207,7 +3516,7 @@ func (x *fastReflection_MsgUpdateDeal) SetUnknown(fields protoreflect.RawFields)
 // message type, but the details are implementation dependent.
 // Validity is not part of the protobuf data model, and may not
 // be preserved in marshaling or other operations.
-func (x *fastReflection_MsgUpdateDeal) IsValid() bool {
+func (x *fastReflection_MsgUpdateSubscriptionRequest) IsValid() bool {
 	return x != nil
 }
 
@@ -3217,9 +3526,9 @@ func (x *fastReflection_MsgUpdateDeal) IsValid() bool {
 // The returned methods type is identical to
 // "google.golang.org/protobuf/runtime/protoiface".Methods.
 // Consult the protoiface package documentation for details.
-func (x *fastReflection_MsgUpdateDeal) ProtoMethods() *protoiface.Methods {
+func (x *fastReflection_MsgUpdateSubscriptionRequest) ProtoMethods() *protoiface.Methods {
 	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
-		x := input.Message.Interface().(*MsgUpdateDeal)
+		x := input.Message.Interface().(*MsgUpdateSubscriptionRequest)
 		if x == nil {
 			return protoiface.SizeOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -3235,7 +3544,7 @@ func (x *fastReflection_MsgUpdateDeal) ProtoMethods() *protoiface.Methods {
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
-		l = len(x.DealId)
+		l = len(x.SubscriptionRequestId)
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
@@ -3245,8 +3554,14 @@ func (x *fastReflection_MsgUpdateDeal) ProtoMethods() *protoiface.Methods {
 		if x.StartBlock != 0 {
 			n += 1 + runtime.Sov(uint64(x.StartBlock))
 		}
-		if x.EndBlock != 0 {
-			n += 1 + runtime.Sov(uint64(x.EndBlock))
+		if x.Duration != 0 {
+			n += 1 + runtime.Sov(uint64(x.Duration))
+		}
+		if len(x.Writers) > 0 {
+			for _, s := range x.Writers {
+				l = len(s)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
 		}
 		if x.unknownFields != nil {
 			n += len(x.unknownFields)
@@ -3258,7 +3573,7 @@ func (x *fastReflection_MsgUpdateDeal) ProtoMethods() *protoiface.Methods {
 	}
 
 	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
-		x := input.Message.Interface().(*MsgUpdateDeal)
+		x := input.Message.Interface().(*MsgUpdateSubscriptionRequest)
 		if x == nil {
 			return protoiface.MarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -3277,8 +3592,17 @@ func (x *fastReflection_MsgUpdateDeal) ProtoMethods() *protoiface.Methods {
 			i -= len(x.unknownFields)
 			copy(dAtA[i:], x.unknownFields)
 		}
-		if x.EndBlock != 0 {
-			i = runtime.EncodeVarint(dAtA, i, uint64(x.EndBlock))
+		if len(x.Writers) > 0 {
+			for iNdEx := len(x.Writers) - 1; iNdEx >= 0; iNdEx-- {
+				i -= len(x.Writers[iNdEx])
+				copy(dAtA[i:], x.Writers[iNdEx])
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Writers[iNdEx])))
+				i--
+				dAtA[i] = 0x3a
+			}
+		}
+		if x.Duration != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.Duration))
 			i--
 			dAtA[i] = 0x28
 		}
@@ -3292,10 +3616,10 @@ func (x *fastReflection_MsgUpdateDeal) ProtoMethods() *protoiface.Methods {
 			i--
 			dAtA[i] = 0x18
 		}
-		if len(x.DealId) > 0 {
-			i -= len(x.DealId)
-			copy(dAtA[i:], x.DealId)
-			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.DealId)))
+		if len(x.SubscriptionRequestId) > 0 {
+			i -= len(x.SubscriptionRequestId)
+			copy(dAtA[i:], x.SubscriptionRequestId)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.SubscriptionRequestId)))
 			i--
 			dAtA[i] = 0x12
 		}
@@ -3317,7 +3641,7 @@ func (x *fastReflection_MsgUpdateDeal) ProtoMethods() *protoiface.Methods {
 		}, nil
 	}
 	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
-		x := input.Message.Interface().(*MsgUpdateDeal)
+		x := input.Message.Interface().(*MsgUpdateSubscriptionRequest)
 		if x == nil {
 			return protoiface.UnmarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -3349,10 +3673,10 @@ func (x *fastReflection_MsgUpdateDeal) ProtoMethods() *protoiface.Methods {
 			fieldNum := int32(wire >> 3)
 			wireType := int(wire & 0x7)
 			if wireType == 4 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgUpdateDeal: wiretype end group for non-group")
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgUpdateSubscriptionRequest: wiretype end group for non-group")
 			}
 			if fieldNum <= 0 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgUpdateDeal: illegal tag %d (wire type %d)", fieldNum, wire)
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgUpdateSubscriptionRequest: illegal tag %d (wire type %d)", fieldNum, wire)
 			}
 			switch fieldNum {
 			case 1:
@@ -3389,7 +3713,7 @@ func (x *fastReflection_MsgUpdateDeal) ProtoMethods() *protoiface.Methods {
 				iNdEx = postIndex
 			case 2:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field DealId", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field SubscriptionRequestId", wireType)
 				}
 				var stringLen uint64
 				for shift := uint(0); ; shift += 7 {
@@ -3417,7 +3741,7 @@ func (x *fastReflection_MsgUpdateDeal) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.DealId = string(dAtA[iNdEx:postIndex])
+				x.SubscriptionRequestId = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
 			case 3:
 				if wireType != 0 {
@@ -3433,7 +3757,7 @@ func (x *fastReflection_MsgUpdateDeal) ProtoMethods() *protoiface.Methods {
 					}
 					b := dAtA[iNdEx]
 					iNdEx++
-					x.Amount |= uint64(b&0x7F) << shift
+					x.Amount |= int64(b&0x7F) << shift
 					if b < 0x80 {
 						break
 					}
@@ -3452,16 +3776,16 @@ func (x *fastReflection_MsgUpdateDeal) ProtoMethods() *protoiface.Methods {
 					}
 					b := dAtA[iNdEx]
 					iNdEx++
-					x.StartBlock |= uint64(b&0x7F) << shift
+					x.StartBlock |= int64(b&0x7F) << shift
 					if b < 0x80 {
 						break
 					}
 				}
 			case 5:
 				if wireType != 0 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field EndBlock", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Duration", wireType)
 				}
-				x.EndBlock = 0
+				x.Duration = 0
 				for shift := uint(0); ; shift += 7 {
 					if shift >= 64 {
 						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
@@ -3471,11 +3795,43 @@ func (x *fastReflection_MsgUpdateDeal) ProtoMethods() *protoiface.Methods {
 					}
 					b := dAtA[iNdEx]
 					iNdEx++
-					x.EndBlock |= uint64(b&0x7F) << shift
+					x.Duration |= int64(b&0x7F) << shift
 					if b < 0x80 {
 						break
 					}
 				}
+			case 7:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Writers", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Writers = append(x.Writers, string(dAtA[iNdEx:postIndex]))
+				iNdEx = postIndex
 			default:
 				iNdEx = preIndex
 				skippy, err := runtime.Skip(dAtA[iNdEx:])
@@ -3512,23 +3868,23 @@ func (x *fastReflection_MsgUpdateDeal) ProtoMethods() *protoiface.Methods {
 }
 
 var (
-	md_MsgUpdateDealResponse protoreflect.MessageDescriptor
+	md_MsgUpdateSubscriptionRequestResponse protoreflect.MessageDescriptor
 )
 
 func init() {
 	file_mandu_subscription_tx_proto_init()
-	md_MsgUpdateDealResponse = File_mandu_subscription_tx_proto.Messages().ByName("MsgUpdateDealResponse")
+	md_MsgUpdateSubscriptionRequestResponse = File_mandu_subscription_tx_proto.Messages().ByName("MsgUpdateSubscriptionRequestResponse")
 }
 
-var _ protoreflect.Message = (*fastReflection_MsgUpdateDealResponse)(nil)
+var _ protoreflect.Message = (*fastReflection_MsgUpdateSubscriptionRequestResponse)(nil)
 
-type fastReflection_MsgUpdateDealResponse MsgUpdateDealResponse
+type fastReflection_MsgUpdateSubscriptionRequestResponse MsgUpdateSubscriptionRequestResponse
 
-func (x *MsgUpdateDealResponse) ProtoReflect() protoreflect.Message {
-	return (*fastReflection_MsgUpdateDealResponse)(x)
+func (x *MsgUpdateSubscriptionRequestResponse) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgUpdateSubscriptionRequestResponse)(x)
 }
 
-func (x *MsgUpdateDealResponse) slowProtoReflect() protoreflect.Message {
+func (x *MsgUpdateSubscriptionRequestResponse) slowProtoReflect() protoreflect.Message {
 	mi := &file_mandu_subscription_tx_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3540,43 +3896,43 @@ func (x *MsgUpdateDealResponse) slowProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-var _fastReflection_MsgUpdateDealResponse_messageType fastReflection_MsgUpdateDealResponse_messageType
-var _ protoreflect.MessageType = fastReflection_MsgUpdateDealResponse_messageType{}
+var _fastReflection_MsgUpdateSubscriptionRequestResponse_messageType fastReflection_MsgUpdateSubscriptionRequestResponse_messageType
+var _ protoreflect.MessageType = fastReflection_MsgUpdateSubscriptionRequestResponse_messageType{}
 
-type fastReflection_MsgUpdateDealResponse_messageType struct{}
+type fastReflection_MsgUpdateSubscriptionRequestResponse_messageType struct{}
 
-func (x fastReflection_MsgUpdateDealResponse_messageType) Zero() protoreflect.Message {
-	return (*fastReflection_MsgUpdateDealResponse)(nil)
+func (x fastReflection_MsgUpdateSubscriptionRequestResponse_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgUpdateSubscriptionRequestResponse)(nil)
 }
-func (x fastReflection_MsgUpdateDealResponse_messageType) New() protoreflect.Message {
-	return new(fastReflection_MsgUpdateDealResponse)
+func (x fastReflection_MsgUpdateSubscriptionRequestResponse_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgUpdateSubscriptionRequestResponse)
 }
-func (x fastReflection_MsgUpdateDealResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgUpdateDealResponse
+func (x fastReflection_MsgUpdateSubscriptionRequestResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgUpdateSubscriptionRequestResponse
 }
 
 // Descriptor returns message descriptor, which contains only the protobuf
 // type information for the message.
-func (x *fastReflection_MsgUpdateDealResponse) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgUpdateDealResponse
+func (x *fastReflection_MsgUpdateSubscriptionRequestResponse) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgUpdateSubscriptionRequestResponse
 }
 
 // Type returns the message type, which encapsulates both Go and protobuf
 // type information. If the Go type information is not needed,
 // it is recommended that the message descriptor be used instead.
-func (x *fastReflection_MsgUpdateDealResponse) Type() protoreflect.MessageType {
-	return _fastReflection_MsgUpdateDealResponse_messageType
+func (x *fastReflection_MsgUpdateSubscriptionRequestResponse) Type() protoreflect.MessageType {
+	return _fastReflection_MsgUpdateSubscriptionRequestResponse_messageType
 }
 
 // New returns a newly allocated and mutable empty message.
-func (x *fastReflection_MsgUpdateDealResponse) New() protoreflect.Message {
-	return new(fastReflection_MsgUpdateDealResponse)
+func (x *fastReflection_MsgUpdateSubscriptionRequestResponse) New() protoreflect.Message {
+	return new(fastReflection_MsgUpdateSubscriptionRequestResponse)
 }
 
 // Interface unwraps the message reflection interface and
 // returns the underlying ProtoMessage interface.
-func (x *fastReflection_MsgUpdateDealResponse) Interface() protoreflect.ProtoMessage {
-	return (*MsgUpdateDealResponse)(x)
+func (x *fastReflection_MsgUpdateSubscriptionRequestResponse) Interface() protoreflect.ProtoMessage {
+	return (*MsgUpdateSubscriptionRequestResponse)(x)
 }
 
 // Range iterates over every populated field in an undefined order,
@@ -3584,7 +3940,7 @@ func (x *fastReflection_MsgUpdateDealResponse) Interface() protoreflect.ProtoMes
 // Range returns immediately if f returns false.
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
-func (x *fastReflection_MsgUpdateDealResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+func (x *fastReflection_MsgUpdateSubscriptionRequestResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
 }
 
 // Has reports whether a field is populated.
@@ -3598,13 +3954,13 @@ func (x *fastReflection_MsgUpdateDealResponse) Range(f func(protoreflect.FieldDe
 // In other cases (aside from the nullable cases above),
 // a proto3 scalar field is populated if it contains a non-zero value, and
 // a repeated field is populated if it is non-empty.
-func (x *fastReflection_MsgUpdateDealResponse) Has(fd protoreflect.FieldDescriptor) bool {
+func (x *fastReflection_MsgUpdateSubscriptionRequestResponse) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgUpdateDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgUpdateSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -3614,13 +3970,13 @@ func (x *fastReflection_MsgUpdateDealResponse) Has(fd protoreflect.FieldDescript
 // associated with the given field number.
 //
 // Clear is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgUpdateDealResponse) Clear(fd protoreflect.FieldDescriptor) {
+func (x *fastReflection_MsgUpdateSubscriptionRequestResponse) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgUpdateDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgUpdateSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -3630,13 +3986,13 @@ func (x *fastReflection_MsgUpdateDealResponse) Clear(fd protoreflect.FieldDescri
 // the default value of a bytes scalar is guaranteed to be a copy.
 // For unpopulated composite types, it returns an empty, read-only view
 // of the value; to obtain a mutable reference, use Mutable.
-func (x *fastReflection_MsgUpdateDealResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgUpdateSubscriptionRequestResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
 	default:
 		if descriptor.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgUpdateDealResponse does not contain field %s", descriptor.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgUpdateSubscriptionRequestResponse does not contain field %s", descriptor.FullName()))
 	}
 }
 
@@ -3650,13 +4006,13 @@ func (x *fastReflection_MsgUpdateDealResponse) Get(descriptor protoreflect.Field
 // empty, read-only value, then it panics.
 //
 // Set is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgUpdateDealResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+func (x *fastReflection_MsgUpdateSubscriptionRequestResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgUpdateDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgUpdateSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -3670,36 +4026,36 @@ func (x *fastReflection_MsgUpdateDealResponse) Set(fd protoreflect.FieldDescript
 // It panics if the field does not contain a composite type.
 //
 // Mutable is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgUpdateDealResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgUpdateSubscriptionRequestResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgUpdateDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgUpdateSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
 // NewField returns a new value that is assignable to the field
 // for the given descriptor. For scalars, this returns the default value.
 // For lists, maps, and messages, this returns a new, empty, mutable value.
-func (x *fastReflection_MsgUpdateDealResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgUpdateSubscriptionRequestResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgUpdateSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgUpdateDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgUpdateSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
 // WhichOneof reports which field within the oneof is populated,
 // returning nil if none are populated.
 // It panics if the oneof descriptor does not belong to this message.
-func (x *fastReflection_MsgUpdateDealResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+func (x *fastReflection_MsgUpdateSubscriptionRequestResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
 	switch d.FullName() {
 	default:
-		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgUpdateDealResponse", d.FullName()))
+		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgUpdateSubscriptionRequestResponse", d.FullName()))
 	}
 	panic("unreachable")
 }
@@ -3707,7 +4063,7 @@ func (x *fastReflection_MsgUpdateDealResponse) WhichOneof(d protoreflect.OneofDe
 // GetUnknown retrieves the entire list of unknown fields.
 // The caller may only mutate the contents of the RawFields
 // if the mutated bytes are stored back into the message with SetUnknown.
-func (x *fastReflection_MsgUpdateDealResponse) GetUnknown() protoreflect.RawFields {
+func (x *fastReflection_MsgUpdateSubscriptionRequestResponse) GetUnknown() protoreflect.RawFields {
 	return x.unknownFields
 }
 
@@ -3718,7 +4074,7 @@ func (x *fastReflection_MsgUpdateDealResponse) GetUnknown() protoreflect.RawFiel
 // An empty RawFields may be passed to clear the fields.
 //
 // SetUnknown is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgUpdateDealResponse) SetUnknown(fields protoreflect.RawFields) {
+func (x *fastReflection_MsgUpdateSubscriptionRequestResponse) SetUnknown(fields protoreflect.RawFields) {
 	x.unknownFields = fields
 }
 
@@ -3730,7 +4086,7 @@ func (x *fastReflection_MsgUpdateDealResponse) SetUnknown(fields protoreflect.Ra
 // message type, but the details are implementation dependent.
 // Validity is not part of the protobuf data model, and may not
 // be preserved in marshaling or other operations.
-func (x *fastReflection_MsgUpdateDealResponse) IsValid() bool {
+func (x *fastReflection_MsgUpdateSubscriptionRequestResponse) IsValid() bool {
 	return x != nil
 }
 
@@ -3740,9 +4096,9 @@ func (x *fastReflection_MsgUpdateDealResponse) IsValid() bool {
 // The returned methods type is identical to
 // "google.golang.org/protobuf/runtime/protoiface".Methods.
 // Consult the protoiface package documentation for details.
-func (x *fastReflection_MsgUpdateDealResponse) ProtoMethods() *protoiface.Methods {
+func (x *fastReflection_MsgUpdateSubscriptionRequestResponse) ProtoMethods() *protoiface.Methods {
 	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
-		x := input.Message.Interface().(*MsgUpdateDealResponse)
+		x := input.Message.Interface().(*MsgUpdateSubscriptionRequestResponse)
 		if x == nil {
 			return protoiface.SizeOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -3764,7 +4120,7 @@ func (x *fastReflection_MsgUpdateDealResponse) ProtoMethods() *protoiface.Method
 	}
 
 	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
-		x := input.Message.Interface().(*MsgUpdateDealResponse)
+		x := input.Message.Interface().(*MsgUpdateSubscriptionRequestResponse)
 		if x == nil {
 			return protoiface.MarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -3794,7 +4150,7 @@ func (x *fastReflection_MsgUpdateDealResponse) ProtoMethods() *protoiface.Method
 		}, nil
 	}
 	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
-		x := input.Message.Interface().(*MsgUpdateDealResponse)
+		x := input.Message.Interface().(*MsgUpdateSubscriptionRequestResponse)
 		if x == nil {
 			return protoiface.UnmarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -3826,10 +4182,10 @@ func (x *fastReflection_MsgUpdateDealResponse) ProtoMethods() *protoiface.Method
 			fieldNum := int32(wire >> 3)
 			wireType := int(wire & 0x7)
 			if wireType == 4 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgUpdateDealResponse: wiretype end group for non-group")
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgUpdateSubscriptionRequestResponse: wiretype end group for non-group")
 			}
 			if fieldNum <= 0 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgUpdateDealResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgUpdateSubscriptionRequestResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 			}
 			switch fieldNum {
 			default:
@@ -3868,29 +4224,29 @@ func (x *fastReflection_MsgUpdateDealResponse) ProtoMethods() *protoiface.Method
 }
 
 var (
-	md_MsgIncrementDealAmount           protoreflect.MessageDescriptor
-	fd_MsgIncrementDealAmount_requester protoreflect.FieldDescriptor
-	fd_MsgIncrementDealAmount_deal_id   protoreflect.FieldDescriptor
-	fd_MsgIncrementDealAmount_amount    protoreflect.FieldDescriptor
+	md_MsgIncrementSubscriptionRequestAmount                         protoreflect.MessageDescriptor
+	fd_MsgIncrementSubscriptionRequestAmount_requester               protoreflect.FieldDescriptor
+	fd_MsgIncrementSubscriptionRequestAmount_subscription_request_id protoreflect.FieldDescriptor
+	fd_MsgIncrementSubscriptionRequestAmount_amount                  protoreflect.FieldDescriptor
 )
 
 func init() {
 	file_mandu_subscription_tx_proto_init()
-	md_MsgIncrementDealAmount = File_mandu_subscription_tx_proto.Messages().ByName("MsgIncrementDealAmount")
-	fd_MsgIncrementDealAmount_requester = md_MsgIncrementDealAmount.Fields().ByName("requester")
-	fd_MsgIncrementDealAmount_deal_id = md_MsgIncrementDealAmount.Fields().ByName("deal_id")
-	fd_MsgIncrementDealAmount_amount = md_MsgIncrementDealAmount.Fields().ByName("amount")
+	md_MsgIncrementSubscriptionRequestAmount = File_mandu_subscription_tx_proto.Messages().ByName("MsgIncrementSubscriptionRequestAmount")
+	fd_MsgIncrementSubscriptionRequestAmount_requester = md_MsgIncrementSubscriptionRequestAmount.Fields().ByName("requester")
+	fd_MsgIncrementSubscriptionRequestAmount_subscription_request_id = md_MsgIncrementSubscriptionRequestAmount.Fields().ByName("subscription_request_id")
+	fd_MsgIncrementSubscriptionRequestAmount_amount = md_MsgIncrementSubscriptionRequestAmount.Fields().ByName("amount")
 }
 
-var _ protoreflect.Message = (*fastReflection_MsgIncrementDealAmount)(nil)
+var _ protoreflect.Message = (*fastReflection_MsgIncrementSubscriptionRequestAmount)(nil)
 
-type fastReflection_MsgIncrementDealAmount MsgIncrementDealAmount
+type fastReflection_MsgIncrementSubscriptionRequestAmount MsgIncrementSubscriptionRequestAmount
 
-func (x *MsgIncrementDealAmount) ProtoReflect() protoreflect.Message {
-	return (*fastReflection_MsgIncrementDealAmount)(x)
+func (x *MsgIncrementSubscriptionRequestAmount) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgIncrementSubscriptionRequestAmount)(x)
 }
 
-func (x *MsgIncrementDealAmount) slowProtoReflect() protoreflect.Message {
+func (x *MsgIncrementSubscriptionRequestAmount) slowProtoReflect() protoreflect.Message {
 	mi := &file_mandu_subscription_tx_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -3902,43 +4258,43 @@ func (x *MsgIncrementDealAmount) slowProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-var _fastReflection_MsgIncrementDealAmount_messageType fastReflection_MsgIncrementDealAmount_messageType
-var _ protoreflect.MessageType = fastReflection_MsgIncrementDealAmount_messageType{}
+var _fastReflection_MsgIncrementSubscriptionRequestAmount_messageType fastReflection_MsgIncrementSubscriptionRequestAmount_messageType
+var _ protoreflect.MessageType = fastReflection_MsgIncrementSubscriptionRequestAmount_messageType{}
 
-type fastReflection_MsgIncrementDealAmount_messageType struct{}
+type fastReflection_MsgIncrementSubscriptionRequestAmount_messageType struct{}
 
-func (x fastReflection_MsgIncrementDealAmount_messageType) Zero() protoreflect.Message {
-	return (*fastReflection_MsgIncrementDealAmount)(nil)
+func (x fastReflection_MsgIncrementSubscriptionRequestAmount_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgIncrementSubscriptionRequestAmount)(nil)
 }
-func (x fastReflection_MsgIncrementDealAmount_messageType) New() protoreflect.Message {
-	return new(fastReflection_MsgIncrementDealAmount)
+func (x fastReflection_MsgIncrementSubscriptionRequestAmount_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgIncrementSubscriptionRequestAmount)
 }
-func (x fastReflection_MsgIncrementDealAmount_messageType) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgIncrementDealAmount
+func (x fastReflection_MsgIncrementSubscriptionRequestAmount_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgIncrementSubscriptionRequestAmount
 }
 
 // Descriptor returns message descriptor, which contains only the protobuf
 // type information for the message.
-func (x *fastReflection_MsgIncrementDealAmount) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgIncrementDealAmount
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmount) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgIncrementSubscriptionRequestAmount
 }
 
 // Type returns the message type, which encapsulates both Go and protobuf
 // type information. If the Go type information is not needed,
 // it is recommended that the message descriptor be used instead.
-func (x *fastReflection_MsgIncrementDealAmount) Type() protoreflect.MessageType {
-	return _fastReflection_MsgIncrementDealAmount_messageType
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmount) Type() protoreflect.MessageType {
+	return _fastReflection_MsgIncrementSubscriptionRequestAmount_messageType
 }
 
 // New returns a newly allocated and mutable empty message.
-func (x *fastReflection_MsgIncrementDealAmount) New() protoreflect.Message {
-	return new(fastReflection_MsgIncrementDealAmount)
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmount) New() protoreflect.Message {
+	return new(fastReflection_MsgIncrementSubscriptionRequestAmount)
 }
 
 // Interface unwraps the message reflection interface and
 // returns the underlying ProtoMessage interface.
-func (x *fastReflection_MsgIncrementDealAmount) Interface() protoreflect.ProtoMessage {
-	return (*MsgIncrementDealAmount)(x)
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmount) Interface() protoreflect.ProtoMessage {
+	return (*MsgIncrementSubscriptionRequestAmount)(x)
 }
 
 // Range iterates over every populated field in an undefined order,
@@ -3946,22 +4302,22 @@ func (x *fastReflection_MsgIncrementDealAmount) Interface() protoreflect.ProtoMe
 // Range returns immediately if f returns false.
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
-func (x *fastReflection_MsgIncrementDealAmount) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmount) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
 	if x.Requester != "" {
 		value := protoreflect.ValueOfString(x.Requester)
-		if !f(fd_MsgIncrementDealAmount_requester, value) {
+		if !f(fd_MsgIncrementSubscriptionRequestAmount_requester, value) {
 			return
 		}
 	}
-	if x.DealId != "" {
-		value := protoreflect.ValueOfString(x.DealId)
-		if !f(fd_MsgIncrementDealAmount_deal_id, value) {
+	if x.SubscriptionRequestId != "" {
+		value := protoreflect.ValueOfString(x.SubscriptionRequestId)
+		if !f(fd_MsgIncrementSubscriptionRequestAmount_subscription_request_id, value) {
 			return
 		}
 	}
-	if x.Amount != uint64(0) {
-		value := protoreflect.ValueOfUint64(x.Amount)
-		if !f(fd_MsgIncrementDealAmount_amount, value) {
+	if x.Amount != int64(0) {
+		value := protoreflect.ValueOfInt64(x.Amount)
+		if !f(fd_MsgIncrementSubscriptionRequestAmount_amount, value) {
 			return
 		}
 	}
@@ -3978,19 +4334,19 @@ func (x *fastReflection_MsgIncrementDealAmount) Range(f func(protoreflect.FieldD
 // In other cases (aside from the nullable cases above),
 // a proto3 scalar field is populated if it contains a non-zero value, and
 // a repeated field is populated if it is non-empty.
-func (x *fastReflection_MsgIncrementDealAmount) Has(fd protoreflect.FieldDescriptor) bool {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmount) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgIncrementDealAmount.requester":
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.requester":
 		return x.Requester != ""
-	case "mandu.subscription.MsgIncrementDealAmount.deal_id":
-		return x.DealId != ""
-	case "mandu.subscription.MsgIncrementDealAmount.amount":
-		return x.Amount != uint64(0)
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.subscription_request_id":
+		return x.SubscriptionRequestId != ""
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.amount":
+		return x.Amount != int64(0)
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementDealAmount"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementSubscriptionRequestAmount"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgIncrementDealAmount does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgIncrementSubscriptionRequestAmount does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -4000,19 +4356,19 @@ func (x *fastReflection_MsgIncrementDealAmount) Has(fd protoreflect.FieldDescrip
 // associated with the given field number.
 //
 // Clear is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgIncrementDealAmount) Clear(fd protoreflect.FieldDescriptor) {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmount) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgIncrementDealAmount.requester":
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.requester":
 		x.Requester = ""
-	case "mandu.subscription.MsgIncrementDealAmount.deal_id":
-		x.DealId = ""
-	case "mandu.subscription.MsgIncrementDealAmount.amount":
-		x.Amount = uint64(0)
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.subscription_request_id":
+		x.SubscriptionRequestId = ""
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.amount":
+		x.Amount = int64(0)
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementDealAmount"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementSubscriptionRequestAmount"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgIncrementDealAmount does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgIncrementSubscriptionRequestAmount does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -4022,22 +4378,22 @@ func (x *fastReflection_MsgIncrementDealAmount) Clear(fd protoreflect.FieldDescr
 // the default value of a bytes scalar is guaranteed to be a copy.
 // For unpopulated composite types, it returns an empty, read-only view
 // of the value; to obtain a mutable reference, use Mutable.
-func (x *fastReflection_MsgIncrementDealAmount) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmount) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
-	case "mandu.subscription.MsgIncrementDealAmount.requester":
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.requester":
 		value := x.Requester
 		return protoreflect.ValueOfString(value)
-	case "mandu.subscription.MsgIncrementDealAmount.deal_id":
-		value := x.DealId
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.subscription_request_id":
+		value := x.SubscriptionRequestId
 		return protoreflect.ValueOfString(value)
-	case "mandu.subscription.MsgIncrementDealAmount.amount":
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.amount":
 		value := x.Amount
-		return protoreflect.ValueOfUint64(value)
+		return protoreflect.ValueOfInt64(value)
 	default:
 		if descriptor.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementDealAmount"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementSubscriptionRequestAmount"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgIncrementDealAmount does not contain field %s", descriptor.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgIncrementSubscriptionRequestAmount does not contain field %s", descriptor.FullName()))
 	}
 }
 
@@ -4051,19 +4407,19 @@ func (x *fastReflection_MsgIncrementDealAmount) Get(descriptor protoreflect.Fiel
 // empty, read-only value, then it panics.
 //
 // Set is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgIncrementDealAmount) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmount) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgIncrementDealAmount.requester":
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.requester":
 		x.Requester = value.Interface().(string)
-	case "mandu.subscription.MsgIncrementDealAmount.deal_id":
-		x.DealId = value.Interface().(string)
-	case "mandu.subscription.MsgIncrementDealAmount.amount":
-		x.Amount = value.Uint()
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.subscription_request_id":
+		x.SubscriptionRequestId = value.Interface().(string)
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.amount":
+		x.Amount = value.Int()
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementDealAmount"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementSubscriptionRequestAmount"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgIncrementDealAmount does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgIncrementSubscriptionRequestAmount does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -4077,48 +4433,48 @@ func (x *fastReflection_MsgIncrementDealAmount) Set(fd protoreflect.FieldDescrip
 // It panics if the field does not contain a composite type.
 //
 // Mutable is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgIncrementDealAmount) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmount) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgIncrementDealAmount.requester":
-		panic(fmt.Errorf("field requester of message mandu.subscription.MsgIncrementDealAmount is not mutable"))
-	case "mandu.subscription.MsgIncrementDealAmount.deal_id":
-		panic(fmt.Errorf("field deal_id of message mandu.subscription.MsgIncrementDealAmount is not mutable"))
-	case "mandu.subscription.MsgIncrementDealAmount.amount":
-		panic(fmt.Errorf("field amount of message mandu.subscription.MsgIncrementDealAmount is not mutable"))
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.requester":
+		panic(fmt.Errorf("field requester of message mandu.subscription.MsgIncrementSubscriptionRequestAmount is not mutable"))
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.subscription_request_id":
+		panic(fmt.Errorf("field subscription_request_id of message mandu.subscription.MsgIncrementSubscriptionRequestAmount is not mutable"))
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.amount":
+		panic(fmt.Errorf("field amount of message mandu.subscription.MsgIncrementSubscriptionRequestAmount is not mutable"))
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementDealAmount"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementSubscriptionRequestAmount"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgIncrementDealAmount does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgIncrementSubscriptionRequestAmount does not contain field %s", fd.FullName()))
 	}
 }
 
 // NewField returns a new value that is assignable to the field
 // for the given descriptor. For scalars, this returns the default value.
 // For lists, maps, and messages, this returns a new, empty, mutable value.
-func (x *fastReflection_MsgIncrementDealAmount) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmount) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgIncrementDealAmount.requester":
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.requester":
 		return protoreflect.ValueOfString("")
-	case "mandu.subscription.MsgIncrementDealAmount.deal_id":
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.subscription_request_id":
 		return protoreflect.ValueOfString("")
-	case "mandu.subscription.MsgIncrementDealAmount.amount":
-		return protoreflect.ValueOfUint64(uint64(0))
+	case "mandu.subscription.MsgIncrementSubscriptionRequestAmount.amount":
+		return protoreflect.ValueOfInt64(int64(0))
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementDealAmount"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementSubscriptionRequestAmount"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgIncrementDealAmount does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgIncrementSubscriptionRequestAmount does not contain field %s", fd.FullName()))
 	}
 }
 
 // WhichOneof reports which field within the oneof is populated,
 // returning nil if none are populated.
 // It panics if the oneof descriptor does not belong to this message.
-func (x *fastReflection_MsgIncrementDealAmount) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmount) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
 	switch d.FullName() {
 	default:
-		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgIncrementDealAmount", d.FullName()))
+		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgIncrementSubscriptionRequestAmount", d.FullName()))
 	}
 	panic("unreachable")
 }
@@ -4126,7 +4482,7 @@ func (x *fastReflection_MsgIncrementDealAmount) WhichOneof(d protoreflect.OneofD
 // GetUnknown retrieves the entire list of unknown fields.
 // The caller may only mutate the contents of the RawFields
 // if the mutated bytes are stored back into the message with SetUnknown.
-func (x *fastReflection_MsgIncrementDealAmount) GetUnknown() protoreflect.RawFields {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmount) GetUnknown() protoreflect.RawFields {
 	return x.unknownFields
 }
 
@@ -4137,7 +4493,7 @@ func (x *fastReflection_MsgIncrementDealAmount) GetUnknown() protoreflect.RawFie
 // An empty RawFields may be passed to clear the fields.
 //
 // SetUnknown is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgIncrementDealAmount) SetUnknown(fields protoreflect.RawFields) {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmount) SetUnknown(fields protoreflect.RawFields) {
 	x.unknownFields = fields
 }
 
@@ -4149,7 +4505,7 @@ func (x *fastReflection_MsgIncrementDealAmount) SetUnknown(fields protoreflect.R
 // message type, but the details are implementation dependent.
 // Validity is not part of the protobuf data model, and may not
 // be preserved in marshaling or other operations.
-func (x *fastReflection_MsgIncrementDealAmount) IsValid() bool {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmount) IsValid() bool {
 	return x != nil
 }
 
@@ -4159,9 +4515,9 @@ func (x *fastReflection_MsgIncrementDealAmount) IsValid() bool {
 // The returned methods type is identical to
 // "google.golang.org/protobuf/runtime/protoiface".Methods.
 // Consult the protoiface package documentation for details.
-func (x *fastReflection_MsgIncrementDealAmount) ProtoMethods() *protoiface.Methods {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmount) ProtoMethods() *protoiface.Methods {
 	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
-		x := input.Message.Interface().(*MsgIncrementDealAmount)
+		x := input.Message.Interface().(*MsgIncrementSubscriptionRequestAmount)
 		if x == nil {
 			return protoiface.SizeOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -4177,7 +4533,7 @@ func (x *fastReflection_MsgIncrementDealAmount) ProtoMethods() *protoiface.Metho
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
-		l = len(x.DealId)
+		l = len(x.SubscriptionRequestId)
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
@@ -4194,7 +4550,7 @@ func (x *fastReflection_MsgIncrementDealAmount) ProtoMethods() *protoiface.Metho
 	}
 
 	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
-		x := input.Message.Interface().(*MsgIncrementDealAmount)
+		x := input.Message.Interface().(*MsgIncrementSubscriptionRequestAmount)
 		if x == nil {
 			return protoiface.MarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -4218,10 +4574,10 @@ func (x *fastReflection_MsgIncrementDealAmount) ProtoMethods() *protoiface.Metho
 			i--
 			dAtA[i] = 0x18
 		}
-		if len(x.DealId) > 0 {
-			i -= len(x.DealId)
-			copy(dAtA[i:], x.DealId)
-			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.DealId)))
+		if len(x.SubscriptionRequestId) > 0 {
+			i -= len(x.SubscriptionRequestId)
+			copy(dAtA[i:], x.SubscriptionRequestId)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.SubscriptionRequestId)))
 			i--
 			dAtA[i] = 0x12
 		}
@@ -4243,7 +4599,7 @@ func (x *fastReflection_MsgIncrementDealAmount) ProtoMethods() *protoiface.Metho
 		}, nil
 	}
 	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
-		x := input.Message.Interface().(*MsgIncrementDealAmount)
+		x := input.Message.Interface().(*MsgIncrementSubscriptionRequestAmount)
 		if x == nil {
 			return protoiface.UnmarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -4275,10 +4631,10 @@ func (x *fastReflection_MsgIncrementDealAmount) ProtoMethods() *protoiface.Metho
 			fieldNum := int32(wire >> 3)
 			wireType := int(wire & 0x7)
 			if wireType == 4 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgIncrementDealAmount: wiretype end group for non-group")
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgIncrementSubscriptionRequestAmount: wiretype end group for non-group")
 			}
 			if fieldNum <= 0 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgIncrementDealAmount: illegal tag %d (wire type %d)", fieldNum, wire)
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgIncrementSubscriptionRequestAmount: illegal tag %d (wire type %d)", fieldNum, wire)
 			}
 			switch fieldNum {
 			case 1:
@@ -4315,7 +4671,7 @@ func (x *fastReflection_MsgIncrementDealAmount) ProtoMethods() *protoiface.Metho
 				iNdEx = postIndex
 			case 2:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field DealId", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field SubscriptionRequestId", wireType)
 				}
 				var stringLen uint64
 				for shift := uint(0); ; shift += 7 {
@@ -4343,7 +4699,7 @@ func (x *fastReflection_MsgIncrementDealAmount) ProtoMethods() *protoiface.Metho
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.DealId = string(dAtA[iNdEx:postIndex])
+				x.SubscriptionRequestId = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
 			case 3:
 				if wireType != 0 {
@@ -4359,7 +4715,7 @@ func (x *fastReflection_MsgIncrementDealAmount) ProtoMethods() *protoiface.Metho
 					}
 					b := dAtA[iNdEx]
 					iNdEx++
-					x.Amount |= uint64(b&0x7F) << shift
+					x.Amount |= int64(b&0x7F) << shift
 					if b < 0x80 {
 						break
 					}
@@ -4400,23 +4756,23 @@ func (x *fastReflection_MsgIncrementDealAmount) ProtoMethods() *protoiface.Metho
 }
 
 var (
-	md_MsgIncrementDealAmountResponse protoreflect.MessageDescriptor
+	md_MsgIncrementSubscriptionRequestAmountResponse protoreflect.MessageDescriptor
 )
 
 func init() {
 	file_mandu_subscription_tx_proto_init()
-	md_MsgIncrementDealAmountResponse = File_mandu_subscription_tx_proto.Messages().ByName("MsgIncrementDealAmountResponse")
+	md_MsgIncrementSubscriptionRequestAmountResponse = File_mandu_subscription_tx_proto.Messages().ByName("MsgIncrementSubscriptionRequestAmountResponse")
 }
 
-var _ protoreflect.Message = (*fastReflection_MsgIncrementDealAmountResponse)(nil)
+var _ protoreflect.Message = (*fastReflection_MsgIncrementSubscriptionRequestAmountResponse)(nil)
 
-type fastReflection_MsgIncrementDealAmountResponse MsgIncrementDealAmountResponse
+type fastReflection_MsgIncrementSubscriptionRequestAmountResponse MsgIncrementSubscriptionRequestAmountResponse
 
-func (x *MsgIncrementDealAmountResponse) ProtoReflect() protoreflect.Message {
-	return (*fastReflection_MsgIncrementDealAmountResponse)(x)
+func (x *MsgIncrementSubscriptionRequestAmountResponse) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgIncrementSubscriptionRequestAmountResponse)(x)
 }
 
-func (x *MsgIncrementDealAmountResponse) slowProtoReflect() protoreflect.Message {
+func (x *MsgIncrementSubscriptionRequestAmountResponse) slowProtoReflect() protoreflect.Message {
 	mi := &file_mandu_subscription_tx_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -4428,43 +4784,43 @@ func (x *MsgIncrementDealAmountResponse) slowProtoReflect() protoreflect.Message
 	return mi.MessageOf(x)
 }
 
-var _fastReflection_MsgIncrementDealAmountResponse_messageType fastReflection_MsgIncrementDealAmountResponse_messageType
-var _ protoreflect.MessageType = fastReflection_MsgIncrementDealAmountResponse_messageType{}
+var _fastReflection_MsgIncrementSubscriptionRequestAmountResponse_messageType fastReflection_MsgIncrementSubscriptionRequestAmountResponse_messageType
+var _ protoreflect.MessageType = fastReflection_MsgIncrementSubscriptionRequestAmountResponse_messageType{}
 
-type fastReflection_MsgIncrementDealAmountResponse_messageType struct{}
+type fastReflection_MsgIncrementSubscriptionRequestAmountResponse_messageType struct{}
 
-func (x fastReflection_MsgIncrementDealAmountResponse_messageType) Zero() protoreflect.Message {
-	return (*fastReflection_MsgIncrementDealAmountResponse)(nil)
+func (x fastReflection_MsgIncrementSubscriptionRequestAmountResponse_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgIncrementSubscriptionRequestAmountResponse)(nil)
 }
-func (x fastReflection_MsgIncrementDealAmountResponse_messageType) New() protoreflect.Message {
-	return new(fastReflection_MsgIncrementDealAmountResponse)
+func (x fastReflection_MsgIncrementSubscriptionRequestAmountResponse_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgIncrementSubscriptionRequestAmountResponse)
 }
-func (x fastReflection_MsgIncrementDealAmountResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgIncrementDealAmountResponse
+func (x fastReflection_MsgIncrementSubscriptionRequestAmountResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgIncrementSubscriptionRequestAmountResponse
 }
 
 // Descriptor returns message descriptor, which contains only the protobuf
 // type information for the message.
-func (x *fastReflection_MsgIncrementDealAmountResponse) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgIncrementDealAmountResponse
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmountResponse) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgIncrementSubscriptionRequestAmountResponse
 }
 
 // Type returns the message type, which encapsulates both Go and protobuf
 // type information. If the Go type information is not needed,
 // it is recommended that the message descriptor be used instead.
-func (x *fastReflection_MsgIncrementDealAmountResponse) Type() protoreflect.MessageType {
-	return _fastReflection_MsgIncrementDealAmountResponse_messageType
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmountResponse) Type() protoreflect.MessageType {
+	return _fastReflection_MsgIncrementSubscriptionRequestAmountResponse_messageType
 }
 
 // New returns a newly allocated and mutable empty message.
-func (x *fastReflection_MsgIncrementDealAmountResponse) New() protoreflect.Message {
-	return new(fastReflection_MsgIncrementDealAmountResponse)
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmountResponse) New() protoreflect.Message {
+	return new(fastReflection_MsgIncrementSubscriptionRequestAmountResponse)
 }
 
 // Interface unwraps the message reflection interface and
 // returns the underlying ProtoMessage interface.
-func (x *fastReflection_MsgIncrementDealAmountResponse) Interface() protoreflect.ProtoMessage {
-	return (*MsgIncrementDealAmountResponse)(x)
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmountResponse) Interface() protoreflect.ProtoMessage {
+	return (*MsgIncrementSubscriptionRequestAmountResponse)(x)
 }
 
 // Range iterates over every populated field in an undefined order,
@@ -4472,7 +4828,7 @@ func (x *fastReflection_MsgIncrementDealAmountResponse) Interface() protoreflect
 // Range returns immediately if f returns false.
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
-func (x *fastReflection_MsgIncrementDealAmountResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmountResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
 }
 
 // Has reports whether a field is populated.
@@ -4486,13 +4842,13 @@ func (x *fastReflection_MsgIncrementDealAmountResponse) Range(f func(protoreflec
 // In other cases (aside from the nullable cases above),
 // a proto3 scalar field is populated if it contains a non-zero value, and
 // a repeated field is populated if it is non-empty.
-func (x *fastReflection_MsgIncrementDealAmountResponse) Has(fd protoreflect.FieldDescriptor) bool {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmountResponse) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementDealAmountResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementSubscriptionRequestAmountResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgIncrementDealAmountResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgIncrementSubscriptionRequestAmountResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -4502,13 +4858,13 @@ func (x *fastReflection_MsgIncrementDealAmountResponse) Has(fd protoreflect.Fiel
 // associated with the given field number.
 //
 // Clear is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgIncrementDealAmountResponse) Clear(fd protoreflect.FieldDescriptor) {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmountResponse) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementDealAmountResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementSubscriptionRequestAmountResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgIncrementDealAmountResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgIncrementSubscriptionRequestAmountResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -4518,13 +4874,13 @@ func (x *fastReflection_MsgIncrementDealAmountResponse) Clear(fd protoreflect.Fi
 // the default value of a bytes scalar is guaranteed to be a copy.
 // For unpopulated composite types, it returns an empty, read-only view
 // of the value; to obtain a mutable reference, use Mutable.
-func (x *fastReflection_MsgIncrementDealAmountResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmountResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
 	default:
 		if descriptor.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementDealAmountResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementSubscriptionRequestAmountResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgIncrementDealAmountResponse does not contain field %s", descriptor.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgIncrementSubscriptionRequestAmountResponse does not contain field %s", descriptor.FullName()))
 	}
 }
 
@@ -4538,13 +4894,13 @@ func (x *fastReflection_MsgIncrementDealAmountResponse) Get(descriptor protorefl
 // empty, read-only value, then it panics.
 //
 // Set is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgIncrementDealAmountResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmountResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementDealAmountResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementSubscriptionRequestAmountResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgIncrementDealAmountResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgIncrementSubscriptionRequestAmountResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -4558,36 +4914,36 @@ func (x *fastReflection_MsgIncrementDealAmountResponse) Set(fd protoreflect.Fiel
 // It panics if the field does not contain a composite type.
 //
 // Mutable is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgIncrementDealAmountResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmountResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementDealAmountResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementSubscriptionRequestAmountResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgIncrementDealAmountResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgIncrementSubscriptionRequestAmountResponse does not contain field %s", fd.FullName()))
 	}
 }
 
 // NewField returns a new value that is assignable to the field
 // for the given descriptor. For scalars, this returns the default value.
 // For lists, maps, and messages, this returns a new, empty, mutable value.
-func (x *fastReflection_MsgIncrementDealAmountResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmountResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementDealAmountResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgIncrementSubscriptionRequestAmountResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgIncrementDealAmountResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgIncrementSubscriptionRequestAmountResponse does not contain field %s", fd.FullName()))
 	}
 }
 
 // WhichOneof reports which field within the oneof is populated,
 // returning nil if none are populated.
 // It panics if the oneof descriptor does not belong to this message.
-func (x *fastReflection_MsgIncrementDealAmountResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmountResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
 	switch d.FullName() {
 	default:
-		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgIncrementDealAmountResponse", d.FullName()))
+		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgIncrementSubscriptionRequestAmountResponse", d.FullName()))
 	}
 	panic("unreachable")
 }
@@ -4595,7 +4951,7 @@ func (x *fastReflection_MsgIncrementDealAmountResponse) WhichOneof(d protoreflec
 // GetUnknown retrieves the entire list of unknown fields.
 // The caller may only mutate the contents of the RawFields
 // if the mutated bytes are stored back into the message with SetUnknown.
-func (x *fastReflection_MsgIncrementDealAmountResponse) GetUnknown() protoreflect.RawFields {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmountResponse) GetUnknown() protoreflect.RawFields {
 	return x.unknownFields
 }
 
@@ -4606,7 +4962,7 @@ func (x *fastReflection_MsgIncrementDealAmountResponse) GetUnknown() protoreflec
 // An empty RawFields may be passed to clear the fields.
 //
 // SetUnknown is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgIncrementDealAmountResponse) SetUnknown(fields protoreflect.RawFields) {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmountResponse) SetUnknown(fields protoreflect.RawFields) {
 	x.unknownFields = fields
 }
 
@@ -4618,7 +4974,7 @@ func (x *fastReflection_MsgIncrementDealAmountResponse) SetUnknown(fields protor
 // message type, but the details are implementation dependent.
 // Validity is not part of the protobuf data model, and may not
 // be preserved in marshaling or other operations.
-func (x *fastReflection_MsgIncrementDealAmountResponse) IsValid() bool {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmountResponse) IsValid() bool {
 	return x != nil
 }
 
@@ -4628,9 +4984,9 @@ func (x *fastReflection_MsgIncrementDealAmountResponse) IsValid() bool {
 // The returned methods type is identical to
 // "google.golang.org/protobuf/runtime/protoiface".Methods.
 // Consult the protoiface package documentation for details.
-func (x *fastReflection_MsgIncrementDealAmountResponse) ProtoMethods() *protoiface.Methods {
+func (x *fastReflection_MsgIncrementSubscriptionRequestAmountResponse) ProtoMethods() *protoiface.Methods {
 	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
-		x := input.Message.Interface().(*MsgIncrementDealAmountResponse)
+		x := input.Message.Interface().(*MsgIncrementSubscriptionRequestAmountResponse)
 		if x == nil {
 			return protoiface.SizeOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -4652,7 +5008,7 @@ func (x *fastReflection_MsgIncrementDealAmountResponse) ProtoMethods() *protoifa
 	}
 
 	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
-		x := input.Message.Interface().(*MsgIncrementDealAmountResponse)
+		x := input.Message.Interface().(*MsgIncrementSubscriptionRequestAmountResponse)
 		if x == nil {
 			return protoiface.MarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -4682,7 +5038,7 @@ func (x *fastReflection_MsgIncrementDealAmountResponse) ProtoMethods() *protoifa
 		}, nil
 	}
 	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
-		x := input.Message.Interface().(*MsgIncrementDealAmountResponse)
+		x := input.Message.Interface().(*MsgIncrementSubscriptionRequestAmountResponse)
 		if x == nil {
 			return protoiface.UnmarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -4714,10 +5070,10 @@ func (x *fastReflection_MsgIncrementDealAmountResponse) ProtoMethods() *protoifa
 			fieldNum := int32(wire >> 3)
 			wireType := int(wire & 0x7)
 			if wireType == 4 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgIncrementDealAmountResponse: wiretype end group for non-group")
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgIncrementSubscriptionRequestAmountResponse: wiretype end group for non-group")
 			}
 			if fieldNum <= 0 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgIncrementDealAmountResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgIncrementSubscriptionRequestAmountResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 			}
 			switch fieldNum {
 			default:
@@ -4756,27 +5112,27 @@ func (x *fastReflection_MsgIncrementDealAmountResponse) ProtoMethods() *protoifa
 }
 
 var (
-	md_MsgJoinDeal          protoreflect.MessageDescriptor
-	fd_MsgJoinDeal_provider protoreflect.FieldDescriptor
-	fd_MsgJoinDeal_deal_id  protoreflect.FieldDescriptor
+	md_MsgJoinSubscriptionRequest                         protoreflect.MessageDescriptor
+	fd_MsgJoinSubscriptionRequest_subscriber              protoreflect.FieldDescriptor
+	fd_MsgJoinSubscriptionRequest_subscription_request_id protoreflect.FieldDescriptor
 )
 
 func init() {
 	file_mandu_subscription_tx_proto_init()
-	md_MsgJoinDeal = File_mandu_subscription_tx_proto.Messages().ByName("MsgJoinDeal")
-	fd_MsgJoinDeal_provider = md_MsgJoinDeal.Fields().ByName("provider")
-	fd_MsgJoinDeal_deal_id = md_MsgJoinDeal.Fields().ByName("deal_id")
+	md_MsgJoinSubscriptionRequest = File_mandu_subscription_tx_proto.Messages().ByName("MsgJoinSubscriptionRequest")
+	fd_MsgJoinSubscriptionRequest_subscriber = md_MsgJoinSubscriptionRequest.Fields().ByName("subscriber")
+	fd_MsgJoinSubscriptionRequest_subscription_request_id = md_MsgJoinSubscriptionRequest.Fields().ByName("subscription_request_id")
 }
 
-var _ protoreflect.Message = (*fastReflection_MsgJoinDeal)(nil)
+var _ protoreflect.Message = (*fastReflection_MsgJoinSubscriptionRequest)(nil)
 
-type fastReflection_MsgJoinDeal MsgJoinDeal
+type fastReflection_MsgJoinSubscriptionRequest MsgJoinSubscriptionRequest
 
-func (x *MsgJoinDeal) ProtoReflect() protoreflect.Message {
-	return (*fastReflection_MsgJoinDeal)(x)
+func (x *MsgJoinSubscriptionRequest) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgJoinSubscriptionRequest)(x)
 }
 
-func (x *MsgJoinDeal) slowProtoReflect() protoreflect.Message {
+func (x *MsgJoinSubscriptionRequest) slowProtoReflect() protoreflect.Message {
 	mi := &file_mandu_subscription_tx_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -4788,43 +5144,43 @@ func (x *MsgJoinDeal) slowProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-var _fastReflection_MsgJoinDeal_messageType fastReflection_MsgJoinDeal_messageType
-var _ protoreflect.MessageType = fastReflection_MsgJoinDeal_messageType{}
+var _fastReflection_MsgJoinSubscriptionRequest_messageType fastReflection_MsgJoinSubscriptionRequest_messageType
+var _ protoreflect.MessageType = fastReflection_MsgJoinSubscriptionRequest_messageType{}
 
-type fastReflection_MsgJoinDeal_messageType struct{}
+type fastReflection_MsgJoinSubscriptionRequest_messageType struct{}
 
-func (x fastReflection_MsgJoinDeal_messageType) Zero() protoreflect.Message {
-	return (*fastReflection_MsgJoinDeal)(nil)
+func (x fastReflection_MsgJoinSubscriptionRequest_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgJoinSubscriptionRequest)(nil)
 }
-func (x fastReflection_MsgJoinDeal_messageType) New() protoreflect.Message {
-	return new(fastReflection_MsgJoinDeal)
+func (x fastReflection_MsgJoinSubscriptionRequest_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgJoinSubscriptionRequest)
 }
-func (x fastReflection_MsgJoinDeal_messageType) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgJoinDeal
+func (x fastReflection_MsgJoinSubscriptionRequest_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgJoinSubscriptionRequest
 }
 
 // Descriptor returns message descriptor, which contains only the protobuf
 // type information for the message.
-func (x *fastReflection_MsgJoinDeal) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgJoinDeal
+func (x *fastReflection_MsgJoinSubscriptionRequest) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgJoinSubscriptionRequest
 }
 
 // Type returns the message type, which encapsulates both Go and protobuf
 // type information. If the Go type information is not needed,
 // it is recommended that the message descriptor be used instead.
-func (x *fastReflection_MsgJoinDeal) Type() protoreflect.MessageType {
-	return _fastReflection_MsgJoinDeal_messageType
+func (x *fastReflection_MsgJoinSubscriptionRequest) Type() protoreflect.MessageType {
+	return _fastReflection_MsgJoinSubscriptionRequest_messageType
 }
 
 // New returns a newly allocated and mutable empty message.
-func (x *fastReflection_MsgJoinDeal) New() protoreflect.Message {
-	return new(fastReflection_MsgJoinDeal)
+func (x *fastReflection_MsgJoinSubscriptionRequest) New() protoreflect.Message {
+	return new(fastReflection_MsgJoinSubscriptionRequest)
 }
 
 // Interface unwraps the message reflection interface and
 // returns the underlying ProtoMessage interface.
-func (x *fastReflection_MsgJoinDeal) Interface() protoreflect.ProtoMessage {
-	return (*MsgJoinDeal)(x)
+func (x *fastReflection_MsgJoinSubscriptionRequest) Interface() protoreflect.ProtoMessage {
+	return (*MsgJoinSubscriptionRequest)(x)
 }
 
 // Range iterates over every populated field in an undefined order,
@@ -4832,16 +5188,16 @@ func (x *fastReflection_MsgJoinDeal) Interface() protoreflect.ProtoMessage {
 // Range returns immediately if f returns false.
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
-func (x *fastReflection_MsgJoinDeal) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
-	if x.Provider != "" {
-		value := protoreflect.ValueOfString(x.Provider)
-		if !f(fd_MsgJoinDeal_provider, value) {
+func (x *fastReflection_MsgJoinSubscriptionRequest) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.Subscriber != "" {
+		value := protoreflect.ValueOfString(x.Subscriber)
+		if !f(fd_MsgJoinSubscriptionRequest_subscriber, value) {
 			return
 		}
 	}
-	if x.DealId != "" {
-		value := protoreflect.ValueOfString(x.DealId)
-		if !f(fd_MsgJoinDeal_deal_id, value) {
+	if x.SubscriptionRequestId != "" {
+		value := protoreflect.ValueOfString(x.SubscriptionRequestId)
+		if !f(fd_MsgJoinSubscriptionRequest_subscription_request_id, value) {
 			return
 		}
 	}
@@ -4858,17 +5214,17 @@ func (x *fastReflection_MsgJoinDeal) Range(f func(protoreflect.FieldDescriptor, 
 // In other cases (aside from the nullable cases above),
 // a proto3 scalar field is populated if it contains a non-zero value, and
 // a repeated field is populated if it is non-empty.
-func (x *fastReflection_MsgJoinDeal) Has(fd protoreflect.FieldDescriptor) bool {
+func (x *fastReflection_MsgJoinSubscriptionRequest) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgJoinDeal.provider":
-		return x.Provider != ""
-	case "mandu.subscription.MsgJoinDeal.deal_id":
-		return x.DealId != ""
+	case "mandu.subscription.MsgJoinSubscriptionRequest.subscriber":
+		return x.Subscriber != ""
+	case "mandu.subscription.MsgJoinSubscriptionRequest.subscription_request_id":
+		return x.SubscriptionRequestId != ""
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgJoinDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgJoinSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -4878,17 +5234,17 @@ func (x *fastReflection_MsgJoinDeal) Has(fd protoreflect.FieldDescriptor) bool {
 // associated with the given field number.
 //
 // Clear is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgJoinDeal) Clear(fd protoreflect.FieldDescriptor) {
+func (x *fastReflection_MsgJoinSubscriptionRequest) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgJoinDeal.provider":
-		x.Provider = ""
-	case "mandu.subscription.MsgJoinDeal.deal_id":
-		x.DealId = ""
+	case "mandu.subscription.MsgJoinSubscriptionRequest.subscriber":
+		x.Subscriber = ""
+	case "mandu.subscription.MsgJoinSubscriptionRequest.subscription_request_id":
+		x.SubscriptionRequestId = ""
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgJoinDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgJoinSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -4898,19 +5254,19 @@ func (x *fastReflection_MsgJoinDeal) Clear(fd protoreflect.FieldDescriptor) {
 // the default value of a bytes scalar is guaranteed to be a copy.
 // For unpopulated composite types, it returns an empty, read-only view
 // of the value; to obtain a mutable reference, use Mutable.
-func (x *fastReflection_MsgJoinDeal) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgJoinSubscriptionRequest) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
-	case "mandu.subscription.MsgJoinDeal.provider":
-		value := x.Provider
+	case "mandu.subscription.MsgJoinSubscriptionRequest.subscriber":
+		value := x.Subscriber
 		return protoreflect.ValueOfString(value)
-	case "mandu.subscription.MsgJoinDeal.deal_id":
-		value := x.DealId
+	case "mandu.subscription.MsgJoinSubscriptionRequest.subscription_request_id":
+		value := x.SubscriptionRequestId
 		return protoreflect.ValueOfString(value)
 	default:
 		if descriptor.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgJoinDeal does not contain field %s", descriptor.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgJoinSubscriptionRequest does not contain field %s", descriptor.FullName()))
 	}
 }
 
@@ -4924,17 +5280,17 @@ func (x *fastReflection_MsgJoinDeal) Get(descriptor protoreflect.FieldDescriptor
 // empty, read-only value, then it panics.
 //
 // Set is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgJoinDeal) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+func (x *fastReflection_MsgJoinSubscriptionRequest) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgJoinDeal.provider":
-		x.Provider = value.Interface().(string)
-	case "mandu.subscription.MsgJoinDeal.deal_id":
-		x.DealId = value.Interface().(string)
+	case "mandu.subscription.MsgJoinSubscriptionRequest.subscriber":
+		x.Subscriber = value.Interface().(string)
+	case "mandu.subscription.MsgJoinSubscriptionRequest.subscription_request_id":
+		x.SubscriptionRequestId = value.Interface().(string)
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgJoinDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgJoinSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -4948,44 +5304,44 @@ func (x *fastReflection_MsgJoinDeal) Set(fd protoreflect.FieldDescriptor, value 
 // It panics if the field does not contain a composite type.
 //
 // Mutable is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgJoinDeal) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgJoinSubscriptionRequest) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgJoinDeal.provider":
-		panic(fmt.Errorf("field provider of message mandu.subscription.MsgJoinDeal is not mutable"))
-	case "mandu.subscription.MsgJoinDeal.deal_id":
-		panic(fmt.Errorf("field deal_id of message mandu.subscription.MsgJoinDeal is not mutable"))
+	case "mandu.subscription.MsgJoinSubscriptionRequest.subscriber":
+		panic(fmt.Errorf("field subscriber of message mandu.subscription.MsgJoinSubscriptionRequest is not mutable"))
+	case "mandu.subscription.MsgJoinSubscriptionRequest.subscription_request_id":
+		panic(fmt.Errorf("field subscription_request_id of message mandu.subscription.MsgJoinSubscriptionRequest is not mutable"))
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgJoinDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgJoinSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
 // NewField returns a new value that is assignable to the field
 // for the given descriptor. For scalars, this returns the default value.
 // For lists, maps, and messages, this returns a new, empty, mutable value.
-func (x *fastReflection_MsgJoinDeal) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgJoinSubscriptionRequest) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgJoinDeal.provider":
+	case "mandu.subscription.MsgJoinSubscriptionRequest.subscriber":
 		return protoreflect.ValueOfString("")
-	case "mandu.subscription.MsgJoinDeal.deal_id":
+	case "mandu.subscription.MsgJoinSubscriptionRequest.subscription_request_id":
 		return protoreflect.ValueOfString("")
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgJoinDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgJoinSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
 // WhichOneof reports which field within the oneof is populated,
 // returning nil if none are populated.
 // It panics if the oneof descriptor does not belong to this message.
-func (x *fastReflection_MsgJoinDeal) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+func (x *fastReflection_MsgJoinSubscriptionRequest) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
 	switch d.FullName() {
 	default:
-		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgJoinDeal", d.FullName()))
+		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgJoinSubscriptionRequest", d.FullName()))
 	}
 	panic("unreachable")
 }
@@ -4993,7 +5349,7 @@ func (x *fastReflection_MsgJoinDeal) WhichOneof(d protoreflect.OneofDescriptor) 
 // GetUnknown retrieves the entire list of unknown fields.
 // The caller may only mutate the contents of the RawFields
 // if the mutated bytes are stored back into the message with SetUnknown.
-func (x *fastReflection_MsgJoinDeal) GetUnknown() protoreflect.RawFields {
+func (x *fastReflection_MsgJoinSubscriptionRequest) GetUnknown() protoreflect.RawFields {
 	return x.unknownFields
 }
 
@@ -5004,7 +5360,7 @@ func (x *fastReflection_MsgJoinDeal) GetUnknown() protoreflect.RawFields {
 // An empty RawFields may be passed to clear the fields.
 //
 // SetUnknown is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgJoinDeal) SetUnknown(fields protoreflect.RawFields) {
+func (x *fastReflection_MsgJoinSubscriptionRequest) SetUnknown(fields protoreflect.RawFields) {
 	x.unknownFields = fields
 }
 
@@ -5016,7 +5372,7 @@ func (x *fastReflection_MsgJoinDeal) SetUnknown(fields protoreflect.RawFields) {
 // message type, but the details are implementation dependent.
 // Validity is not part of the protobuf data model, and may not
 // be preserved in marshaling or other operations.
-func (x *fastReflection_MsgJoinDeal) IsValid() bool {
+func (x *fastReflection_MsgJoinSubscriptionRequest) IsValid() bool {
 	return x != nil
 }
 
@@ -5026,9 +5382,9 @@ func (x *fastReflection_MsgJoinDeal) IsValid() bool {
 // The returned methods type is identical to
 // "google.golang.org/protobuf/runtime/protoiface".Methods.
 // Consult the protoiface package documentation for details.
-func (x *fastReflection_MsgJoinDeal) ProtoMethods() *protoiface.Methods {
+func (x *fastReflection_MsgJoinSubscriptionRequest) ProtoMethods() *protoiface.Methods {
 	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
-		x := input.Message.Interface().(*MsgJoinDeal)
+		x := input.Message.Interface().(*MsgJoinSubscriptionRequest)
 		if x == nil {
 			return protoiface.SizeOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -5040,11 +5396,11 @@ func (x *fastReflection_MsgJoinDeal) ProtoMethods() *protoiface.Methods {
 		var n int
 		var l int
 		_ = l
-		l = len(x.Provider)
+		l = len(x.Subscriber)
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
-		l = len(x.DealId)
+		l = len(x.SubscriptionRequestId)
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
@@ -5058,7 +5414,7 @@ func (x *fastReflection_MsgJoinDeal) ProtoMethods() *protoiface.Methods {
 	}
 
 	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
-		x := input.Message.Interface().(*MsgJoinDeal)
+		x := input.Message.Interface().(*MsgJoinSubscriptionRequest)
 		if x == nil {
 			return protoiface.MarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -5077,17 +5433,17 @@ func (x *fastReflection_MsgJoinDeal) ProtoMethods() *protoiface.Methods {
 			i -= len(x.unknownFields)
 			copy(dAtA[i:], x.unknownFields)
 		}
-		if len(x.DealId) > 0 {
-			i -= len(x.DealId)
-			copy(dAtA[i:], x.DealId)
-			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.DealId)))
+		if len(x.SubscriptionRequestId) > 0 {
+			i -= len(x.SubscriptionRequestId)
+			copy(dAtA[i:], x.SubscriptionRequestId)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.SubscriptionRequestId)))
 			i--
 			dAtA[i] = 0x12
 		}
-		if len(x.Provider) > 0 {
-			i -= len(x.Provider)
-			copy(dAtA[i:], x.Provider)
-			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Provider)))
+		if len(x.Subscriber) > 0 {
+			i -= len(x.Subscriber)
+			copy(dAtA[i:], x.Subscriber)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Subscriber)))
 			i--
 			dAtA[i] = 0xa
 		}
@@ -5102,7 +5458,7 @@ func (x *fastReflection_MsgJoinDeal) ProtoMethods() *protoiface.Methods {
 		}, nil
 	}
 	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
-		x := input.Message.Interface().(*MsgJoinDeal)
+		x := input.Message.Interface().(*MsgJoinSubscriptionRequest)
 		if x == nil {
 			return protoiface.UnmarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -5134,15 +5490,15 @@ func (x *fastReflection_MsgJoinDeal) ProtoMethods() *protoiface.Methods {
 			fieldNum := int32(wire >> 3)
 			wireType := int(wire & 0x7)
 			if wireType == 4 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgJoinDeal: wiretype end group for non-group")
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgJoinSubscriptionRequest: wiretype end group for non-group")
 			}
 			if fieldNum <= 0 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgJoinDeal: illegal tag %d (wire type %d)", fieldNum, wire)
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgJoinSubscriptionRequest: illegal tag %d (wire type %d)", fieldNum, wire)
 			}
 			switch fieldNum {
 			case 1:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Provider", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Subscriber", wireType)
 				}
 				var stringLen uint64
 				for shift := uint(0); ; shift += 7 {
@@ -5170,11 +5526,11 @@ func (x *fastReflection_MsgJoinDeal) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.Provider = string(dAtA[iNdEx:postIndex])
+				x.Subscriber = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
 			case 2:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field DealId", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field SubscriptionRequestId", wireType)
 				}
 				var stringLen uint64
 				for shift := uint(0); ; shift += 7 {
@@ -5202,7 +5558,7 @@ func (x *fastReflection_MsgJoinDeal) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.DealId = string(dAtA[iNdEx:postIndex])
+				x.SubscriptionRequestId = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
 			default:
 				iNdEx = preIndex
@@ -5240,25 +5596,25 @@ func (x *fastReflection_MsgJoinDeal) ProtoMethods() *protoiface.Methods {
 }
 
 var (
-	md_MsgJoinDealResponse                 protoreflect.MessageDescriptor
-	fd_MsgJoinDealResponse_subscription_id protoreflect.FieldDescriptor
+	md_MsgJoinSubscriptionRequestResponse                 protoreflect.MessageDescriptor
+	fd_MsgJoinSubscriptionRequestResponse_subscription_id protoreflect.FieldDescriptor
 )
 
 func init() {
 	file_mandu_subscription_tx_proto_init()
-	md_MsgJoinDealResponse = File_mandu_subscription_tx_proto.Messages().ByName("MsgJoinDealResponse")
-	fd_MsgJoinDealResponse_subscription_id = md_MsgJoinDealResponse.Fields().ByName("subscription_id")
+	md_MsgJoinSubscriptionRequestResponse = File_mandu_subscription_tx_proto.Messages().ByName("MsgJoinSubscriptionRequestResponse")
+	fd_MsgJoinSubscriptionRequestResponse_subscription_id = md_MsgJoinSubscriptionRequestResponse.Fields().ByName("subscription_id")
 }
 
-var _ protoreflect.Message = (*fastReflection_MsgJoinDealResponse)(nil)
+var _ protoreflect.Message = (*fastReflection_MsgJoinSubscriptionRequestResponse)(nil)
 
-type fastReflection_MsgJoinDealResponse MsgJoinDealResponse
+type fastReflection_MsgJoinSubscriptionRequestResponse MsgJoinSubscriptionRequestResponse
 
-func (x *MsgJoinDealResponse) ProtoReflect() protoreflect.Message {
-	return (*fastReflection_MsgJoinDealResponse)(x)
+func (x *MsgJoinSubscriptionRequestResponse) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgJoinSubscriptionRequestResponse)(x)
 }
 
-func (x *MsgJoinDealResponse) slowProtoReflect() protoreflect.Message {
+func (x *MsgJoinSubscriptionRequestResponse) slowProtoReflect() protoreflect.Message {
 	mi := &file_mandu_subscription_tx_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -5270,43 +5626,43 @@ func (x *MsgJoinDealResponse) slowProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-var _fastReflection_MsgJoinDealResponse_messageType fastReflection_MsgJoinDealResponse_messageType
-var _ protoreflect.MessageType = fastReflection_MsgJoinDealResponse_messageType{}
+var _fastReflection_MsgJoinSubscriptionRequestResponse_messageType fastReflection_MsgJoinSubscriptionRequestResponse_messageType
+var _ protoreflect.MessageType = fastReflection_MsgJoinSubscriptionRequestResponse_messageType{}
 
-type fastReflection_MsgJoinDealResponse_messageType struct{}
+type fastReflection_MsgJoinSubscriptionRequestResponse_messageType struct{}
 
-func (x fastReflection_MsgJoinDealResponse_messageType) Zero() protoreflect.Message {
-	return (*fastReflection_MsgJoinDealResponse)(nil)
+func (x fastReflection_MsgJoinSubscriptionRequestResponse_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgJoinSubscriptionRequestResponse)(nil)
 }
-func (x fastReflection_MsgJoinDealResponse_messageType) New() protoreflect.Message {
-	return new(fastReflection_MsgJoinDealResponse)
+func (x fastReflection_MsgJoinSubscriptionRequestResponse_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgJoinSubscriptionRequestResponse)
 }
-func (x fastReflection_MsgJoinDealResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgJoinDealResponse
+func (x fastReflection_MsgJoinSubscriptionRequestResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgJoinSubscriptionRequestResponse
 }
 
 // Descriptor returns message descriptor, which contains only the protobuf
 // type information for the message.
-func (x *fastReflection_MsgJoinDealResponse) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgJoinDealResponse
+func (x *fastReflection_MsgJoinSubscriptionRequestResponse) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgJoinSubscriptionRequestResponse
 }
 
 // Type returns the message type, which encapsulates both Go and protobuf
 // type information. If the Go type information is not needed,
 // it is recommended that the message descriptor be used instead.
-func (x *fastReflection_MsgJoinDealResponse) Type() protoreflect.MessageType {
-	return _fastReflection_MsgJoinDealResponse_messageType
+func (x *fastReflection_MsgJoinSubscriptionRequestResponse) Type() protoreflect.MessageType {
+	return _fastReflection_MsgJoinSubscriptionRequestResponse_messageType
 }
 
 // New returns a newly allocated and mutable empty message.
-func (x *fastReflection_MsgJoinDealResponse) New() protoreflect.Message {
-	return new(fastReflection_MsgJoinDealResponse)
+func (x *fastReflection_MsgJoinSubscriptionRequestResponse) New() protoreflect.Message {
+	return new(fastReflection_MsgJoinSubscriptionRequestResponse)
 }
 
 // Interface unwraps the message reflection interface and
 // returns the underlying ProtoMessage interface.
-func (x *fastReflection_MsgJoinDealResponse) Interface() protoreflect.ProtoMessage {
-	return (*MsgJoinDealResponse)(x)
+func (x *fastReflection_MsgJoinSubscriptionRequestResponse) Interface() protoreflect.ProtoMessage {
+	return (*MsgJoinSubscriptionRequestResponse)(x)
 }
 
 // Range iterates over every populated field in an undefined order,
@@ -5314,10 +5670,10 @@ func (x *fastReflection_MsgJoinDealResponse) Interface() protoreflect.ProtoMessa
 // Range returns immediately if f returns false.
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
-func (x *fastReflection_MsgJoinDealResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+func (x *fastReflection_MsgJoinSubscriptionRequestResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
 	if x.SubscriptionId != "" {
 		value := protoreflect.ValueOfString(x.SubscriptionId)
-		if !f(fd_MsgJoinDealResponse_subscription_id, value) {
+		if !f(fd_MsgJoinSubscriptionRequestResponse_subscription_id, value) {
 			return
 		}
 	}
@@ -5334,15 +5690,15 @@ func (x *fastReflection_MsgJoinDealResponse) Range(f func(protoreflect.FieldDesc
 // In other cases (aside from the nullable cases above),
 // a proto3 scalar field is populated if it contains a non-zero value, and
 // a repeated field is populated if it is non-empty.
-func (x *fastReflection_MsgJoinDealResponse) Has(fd protoreflect.FieldDescriptor) bool {
+func (x *fastReflection_MsgJoinSubscriptionRequestResponse) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgJoinDealResponse.subscription_id":
+	case "mandu.subscription.MsgJoinSubscriptionRequestResponse.subscription_id":
 		return x.SubscriptionId != ""
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgJoinDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgJoinSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -5352,15 +5708,15 @@ func (x *fastReflection_MsgJoinDealResponse) Has(fd protoreflect.FieldDescriptor
 // associated with the given field number.
 //
 // Clear is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgJoinDealResponse) Clear(fd protoreflect.FieldDescriptor) {
+func (x *fastReflection_MsgJoinSubscriptionRequestResponse) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgJoinDealResponse.subscription_id":
+	case "mandu.subscription.MsgJoinSubscriptionRequestResponse.subscription_id":
 		x.SubscriptionId = ""
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgJoinDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgJoinSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -5370,16 +5726,16 @@ func (x *fastReflection_MsgJoinDealResponse) Clear(fd protoreflect.FieldDescript
 // the default value of a bytes scalar is guaranteed to be a copy.
 // For unpopulated composite types, it returns an empty, read-only view
 // of the value; to obtain a mutable reference, use Mutable.
-func (x *fastReflection_MsgJoinDealResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgJoinSubscriptionRequestResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
-	case "mandu.subscription.MsgJoinDealResponse.subscription_id":
+	case "mandu.subscription.MsgJoinSubscriptionRequestResponse.subscription_id":
 		value := x.SubscriptionId
 		return protoreflect.ValueOfString(value)
 	default:
 		if descriptor.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgJoinDealResponse does not contain field %s", descriptor.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgJoinSubscriptionRequestResponse does not contain field %s", descriptor.FullName()))
 	}
 }
 
@@ -5393,15 +5749,15 @@ func (x *fastReflection_MsgJoinDealResponse) Get(descriptor protoreflect.FieldDe
 // empty, read-only value, then it panics.
 //
 // Set is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgJoinDealResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+func (x *fastReflection_MsgJoinSubscriptionRequestResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgJoinDealResponse.subscription_id":
+	case "mandu.subscription.MsgJoinSubscriptionRequestResponse.subscription_id":
 		x.SubscriptionId = value.Interface().(string)
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgJoinDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgJoinSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -5415,40 +5771,40 @@ func (x *fastReflection_MsgJoinDealResponse) Set(fd protoreflect.FieldDescriptor
 // It panics if the field does not contain a composite type.
 //
 // Mutable is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgJoinDealResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgJoinSubscriptionRequestResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgJoinDealResponse.subscription_id":
-		panic(fmt.Errorf("field subscription_id of message mandu.subscription.MsgJoinDealResponse is not mutable"))
+	case "mandu.subscription.MsgJoinSubscriptionRequestResponse.subscription_id":
+		panic(fmt.Errorf("field subscription_id of message mandu.subscription.MsgJoinSubscriptionRequestResponse is not mutable"))
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgJoinDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgJoinSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
 // NewField returns a new value that is assignable to the field
 // for the given descriptor. For scalars, this returns the default value.
 // For lists, maps, and messages, this returns a new, empty, mutable value.
-func (x *fastReflection_MsgJoinDealResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgJoinSubscriptionRequestResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgJoinDealResponse.subscription_id":
+	case "mandu.subscription.MsgJoinSubscriptionRequestResponse.subscription_id":
 		return protoreflect.ValueOfString("")
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgJoinSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgJoinDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgJoinSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
 // WhichOneof reports which field within the oneof is populated,
 // returning nil if none are populated.
 // It panics if the oneof descriptor does not belong to this message.
-func (x *fastReflection_MsgJoinDealResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+func (x *fastReflection_MsgJoinSubscriptionRequestResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
 	switch d.FullName() {
 	default:
-		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgJoinDealResponse", d.FullName()))
+		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgJoinSubscriptionRequestResponse", d.FullName()))
 	}
 	panic("unreachable")
 }
@@ -5456,7 +5812,7 @@ func (x *fastReflection_MsgJoinDealResponse) WhichOneof(d protoreflect.OneofDesc
 // GetUnknown retrieves the entire list of unknown fields.
 // The caller may only mutate the contents of the RawFields
 // if the mutated bytes are stored back into the message with SetUnknown.
-func (x *fastReflection_MsgJoinDealResponse) GetUnknown() protoreflect.RawFields {
+func (x *fastReflection_MsgJoinSubscriptionRequestResponse) GetUnknown() protoreflect.RawFields {
 	return x.unknownFields
 }
 
@@ -5467,7 +5823,7 @@ func (x *fastReflection_MsgJoinDealResponse) GetUnknown() protoreflect.RawFields
 // An empty RawFields may be passed to clear the fields.
 //
 // SetUnknown is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgJoinDealResponse) SetUnknown(fields protoreflect.RawFields) {
+func (x *fastReflection_MsgJoinSubscriptionRequestResponse) SetUnknown(fields protoreflect.RawFields) {
 	x.unknownFields = fields
 }
 
@@ -5479,7 +5835,7 @@ func (x *fastReflection_MsgJoinDealResponse) SetUnknown(fields protoreflect.RawF
 // message type, but the details are implementation dependent.
 // Validity is not part of the protobuf data model, and may not
 // be preserved in marshaling or other operations.
-func (x *fastReflection_MsgJoinDealResponse) IsValid() bool {
+func (x *fastReflection_MsgJoinSubscriptionRequestResponse) IsValid() bool {
 	return x != nil
 }
 
@@ -5489,9 +5845,9 @@ func (x *fastReflection_MsgJoinDealResponse) IsValid() bool {
 // The returned methods type is identical to
 // "google.golang.org/protobuf/runtime/protoiface".Methods.
 // Consult the protoiface package documentation for details.
-func (x *fastReflection_MsgJoinDealResponse) ProtoMethods() *protoiface.Methods {
+func (x *fastReflection_MsgJoinSubscriptionRequestResponse) ProtoMethods() *protoiface.Methods {
 	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
-		x := input.Message.Interface().(*MsgJoinDealResponse)
+		x := input.Message.Interface().(*MsgJoinSubscriptionRequestResponse)
 		if x == nil {
 			return protoiface.SizeOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -5517,7 +5873,7 @@ func (x *fastReflection_MsgJoinDealResponse) ProtoMethods() *protoiface.Methods 
 	}
 
 	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
-		x := input.Message.Interface().(*MsgJoinDealResponse)
+		x := input.Message.Interface().(*MsgJoinSubscriptionRequestResponse)
 		if x == nil {
 			return protoiface.MarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -5554,7 +5910,7 @@ func (x *fastReflection_MsgJoinDealResponse) ProtoMethods() *protoiface.Methods 
 		}, nil
 	}
 	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
-		x := input.Message.Interface().(*MsgJoinDealResponse)
+		x := input.Message.Interface().(*MsgJoinSubscriptionRequestResponse)
 		if x == nil {
 			return protoiface.UnmarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -5586,10 +5942,10 @@ func (x *fastReflection_MsgJoinDealResponse) ProtoMethods() *protoiface.Methods 
 			fieldNum := int32(wire >> 3)
 			wireType := int(wire & 0x7)
 			if wireType == 4 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgJoinDealResponse: wiretype end group for non-group")
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgJoinSubscriptionRequestResponse: wiretype end group for non-group")
 			}
 			if fieldNum <= 0 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgJoinDealResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgJoinSubscriptionRequestResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 			}
 			switch fieldNum {
 			case 1:
@@ -5660,27 +6016,27 @@ func (x *fastReflection_MsgJoinDealResponse) ProtoMethods() *protoiface.Methods 
 }
 
 var (
-	md_MsgLeaveDeal          protoreflect.MessageDescriptor
-	fd_MsgLeaveDeal_provider protoreflect.FieldDescriptor
-	fd_MsgLeaveDeal_deal_id  protoreflect.FieldDescriptor
+	md_MsgLeaveSubscriptionRequest                         protoreflect.MessageDescriptor
+	fd_MsgLeaveSubscriptionRequest_subscriber              protoreflect.FieldDescriptor
+	fd_MsgLeaveSubscriptionRequest_subscription_request_id protoreflect.FieldDescriptor
 )
 
 func init() {
 	file_mandu_subscription_tx_proto_init()
-	md_MsgLeaveDeal = File_mandu_subscription_tx_proto.Messages().ByName("MsgLeaveDeal")
-	fd_MsgLeaveDeal_provider = md_MsgLeaveDeal.Fields().ByName("provider")
-	fd_MsgLeaveDeal_deal_id = md_MsgLeaveDeal.Fields().ByName("deal_id")
+	md_MsgLeaveSubscriptionRequest = File_mandu_subscription_tx_proto.Messages().ByName("MsgLeaveSubscriptionRequest")
+	fd_MsgLeaveSubscriptionRequest_subscriber = md_MsgLeaveSubscriptionRequest.Fields().ByName("subscriber")
+	fd_MsgLeaveSubscriptionRequest_subscription_request_id = md_MsgLeaveSubscriptionRequest.Fields().ByName("subscription_request_id")
 }
 
-var _ protoreflect.Message = (*fastReflection_MsgLeaveDeal)(nil)
+var _ protoreflect.Message = (*fastReflection_MsgLeaveSubscriptionRequest)(nil)
 
-type fastReflection_MsgLeaveDeal MsgLeaveDeal
+type fastReflection_MsgLeaveSubscriptionRequest MsgLeaveSubscriptionRequest
 
-func (x *MsgLeaveDeal) ProtoReflect() protoreflect.Message {
-	return (*fastReflection_MsgLeaveDeal)(x)
+func (x *MsgLeaveSubscriptionRequest) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgLeaveSubscriptionRequest)(x)
 }
 
-func (x *MsgLeaveDeal) slowProtoReflect() protoreflect.Message {
+func (x *MsgLeaveSubscriptionRequest) slowProtoReflect() protoreflect.Message {
 	mi := &file_mandu_subscription_tx_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -5692,43 +6048,43 @@ func (x *MsgLeaveDeal) slowProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-var _fastReflection_MsgLeaveDeal_messageType fastReflection_MsgLeaveDeal_messageType
-var _ protoreflect.MessageType = fastReflection_MsgLeaveDeal_messageType{}
+var _fastReflection_MsgLeaveSubscriptionRequest_messageType fastReflection_MsgLeaveSubscriptionRequest_messageType
+var _ protoreflect.MessageType = fastReflection_MsgLeaveSubscriptionRequest_messageType{}
 
-type fastReflection_MsgLeaveDeal_messageType struct{}
+type fastReflection_MsgLeaveSubscriptionRequest_messageType struct{}
 
-func (x fastReflection_MsgLeaveDeal_messageType) Zero() protoreflect.Message {
-	return (*fastReflection_MsgLeaveDeal)(nil)
+func (x fastReflection_MsgLeaveSubscriptionRequest_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgLeaveSubscriptionRequest)(nil)
 }
-func (x fastReflection_MsgLeaveDeal_messageType) New() protoreflect.Message {
-	return new(fastReflection_MsgLeaveDeal)
+func (x fastReflection_MsgLeaveSubscriptionRequest_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgLeaveSubscriptionRequest)
 }
-func (x fastReflection_MsgLeaveDeal_messageType) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgLeaveDeal
+func (x fastReflection_MsgLeaveSubscriptionRequest_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgLeaveSubscriptionRequest
 }
 
 // Descriptor returns message descriptor, which contains only the protobuf
 // type information for the message.
-func (x *fastReflection_MsgLeaveDeal) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgLeaveDeal
+func (x *fastReflection_MsgLeaveSubscriptionRequest) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgLeaveSubscriptionRequest
 }
 
 // Type returns the message type, which encapsulates both Go and protobuf
 // type information. If the Go type information is not needed,
 // it is recommended that the message descriptor be used instead.
-func (x *fastReflection_MsgLeaveDeal) Type() protoreflect.MessageType {
-	return _fastReflection_MsgLeaveDeal_messageType
+func (x *fastReflection_MsgLeaveSubscriptionRequest) Type() protoreflect.MessageType {
+	return _fastReflection_MsgLeaveSubscriptionRequest_messageType
 }
 
 // New returns a newly allocated and mutable empty message.
-func (x *fastReflection_MsgLeaveDeal) New() protoreflect.Message {
-	return new(fastReflection_MsgLeaveDeal)
+func (x *fastReflection_MsgLeaveSubscriptionRequest) New() protoreflect.Message {
+	return new(fastReflection_MsgLeaveSubscriptionRequest)
 }
 
 // Interface unwraps the message reflection interface and
 // returns the underlying ProtoMessage interface.
-func (x *fastReflection_MsgLeaveDeal) Interface() protoreflect.ProtoMessage {
-	return (*MsgLeaveDeal)(x)
+func (x *fastReflection_MsgLeaveSubscriptionRequest) Interface() protoreflect.ProtoMessage {
+	return (*MsgLeaveSubscriptionRequest)(x)
 }
 
 // Range iterates over every populated field in an undefined order,
@@ -5736,16 +6092,16 @@ func (x *fastReflection_MsgLeaveDeal) Interface() protoreflect.ProtoMessage {
 // Range returns immediately if f returns false.
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
-func (x *fastReflection_MsgLeaveDeal) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
-	if x.Provider != "" {
-		value := protoreflect.ValueOfString(x.Provider)
-		if !f(fd_MsgLeaveDeal_provider, value) {
+func (x *fastReflection_MsgLeaveSubscriptionRequest) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.Subscriber != "" {
+		value := protoreflect.ValueOfString(x.Subscriber)
+		if !f(fd_MsgLeaveSubscriptionRequest_subscriber, value) {
 			return
 		}
 	}
-	if x.DealId != "" {
-		value := protoreflect.ValueOfString(x.DealId)
-		if !f(fd_MsgLeaveDeal_deal_id, value) {
+	if x.SubscriptionRequestId != "" {
+		value := protoreflect.ValueOfString(x.SubscriptionRequestId)
+		if !f(fd_MsgLeaveSubscriptionRequest_subscription_request_id, value) {
 			return
 		}
 	}
@@ -5762,17 +6118,17 @@ func (x *fastReflection_MsgLeaveDeal) Range(f func(protoreflect.FieldDescriptor,
 // In other cases (aside from the nullable cases above),
 // a proto3 scalar field is populated if it contains a non-zero value, and
 // a repeated field is populated if it is non-empty.
-func (x *fastReflection_MsgLeaveDeal) Has(fd protoreflect.FieldDescriptor) bool {
+func (x *fastReflection_MsgLeaveSubscriptionRequest) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgLeaveDeal.provider":
-		return x.Provider != ""
-	case "mandu.subscription.MsgLeaveDeal.deal_id":
-		return x.DealId != ""
+	case "mandu.subscription.MsgLeaveSubscriptionRequest.subscriber":
+		return x.Subscriber != ""
+	case "mandu.subscription.MsgLeaveSubscriptionRequest.subscription_request_id":
+		return x.SubscriptionRequestId != ""
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgLeaveDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgLeaveSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -5782,17 +6138,17 @@ func (x *fastReflection_MsgLeaveDeal) Has(fd protoreflect.FieldDescriptor) bool 
 // associated with the given field number.
 //
 // Clear is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgLeaveDeal) Clear(fd protoreflect.FieldDescriptor) {
+func (x *fastReflection_MsgLeaveSubscriptionRequest) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgLeaveDeal.provider":
-		x.Provider = ""
-	case "mandu.subscription.MsgLeaveDeal.deal_id":
-		x.DealId = ""
+	case "mandu.subscription.MsgLeaveSubscriptionRequest.subscriber":
+		x.Subscriber = ""
+	case "mandu.subscription.MsgLeaveSubscriptionRequest.subscription_request_id":
+		x.SubscriptionRequestId = ""
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgLeaveDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgLeaveSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -5802,19 +6158,19 @@ func (x *fastReflection_MsgLeaveDeal) Clear(fd protoreflect.FieldDescriptor) {
 // the default value of a bytes scalar is guaranteed to be a copy.
 // For unpopulated composite types, it returns an empty, read-only view
 // of the value; to obtain a mutable reference, use Mutable.
-func (x *fastReflection_MsgLeaveDeal) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgLeaveSubscriptionRequest) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
-	case "mandu.subscription.MsgLeaveDeal.provider":
-		value := x.Provider
+	case "mandu.subscription.MsgLeaveSubscriptionRequest.subscriber":
+		value := x.Subscriber
 		return protoreflect.ValueOfString(value)
-	case "mandu.subscription.MsgLeaveDeal.deal_id":
-		value := x.DealId
+	case "mandu.subscription.MsgLeaveSubscriptionRequest.subscription_request_id":
+		value := x.SubscriptionRequestId
 		return protoreflect.ValueOfString(value)
 	default:
 		if descriptor.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgLeaveDeal does not contain field %s", descriptor.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgLeaveSubscriptionRequest does not contain field %s", descriptor.FullName()))
 	}
 }
 
@@ -5828,17 +6184,17 @@ func (x *fastReflection_MsgLeaveDeal) Get(descriptor protoreflect.FieldDescripto
 // empty, read-only value, then it panics.
 //
 // Set is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgLeaveDeal) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+func (x *fastReflection_MsgLeaveSubscriptionRequest) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgLeaveDeal.provider":
-		x.Provider = value.Interface().(string)
-	case "mandu.subscription.MsgLeaveDeal.deal_id":
-		x.DealId = value.Interface().(string)
+	case "mandu.subscription.MsgLeaveSubscriptionRequest.subscriber":
+		x.Subscriber = value.Interface().(string)
+	case "mandu.subscription.MsgLeaveSubscriptionRequest.subscription_request_id":
+		x.SubscriptionRequestId = value.Interface().(string)
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgLeaveDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgLeaveSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -5852,44 +6208,44 @@ func (x *fastReflection_MsgLeaveDeal) Set(fd protoreflect.FieldDescriptor, value
 // It panics if the field does not contain a composite type.
 //
 // Mutable is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgLeaveDeal) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgLeaveSubscriptionRequest) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgLeaveDeal.provider":
-		panic(fmt.Errorf("field provider of message mandu.subscription.MsgLeaveDeal is not mutable"))
-	case "mandu.subscription.MsgLeaveDeal.deal_id":
-		panic(fmt.Errorf("field deal_id of message mandu.subscription.MsgLeaveDeal is not mutable"))
+	case "mandu.subscription.MsgLeaveSubscriptionRequest.subscriber":
+		panic(fmt.Errorf("field subscriber of message mandu.subscription.MsgLeaveSubscriptionRequest is not mutable"))
+	case "mandu.subscription.MsgLeaveSubscriptionRequest.subscription_request_id":
+		panic(fmt.Errorf("field subscription_request_id of message mandu.subscription.MsgLeaveSubscriptionRequest is not mutable"))
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgLeaveDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgLeaveSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
 // NewField returns a new value that is assignable to the field
 // for the given descriptor. For scalars, this returns the default value.
 // For lists, maps, and messages, this returns a new, empty, mutable value.
-func (x *fastReflection_MsgLeaveDeal) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgLeaveSubscriptionRequest) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgLeaveDeal.provider":
+	case "mandu.subscription.MsgLeaveSubscriptionRequest.subscriber":
 		return protoreflect.ValueOfString("")
-	case "mandu.subscription.MsgLeaveDeal.deal_id":
+	case "mandu.subscription.MsgLeaveSubscriptionRequest.subscription_request_id":
 		return protoreflect.ValueOfString("")
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveDeal"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveSubscriptionRequest"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgLeaveDeal does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgLeaveSubscriptionRequest does not contain field %s", fd.FullName()))
 	}
 }
 
 // WhichOneof reports which field within the oneof is populated,
 // returning nil if none are populated.
 // It panics if the oneof descriptor does not belong to this message.
-func (x *fastReflection_MsgLeaveDeal) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+func (x *fastReflection_MsgLeaveSubscriptionRequest) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
 	switch d.FullName() {
 	default:
-		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgLeaveDeal", d.FullName()))
+		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgLeaveSubscriptionRequest", d.FullName()))
 	}
 	panic("unreachable")
 }
@@ -5897,7 +6253,7 @@ func (x *fastReflection_MsgLeaveDeal) WhichOneof(d protoreflect.OneofDescriptor)
 // GetUnknown retrieves the entire list of unknown fields.
 // The caller may only mutate the contents of the RawFields
 // if the mutated bytes are stored back into the message with SetUnknown.
-func (x *fastReflection_MsgLeaveDeal) GetUnknown() protoreflect.RawFields {
+func (x *fastReflection_MsgLeaveSubscriptionRequest) GetUnknown() protoreflect.RawFields {
 	return x.unknownFields
 }
 
@@ -5908,7 +6264,7 @@ func (x *fastReflection_MsgLeaveDeal) GetUnknown() protoreflect.RawFields {
 // An empty RawFields may be passed to clear the fields.
 //
 // SetUnknown is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgLeaveDeal) SetUnknown(fields protoreflect.RawFields) {
+func (x *fastReflection_MsgLeaveSubscriptionRequest) SetUnknown(fields protoreflect.RawFields) {
 	x.unknownFields = fields
 }
 
@@ -5920,7 +6276,7 @@ func (x *fastReflection_MsgLeaveDeal) SetUnknown(fields protoreflect.RawFields) 
 // message type, but the details are implementation dependent.
 // Validity is not part of the protobuf data model, and may not
 // be preserved in marshaling or other operations.
-func (x *fastReflection_MsgLeaveDeal) IsValid() bool {
+func (x *fastReflection_MsgLeaveSubscriptionRequest) IsValid() bool {
 	return x != nil
 }
 
@@ -5930,9 +6286,9 @@ func (x *fastReflection_MsgLeaveDeal) IsValid() bool {
 // The returned methods type is identical to
 // "google.golang.org/protobuf/runtime/protoiface".Methods.
 // Consult the protoiface package documentation for details.
-func (x *fastReflection_MsgLeaveDeal) ProtoMethods() *protoiface.Methods {
+func (x *fastReflection_MsgLeaveSubscriptionRequest) ProtoMethods() *protoiface.Methods {
 	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
-		x := input.Message.Interface().(*MsgLeaveDeal)
+		x := input.Message.Interface().(*MsgLeaveSubscriptionRequest)
 		if x == nil {
 			return protoiface.SizeOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -5944,11 +6300,11 @@ func (x *fastReflection_MsgLeaveDeal) ProtoMethods() *protoiface.Methods {
 		var n int
 		var l int
 		_ = l
-		l = len(x.Provider)
+		l = len(x.Subscriber)
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
-		l = len(x.DealId)
+		l = len(x.SubscriptionRequestId)
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
@@ -5962,7 +6318,7 @@ func (x *fastReflection_MsgLeaveDeal) ProtoMethods() *protoiface.Methods {
 	}
 
 	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
-		x := input.Message.Interface().(*MsgLeaveDeal)
+		x := input.Message.Interface().(*MsgLeaveSubscriptionRequest)
 		if x == nil {
 			return protoiface.MarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -5981,17 +6337,17 @@ func (x *fastReflection_MsgLeaveDeal) ProtoMethods() *protoiface.Methods {
 			i -= len(x.unknownFields)
 			copy(dAtA[i:], x.unknownFields)
 		}
-		if len(x.DealId) > 0 {
-			i -= len(x.DealId)
-			copy(dAtA[i:], x.DealId)
-			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.DealId)))
+		if len(x.SubscriptionRequestId) > 0 {
+			i -= len(x.SubscriptionRequestId)
+			copy(dAtA[i:], x.SubscriptionRequestId)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.SubscriptionRequestId)))
 			i--
 			dAtA[i] = 0x12
 		}
-		if len(x.Provider) > 0 {
-			i -= len(x.Provider)
-			copy(dAtA[i:], x.Provider)
-			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Provider)))
+		if len(x.Subscriber) > 0 {
+			i -= len(x.Subscriber)
+			copy(dAtA[i:], x.Subscriber)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Subscriber)))
 			i--
 			dAtA[i] = 0xa
 		}
@@ -6006,7 +6362,7 @@ func (x *fastReflection_MsgLeaveDeal) ProtoMethods() *protoiface.Methods {
 		}, nil
 	}
 	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
-		x := input.Message.Interface().(*MsgLeaveDeal)
+		x := input.Message.Interface().(*MsgLeaveSubscriptionRequest)
 		if x == nil {
 			return protoiface.UnmarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -6038,15 +6394,15 @@ func (x *fastReflection_MsgLeaveDeal) ProtoMethods() *protoiface.Methods {
 			fieldNum := int32(wire >> 3)
 			wireType := int(wire & 0x7)
 			if wireType == 4 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgLeaveDeal: wiretype end group for non-group")
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgLeaveSubscriptionRequest: wiretype end group for non-group")
 			}
 			if fieldNum <= 0 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgLeaveDeal: illegal tag %d (wire type %d)", fieldNum, wire)
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgLeaveSubscriptionRequest: illegal tag %d (wire type %d)", fieldNum, wire)
 			}
 			switch fieldNum {
 			case 1:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Provider", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Subscriber", wireType)
 				}
 				var stringLen uint64
 				for shift := uint(0); ; shift += 7 {
@@ -6074,11 +6430,11 @@ func (x *fastReflection_MsgLeaveDeal) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.Provider = string(dAtA[iNdEx:postIndex])
+				x.Subscriber = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
 			case 2:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field DealId", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field SubscriptionRequestId", wireType)
 				}
 				var stringLen uint64
 				for shift := uint(0); ; shift += 7 {
@@ -6106,7 +6462,7 @@ func (x *fastReflection_MsgLeaveDeal) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.DealId = string(dAtA[iNdEx:postIndex])
+				x.SubscriptionRequestId = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
 			default:
 				iNdEx = preIndex
@@ -6144,23 +6500,23 @@ func (x *fastReflection_MsgLeaveDeal) ProtoMethods() *protoiface.Methods {
 }
 
 var (
-	md_MsgLeaveDealResponse protoreflect.MessageDescriptor
+	md_MsgLeaveSubscriptionRequestResponse protoreflect.MessageDescriptor
 )
 
 func init() {
 	file_mandu_subscription_tx_proto_init()
-	md_MsgLeaveDealResponse = File_mandu_subscription_tx_proto.Messages().ByName("MsgLeaveDealResponse")
+	md_MsgLeaveSubscriptionRequestResponse = File_mandu_subscription_tx_proto.Messages().ByName("MsgLeaveSubscriptionRequestResponse")
 }
 
-var _ protoreflect.Message = (*fastReflection_MsgLeaveDealResponse)(nil)
+var _ protoreflect.Message = (*fastReflection_MsgLeaveSubscriptionRequestResponse)(nil)
 
-type fastReflection_MsgLeaveDealResponse MsgLeaveDealResponse
+type fastReflection_MsgLeaveSubscriptionRequestResponse MsgLeaveSubscriptionRequestResponse
 
-func (x *MsgLeaveDealResponse) ProtoReflect() protoreflect.Message {
-	return (*fastReflection_MsgLeaveDealResponse)(x)
+func (x *MsgLeaveSubscriptionRequestResponse) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgLeaveSubscriptionRequestResponse)(x)
 }
 
-func (x *MsgLeaveDealResponse) slowProtoReflect() protoreflect.Message {
+func (x *MsgLeaveSubscriptionRequestResponse) slowProtoReflect() protoreflect.Message {
 	mi := &file_mandu_subscription_tx_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -6172,43 +6528,43 @@ func (x *MsgLeaveDealResponse) slowProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-var _fastReflection_MsgLeaveDealResponse_messageType fastReflection_MsgLeaveDealResponse_messageType
-var _ protoreflect.MessageType = fastReflection_MsgLeaveDealResponse_messageType{}
+var _fastReflection_MsgLeaveSubscriptionRequestResponse_messageType fastReflection_MsgLeaveSubscriptionRequestResponse_messageType
+var _ protoreflect.MessageType = fastReflection_MsgLeaveSubscriptionRequestResponse_messageType{}
 
-type fastReflection_MsgLeaveDealResponse_messageType struct{}
+type fastReflection_MsgLeaveSubscriptionRequestResponse_messageType struct{}
 
-func (x fastReflection_MsgLeaveDealResponse_messageType) Zero() protoreflect.Message {
-	return (*fastReflection_MsgLeaveDealResponse)(nil)
+func (x fastReflection_MsgLeaveSubscriptionRequestResponse_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgLeaveSubscriptionRequestResponse)(nil)
 }
-func (x fastReflection_MsgLeaveDealResponse_messageType) New() protoreflect.Message {
-	return new(fastReflection_MsgLeaveDealResponse)
+func (x fastReflection_MsgLeaveSubscriptionRequestResponse_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgLeaveSubscriptionRequestResponse)
 }
-func (x fastReflection_MsgLeaveDealResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgLeaveDealResponse
+func (x fastReflection_MsgLeaveSubscriptionRequestResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgLeaveSubscriptionRequestResponse
 }
 
 // Descriptor returns message descriptor, which contains only the protobuf
 // type information for the message.
-func (x *fastReflection_MsgLeaveDealResponse) Descriptor() protoreflect.MessageDescriptor {
-	return md_MsgLeaveDealResponse
+func (x *fastReflection_MsgLeaveSubscriptionRequestResponse) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgLeaveSubscriptionRequestResponse
 }
 
 // Type returns the message type, which encapsulates both Go and protobuf
 // type information. If the Go type information is not needed,
 // it is recommended that the message descriptor be used instead.
-func (x *fastReflection_MsgLeaveDealResponse) Type() protoreflect.MessageType {
-	return _fastReflection_MsgLeaveDealResponse_messageType
+func (x *fastReflection_MsgLeaveSubscriptionRequestResponse) Type() protoreflect.MessageType {
+	return _fastReflection_MsgLeaveSubscriptionRequestResponse_messageType
 }
 
 // New returns a newly allocated and mutable empty message.
-func (x *fastReflection_MsgLeaveDealResponse) New() protoreflect.Message {
-	return new(fastReflection_MsgLeaveDealResponse)
+func (x *fastReflection_MsgLeaveSubscriptionRequestResponse) New() protoreflect.Message {
+	return new(fastReflection_MsgLeaveSubscriptionRequestResponse)
 }
 
 // Interface unwraps the message reflection interface and
 // returns the underlying ProtoMessage interface.
-func (x *fastReflection_MsgLeaveDealResponse) Interface() protoreflect.ProtoMessage {
-	return (*MsgLeaveDealResponse)(x)
+func (x *fastReflection_MsgLeaveSubscriptionRequestResponse) Interface() protoreflect.ProtoMessage {
+	return (*MsgLeaveSubscriptionRequestResponse)(x)
 }
 
 // Range iterates over every populated field in an undefined order,
@@ -6216,7 +6572,7 @@ func (x *fastReflection_MsgLeaveDealResponse) Interface() protoreflect.ProtoMess
 // Range returns immediately if f returns false.
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
-func (x *fastReflection_MsgLeaveDealResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+func (x *fastReflection_MsgLeaveSubscriptionRequestResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
 }
 
 // Has reports whether a field is populated.
@@ -6230,13 +6586,13 @@ func (x *fastReflection_MsgLeaveDealResponse) Range(f func(protoreflect.FieldDes
 // In other cases (aside from the nullable cases above),
 // a proto3 scalar field is populated if it contains a non-zero value, and
 // a repeated field is populated if it is non-empty.
-func (x *fastReflection_MsgLeaveDealResponse) Has(fd protoreflect.FieldDescriptor) bool {
+func (x *fastReflection_MsgLeaveSubscriptionRequestResponse) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgLeaveDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgLeaveSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -6246,13 +6602,13 @@ func (x *fastReflection_MsgLeaveDealResponse) Has(fd protoreflect.FieldDescripto
 // associated with the given field number.
 //
 // Clear is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgLeaveDealResponse) Clear(fd protoreflect.FieldDescriptor) {
+func (x *fastReflection_MsgLeaveSubscriptionRequestResponse) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgLeaveDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgLeaveSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -6262,13 +6618,13 @@ func (x *fastReflection_MsgLeaveDealResponse) Clear(fd protoreflect.FieldDescrip
 // the default value of a bytes scalar is guaranteed to be a copy.
 // For unpopulated composite types, it returns an empty, read-only view
 // of the value; to obtain a mutable reference, use Mutable.
-func (x *fastReflection_MsgLeaveDealResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgLeaveSubscriptionRequestResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
 	default:
 		if descriptor.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgLeaveDealResponse does not contain field %s", descriptor.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgLeaveSubscriptionRequestResponse does not contain field %s", descriptor.FullName()))
 	}
 }
 
@@ -6282,13 +6638,13 @@ func (x *fastReflection_MsgLeaveDealResponse) Get(descriptor protoreflect.FieldD
 // empty, read-only value, then it panics.
 //
 // Set is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgLeaveDealResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+func (x *fastReflection_MsgLeaveSubscriptionRequestResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgLeaveDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgLeaveSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
@@ -6302,36 +6658,36 @@ func (x *fastReflection_MsgLeaveDealResponse) Set(fd protoreflect.FieldDescripto
 // It panics if the field does not contain a composite type.
 //
 // Mutable is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgLeaveDealResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgLeaveSubscriptionRequestResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgLeaveDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgLeaveSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
 // NewField returns a new value that is assignable to the field
 // for the given descriptor. For scalars, this returns the default value.
 // For lists, maps, and messages, this returns a new, empty, mutable value.
-func (x *fastReflection_MsgLeaveDealResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+func (x *fastReflection_MsgLeaveSubscriptionRequestResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
 	default:
 		if fd.IsExtension() {
-			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveDealResponse"))
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.MsgLeaveSubscriptionRequestResponse"))
 		}
-		panic(fmt.Errorf("message mandu.subscription.MsgLeaveDealResponse does not contain field %s", fd.FullName()))
+		panic(fmt.Errorf("message mandu.subscription.MsgLeaveSubscriptionRequestResponse does not contain field %s", fd.FullName()))
 	}
 }
 
 // WhichOneof reports which field within the oneof is populated,
 // returning nil if none are populated.
 // It panics if the oneof descriptor does not belong to this message.
-func (x *fastReflection_MsgLeaveDealResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+func (x *fastReflection_MsgLeaveSubscriptionRequestResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
 	switch d.FullName() {
 	default:
-		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgLeaveDealResponse", d.FullName()))
+		panic(fmt.Errorf("%s is not a oneof field in mandu.subscription.MsgLeaveSubscriptionRequestResponse", d.FullName()))
 	}
 	panic("unreachable")
 }
@@ -6339,7 +6695,7 @@ func (x *fastReflection_MsgLeaveDealResponse) WhichOneof(d protoreflect.OneofDes
 // GetUnknown retrieves the entire list of unknown fields.
 // The caller may only mutate the contents of the RawFields
 // if the mutated bytes are stored back into the message with SetUnknown.
-func (x *fastReflection_MsgLeaveDealResponse) GetUnknown() protoreflect.RawFields {
+func (x *fastReflection_MsgLeaveSubscriptionRequestResponse) GetUnknown() protoreflect.RawFields {
 	return x.unknownFields
 }
 
@@ -6350,7 +6706,7 @@ func (x *fastReflection_MsgLeaveDealResponse) GetUnknown() protoreflect.RawField
 // An empty RawFields may be passed to clear the fields.
 //
 // SetUnknown is a mutating operation and unsafe for concurrent use.
-func (x *fastReflection_MsgLeaveDealResponse) SetUnknown(fields protoreflect.RawFields) {
+func (x *fastReflection_MsgLeaveSubscriptionRequestResponse) SetUnknown(fields protoreflect.RawFields) {
 	x.unknownFields = fields
 }
 
@@ -6362,7 +6718,7 @@ func (x *fastReflection_MsgLeaveDealResponse) SetUnknown(fields protoreflect.Raw
 // message type, but the details are implementation dependent.
 // Validity is not part of the protobuf data model, and may not
 // be preserved in marshaling or other operations.
-func (x *fastReflection_MsgLeaveDealResponse) IsValid() bool {
+func (x *fastReflection_MsgLeaveSubscriptionRequestResponse) IsValid() bool {
 	return x != nil
 }
 
@@ -6372,9 +6728,9 @@ func (x *fastReflection_MsgLeaveDealResponse) IsValid() bool {
 // The returned methods type is identical to
 // "google.golang.org/protobuf/runtime/protoiface".Methods.
 // Consult the protoiface package documentation for details.
-func (x *fastReflection_MsgLeaveDealResponse) ProtoMethods() *protoiface.Methods {
+func (x *fastReflection_MsgLeaveSubscriptionRequestResponse) ProtoMethods() *protoiface.Methods {
 	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
-		x := input.Message.Interface().(*MsgLeaveDealResponse)
+		x := input.Message.Interface().(*MsgLeaveSubscriptionRequestResponse)
 		if x == nil {
 			return protoiface.SizeOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -6396,7 +6752,7 @@ func (x *fastReflection_MsgLeaveDealResponse) ProtoMethods() *protoiface.Methods
 	}
 
 	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
-		x := input.Message.Interface().(*MsgLeaveDealResponse)
+		x := input.Message.Interface().(*MsgLeaveSubscriptionRequestResponse)
 		if x == nil {
 			return protoiface.MarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -6426,7 +6782,7 @@ func (x *fastReflection_MsgLeaveDealResponse) ProtoMethods() *protoiface.Methods
 		}, nil
 	}
 	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
-		x := input.Message.Interface().(*MsgLeaveDealResponse)
+		x := input.Message.Interface().(*MsgLeaveSubscriptionRequestResponse)
 		if x == nil {
 			return protoiface.UnmarshalOutput{
 				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
@@ -6458,10 +6814,10 @@ func (x *fastReflection_MsgLeaveDealResponse) ProtoMethods() *protoiface.Methods
 			fieldNum := int32(wire >> 3)
 			wireType := int(wire & 0x7)
 			if wireType == 4 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgLeaveDealResponse: wiretype end group for non-group")
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgLeaveSubscriptionRequestResponse: wiretype end group for non-group")
 			}
 			if fieldNum <= 0 {
-				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgLeaveDealResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgLeaveSubscriptionRequestResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 			}
 			switch fieldNum {
 			default:
@@ -6547,7 +6903,7 @@ func (x *_MsgSubmitProgress_3_list) IsValid() bool {
 
 var (
 	md_MsgSubmitProgress                          protoreflect.MessageDescriptor
-	fd_MsgSubmitProgress_provider                 protoreflect.FieldDescriptor
+	fd_MsgSubmitProgress_subscriber               protoreflect.FieldDescriptor
 	fd_MsgSubmitProgress_subscription_id          protoreflect.FieldDescriptor
 	fd_MsgSubmitProgress_previous_vertices_hashes protoreflect.FieldDescriptor
 	fd_MsgSubmitProgress_obfuscated_vertices_hash protoreflect.FieldDescriptor
@@ -6556,7 +6912,7 @@ var (
 func init() {
 	file_mandu_subscription_tx_proto_init()
 	md_MsgSubmitProgress = File_mandu_subscription_tx_proto.Messages().ByName("MsgSubmitProgress")
-	fd_MsgSubmitProgress_provider = md_MsgSubmitProgress.Fields().ByName("provider")
+	fd_MsgSubmitProgress_subscriber = md_MsgSubmitProgress.Fields().ByName("subscriber")
 	fd_MsgSubmitProgress_subscription_id = md_MsgSubmitProgress.Fields().ByName("subscription_id")
 	fd_MsgSubmitProgress_previous_vertices_hashes = md_MsgSubmitProgress.Fields().ByName("previous_vertices_hashes")
 	fd_MsgSubmitProgress_obfuscated_vertices_hash = md_MsgSubmitProgress.Fields().ByName("obfuscated_vertices_hash")
@@ -6627,9 +6983,9 @@ func (x *fastReflection_MsgSubmitProgress) Interface() protoreflect.ProtoMessage
 // While iterating, mutating operations may only be performed
 // on the current field descriptor.
 func (x *fastReflection_MsgSubmitProgress) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
-	if x.Provider != "" {
-		value := protoreflect.ValueOfString(x.Provider)
-		if !f(fd_MsgSubmitProgress_provider, value) {
+	if x.Subscriber != "" {
+		value := protoreflect.ValueOfString(x.Subscriber)
+		if !f(fd_MsgSubmitProgress_subscriber, value) {
 			return
 		}
 	}
@@ -6666,8 +7022,8 @@ func (x *fastReflection_MsgSubmitProgress) Range(f func(protoreflect.FieldDescri
 // a repeated field is populated if it is non-empty.
 func (x *fastReflection_MsgSubmitProgress) Has(fd protoreflect.FieldDescriptor) bool {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgSubmitProgress.provider":
-		return x.Provider != ""
+	case "mandu.subscription.MsgSubmitProgress.subscriber":
+		return x.Subscriber != ""
 	case "mandu.subscription.MsgSubmitProgress.subscription_id":
 		return x.SubscriptionId != ""
 	case "mandu.subscription.MsgSubmitProgress.previous_vertices_hashes":
@@ -6690,8 +7046,8 @@ func (x *fastReflection_MsgSubmitProgress) Has(fd protoreflect.FieldDescriptor) 
 // Clear is a mutating operation and unsafe for concurrent use.
 func (x *fastReflection_MsgSubmitProgress) Clear(fd protoreflect.FieldDescriptor) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgSubmitProgress.provider":
-		x.Provider = ""
+	case "mandu.subscription.MsgSubmitProgress.subscriber":
+		x.Subscriber = ""
 	case "mandu.subscription.MsgSubmitProgress.subscription_id":
 		x.SubscriptionId = ""
 	case "mandu.subscription.MsgSubmitProgress.previous_vertices_hashes":
@@ -6714,8 +7070,8 @@ func (x *fastReflection_MsgSubmitProgress) Clear(fd protoreflect.FieldDescriptor
 // of the value; to obtain a mutable reference, use Mutable.
 func (x *fastReflection_MsgSubmitProgress) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
 	switch descriptor.FullName() {
-	case "mandu.subscription.MsgSubmitProgress.provider":
-		value := x.Provider
+	case "mandu.subscription.MsgSubmitProgress.subscriber":
+		value := x.Subscriber
 		return protoreflect.ValueOfString(value)
 	case "mandu.subscription.MsgSubmitProgress.subscription_id":
 		value := x.SubscriptionId
@@ -6749,8 +7105,8 @@ func (x *fastReflection_MsgSubmitProgress) Get(descriptor protoreflect.FieldDesc
 // Set is a mutating operation and unsafe for concurrent use.
 func (x *fastReflection_MsgSubmitProgress) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgSubmitProgress.provider":
-		x.Provider = value.Interface().(string)
+	case "mandu.subscription.MsgSubmitProgress.subscriber":
+		x.Subscriber = value.Interface().(string)
 	case "mandu.subscription.MsgSubmitProgress.subscription_id":
 		x.SubscriptionId = value.Interface().(string)
 	case "mandu.subscription.MsgSubmitProgress.previous_vertices_hashes":
@@ -6785,8 +7141,8 @@ func (x *fastReflection_MsgSubmitProgress) Mutable(fd protoreflect.FieldDescript
 		}
 		value := &_MsgSubmitProgress_3_list{list: &x.PreviousVerticesHashes}
 		return protoreflect.ValueOfList(value)
-	case "mandu.subscription.MsgSubmitProgress.provider":
-		panic(fmt.Errorf("field provider of message mandu.subscription.MsgSubmitProgress is not mutable"))
+	case "mandu.subscription.MsgSubmitProgress.subscriber":
+		panic(fmt.Errorf("field subscriber of message mandu.subscription.MsgSubmitProgress is not mutable"))
 	case "mandu.subscription.MsgSubmitProgress.subscription_id":
 		panic(fmt.Errorf("field subscription_id of message mandu.subscription.MsgSubmitProgress is not mutable"))
 	case "mandu.subscription.MsgSubmitProgress.obfuscated_vertices_hash":
@@ -6804,7 +7160,7 @@ func (x *fastReflection_MsgSubmitProgress) Mutable(fd protoreflect.FieldDescript
 // For lists, maps, and messages, this returns a new, empty, mutable value.
 func (x *fastReflection_MsgSubmitProgress) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
 	switch fd.FullName() {
-	case "mandu.subscription.MsgSubmitProgress.provider":
+	case "mandu.subscription.MsgSubmitProgress.subscriber":
 		return protoreflect.ValueOfString("")
 	case "mandu.subscription.MsgSubmitProgress.subscription_id":
 		return protoreflect.ValueOfString("")
@@ -6882,7 +7238,7 @@ func (x *fastReflection_MsgSubmitProgress) ProtoMethods() *protoiface.Methods {
 		var n int
 		var l int
 		_ = l
-		l = len(x.Provider)
+		l = len(x.Subscriber)
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
@@ -6952,10 +7308,10 @@ func (x *fastReflection_MsgSubmitProgress) ProtoMethods() *protoiface.Methods {
 			i--
 			dAtA[i] = 0x12
 		}
-		if len(x.Provider) > 0 {
-			i -= len(x.Provider)
-			copy(dAtA[i:], x.Provider)
-			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Provider)))
+		if len(x.Subscriber) > 0 {
+			i -= len(x.Subscriber)
+			copy(dAtA[i:], x.Subscriber)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Subscriber)))
 			i--
 			dAtA[i] = 0xa
 		}
@@ -7010,7 +7366,7 @@ func (x *fastReflection_MsgSubmitProgress) ProtoMethods() *protoiface.Methods {
 			switch fieldNum {
 			case 1:
 				if wireType != 2 {
-					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Provider", wireType)
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Subscriber", wireType)
 				}
 				var stringLen uint64
 				for shift := uint(0); ; shift += 7 {
@@ -7038,7 +7394,7 @@ func (x *fastReflection_MsgSubmitProgress) ProtoMethods() *protoiface.Methods {
 				if postIndex > l {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
 				}
-				x.Provider = string(dAtA[iNdEx:postIndex])
+				x.Subscriber = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
 			case 2:
 				if wireType != 2 {
@@ -7615,21 +7971,23 @@ func (*MsgUpdateParamsResponse) Descriptor() ([]byte, []int) {
 	return file_mandu_subscription_tx_proto_rawDescGZIP(), []int{1}
 }
 
-type MsgCreateDeal struct {
+type MsgCreateSubscriptionRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
 	Requester       string   `protobuf:"bytes,1,opt,name=requester,proto3" json:"requester,omitempty"`
-	CroId           string   `protobuf:"bytes,2,opt,name=cro_id,json=croId,proto3" json:"cro_id,omitempty"`
-	Amount          uint64   `protobuf:"varint,3,opt,name=amount,proto3" json:"amount,omitempty"`
-	StartBlock      uint64   `protobuf:"varint,4,opt,name=start_block,json=startBlock,proto3" json:"start_block,omitempty"`
-	EndBlock        uint64   `protobuf:"varint,5,opt,name=end_block,json=endBlock,proto3" json:"end_block,omitempty"`
-	InitialFrontier []string `protobuf:"bytes,6,rep,name=initial_frontier,json=initialFrontier,proto3" json:"initial_frontier,omitempty"`
+	Amount          int64    `protobuf:"varint,2,opt,name=amount,proto3" json:"amount,omitempty"`
+	StartBlock      int64    `protobuf:"varint,3,opt,name=start_block,json=startBlock,proto3" json:"start_block,omitempty"`
+	EpochSize       int64    `protobuf:"varint,4,opt,name=epoch_size,json=epochSize,proto3" json:"epoch_size,omitempty"`
+	Duration        int64    `protobuf:"varint,5,opt,name=duration,proto3" json:"duration,omitempty"`
+	DrpIds          []string `protobuf:"bytes,6,rep,name=drp_ids,json=drpIds,proto3" json:"drp_ids,omitempty"`
+	Writers         []string `protobuf:"bytes,7,rep,name=writers,proto3" json:"writers,omitempty"`
+	InitialFrontier []string `protobuf:"bytes,8,rep,name=initial_frontier,json=initialFrontier,proto3" json:"initial_frontier,omitempty"`
 }
 
-func (x *MsgCreateDeal) Reset() {
-	*x = MsgCreateDeal{}
+func (x *MsgCreateSubscriptionRequest) Reset() {
+	*x = MsgCreateSubscriptionRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_mandu_subscription_tx_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7637,69 +7995,83 @@ func (x *MsgCreateDeal) Reset() {
 	}
 }
 
-func (x *MsgCreateDeal) String() string {
+func (x *MsgCreateSubscriptionRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MsgCreateDeal) ProtoMessage() {}
+func (*MsgCreateSubscriptionRequest) ProtoMessage() {}
 
-// Deprecated: Use MsgCreateDeal.ProtoReflect.Descriptor instead.
-func (*MsgCreateDeal) Descriptor() ([]byte, []int) {
+// Deprecated: Use MsgCreateSubscriptionRequest.ProtoReflect.Descriptor instead.
+func (*MsgCreateSubscriptionRequest) Descriptor() ([]byte, []int) {
 	return file_mandu_subscription_tx_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *MsgCreateDeal) GetRequester() string {
+func (x *MsgCreateSubscriptionRequest) GetRequester() string {
 	if x != nil {
 		return x.Requester
 	}
 	return ""
 }
 
-func (x *MsgCreateDeal) GetCroId() string {
-	if x != nil {
-		return x.CroId
-	}
-	return ""
-}
-
-func (x *MsgCreateDeal) GetAmount() uint64 {
+func (x *MsgCreateSubscriptionRequest) GetAmount() int64 {
 	if x != nil {
 		return x.Amount
 	}
 	return 0
 }
 
-func (x *MsgCreateDeal) GetStartBlock() uint64 {
+func (x *MsgCreateSubscriptionRequest) GetStartBlock() int64 {
 	if x != nil {
 		return x.StartBlock
 	}
 	return 0
 }
 
-func (x *MsgCreateDeal) GetEndBlock() uint64 {
+func (x *MsgCreateSubscriptionRequest) GetEpochSize() int64 {
 	if x != nil {
-		return x.EndBlock
+		return x.EpochSize
 	}
 	return 0
 }
 
-func (x *MsgCreateDeal) GetInitialFrontier() []string {
+func (x *MsgCreateSubscriptionRequest) GetDuration() int64 {
+	if x != nil {
+		return x.Duration
+	}
+	return 0
+}
+
+func (x *MsgCreateSubscriptionRequest) GetDrpIds() []string {
+	if x != nil {
+		return x.DrpIds
+	}
+	return nil
+}
+
+func (x *MsgCreateSubscriptionRequest) GetWriters() []string {
+	if x != nil {
+		return x.Writers
+	}
+	return nil
+}
+
+func (x *MsgCreateSubscriptionRequest) GetInitialFrontier() []string {
 	if x != nil {
 		return x.InitialFrontier
 	}
 	return nil
 }
 
-type MsgCreateDealResponse struct {
+type MsgCreateSubscriptionRequestResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	DealId string `protobuf:"bytes,1,opt,name=deal_id,json=dealId,proto3" json:"deal_id,omitempty"`
+	SubscriptionRequestId string `protobuf:"bytes,1,opt,name=subscription_request_id,json=subscriptionRequestId,proto3" json:"subscription_request_id,omitempty"`
 }
 
-func (x *MsgCreateDealResponse) Reset() {
-	*x = MsgCreateDealResponse{}
+func (x *MsgCreateSubscriptionRequestResponse) Reset() {
+	*x = MsgCreateSubscriptionRequestResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_mandu_subscription_tx_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7707,35 +8079,35 @@ func (x *MsgCreateDealResponse) Reset() {
 	}
 }
 
-func (x *MsgCreateDealResponse) String() string {
+func (x *MsgCreateSubscriptionRequestResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MsgCreateDealResponse) ProtoMessage() {}
+func (*MsgCreateSubscriptionRequestResponse) ProtoMessage() {}
 
-// Deprecated: Use MsgCreateDealResponse.ProtoReflect.Descriptor instead.
-func (*MsgCreateDealResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use MsgCreateSubscriptionRequestResponse.ProtoReflect.Descriptor instead.
+func (*MsgCreateSubscriptionRequestResponse) Descriptor() ([]byte, []int) {
 	return file_mandu_subscription_tx_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *MsgCreateDealResponse) GetDealId() string {
+func (x *MsgCreateSubscriptionRequestResponse) GetSubscriptionRequestId() string {
 	if x != nil {
-		return x.DealId
+		return x.SubscriptionRequestId
 	}
 	return ""
 }
 
-type MsgCancelDeal struct {
+type MsgCancelSubscriptionRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Requester string `protobuf:"bytes,1,opt,name=requester,proto3" json:"requester,omitempty"`
-	DealId    string `protobuf:"bytes,2,opt,name=deal_id,json=dealId,proto3" json:"deal_id,omitempty"`
+	Requester             string `protobuf:"bytes,1,opt,name=requester,proto3" json:"requester,omitempty"`
+	SubscriptionRequestId string `protobuf:"bytes,2,opt,name=subscription_request_id,json=subscriptionRequestId,proto3" json:"subscription_request_id,omitempty"`
 }
 
-func (x *MsgCancelDeal) Reset() {
-	*x = MsgCancelDeal{}
+func (x *MsgCancelSubscriptionRequest) Reset() {
+	*x = MsgCancelSubscriptionRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_mandu_subscription_tx_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7743,39 +8115,39 @@ func (x *MsgCancelDeal) Reset() {
 	}
 }
 
-func (x *MsgCancelDeal) String() string {
+func (x *MsgCancelSubscriptionRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MsgCancelDeal) ProtoMessage() {}
+func (*MsgCancelSubscriptionRequest) ProtoMessage() {}
 
-// Deprecated: Use MsgCancelDeal.ProtoReflect.Descriptor instead.
-func (*MsgCancelDeal) Descriptor() ([]byte, []int) {
+// Deprecated: Use MsgCancelSubscriptionRequest.ProtoReflect.Descriptor instead.
+func (*MsgCancelSubscriptionRequest) Descriptor() ([]byte, []int) {
 	return file_mandu_subscription_tx_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *MsgCancelDeal) GetRequester() string {
+func (x *MsgCancelSubscriptionRequest) GetRequester() string {
 	if x != nil {
 		return x.Requester
 	}
 	return ""
 }
 
-func (x *MsgCancelDeal) GetDealId() string {
+func (x *MsgCancelSubscriptionRequest) GetSubscriptionRequestId() string {
 	if x != nil {
-		return x.DealId
+		return x.SubscriptionRequestId
 	}
 	return ""
 }
 
-type MsgCancelDealResponse struct {
+type MsgCancelSubscriptionRequestResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *MsgCancelDealResponse) Reset() {
-	*x = MsgCancelDealResponse{}
+func (x *MsgCancelSubscriptionRequestResponse) Reset() {
+	*x = MsgCancelSubscriptionRequestResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_mandu_subscription_tx_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7783,32 +8155,33 @@ func (x *MsgCancelDealResponse) Reset() {
 	}
 }
 
-func (x *MsgCancelDealResponse) String() string {
+func (x *MsgCancelSubscriptionRequestResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MsgCancelDealResponse) ProtoMessage() {}
+func (*MsgCancelSubscriptionRequestResponse) ProtoMessage() {}
 
-// Deprecated: Use MsgCancelDealResponse.ProtoReflect.Descriptor instead.
-func (*MsgCancelDealResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use MsgCancelSubscriptionRequestResponse.ProtoReflect.Descriptor instead.
+func (*MsgCancelSubscriptionRequestResponse) Descriptor() ([]byte, []int) {
 	return file_mandu_subscription_tx_proto_rawDescGZIP(), []int{5}
 }
 
-type MsgUpdateDeal struct {
+type MsgUpdateSubscriptionRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Requester string `protobuf:"bytes,1,opt,name=requester,proto3" json:"requester,omitempty"`
-	DealId    string `protobuf:"bytes,2,opt,name=deal_id,json=dealId,proto3" json:"deal_id,omitempty"`
+	Requester             string `protobuf:"bytes,1,opt,name=requester,proto3" json:"requester,omitempty"`
+	SubscriptionRequestId string `protobuf:"bytes,2,opt,name=subscription_request_id,json=subscriptionRequestId,proto3" json:"subscription_request_id,omitempty"`
 	// these fields should be optional, errors with pulsar
-	Amount     uint64 `protobuf:"varint,3,opt,name=amount,proto3" json:"amount,omitempty"`
-	StartBlock uint64 `protobuf:"varint,4,opt,name=start_block,json=startBlock,proto3" json:"start_block,omitempty"`
-	EndBlock   uint64 `protobuf:"varint,5,opt,name=end_block,json=endBlock,proto3" json:"end_block,omitempty"`
+	Amount     int64    `protobuf:"varint,3,opt,name=amount,proto3" json:"amount,omitempty"`
+	StartBlock int64    `protobuf:"varint,4,opt,name=start_block,json=startBlock,proto3" json:"start_block,omitempty"`
+	Duration   int64    `protobuf:"varint,5,opt,name=duration,proto3" json:"duration,omitempty"`
+	Writers    []string `protobuf:"bytes,7,rep,name=writers,proto3" json:"writers,omitempty"`
 }
 
-func (x *MsgUpdateDeal) Reset() {
-	*x = MsgUpdateDeal{}
+func (x *MsgUpdateSubscriptionRequest) Reset() {
+	*x = MsgUpdateSubscriptionRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_mandu_subscription_tx_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7816,60 +8189,67 @@ func (x *MsgUpdateDeal) Reset() {
 	}
 }
 
-func (x *MsgUpdateDeal) String() string {
+func (x *MsgUpdateSubscriptionRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MsgUpdateDeal) ProtoMessage() {}
+func (*MsgUpdateSubscriptionRequest) ProtoMessage() {}
 
-// Deprecated: Use MsgUpdateDeal.ProtoReflect.Descriptor instead.
-func (*MsgUpdateDeal) Descriptor() ([]byte, []int) {
+// Deprecated: Use MsgUpdateSubscriptionRequest.ProtoReflect.Descriptor instead.
+func (*MsgUpdateSubscriptionRequest) Descriptor() ([]byte, []int) {
 	return file_mandu_subscription_tx_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *MsgUpdateDeal) GetRequester() string {
+func (x *MsgUpdateSubscriptionRequest) GetRequester() string {
 	if x != nil {
 		return x.Requester
 	}
 	return ""
 }
 
-func (x *MsgUpdateDeal) GetDealId() string {
+func (x *MsgUpdateSubscriptionRequest) GetSubscriptionRequestId() string {
 	if x != nil {
-		return x.DealId
+		return x.SubscriptionRequestId
 	}
 	return ""
 }
 
-func (x *MsgUpdateDeal) GetAmount() uint64 {
+func (x *MsgUpdateSubscriptionRequest) GetAmount() int64 {
 	if x != nil {
 		return x.Amount
 	}
 	return 0
 }
 
-func (x *MsgUpdateDeal) GetStartBlock() uint64 {
+func (x *MsgUpdateSubscriptionRequest) GetStartBlock() int64 {
 	if x != nil {
 		return x.StartBlock
 	}
 	return 0
 }
 
-func (x *MsgUpdateDeal) GetEndBlock() uint64 {
+func (x *MsgUpdateSubscriptionRequest) GetDuration() int64 {
 	if x != nil {
-		return x.EndBlock
+		return x.Duration
 	}
 	return 0
 }
 
-type MsgUpdateDealResponse struct {
+func (x *MsgUpdateSubscriptionRequest) GetWriters() []string {
+	if x != nil {
+		return x.Writers
+	}
+	return nil
+}
+
+type MsgUpdateSubscriptionRequestResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *MsgUpdateDealResponse) Reset() {
-	*x = MsgUpdateDealResponse{}
+func (x *MsgUpdateSubscriptionRequestResponse) Reset() {
+	*x = MsgUpdateSubscriptionRequestResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_mandu_subscription_tx_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7877,29 +8257,29 @@ func (x *MsgUpdateDealResponse) Reset() {
 	}
 }
 
-func (x *MsgUpdateDealResponse) String() string {
+func (x *MsgUpdateSubscriptionRequestResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MsgUpdateDealResponse) ProtoMessage() {}
+func (*MsgUpdateSubscriptionRequestResponse) ProtoMessage() {}
 
-// Deprecated: Use MsgUpdateDealResponse.ProtoReflect.Descriptor instead.
-func (*MsgUpdateDealResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use MsgUpdateSubscriptionRequestResponse.ProtoReflect.Descriptor instead.
+func (*MsgUpdateSubscriptionRequestResponse) Descriptor() ([]byte, []int) {
 	return file_mandu_subscription_tx_proto_rawDescGZIP(), []int{7}
 }
 
-type MsgIncrementDealAmount struct {
+type MsgIncrementSubscriptionRequestAmount struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Requester string `protobuf:"bytes,1,opt,name=requester,proto3" json:"requester,omitempty"`
-	DealId    string `protobuf:"bytes,2,opt,name=deal_id,json=dealId,proto3" json:"deal_id,omitempty"`
-	Amount    uint64 `protobuf:"varint,3,opt,name=amount,proto3" json:"amount,omitempty"`
+	Requester             string `protobuf:"bytes,1,opt,name=requester,proto3" json:"requester,omitempty"`
+	SubscriptionRequestId string `protobuf:"bytes,2,opt,name=subscription_request_id,json=subscriptionRequestId,proto3" json:"subscription_request_id,omitempty"`
+	Amount                int64  `protobuf:"varint,3,opt,name=amount,proto3" json:"amount,omitempty"`
 }
 
-func (x *MsgIncrementDealAmount) Reset() {
-	*x = MsgIncrementDealAmount{}
+func (x *MsgIncrementSubscriptionRequestAmount) Reset() {
+	*x = MsgIncrementSubscriptionRequestAmount{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_mandu_subscription_tx_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7907,46 +8287,46 @@ func (x *MsgIncrementDealAmount) Reset() {
 	}
 }
 
-func (x *MsgIncrementDealAmount) String() string {
+func (x *MsgIncrementSubscriptionRequestAmount) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MsgIncrementDealAmount) ProtoMessage() {}
+func (*MsgIncrementSubscriptionRequestAmount) ProtoMessage() {}
 
-// Deprecated: Use MsgIncrementDealAmount.ProtoReflect.Descriptor instead.
-func (*MsgIncrementDealAmount) Descriptor() ([]byte, []int) {
+// Deprecated: Use MsgIncrementSubscriptionRequestAmount.ProtoReflect.Descriptor instead.
+func (*MsgIncrementSubscriptionRequestAmount) Descriptor() ([]byte, []int) {
 	return file_mandu_subscription_tx_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *MsgIncrementDealAmount) GetRequester() string {
+func (x *MsgIncrementSubscriptionRequestAmount) GetRequester() string {
 	if x != nil {
 		return x.Requester
 	}
 	return ""
 }
 
-func (x *MsgIncrementDealAmount) GetDealId() string {
+func (x *MsgIncrementSubscriptionRequestAmount) GetSubscriptionRequestId() string {
 	if x != nil {
-		return x.DealId
+		return x.SubscriptionRequestId
 	}
 	return ""
 }
 
-func (x *MsgIncrementDealAmount) GetAmount() uint64 {
+func (x *MsgIncrementSubscriptionRequestAmount) GetAmount() int64 {
 	if x != nil {
 		return x.Amount
 	}
 	return 0
 }
 
-type MsgIncrementDealAmountResponse struct {
+type MsgIncrementSubscriptionRequestAmountResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *MsgIncrementDealAmountResponse) Reset() {
-	*x = MsgIncrementDealAmountResponse{}
+func (x *MsgIncrementSubscriptionRequestAmountResponse) Reset() {
+	*x = MsgIncrementSubscriptionRequestAmountResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_mandu_subscription_tx_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7954,28 +8334,28 @@ func (x *MsgIncrementDealAmountResponse) Reset() {
 	}
 }
 
-func (x *MsgIncrementDealAmountResponse) String() string {
+func (x *MsgIncrementSubscriptionRequestAmountResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MsgIncrementDealAmountResponse) ProtoMessage() {}
+func (*MsgIncrementSubscriptionRequestAmountResponse) ProtoMessage() {}
 
-// Deprecated: Use MsgIncrementDealAmountResponse.ProtoReflect.Descriptor instead.
-func (*MsgIncrementDealAmountResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use MsgIncrementSubscriptionRequestAmountResponse.ProtoReflect.Descriptor instead.
+func (*MsgIncrementSubscriptionRequestAmountResponse) Descriptor() ([]byte, []int) {
 	return file_mandu_subscription_tx_proto_rawDescGZIP(), []int{9}
 }
 
-type MsgJoinDeal struct {
+type MsgJoinSubscriptionRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Provider string `protobuf:"bytes,1,opt,name=provider,proto3" json:"provider,omitempty"`
-	DealId   string `protobuf:"bytes,2,opt,name=deal_id,json=dealId,proto3" json:"deal_id,omitempty"`
+	Subscriber            string `protobuf:"bytes,1,opt,name=subscriber,proto3" json:"subscriber,omitempty"`
+	SubscriptionRequestId string `protobuf:"bytes,2,opt,name=subscription_request_id,json=subscriptionRequestId,proto3" json:"subscription_request_id,omitempty"`
 }
 
-func (x *MsgJoinDeal) Reset() {
-	*x = MsgJoinDeal{}
+func (x *MsgJoinSubscriptionRequest) Reset() {
+	*x = MsgJoinSubscriptionRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_mandu_subscription_tx_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -7983,32 +8363,32 @@ func (x *MsgJoinDeal) Reset() {
 	}
 }
 
-func (x *MsgJoinDeal) String() string {
+func (x *MsgJoinSubscriptionRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MsgJoinDeal) ProtoMessage() {}
+func (*MsgJoinSubscriptionRequest) ProtoMessage() {}
 
-// Deprecated: Use MsgJoinDeal.ProtoReflect.Descriptor instead.
-func (*MsgJoinDeal) Descriptor() ([]byte, []int) {
+// Deprecated: Use MsgJoinSubscriptionRequest.ProtoReflect.Descriptor instead.
+func (*MsgJoinSubscriptionRequest) Descriptor() ([]byte, []int) {
 	return file_mandu_subscription_tx_proto_rawDescGZIP(), []int{10}
 }
 
-func (x *MsgJoinDeal) GetProvider() string {
+func (x *MsgJoinSubscriptionRequest) GetSubscriber() string {
 	if x != nil {
-		return x.Provider
+		return x.Subscriber
 	}
 	return ""
 }
 
-func (x *MsgJoinDeal) GetDealId() string {
+func (x *MsgJoinSubscriptionRequest) GetSubscriptionRequestId() string {
 	if x != nil {
-		return x.DealId
+		return x.SubscriptionRequestId
 	}
 	return ""
 }
 
-type MsgJoinDealResponse struct {
+type MsgJoinSubscriptionRequestResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -8016,8 +8396,8 @@ type MsgJoinDealResponse struct {
 	SubscriptionId string `protobuf:"bytes,1,opt,name=subscription_id,json=subscriptionId,proto3" json:"subscription_id,omitempty"`
 }
 
-func (x *MsgJoinDealResponse) Reset() {
-	*x = MsgJoinDealResponse{}
+func (x *MsgJoinSubscriptionRequestResponse) Reset() {
+	*x = MsgJoinSubscriptionRequestResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_mandu_subscription_tx_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -8025,35 +8405,35 @@ func (x *MsgJoinDealResponse) Reset() {
 	}
 }
 
-func (x *MsgJoinDealResponse) String() string {
+func (x *MsgJoinSubscriptionRequestResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MsgJoinDealResponse) ProtoMessage() {}
+func (*MsgJoinSubscriptionRequestResponse) ProtoMessage() {}
 
-// Deprecated: Use MsgJoinDealResponse.ProtoReflect.Descriptor instead.
-func (*MsgJoinDealResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use MsgJoinSubscriptionRequestResponse.ProtoReflect.Descriptor instead.
+func (*MsgJoinSubscriptionRequestResponse) Descriptor() ([]byte, []int) {
 	return file_mandu_subscription_tx_proto_rawDescGZIP(), []int{11}
 }
 
-func (x *MsgJoinDealResponse) GetSubscriptionId() string {
+func (x *MsgJoinSubscriptionRequestResponse) GetSubscriptionId() string {
 	if x != nil {
 		return x.SubscriptionId
 	}
 	return ""
 }
 
-type MsgLeaveDeal struct {
+type MsgLeaveSubscriptionRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Provider string `protobuf:"bytes,1,opt,name=provider,proto3" json:"provider,omitempty"`
-	DealId   string `protobuf:"bytes,2,opt,name=deal_id,json=dealId,proto3" json:"deal_id,omitempty"`
+	Subscriber            string `protobuf:"bytes,1,opt,name=subscriber,proto3" json:"subscriber,omitempty"`
+	SubscriptionRequestId string `protobuf:"bytes,2,opt,name=subscription_request_id,json=subscriptionRequestId,proto3" json:"subscription_request_id,omitempty"`
 }
 
-func (x *MsgLeaveDeal) Reset() {
-	*x = MsgLeaveDeal{}
+func (x *MsgLeaveSubscriptionRequest) Reset() {
+	*x = MsgLeaveSubscriptionRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_mandu_subscription_tx_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -8061,39 +8441,39 @@ func (x *MsgLeaveDeal) Reset() {
 	}
 }
 
-func (x *MsgLeaveDeal) String() string {
+func (x *MsgLeaveSubscriptionRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MsgLeaveDeal) ProtoMessage() {}
+func (*MsgLeaveSubscriptionRequest) ProtoMessage() {}
 
-// Deprecated: Use MsgLeaveDeal.ProtoReflect.Descriptor instead.
-func (*MsgLeaveDeal) Descriptor() ([]byte, []int) {
+// Deprecated: Use MsgLeaveSubscriptionRequest.ProtoReflect.Descriptor instead.
+func (*MsgLeaveSubscriptionRequest) Descriptor() ([]byte, []int) {
 	return file_mandu_subscription_tx_proto_rawDescGZIP(), []int{12}
 }
 
-func (x *MsgLeaveDeal) GetProvider() string {
+func (x *MsgLeaveSubscriptionRequest) GetSubscriber() string {
 	if x != nil {
-		return x.Provider
+		return x.Subscriber
 	}
 	return ""
 }
 
-func (x *MsgLeaveDeal) GetDealId() string {
+func (x *MsgLeaveSubscriptionRequest) GetSubscriptionRequestId() string {
 	if x != nil {
-		return x.DealId
+		return x.SubscriptionRequestId
 	}
 	return ""
 }
 
-type MsgLeaveDealResponse struct {
+type MsgLeaveSubscriptionRequestResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 }
 
-func (x *MsgLeaveDealResponse) Reset() {
-	*x = MsgLeaveDealResponse{}
+func (x *MsgLeaveSubscriptionRequestResponse) Reset() {
+	*x = MsgLeaveSubscriptionRequestResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_mandu_subscription_tx_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -8101,14 +8481,14 @@ func (x *MsgLeaveDealResponse) Reset() {
 	}
 }
 
-func (x *MsgLeaveDealResponse) String() string {
+func (x *MsgLeaveSubscriptionRequestResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*MsgLeaveDealResponse) ProtoMessage() {}
+func (*MsgLeaveSubscriptionRequestResponse) ProtoMessage() {}
 
-// Deprecated: Use MsgLeaveDealResponse.ProtoReflect.Descriptor instead.
-func (*MsgLeaveDealResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use MsgLeaveSubscriptionRequestResponse.ProtoReflect.Descriptor instead.
+func (*MsgLeaveSubscriptionRequestResponse) Descriptor() ([]byte, []int) {
 	return file_mandu_subscription_tx_proto_rawDescGZIP(), []int{13}
 }
 
@@ -8117,7 +8497,7 @@ type MsgSubmitProgress struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Provider               string   `protobuf:"bytes,1,opt,name=provider,proto3" json:"provider,omitempty"`
+	Subscriber             string   `protobuf:"bytes,1,opt,name=subscriber,proto3" json:"subscriber,omitempty"`
 	SubscriptionId         string   `protobuf:"bytes,2,opt,name=subscription_id,json=subscriptionId,proto3" json:"subscription_id,omitempty"`
 	PreviousVerticesHashes []string `protobuf:"bytes,3,rep,name=previous_vertices_hashes,json=previousVerticesHashes,proto3" json:"previous_vertices_hashes,omitempty"`
 	ObfuscatedVerticesHash string   `protobuf:"bytes,4,opt,name=obfuscated_vertices_hash,json=obfuscatedVerticesHash,proto3" json:"obfuscated_vertices_hash,omitempty"`
@@ -8143,9 +8523,9 @@ func (*MsgSubmitProgress) Descriptor() ([]byte, []int) {
 	return file_mandu_subscription_tx_proto_rawDescGZIP(), []int{14}
 }
 
-func (x *MsgSubmitProgress) GetProvider() string {
+func (x *MsgSubmitProgress) GetSubscriber() string {
 	if x != nil {
-		return x.Provider
+		return x.Subscriber
 	}
 	return ""
 }
@@ -8224,145 +8604,192 @@ var file_mandu_subscription_tx_proto_rawDesc = []byte{
 	0x61, 0x6e, 0x64, 0x75, 0x2f, 0x78, 0x2f, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
 	0x69, 0x6f, 0x6e, 0x2f, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72,
 	0x61, 0x6d, 0x73, 0x22, 0x19, 0x0a, 0x17, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65,
-	0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0xd5,
-	0x01, 0x0a, 0x0d, 0x4d, 0x73, 0x67, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44, 0x65, 0x61, 0x6c,
+	0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x9e,
+	0x02, 0x0a, 0x1c, 0x4d, 0x73, 0x67, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x73,
+	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x1c, 0x0a, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x12, 0x16, 0x0a,
+	0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x61,
+	0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x1f, 0x0a, 0x0b, 0x73, 0x74, 0x61, 0x72, 0x74, 0x5f, 0x62,
+	0x6c, 0x6f, 0x63, 0x6b, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0a, 0x73, 0x74, 0x61, 0x72,
+	0x74, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x12, 0x1d, 0x0a, 0x0a, 0x65, 0x70, 0x6f, 0x63, 0x68, 0x5f,
+	0x73, 0x69, 0x7a, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x65, 0x70, 0x6f, 0x63,
+	0x68, 0x53, 0x69, 0x7a, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x64, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x18, 0x05, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x64, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f,
+	0x6e, 0x12, 0x17, 0x0a, 0x07, 0x64, 0x72, 0x70, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x06, 0x20, 0x03,
+	0x28, 0x09, 0x52, 0x06, 0x64, 0x72, 0x70, 0x49, 0x64, 0x73, 0x12, 0x18, 0x0a, 0x07, 0x77, 0x72,
+	0x69, 0x74, 0x65, 0x72, 0x73, 0x18, 0x07, 0x20, 0x03, 0x28, 0x09, 0x52, 0x07, 0x77, 0x72, 0x69,
+	0x74, 0x65, 0x72, 0x73, 0x12, 0x29, 0x0a, 0x10, 0x69, 0x6e, 0x69, 0x74, 0x69, 0x61, 0x6c, 0x5f,
+	0x66, 0x72, 0x6f, 0x6e, 0x74, 0x69, 0x65, 0x72, 0x18, 0x08, 0x20, 0x03, 0x28, 0x09, 0x52, 0x0f,
+	0x69, 0x6e, 0x69, 0x74, 0x69, 0x61, 0x6c, 0x46, 0x72, 0x6f, 0x6e, 0x74, 0x69, 0x65, 0x72, 0x3a,
+	0x0e, 0x82, 0xe7, 0xb0, 0x2a, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x22,
+	0x5e, 0x0a, 0x24, 0x4d, 0x73, 0x67, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x73,
+	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x36, 0x0a, 0x17, 0x73, 0x75, 0x62, 0x73, 0x63,
+	0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x5f,
+	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x15, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72,
+	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x49, 0x64, 0x22,
+	0x84, 0x01, 0x0a, 0x1c, 0x4d, 0x73, 0x67, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x53, 0x75, 0x62,
+	0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
 	0x12, 0x1c, 0x0a, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x12, 0x15,
-	0x0a, 0x06, 0x63, 0x72, 0x6f, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
-	0x63, 0x72, 0x6f, 0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18,
-	0x03, 0x20, 0x01, 0x28, 0x04, 0x52, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x1f, 0x0a,
+	0x01, 0x28, 0x09, 0x52, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x12, 0x36,
+	0x0a, 0x17, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x72,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x15, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x49, 0x64, 0x3a, 0x0e, 0x82, 0xe7, 0xb0, 0x2a, 0x09, 0x72, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x22, 0x26, 0x0a, 0x24, 0x4d, 0x73, 0x67, 0x43, 0x61, 0x6e,
+	0x63, 0x65, 0x6c, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0xf3,
+	0x01, 0x0a, 0x1c, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x73,
+	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x1c, 0x0a, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x12, 0x36, 0x0a,
+	0x17, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x72, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x15,
+	0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18,
+	0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x1f, 0x0a,
 	0x0b, 0x73, 0x74, 0x61, 0x72, 0x74, 0x5f, 0x62, 0x6c, 0x6f, 0x63, 0x6b, 0x18, 0x04, 0x20, 0x01,
-	0x28, 0x04, 0x52, 0x0a, 0x73, 0x74, 0x61, 0x72, 0x74, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x12, 0x1b,
-	0x0a, 0x09, 0x65, 0x6e, 0x64, 0x5f, 0x62, 0x6c, 0x6f, 0x63, 0x6b, 0x18, 0x05, 0x20, 0x01, 0x28,
-	0x04, 0x52, 0x08, 0x65, 0x6e, 0x64, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x12, 0x29, 0x0a, 0x10, 0x69,
-	0x6e, 0x69, 0x74, 0x69, 0x61, 0x6c, 0x5f, 0x66, 0x72, 0x6f, 0x6e, 0x74, 0x69, 0x65, 0x72, 0x18,
-	0x06, 0x20, 0x03, 0x28, 0x09, 0x52, 0x0f, 0x69, 0x6e, 0x69, 0x74, 0x69, 0x61, 0x6c, 0x46, 0x72,
-	0x6f, 0x6e, 0x74, 0x69, 0x65, 0x72, 0x3a, 0x0e, 0x82, 0xe7, 0xb0, 0x2a, 0x09, 0x72, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x22, 0x30, 0x0a, 0x15, 0x4d, 0x73, 0x67, 0x43, 0x72, 0x65,
-	0x61, 0x74, 0x65, 0x44, 0x65, 0x61, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
-	0x17, 0x0a, 0x07, 0x64, 0x65, 0x61, 0x6c, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x06, 0x64, 0x65, 0x61, 0x6c, 0x49, 0x64, 0x22, 0x56, 0x0a, 0x0d, 0x4d, 0x73, 0x67, 0x43,
-	0x61, 0x6e, 0x63, 0x65, 0x6c, 0x44, 0x65, 0x61, 0x6c, 0x12, 0x1c, 0x0a, 0x09, 0x72, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x72, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x12, 0x17, 0x0a, 0x07, 0x64, 0x65, 0x61, 0x6c, 0x5f,
-	0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x64, 0x65, 0x61, 0x6c, 0x49, 0x64,
-	0x3a, 0x0e, 0x82, 0xe7, 0xb0, 0x2a, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72,
-	0x22, 0x17, 0x0a, 0x15, 0x4d, 0x73, 0x67, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x44, 0x65, 0x61,
-	0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0xac, 0x01, 0x0a, 0x0d, 0x4d, 0x73,
-	0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x44, 0x65, 0x61, 0x6c, 0x12, 0x1c, 0x0a, 0x09, 0x72,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09,
-	0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x12, 0x17, 0x0a, 0x07, 0x64, 0x65, 0x61,
-	0x6c, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x64, 0x65, 0x61, 0x6c,
-	0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x03, 0x20, 0x01,
-	0x28, 0x04, 0x52, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x1f, 0x0a, 0x0b, 0x73, 0x74,
-	0x61, 0x72, 0x74, 0x5f, 0x62, 0x6c, 0x6f, 0x63, 0x6b, 0x18, 0x04, 0x20, 0x01, 0x28, 0x04, 0x52,
-	0x0a, 0x73, 0x74, 0x61, 0x72, 0x74, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x12, 0x1b, 0x0a, 0x09, 0x65,
-	0x6e, 0x64, 0x5f, 0x62, 0x6c, 0x6f, 0x63, 0x6b, 0x18, 0x05, 0x20, 0x01, 0x28, 0x04, 0x52, 0x08,
-	0x65, 0x6e, 0x64, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x3a, 0x0e, 0x82, 0xe7, 0xb0, 0x2a, 0x09, 0x72,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x22, 0x17, 0x0a, 0x15, 0x4d, 0x73, 0x67, 0x55,
-	0x70, 0x64, 0x61, 0x74, 0x65, 0x44, 0x65, 0x61, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x77, 0x0a, 0x16, 0x4d, 0x73, 0x67, 0x49, 0x6e, 0x63, 0x72, 0x65, 0x6d, 0x65, 0x6e,
-	0x74, 0x44, 0x65, 0x61, 0x6c, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x72,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09,
-	0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x12, 0x17, 0x0a, 0x07, 0x64, 0x65, 0x61,
-	0x6c, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x64, 0x65, 0x61, 0x6c,
-	0x49, 0x64, 0x12, 0x16, 0x0a, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x03, 0x20, 0x01,
-	0x28, 0x04, 0x52, 0x06, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x3a, 0x0e, 0x82, 0xe7, 0xb0, 0x2a,
-	0x09, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72, 0x22, 0x20, 0x0a, 0x1e, 0x4d, 0x73,
-	0x67, 0x49, 0x6e, 0x63, 0x72, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x44, 0x65, 0x61, 0x6c, 0x41, 0x6d,
-	0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x51, 0x0a, 0x0b,
-	0x4d, 0x73, 0x67, 0x4a, 0x6f, 0x69, 0x6e, 0x44, 0x65, 0x61, 0x6c, 0x12, 0x1a, 0x0a, 0x08, 0x70,
-	0x72, 0x6f, 0x76, 0x69, 0x64, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x70,
-	0x72, 0x6f, 0x76, 0x69, 0x64, 0x65, 0x72, 0x12, 0x17, 0x0a, 0x07, 0x64, 0x65, 0x61, 0x6c, 0x5f,
-	0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x64, 0x65, 0x61, 0x6c, 0x49, 0x64,
-	0x3a, 0x0d, 0x82, 0xe7, 0xb0, 0x2a, 0x08, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x64, 0x65, 0x72, 0x22,
-	0x3e, 0x0a, 0x13, 0x4d, 0x73, 0x67, 0x4a, 0x6f, 0x69, 0x6e, 0x44, 0x65, 0x61, 0x6c, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x27, 0x0a, 0x0f, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72,
-	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x0e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22,
-	0x52, 0x0a, 0x0c, 0x4d, 0x73, 0x67, 0x4c, 0x65, 0x61, 0x76, 0x65, 0x44, 0x65, 0x61, 0x6c, 0x12,
-	0x1a, 0x0a, 0x08, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x64, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x64, 0x65, 0x72, 0x12, 0x17, 0x0a, 0x07, 0x64,
-	0x65, 0x61, 0x6c, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x64, 0x65,
-	0x61, 0x6c, 0x49, 0x64, 0x3a, 0x0d, 0x82, 0xe7, 0xb0, 0x2a, 0x08, 0x70, 0x72, 0x6f, 0x76, 0x69,
-	0x64, 0x65, 0x72, 0x22, 0x16, 0x0a, 0x14, 0x4d, 0x73, 0x67, 0x4c, 0x65, 0x61, 0x76, 0x65, 0x44,
-	0x65, 0x61, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0xdb, 0x01, 0x0a, 0x11,
-	0x4d, 0x73, 0x67, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x50, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73,
-	0x73, 0x12, 0x1a, 0x0a, 0x08, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x64, 0x65, 0x72, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x64, 0x65, 0x72, 0x12, 0x27, 0x0a,
-	0x0f, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70,
-	0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x12, 0x38, 0x0a, 0x18, 0x70, 0x72, 0x65, 0x76, 0x69, 0x6f,
-	0x75, 0x73, 0x5f, 0x76, 0x65, 0x72, 0x74, 0x69, 0x63, 0x65, 0x73, 0x5f, 0x68, 0x61, 0x73, 0x68,
-	0x65, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x09, 0x52, 0x16, 0x70, 0x72, 0x65, 0x76, 0x69, 0x6f,
-	0x75, 0x73, 0x56, 0x65, 0x72, 0x74, 0x69, 0x63, 0x65, 0x73, 0x48, 0x61, 0x73, 0x68, 0x65, 0x73,
-	0x12, 0x38, 0x0a, 0x18, 0x6f, 0x62, 0x66, 0x75, 0x73, 0x63, 0x61, 0x74, 0x65, 0x64, 0x5f, 0x76,
-	0x65, 0x72, 0x74, 0x69, 0x63, 0x65, 0x73, 0x5f, 0x68, 0x61, 0x73, 0x68, 0x18, 0x04, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x16, 0x6f, 0x62, 0x66, 0x75, 0x73, 0x63, 0x61, 0x74, 0x65, 0x64, 0x56, 0x65,
-	0x72, 0x74, 0x69, 0x63, 0x65, 0x73, 0x48, 0x61, 0x73, 0x68, 0x3a, 0x0d, 0x82, 0xe7, 0xb0, 0x2a,
-	0x08, 0x70, 0x72, 0x6f, 0x76, 0x69, 0x64, 0x65, 0x72, 0x22, 0x1b, 0x0a, 0x19, 0x4d, 0x73, 0x67,
-	0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x50, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0x90, 0x06, 0x0a, 0x03, 0x4d, 0x73, 0x67, 0x12, 0x60,
-	0x0a, 0x0c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0x23,
-	0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
-	0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72,
-	0x61, 0x6d, 0x73, 0x1a, 0x2b, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73,
-	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61,
-	0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x12, 0x5a, 0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44, 0x65, 0x61, 0x6c, 0x12, 0x21,
-	0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
-	0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x44, 0x65, 0x61,
-	0x6c, 0x1a, 0x29, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72,
-	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65,
-	0x44, 0x65, 0x61, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5a, 0x0a, 0x0a,
-	0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x44, 0x65, 0x61, 0x6c, 0x12, 0x21, 0x2e, 0x6d, 0x61, 0x6e,
+	0x28, 0x03, 0x52, 0x0a, 0x73, 0x74, 0x61, 0x72, 0x74, 0x42, 0x6c, 0x6f, 0x63, 0x6b, 0x12, 0x1a,
+	0x0a, 0x08, 0x64, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x05, 0x20, 0x01, 0x28, 0x03,
+	0x52, 0x08, 0x64, 0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x18, 0x0a, 0x07, 0x77, 0x72,
+	0x69, 0x74, 0x65, 0x72, 0x73, 0x18, 0x07, 0x20, 0x03, 0x28, 0x09, 0x52, 0x07, 0x77, 0x72, 0x69,
+	0x74, 0x65, 0x72, 0x73, 0x3a, 0x0e, 0x82, 0xe7, 0xb0, 0x2a, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x65, 0x72, 0x22, 0x26, 0x0a, 0x24, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74,
+	0x65, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0xa5, 0x01, 0x0a,
+	0x25, 0x4d, 0x73, 0x67, 0x49, 0x6e, 0x63, 0x72, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x53, 0x75, 0x62,
+	0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x1c, 0x0a, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x65, 0x72, 0x12, 0x36, 0x0a, 0x17, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70,
+	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x15, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x49, 0x64, 0x12, 0x16, 0x0a, 0x06,
+	0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52, 0x06, 0x61, 0x6d,
+	0x6f, 0x75, 0x6e, 0x74, 0x3a, 0x0e, 0x82, 0xe7, 0xb0, 0x2a, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x65, 0x72, 0x22, 0x2f, 0x0a, 0x2d, 0x4d, 0x73, 0x67, 0x49, 0x6e, 0x63, 0x72, 0x65,
+	0x6d, 0x65, 0x6e, 0x74, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x85, 0x01, 0x0a, 0x1a, 0x4d, 0x73, 0x67, 0x4a, 0x6f, 0x69,
+	0x6e, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x12, 0x1e, 0x0a, 0x0a, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62,
+	0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72,
+	0x69, 0x62, 0x65, 0x72, 0x12, 0x36, 0x0a, 0x17, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70,
+	0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x15, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
+	0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x49, 0x64, 0x3a, 0x0f, 0x82, 0xe7,
+	0xb0, 0x2a, 0x0a, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x72, 0x22, 0x4d, 0x0a,
+	0x22, 0x4d, 0x73, 0x67, 0x4a, 0x6f, 0x69, 0x6e, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70,
+	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x27, 0x0a, 0x0f, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
+	0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x73, 0x75,
+	0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0x86, 0x01, 0x0a,
+	0x1b, 0x4d, 0x73, 0x67, 0x4c, 0x65, 0x61, 0x76, 0x65, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69,
+	0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1e, 0x0a, 0x0a,
+	0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0a, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x72, 0x12, 0x36, 0x0a, 0x17,
+	0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x72, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x15, 0x73,
+	0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x49, 0x64, 0x3a, 0x0f, 0x82, 0xe7, 0xb0, 0x2a, 0x0a, 0x73, 0x75, 0x62, 0x73, 0x63,
+	0x72, 0x69, 0x62, 0x65, 0x72, 0x22, 0x25, 0x0a, 0x23, 0x4d, 0x73, 0x67, 0x4c, 0x65, 0x61, 0x76,
+	0x65, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0xe1, 0x01, 0x0a,
+	0x11, 0x4d, 0x73, 0x67, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x50, 0x72, 0x6f, 0x67, 0x72, 0x65,
+	0x73, 0x73, 0x12, 0x1e, 0x0a, 0x0a, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x72,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62,
+	0x65, 0x72, 0x12, 0x27, 0x0a, 0x0f, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69,
+	0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x73, 0x75, 0x62,
+	0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x12, 0x38, 0x0a, 0x18, 0x70,
+	0x72, 0x65, 0x76, 0x69, 0x6f, 0x75, 0x73, 0x5f, 0x76, 0x65, 0x72, 0x74, 0x69, 0x63, 0x65, 0x73,
+	0x5f, 0x68, 0x61, 0x73, 0x68, 0x65, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x09, 0x52, 0x16, 0x70,
+	0x72, 0x65, 0x76, 0x69, 0x6f, 0x75, 0x73, 0x56, 0x65, 0x72, 0x74, 0x69, 0x63, 0x65, 0x73, 0x48,
+	0x61, 0x73, 0x68, 0x65, 0x73, 0x12, 0x38, 0x0a, 0x18, 0x6f, 0x62, 0x66, 0x75, 0x73, 0x63, 0x61,
+	0x74, 0x65, 0x64, 0x5f, 0x76, 0x65, 0x72, 0x74, 0x69, 0x63, 0x65, 0x73, 0x5f, 0x68, 0x61, 0x73,
+	0x68, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x16, 0x6f, 0x62, 0x66, 0x75, 0x73, 0x63, 0x61,
+	0x74, 0x65, 0x64, 0x56, 0x65, 0x72, 0x74, 0x69, 0x63, 0x65, 0x73, 0x48, 0x61, 0x73, 0x68, 0x3a,
+	0x0f, 0x82, 0xe7, 0xb0, 0x2a, 0x0a, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x72,
+	0x22, 0x1b, 0x0a, 0x19, 0x4d, 0x73, 0x67, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x50, 0x72, 0x6f,
+	0x67, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0xa4, 0x08,
+	0x0a, 0x03, 0x4d, 0x73, 0x67, 0x12, 0x60, 0x0a, 0x0c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50,
+	0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0x23, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75,
+	0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x1a, 0x2b, 0x2e, 0x6d, 0x61, 0x6e,
 	0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e,
-	0x4d, 0x73, 0x67, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x44, 0x65, 0x61, 0x6c, 0x1a, 0x29, 0x2e,
-	0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69,
-	0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x44, 0x65, 0x61, 0x6c,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5a, 0x0a, 0x0a, 0x55, 0x70, 0x64, 0x61,
-	0x74, 0x65, 0x44, 0x65, 0x61, 0x6c, 0x12, 0x21, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73,
-	0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x55,
-	0x70, 0x64, 0x61, 0x74, 0x65, 0x44, 0x65, 0x61, 0x6c, 0x1a, 0x29, 0x2e, 0x6d, 0x61, 0x6e, 0x64,
+	0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x87, 0x01, 0x0a, 0x19, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x30, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75,
+	0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x38, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e,
+	0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69,
+	0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x12, 0x87, 0x01, 0x0a, 0x19, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x53, 0x75, 0x62, 0x73,
+	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x30, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70,
+	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x53, 0x75,
+	0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x38, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72,
+	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c,
+	0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x87, 0x01, 0x0a, 0x19,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69,
+	0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x30, 0x2e, 0x6d, 0x61, 0x6e, 0x64,
 	0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d,
-	0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x44, 0x65, 0x61, 0x6c, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x75, 0x0a, 0x13, 0x49, 0x6e, 0x63, 0x72, 0x65, 0x6d, 0x65, 0x6e,
-	0x74, 0x44, 0x65, 0x61, 0x6c, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x2a, 0x2e, 0x6d, 0x61,
+	0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70,
+	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x38, 0x2e, 0x6d, 0x61,
 	0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e,
-	0x2e, 0x4d, 0x73, 0x67, 0x49, 0x6e, 0x63, 0x72, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x44, 0x65, 0x61,
-	0x6c, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x1a, 0x32, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e,
-	0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67,
-	0x49, 0x6e, 0x63, 0x72, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x44, 0x65, 0x61, 0x6c, 0x41, 0x6d, 0x6f,
-	0x75, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x54, 0x0a, 0x08, 0x4a,
-	0x6f, 0x69, 0x6e, 0x44, 0x65, 0x61, 0x6c, 0x12, 0x1f, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e,
-	0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67,
-	0x4a, 0x6f, 0x69, 0x6e, 0x44, 0x65, 0x61, 0x6c, 0x1a, 0x27, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75,
-	0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73,
-	0x67, 0x4a, 0x6f, 0x69, 0x6e, 0x44, 0x65, 0x61, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x12, 0x57, 0x0a, 0x09, 0x4c, 0x65, 0x61, 0x76, 0x65, 0x44, 0x65, 0x61, 0x6c, 0x12, 0x20,
-	0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
-	0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x4c, 0x65, 0x61, 0x76, 0x65, 0x44, 0x65, 0x61, 0x6c,
-	0x1a, 0x28, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69,
-	0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x4c, 0x65, 0x61, 0x76, 0x65, 0x44, 0x65,
-	0x61, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x66, 0x0a, 0x0e, 0x53, 0x75,
-	0x62, 0x6d, 0x69, 0x74, 0x50, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73, 0x73, 0x12, 0x25, 0x2e, 0x6d,
+	0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72,
+	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0xa2, 0x01, 0x0a, 0x22, 0x49, 0x6e, 0x63, 0x72, 0x65, 0x6d,
+	0x65, 0x6e, 0x74, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x39, 0x2e, 0x6d,
 	0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f,
-	0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x50, 0x72, 0x6f, 0x67, 0x72,
-	0x65, 0x73, 0x73, 0x1a, 0x2d, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73,
-	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x53, 0x75, 0x62, 0x6d,
-	0x69, 0x74, 0x50, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x1a, 0x05, 0x80, 0xe7, 0xb0, 0x2a, 0x01, 0x42, 0xa8, 0x01, 0x0a, 0x16, 0x63, 0x6f,
-	0x6d, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70,
-	0x74, 0x69, 0x6f, 0x6e, 0x42, 0x07, 0x54, 0x78, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a,
-	0x1c, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x6d, 0x61, 0x6e, 0x64, 0x75,
-	0x2f, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0xa2, 0x02, 0x03,
-	0x4d, 0x53, 0x58, 0xaa, 0x02, 0x12, 0x4d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x53, 0x75, 0x62, 0x73,
-	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0xca, 0x02, 0x12, 0x4d, 0x61, 0x6e, 0x64, 0x75,
-	0x5c, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0xe2, 0x02, 0x1e,
-	0x4d, 0x61, 0x6e, 0x64, 0x75, 0x5c, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69,
-	0x6f, 0x6e, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02,
-	0x13, 0x4d, 0x61, 0x6e, 0x64, 0x75, 0x3a, 0x3a, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70,
-	0x74, 0x69, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x49, 0x6e, 0x63, 0x72, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x53, 0x75,
+	0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x41, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x1a, 0x41, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e,
+	0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67,
+	0x49, 0x6e, 0x63, 0x72, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69,
+	0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x41, 0x6d, 0x6f, 0x75,
+	0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x81, 0x01, 0x0a, 0x17, 0x4a,
+	0x6f, 0x69, 0x6e, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2e, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73,
+	0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x4a,
+	0x6f, 0x69, 0x6e, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x36, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73,
+	0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x4a,
+	0x6f, 0x69, 0x6e, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x84,
+	0x01, 0x0a, 0x18, 0x4c, 0x65, 0x61, 0x76, 0x65, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70,
+	0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x2f, 0x2e, 0x6d, 0x61,
+	0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e,
+	0x2e, 0x4d, 0x73, 0x67, 0x4c, 0x65, 0x61, 0x76, 0x65, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69,
+	0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x37, 0x2e, 0x6d,
+	0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f,
+	0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x4c, 0x65, 0x61, 0x76, 0x65, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72,
+	0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x66, 0x0a, 0x0e, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x50,
+	0x72, 0x6f, 0x67, 0x72, 0x65, 0x73, 0x73, 0x12, 0x25, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e,
+	0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67,
+	0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x50, 0x72, 0x6f, 0x67, 0x72, 0x65, 0x73, 0x73, 0x1a, 0x2d,
+	0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
+	0x69, 0x6f, 0x6e, 0x2e, 0x4d, 0x73, 0x67, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x50, 0x72, 0x6f,
+	0x67, 0x72, 0x65, 0x73, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x1a, 0x05, 0x80,
+	0xe7, 0xb0, 0x2a, 0x01, 0x42, 0xa8, 0x01, 0x0a, 0x16, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x61, 0x6e,
+	0x64, 0x75, 0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x42,
+	0x07, 0x54, 0x78, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x1c, 0x6d, 0x61, 0x6e, 0x64,
+	0x75, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2f, 0x73, 0x75, 0x62, 0x73,
+	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0xa2, 0x02, 0x03, 0x4d, 0x53, 0x58, 0xaa, 0x02,
+	0x12, 0x4d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
+	0x69, 0x6f, 0x6e, 0xca, 0x02, 0x12, 0x4d, 0x61, 0x6e, 0x64, 0x75, 0x5c, 0x53, 0x75, 0x62, 0x73,
+	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0xe2, 0x02, 0x1e, 0x4d, 0x61, 0x6e, 0x64, 0x75,
+	0x5c, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x5c, 0x47, 0x50,
+	0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x13, 0x4d, 0x61, 0x6e, 0x64,
+	0x75, 0x3a, 0x3a, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -8379,41 +8806,41 @@ func file_mandu_subscription_tx_proto_rawDescGZIP() []byte {
 
 var file_mandu_subscription_tx_proto_msgTypes = make([]protoimpl.MessageInfo, 16)
 var file_mandu_subscription_tx_proto_goTypes = []interface{}{
-	(*MsgUpdateParams)(nil),                // 0: mandu.subscription.MsgUpdateParams
-	(*MsgUpdateParamsResponse)(nil),        // 1: mandu.subscription.MsgUpdateParamsResponse
-	(*MsgCreateDeal)(nil),                  // 2: mandu.subscription.MsgCreateDeal
-	(*MsgCreateDealResponse)(nil),          // 3: mandu.subscription.MsgCreateDealResponse
-	(*MsgCancelDeal)(nil),                  // 4: mandu.subscription.MsgCancelDeal
-	(*MsgCancelDealResponse)(nil),          // 5: mandu.subscription.MsgCancelDealResponse
-	(*MsgUpdateDeal)(nil),                  // 6: mandu.subscription.MsgUpdateDeal
-	(*MsgUpdateDealResponse)(nil),          // 7: mandu.subscription.MsgUpdateDealResponse
-	(*MsgIncrementDealAmount)(nil),         // 8: mandu.subscription.MsgIncrementDealAmount
-	(*MsgIncrementDealAmountResponse)(nil), // 9: mandu.subscription.MsgIncrementDealAmountResponse
-	(*MsgJoinDeal)(nil),                    // 10: mandu.subscription.MsgJoinDeal
-	(*MsgJoinDealResponse)(nil),            // 11: mandu.subscription.MsgJoinDealResponse
-	(*MsgLeaveDeal)(nil),                   // 12: mandu.subscription.MsgLeaveDeal
-	(*MsgLeaveDealResponse)(nil),           // 13: mandu.subscription.MsgLeaveDealResponse
-	(*MsgSubmitProgress)(nil),              // 14: mandu.subscription.MsgSubmitProgress
-	(*MsgSubmitProgressResponse)(nil),      // 15: mandu.subscription.MsgSubmitProgressResponse
-	(*Params)(nil),                         // 16: mandu.subscription.Params
+	(*MsgUpdateParams)(nil),                               // 0: mandu.subscription.MsgUpdateParams
+	(*MsgUpdateParamsResponse)(nil),                       // 1: mandu.subscription.MsgUpdateParamsResponse
+	(*MsgCreateSubscriptionRequest)(nil),                  // 2: mandu.subscription.MsgCreateSubscriptionRequest
+	(*MsgCreateSubscriptionRequestResponse)(nil),          // 3: mandu.subscription.MsgCreateSubscriptionRequestResponse
+	(*MsgCancelSubscriptionRequest)(nil),                  // 4: mandu.subscription.MsgCancelSubscriptionRequest
+	(*MsgCancelSubscriptionRequestResponse)(nil),          // 5: mandu.subscription.MsgCancelSubscriptionRequestResponse
+	(*MsgUpdateSubscriptionRequest)(nil),                  // 6: mandu.subscription.MsgUpdateSubscriptionRequest
+	(*MsgUpdateSubscriptionRequestResponse)(nil),          // 7: mandu.subscription.MsgUpdateSubscriptionRequestResponse
+	(*MsgIncrementSubscriptionRequestAmount)(nil),         // 8: mandu.subscription.MsgIncrementSubscriptionRequestAmount
+	(*MsgIncrementSubscriptionRequestAmountResponse)(nil), // 9: mandu.subscription.MsgIncrementSubscriptionRequestAmountResponse
+	(*MsgJoinSubscriptionRequest)(nil),                    // 10: mandu.subscription.MsgJoinSubscriptionRequest
+	(*MsgJoinSubscriptionRequestResponse)(nil),            // 11: mandu.subscription.MsgJoinSubscriptionRequestResponse
+	(*MsgLeaveSubscriptionRequest)(nil),                   // 12: mandu.subscription.MsgLeaveSubscriptionRequest
+	(*MsgLeaveSubscriptionRequestResponse)(nil),           // 13: mandu.subscription.MsgLeaveSubscriptionRequestResponse
+	(*MsgSubmitProgress)(nil),                             // 14: mandu.subscription.MsgSubmitProgress
+	(*MsgSubmitProgressResponse)(nil),                     // 15: mandu.subscription.MsgSubmitProgressResponse
+	(*Params)(nil),                                        // 16: mandu.subscription.Params
 }
 var file_mandu_subscription_tx_proto_depIdxs = []int32{
 	16, // 0: mandu.subscription.MsgUpdateParams.params:type_name -> mandu.subscription.Params
 	0,  // 1: mandu.subscription.Msg.UpdateParams:input_type -> mandu.subscription.MsgUpdateParams
-	2,  // 2: mandu.subscription.Msg.CreateDeal:input_type -> mandu.subscription.MsgCreateDeal
-	4,  // 3: mandu.subscription.Msg.CancelDeal:input_type -> mandu.subscription.MsgCancelDeal
-	6,  // 4: mandu.subscription.Msg.UpdateDeal:input_type -> mandu.subscription.MsgUpdateDeal
-	8,  // 5: mandu.subscription.Msg.IncrementDealAmount:input_type -> mandu.subscription.MsgIncrementDealAmount
-	10, // 6: mandu.subscription.Msg.JoinDeal:input_type -> mandu.subscription.MsgJoinDeal
-	12, // 7: mandu.subscription.Msg.LeaveDeal:input_type -> mandu.subscription.MsgLeaveDeal
+	2,  // 2: mandu.subscription.Msg.CreateSubscriptionRequest:input_type -> mandu.subscription.MsgCreateSubscriptionRequest
+	4,  // 3: mandu.subscription.Msg.CancelSubscriptionRequest:input_type -> mandu.subscription.MsgCancelSubscriptionRequest
+	6,  // 4: mandu.subscription.Msg.UpdateSubscriptionRequest:input_type -> mandu.subscription.MsgUpdateSubscriptionRequest
+	8,  // 5: mandu.subscription.Msg.IncrementSubscriptionRequestAmount:input_type -> mandu.subscription.MsgIncrementSubscriptionRequestAmount
+	10, // 6: mandu.subscription.Msg.JoinSubscriptionRequest:input_type -> mandu.subscription.MsgJoinSubscriptionRequest
+	12, // 7: mandu.subscription.Msg.LeaveSubscriptionRequest:input_type -> mandu.subscription.MsgLeaveSubscriptionRequest
 	14, // 8: mandu.subscription.Msg.SubmitProgress:input_type -> mandu.subscription.MsgSubmitProgress
 	1,  // 9: mandu.subscription.Msg.UpdateParams:output_type -> mandu.subscription.MsgUpdateParamsResponse
-	3,  // 10: mandu.subscription.Msg.CreateDeal:output_type -> mandu.subscription.MsgCreateDealResponse
-	5,  // 11: mandu.subscription.Msg.CancelDeal:output_type -> mandu.subscription.MsgCancelDealResponse
-	7,  // 12: mandu.subscription.Msg.UpdateDeal:output_type -> mandu.subscription.MsgUpdateDealResponse
-	9,  // 13: mandu.subscription.Msg.IncrementDealAmount:output_type -> mandu.subscription.MsgIncrementDealAmountResponse
-	11, // 14: mandu.subscription.Msg.JoinDeal:output_type -> mandu.subscription.MsgJoinDealResponse
-	13, // 15: mandu.subscription.Msg.LeaveDeal:output_type -> mandu.subscription.MsgLeaveDealResponse
+	3,  // 10: mandu.subscription.Msg.CreateSubscriptionRequest:output_type -> mandu.subscription.MsgCreateSubscriptionRequestResponse
+	5,  // 11: mandu.subscription.Msg.CancelSubscriptionRequest:output_type -> mandu.subscription.MsgCancelSubscriptionRequestResponse
+	7,  // 12: mandu.subscription.Msg.UpdateSubscriptionRequest:output_type -> mandu.subscription.MsgUpdateSubscriptionRequestResponse
+	9,  // 13: mandu.subscription.Msg.IncrementSubscriptionRequestAmount:output_type -> mandu.subscription.MsgIncrementSubscriptionRequestAmountResponse
+	11, // 14: mandu.subscription.Msg.JoinSubscriptionRequest:output_type -> mandu.subscription.MsgJoinSubscriptionRequestResponse
+	13, // 15: mandu.subscription.Msg.LeaveSubscriptionRequest:output_type -> mandu.subscription.MsgLeaveSubscriptionRequestResponse
 	15, // 16: mandu.subscription.Msg.SubmitProgress:output_type -> mandu.subscription.MsgSubmitProgressResponse
 	9,  // [9:17] is the sub-list for method output_type
 	1,  // [1:9] is the sub-list for method input_type
@@ -8454,7 +8881,7 @@ func file_mandu_subscription_tx_proto_init() {
 			}
 		}
 		file_mandu_subscription_tx_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MsgCreateDeal); i {
+			switch v := v.(*MsgCreateSubscriptionRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8466,7 +8893,7 @@ func file_mandu_subscription_tx_proto_init() {
 			}
 		}
 		file_mandu_subscription_tx_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MsgCreateDealResponse); i {
+			switch v := v.(*MsgCreateSubscriptionRequestResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8478,7 +8905,7 @@ func file_mandu_subscription_tx_proto_init() {
 			}
 		}
 		file_mandu_subscription_tx_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MsgCancelDeal); i {
+			switch v := v.(*MsgCancelSubscriptionRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8490,7 +8917,7 @@ func file_mandu_subscription_tx_proto_init() {
 			}
 		}
 		file_mandu_subscription_tx_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MsgCancelDealResponse); i {
+			switch v := v.(*MsgCancelSubscriptionRequestResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8502,7 +8929,7 @@ func file_mandu_subscription_tx_proto_init() {
 			}
 		}
 		file_mandu_subscription_tx_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MsgUpdateDeal); i {
+			switch v := v.(*MsgUpdateSubscriptionRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8514,7 +8941,7 @@ func file_mandu_subscription_tx_proto_init() {
 			}
 		}
 		file_mandu_subscription_tx_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MsgUpdateDealResponse); i {
+			switch v := v.(*MsgUpdateSubscriptionRequestResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8526,7 +8953,7 @@ func file_mandu_subscription_tx_proto_init() {
 			}
 		}
 		file_mandu_subscription_tx_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MsgIncrementDealAmount); i {
+			switch v := v.(*MsgIncrementSubscriptionRequestAmount); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8538,7 +8965,7 @@ func file_mandu_subscription_tx_proto_init() {
 			}
 		}
 		file_mandu_subscription_tx_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MsgIncrementDealAmountResponse); i {
+			switch v := v.(*MsgIncrementSubscriptionRequestAmountResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8550,7 +8977,7 @@ func file_mandu_subscription_tx_proto_init() {
 			}
 		}
 		file_mandu_subscription_tx_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MsgJoinDeal); i {
+			switch v := v.(*MsgJoinSubscriptionRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8562,7 +8989,7 @@ func file_mandu_subscription_tx_proto_init() {
 			}
 		}
 		file_mandu_subscription_tx_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MsgJoinDealResponse); i {
+			switch v := v.(*MsgJoinSubscriptionRequestResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8574,7 +9001,7 @@ func file_mandu_subscription_tx_proto_init() {
 			}
 		}
 		file_mandu_subscription_tx_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MsgLeaveDeal); i {
+			switch v := v.(*MsgLeaveSubscriptionRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -8586,7 +9013,7 @@ func file_mandu_subscription_tx_proto_init() {
 			}
 		}
 		file_mandu_subscription_tx_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*MsgLeaveDealResponse); i {
+			switch v := v.(*MsgLeaveSubscriptionRequestResponse); i {
 			case 0:
 				return &v.state
 			case 1:

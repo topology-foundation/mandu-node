@@ -15,35 +15,35 @@ import (
 	"google.golang.org/grpc/status"
 )
 
-func (k Keeper) Deal(goCtx context.Context, req *types.QueryDealRequest) (*types.QueryDealResponse, error) {
+func (k Keeper) SubscriptionRequest(goCtx context.Context, req *types.QuerySubscriptionRequestRequest) (*types.QuerySubscriptionRequestResponse, error) {
 	if req == nil {
 		return nil, status.Error(codes.InvalidArgument, "invalid request")
 	}
 
 	ctx := sdk.UnwrapSDKContext(goCtx)
-	deal, found := k.GetDeal(ctx, req.Id)
+	subReq, found := k.GetSubscriptionRequest(ctx, req.Id)
 	if !found {
 		return nil, sdkerrors.ErrKeyNotFound
 	}
 
-	return &types.QueryDealResponse{Deal: deal}, nil
+	return &types.QuerySubscriptionRequestResponse{SubscriptionRequest: subReq}, nil
 }
 
-func (k Keeper) DealStatus(goCtx context.Context, req *types.QueryDealStatusRequest) (*types.QueryDealStatusResponse, error) {
+func (k Keeper) SubscriptionRequestStatus(goCtx context.Context, req *types.QuerySubscriptionRequestStatusRequest) (*types.QuerySubscriptionRequestStatusResponse, error) {
 	if req == nil {
 		return nil, status.Error(codes.InvalidArgument, "invalid request")
 	}
 
 	ctx := sdk.UnwrapSDKContext(goCtx)
-	deal, found := k.GetDeal(ctx, req.Id)
+	subReq, found := k.GetSubscriptionRequest(ctx, req.Id)
 	if !found {
 		return nil, sdkerrors.ErrKeyNotFound
 	}
 
-	return &types.QueryDealStatusResponse{Status: deal.Status}, nil
+	return &types.QuerySubscriptionRequestStatusResponse{Status: subReq.Status}, nil
 }
 
-func (k Keeper) Deals(goCtx context.Context, req *types.QueryDealsRequest) (*types.QueryDealsResponse, error) {
+func (k Keeper) SubscriptionRequests(goCtx context.Context, req *types.QuerySubscriptionRequestsRequest) (*types.QuerySubscriptionRequestsResponse, error) {
 	if req == nil {
 		return nil, status.Error(codes.InvalidArgument, "invalid request")
 	}
@@ -51,19 +51,19 @@ func (k Keeper) Deals(goCtx context.Context, req *types.QueryDealsRequest) (*typ
 	storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
 	store := prefix.NewStore(storeAdapter, types.GetRequesterStoreKey(req.Requester))
 
-	var deals []types.Deal
+	var subReqs []types.SubscriptionRequest
 	pageRes, err := query.Paginate(store, req.Pagination, func(key []byte, _ []byte) error {
-		deal, found := k.GetDeal(ctx, string(key))
+		subReq, found := k.GetSubscriptionRequest(ctx, string(key))
 		if !found {
 			return sdkerrors.ErrKeyNotFound
 		}
 
-		deals = append(deals, deal)
+		subReqs = append(subReqs, subReq)
 		return nil
 	})
 	if err != nil {
 		return nil, status.Error(codes.Internal, err.Error())
 	}
 
-	return &types.QueryDealsResponse{Deals: deals, Pagination: pageRes}, nil
+	return &types.QuerySubscriptionRequestsResponse{SubscriptionRequests: subReqs, Pagination: pageRes}, nil
 }

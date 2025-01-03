@@ -19,14 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	Msg_UpdateParams_FullMethodName        = "/mandu.subscription.Msg/UpdateParams"
-	Msg_CreateDeal_FullMethodName          = "/mandu.subscription.Msg/CreateDeal"
-	Msg_CancelDeal_FullMethodName          = "/mandu.subscription.Msg/CancelDeal"
-	Msg_UpdateDeal_FullMethodName          = "/mandu.subscription.Msg/UpdateDeal"
-	Msg_IncrementDealAmount_FullMethodName = "/mandu.subscription.Msg/IncrementDealAmount"
-	Msg_JoinDeal_FullMethodName            = "/mandu.subscription.Msg/JoinDeal"
-	Msg_LeaveDeal_FullMethodName           = "/mandu.subscription.Msg/LeaveDeal"
-	Msg_SubmitProgress_FullMethodName      = "/mandu.subscription.Msg/SubmitProgress"
+	Msg_UpdateParams_FullMethodName                       = "/mandu.subscription.Msg/UpdateParams"
+	Msg_CreateSubscriptionRequest_FullMethodName          = "/mandu.subscription.Msg/CreateSubscriptionRequest"
+	Msg_CancelSubscriptionRequest_FullMethodName          = "/mandu.subscription.Msg/CancelSubscriptionRequest"
+	Msg_UpdateSubscriptionRequest_FullMethodName          = "/mandu.subscription.Msg/UpdateSubscriptionRequest"
+	Msg_IncrementSubscriptionRequestAmount_FullMethodName = "/mandu.subscription.Msg/IncrementSubscriptionRequestAmount"
+	Msg_JoinSubscriptionRequest_FullMethodName            = "/mandu.subscription.Msg/JoinSubscriptionRequest"
+	Msg_LeaveSubscriptionRequest_FullMethodName           = "/mandu.subscription.Msg/LeaveSubscriptionRequest"
+	Msg_SubmitProgress_FullMethodName                     = "/mandu.subscription.Msg/SubmitProgress"
 )
 
 // MsgClient is the client API for Msg service.
@@ -36,12 +36,12 @@ type MsgClient interface {
 	// UpdateParams defines a (governance) operation for updating the module
 	// parameters. The authority defaults to the x/gov module account.
 	UpdateParams(ctx context.Context, in *MsgUpdateParams, opts ...grpc.CallOption) (*MsgUpdateParamsResponse, error)
-	CreateDeal(ctx context.Context, in *MsgCreateDeal, opts ...grpc.CallOption) (*MsgCreateDealResponse, error)
-	CancelDeal(ctx context.Context, in *MsgCancelDeal, opts ...grpc.CallOption) (*MsgCancelDealResponse, error)
-	UpdateDeal(ctx context.Context, in *MsgUpdateDeal, opts ...grpc.CallOption) (*MsgUpdateDealResponse, error)
-	IncrementDealAmount(ctx context.Context, in *MsgIncrementDealAmount, opts ...grpc.CallOption) (*MsgIncrementDealAmountResponse, error)
-	JoinDeal(ctx context.Context, in *MsgJoinDeal, opts ...grpc.CallOption) (*MsgJoinDealResponse, error)
-	LeaveDeal(ctx context.Context, in *MsgLeaveDeal, opts ...grpc.CallOption) (*MsgLeaveDealResponse, error)
+	CreateSubscriptionRequest(ctx context.Context, in *MsgCreateSubscriptionRequest, opts ...grpc.CallOption) (*MsgCreateSubscriptionRequestResponse, error)
+	CancelSubscriptionRequest(ctx context.Context, in *MsgCancelSubscriptionRequest, opts ...grpc.CallOption) (*MsgCancelSubscriptionRequestResponse, error)
+	UpdateSubscriptionRequest(ctx context.Context, in *MsgUpdateSubscriptionRequest, opts ...grpc.CallOption) (*MsgUpdateSubscriptionRequestResponse, error)
+	IncrementSubscriptionRequestAmount(ctx context.Context, in *MsgIncrementSubscriptionRequestAmount, opts ...grpc.CallOption) (*MsgIncrementSubscriptionRequestAmountResponse, error)
+	JoinSubscriptionRequest(ctx context.Context, in *MsgJoinSubscriptionRequest, opts ...grpc.CallOption) (*MsgJoinSubscriptionRequestResponse, error)
+	LeaveSubscriptionRequest(ctx context.Context, in *MsgLeaveSubscriptionRequest, opts ...grpc.CallOption) (*MsgLeaveSubscriptionRequestResponse, error)
 	SubmitProgress(ctx context.Context, in *MsgSubmitProgress, opts ...grpc.CallOption) (*MsgSubmitProgressResponse, error)
 }
 
@@ -62,54 +62,54 @@ func (c *msgClient) UpdateParams(ctx context.Context, in *MsgUpdateParams, opts 
 	return out, nil
 }
 
-func (c *msgClient) CreateDeal(ctx context.Context, in *MsgCreateDeal, opts ...grpc.CallOption) (*MsgCreateDealResponse, error) {
-	out := new(MsgCreateDealResponse)
-	err := c.cc.Invoke(ctx, Msg_CreateDeal_FullMethodName, in, out, opts...)
+func (c *msgClient) CreateSubscriptionRequest(ctx context.Context, in *MsgCreateSubscriptionRequest, opts ...grpc.CallOption) (*MsgCreateSubscriptionRequestResponse, error) {
+	out := new(MsgCreateSubscriptionRequestResponse)
+	err := c.cc.Invoke(ctx, Msg_CreateSubscriptionRequest_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *msgClient) CancelDeal(ctx context.Context, in *MsgCancelDeal, opts ...grpc.CallOption) (*MsgCancelDealResponse, error) {
-	out := new(MsgCancelDealResponse)
-	err := c.cc.Invoke(ctx, Msg_CancelDeal_FullMethodName, in, out, opts...)
+func (c *msgClient) CancelSubscriptionRequest(ctx context.Context, in *MsgCancelSubscriptionRequest, opts ...grpc.CallOption) (*MsgCancelSubscriptionRequestResponse, error) {
+	out := new(MsgCancelSubscriptionRequestResponse)
+	err := c.cc.Invoke(ctx, Msg_CancelSubscriptionRequest_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *msgClient) UpdateDeal(ctx context.Context, in *MsgUpdateDeal, opts ...grpc.CallOption) (*MsgUpdateDealResponse, error) {
-	out := new(MsgUpdateDealResponse)
-	err := c.cc.Invoke(ctx, Msg_UpdateDeal_FullMethodName, in, out, opts...)
+func (c *msgClient) UpdateSubscriptionRequest(ctx context.Context, in *MsgUpdateSubscriptionRequest, opts ...grpc.CallOption) (*MsgUpdateSubscriptionRequestResponse, error) {
+	out := new(MsgUpdateSubscriptionRequestResponse)
+	err := c.cc.Invoke(ctx, Msg_UpdateSubscriptionRequest_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *msgClient) IncrementDealAmount(ctx context.Context, in *MsgIncrementDealAmount, opts ...grpc.CallOption) (*MsgIncrementDealAmountResponse, error) {
-	out := new(MsgIncrementDealAmountResponse)
-	err := c.cc.Invoke(ctx, Msg_IncrementDealAmount_FullMethodName, in, out, opts...)
+func (c *msgClient) IncrementSubscriptionRequestAmount(ctx context.Context, in *MsgIncrementSubscriptionRequestAmount, opts ...grpc.CallOption) (*MsgIncrementSubscriptionRequestAmountResponse, error) {
+	out := new(MsgIncrementSubscriptionRequestAmountResponse)
+	err := c.cc.Invoke(ctx, Msg_IncrementSubscriptionRequestAmount_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *msgClient) JoinDeal(ctx context.Context, in *MsgJoinDeal, opts ...grpc.CallOption) (*MsgJoinDealResponse, error) {
-	out := new(MsgJoinDealResponse)
-	err := c.cc.Invoke(ctx, Msg_JoinDeal_FullMethodName, in, out, opts...)
+func (c *msgClient) JoinSubscriptionRequest(ctx context.Context, in *MsgJoinSubscriptionRequest, opts ...grpc.CallOption) (*MsgJoinSubscriptionRequestResponse, error) {
+	out := new(MsgJoinSubscriptionRequestResponse)
+	err := c.cc.Invoke(ctx, Msg_JoinSubscriptionRequest_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *msgClient) LeaveDeal(ctx context.Context, in *MsgLeaveDeal, opts ...grpc.CallOption) (*MsgLeaveDealResponse, error) {
-	out := new(MsgLeaveDealResponse)
-	err := c.cc.Invoke(ctx, Msg_LeaveDeal_FullMethodName, in, out, opts...)
+func (c *msgClient) LeaveSubscriptionRequest(ctx context.Context, in *MsgLeaveSubscriptionRequest, opts ...grpc.CallOption) (*MsgLeaveSubscriptionRequestResponse, error) {
+	out := new(MsgLeaveSubscriptionRequestResponse)
+	err := c.cc.Invoke(ctx, Msg_LeaveSubscriptionRequest_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -132,12 +132,12 @@ type MsgServer interface {
 	// UpdateParams defines a (governance) operation for updating the module
 	// parameters. The authority defaults to the x/gov module account.
 	UpdateParams(context.Context, *MsgUpdateParams) (*MsgUpdateParamsResponse, error)
-	CreateDeal(context.Context, *MsgCreateDeal) (*MsgCreateDealResponse, error)
-	CancelDeal(context.Context, *MsgCancelDeal) (*MsgCancelDealResponse, error)
-	UpdateDeal(context.Context, *MsgUpdateDeal) (*MsgUpdateDealResponse, error)
-	IncrementDealAmount(context.Context, *MsgIncrementDealAmount) (*MsgIncrementDealAmountResponse, error)
-	JoinDeal(context.Context, *MsgJoinDeal) (*MsgJoinDealResponse, error)
-	LeaveDeal(context.Context, *MsgLeaveDeal) (*MsgLeaveDealResponse, error)
+	CreateSubscriptionRequest(context.Context, *MsgCreateSubscriptionRequest) (*MsgCreateSubscriptionRequestResponse, error)
+	CancelSubscriptionRequest(context.Context, *MsgCancelSubscriptionRequest) (*MsgCancelSubscriptionRequestResponse, error)
+	UpdateSubscriptionRequest(context.Context, *MsgUpdateSubscriptionRequest) (*MsgUpdateSubscriptionRequestResponse, error)
+	IncrementSubscriptionRequestAmount(context.Context, *MsgIncrementSubscriptionRequestAmount) (*MsgIncrementSubscriptionRequestAmountResponse, error)
+	JoinSubscriptionRequest(context.Context, *MsgJoinSubscriptionRequest) (*MsgJoinSubscriptionRequestResponse, error)
+	LeaveSubscriptionRequest(context.Context, *MsgLeaveSubscriptionRequest) (*MsgLeaveSubscriptionRequestResponse, error)
 	SubmitProgress(context.Context, *MsgSubmitProgress) (*MsgSubmitProgressResponse, error)
 	mustEmbedUnimplementedMsgServer()
 }
@@ -149,23 +149,23 @@ type UnimplementedMsgServer struct {
 func (UnimplementedMsgServer) UpdateParams(context.Context, *MsgUpdateParams) (*MsgUpdateParamsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateParams not implemented")
 }
-func (UnimplementedMsgServer) CreateDeal(context.Context, *MsgCreateDeal) (*MsgCreateDealResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CreateDeal not implemented")
+func (UnimplementedMsgServer) CreateSubscriptionRequest(context.Context, *MsgCreateSubscriptionRequest) (*MsgCreateSubscriptionRequestResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateSubscriptionRequest not implemented")
 }
-func (UnimplementedMsgServer) CancelDeal(context.Context, *MsgCancelDeal) (*MsgCancelDealResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method CancelDeal not implemented")
+func (UnimplementedMsgServer) CancelSubscriptionRequest(context.Context, *MsgCancelSubscriptionRequest) (*MsgCancelSubscriptionRequestResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CancelSubscriptionRequest not implemented")
 }
-func (UnimplementedMsgServer) UpdateDeal(context.Context, *MsgUpdateDeal) (*MsgUpdateDealResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UpdateDeal not implemented")
+func (UnimplementedMsgServer) UpdateSubscriptionRequest(context.Context, *MsgUpdateSubscriptionRequest) (*MsgUpdateSubscriptionRequestResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateSubscriptionRequest not implemented")
 }
-func (UnimplementedMsgServer) IncrementDealAmount(context.Context, *MsgIncrementDealAmount) (*MsgIncrementDealAmountResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method IncrementDealAmount not implemented")
+func (UnimplementedMsgServer) IncrementSubscriptionRequestAmount(context.Context, *MsgIncrementSubscriptionRequestAmount) (*MsgIncrementSubscriptionRequestAmountResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method IncrementSubscriptionRequestAmount not implemented")
 }
-func (UnimplementedMsgServer) JoinDeal(context.Context, *MsgJoinDeal) (*MsgJoinDealResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method JoinDeal not implemented")
+func (UnimplementedMsgServer) JoinSubscriptionRequest(context.Context, *MsgJoinSubscriptionRequest) (*MsgJoinSubscriptionRequestResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method JoinSubscriptionRequest not implemented")
 }
-func (UnimplementedMsgServer) LeaveDeal(context.Context, *MsgLeaveDeal) (*MsgLeaveDealResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method LeaveDeal not implemented")
+func (UnimplementedMsgServer) LeaveSubscriptionRequest(context.Context, *MsgLeaveSubscriptionRequest) (*MsgLeaveSubscriptionRequestResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method LeaveSubscriptionRequest not implemented")
 }
 func (UnimplementedMsgServer) SubmitProgress(context.Context, *MsgSubmitProgress) (*MsgSubmitProgressResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SubmitProgress not implemented")
@@ -201,110 +201,110 @@ func _Msg_UpdateParams_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Msg_CreateDeal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(MsgCreateDeal)
+func _Msg_CreateSubscriptionRequest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCreateSubscriptionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MsgServer).CreateDeal(ctx, in)
+		return srv.(MsgServer).CreateSubscriptionRequest(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Msg_CreateDeal_FullMethodName,
+		FullMethod: Msg_CreateSubscriptionRequest_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MsgServer).CreateDeal(ctx, req.(*MsgCreateDeal))
+		return srv.(MsgServer).CreateSubscriptionRequest(ctx, req.(*MsgCreateSubscriptionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Msg_CancelDeal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(MsgCancelDeal)
+func _Msg_CancelSubscriptionRequest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgCancelSubscriptionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MsgServer).CancelDeal(ctx, in)
+		return srv.(MsgServer).CancelSubscriptionRequest(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Msg_CancelDeal_FullMethodName,
+		FullMethod: Msg_CancelSubscriptionRequest_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MsgServer).CancelDeal(ctx, req.(*MsgCancelDeal))
+		return srv.(MsgServer).CancelSubscriptionRequest(ctx, req.(*MsgCancelSubscriptionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Msg_UpdateDeal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(MsgUpdateDeal)
+func _Msg_UpdateSubscriptionRequest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgUpdateSubscriptionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MsgServer).UpdateDeal(ctx, in)
+		return srv.(MsgServer).UpdateSubscriptionRequest(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Msg_UpdateDeal_FullMethodName,
+		FullMethod: Msg_UpdateSubscriptionRequest_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MsgServer).UpdateDeal(ctx, req.(*MsgUpdateDeal))
+		return srv.(MsgServer).UpdateSubscriptionRequest(ctx, req.(*MsgUpdateSubscriptionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Msg_IncrementDealAmount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(MsgIncrementDealAmount)
+func _Msg_IncrementSubscriptionRequestAmount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgIncrementSubscriptionRequestAmount)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MsgServer).IncrementDealAmount(ctx, in)
+		return srv.(MsgServer).IncrementSubscriptionRequestAmount(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Msg_IncrementDealAmount_FullMethodName,
+		FullMethod: Msg_IncrementSubscriptionRequestAmount_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MsgServer).IncrementDealAmount(ctx, req.(*MsgIncrementDealAmount))
+		return srv.(MsgServer).IncrementSubscriptionRequestAmount(ctx, req.(*MsgIncrementSubscriptionRequestAmount))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Msg_JoinDeal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(MsgJoinDeal)
+func _Msg_JoinSubscriptionRequest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgJoinSubscriptionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MsgServer).JoinDeal(ctx, in)
+		return srv.(MsgServer).JoinSubscriptionRequest(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Msg_JoinDeal_FullMethodName,
+		FullMethod: Msg_JoinSubscriptionRequest_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MsgServer).JoinDeal(ctx, req.(*MsgJoinDeal))
+		return srv.(MsgServer).JoinSubscriptionRequest(ctx, req.(*MsgJoinSubscriptionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Msg_LeaveDeal_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(MsgLeaveDeal)
+func _Msg_LeaveSubscriptionRequest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgLeaveSubscriptionRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(MsgServer).LeaveDeal(ctx, in)
+		return srv.(MsgServer).LeaveSubscriptionRequest(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: Msg_LeaveDeal_FullMethodName,
+		FullMethod: Msg_LeaveSubscriptionRequest_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MsgServer).LeaveDeal(ctx, req.(*MsgLeaveDeal))
+		return srv.(MsgServer).LeaveSubscriptionRequest(ctx, req.(*MsgLeaveSubscriptionRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -339,28 +339,28 @@ var Msg_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _Msg_UpdateParams_Handler,
 		},
 		{
-			MethodName: "CreateDeal",
-			Handler:    _Msg_CreateDeal_Handler,
+			MethodName: "CreateSubscriptionRequest",
+			Handler:    _Msg_CreateSubscriptionRequest_Handler,
 		},
 		{
-			MethodName: "CancelDeal",
-			Handler:    _Msg_CancelDeal_Handler,
+			MethodName: "CancelSubscriptionRequest",
+			Handler:    _Msg_CancelSubscriptionRequest_Handler,
 		},
 		{
-			MethodName: "UpdateDeal",
-			Handler:    _Msg_UpdateDeal_Handler,
+			MethodName: "UpdateSubscriptionRequest",
+			Handler:    _Msg_UpdateSubscriptionRequest_Handler,
 		},
 		{
-			MethodName: "IncrementDealAmount",
-			Handler:    _Msg_IncrementDealAmount_Handler,
+			MethodName: "IncrementSubscriptionRequestAmount",
+			Handler:    _Msg_IncrementSubscriptionRequestAmount_Handler,
 		},
 		{
-			MethodName: "JoinDeal",
-			Handler:    _Msg_JoinDeal_Handler,
+			MethodName: "JoinSubscriptionRequest",
+			Handler:    _Msg_JoinSubscriptionRequest_Handler,
 		},
 		{
-			MethodName: "LeaveDeal",
-			Handler:    _Msg_LeaveDeal_Handler,
+			MethodName: "LeaveSubscriptionRequest",
+			Handler:    _Msg_LeaveSubscriptionRequest_Handler,
 		},
 		{
 			MethodName: "SubmitProgress",

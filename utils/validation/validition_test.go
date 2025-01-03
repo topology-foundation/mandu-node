@@ -27,12 +27,12 @@ func TestValidateNonEmptyString(t *testing.T) {
 func TestValidatePositiveAmount(t *testing.T) {
 	tests := []struct {
 		name    string
-		amount  uint64
+		amount  int64
 		wantErr bool
 	}{
 		{"Valid positive amount", 100, false},
 		{"Zero amount", 0, true},
-		{"Large positive amount", 18446744073709551615, false}, // Max uint64 value
+		{"Large positive amount", 1844674407379551615, false}, // Max uint64 value
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -66,19 +66,41 @@ func TestValidateAddress(t *testing.T) {
 func TestValidateBlockRange(t *testing.T) {
 	tests := []struct {
 		name       string
-		startBlock uint64
-		endBlock   uint64
+		startBlock int64
+		endBlock   int64
 		wantErr    bool
 	}{
 		{"Valid block range", 100, 200, false},
 		{"Start block equals end block", 100, 100, true},
 		{"Start block greater than end block", 200, 100, true},
 		{"Zero start block", 0, 100, false},
-		{"Large block numbers", 18446744073709551614, 18446744073709551615, false}, // Max uint64 value - 1 and Max uint64 value
+		{"Large block numbers", 1844674407379551614, 1844674407379551615, false}, // Max uint64 value - 1 and Max uint64 value
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			if err := ValidateBlockRange(tt.startBlock, tt.endBlock); (err != nil) != tt.wantErr {
+				t.Errorf("ValidateBlockRange() error = %v, wantErr %v", err, tt.wantErr)
+			}
+		})
+	}
+}
+
+func TestValidateEpochRange(t *testing.T) {
+	tests := []struct {
+		name       string
+		startEpoch int64
+		endEpoch   int64
+		wantErr    bool
+	}{
+		{"Valid epoch range", 100, 200, false},
+		{"Start epoch equals end epoch", 100, 100, true},
+		{"Start epoch greater than end epoch", 200, 100, true},
+		{"Zero start epoch", 0, 100, false},
+		{"Large epoch numbers", 1844674407379551614, 1844674407379551615, false}, // Max uint64 value - 1 and Max uint64 value
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if err := ValidateBlockRange(tt.startEpoch, tt.endEpoch); (err != nil) != tt.wantErr {
 				t.Errorf("ValidateBlockRange() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
