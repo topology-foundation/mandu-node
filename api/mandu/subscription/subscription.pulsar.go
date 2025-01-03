@@ -12,98 +12,6 @@ import (
 	sync "sync"
 )
 
-var _ protoreflect.List = (*_SubscriptionRequest_9_list)(nil)
-
-type _SubscriptionRequest_9_list struct {
-	list *[]string
-}
-
-func (x *_SubscriptionRequest_9_list) Len() int {
-	if x.list == nil {
-		return 0
-	}
-	return len(*x.list)
-}
-
-func (x *_SubscriptionRequest_9_list) Get(i int) protoreflect.Value {
-	return protoreflect.ValueOfString((*x.list)[i])
-}
-
-func (x *_SubscriptionRequest_9_list) Set(i int, value protoreflect.Value) {
-	valueUnwrapped := value.String()
-	concreteValue := valueUnwrapped
-	(*x.list)[i] = concreteValue
-}
-
-func (x *_SubscriptionRequest_9_list) Append(value protoreflect.Value) {
-	valueUnwrapped := value.String()
-	concreteValue := valueUnwrapped
-	*x.list = append(*x.list, concreteValue)
-}
-
-func (x *_SubscriptionRequest_9_list) AppendMutable() protoreflect.Value {
-	panic(fmt.Errorf("AppendMutable can not be called on message SubscriptionRequest at list field DrpIds as it is not of Message kind"))
-}
-
-func (x *_SubscriptionRequest_9_list) Truncate(n int) {
-	*x.list = (*x.list)[:n]
-}
-
-func (x *_SubscriptionRequest_9_list) NewElement() protoreflect.Value {
-	v := ""
-	return protoreflect.ValueOfString(v)
-}
-
-func (x *_SubscriptionRequest_9_list) IsValid() bool {
-	return x.list != nil
-}
-
-var _ protoreflect.List = (*_SubscriptionRequest_10_list)(nil)
-
-type _SubscriptionRequest_10_list struct {
-	list *[]string
-}
-
-func (x *_SubscriptionRequest_10_list) Len() int {
-	if x.list == nil {
-		return 0
-	}
-	return len(*x.list)
-}
-
-func (x *_SubscriptionRequest_10_list) Get(i int) protoreflect.Value {
-	return protoreflect.ValueOfString((*x.list)[i])
-}
-
-func (x *_SubscriptionRequest_10_list) Set(i int, value protoreflect.Value) {
-	valueUnwrapped := value.String()
-	concreteValue := valueUnwrapped
-	(*x.list)[i] = concreteValue
-}
-
-func (x *_SubscriptionRequest_10_list) Append(value protoreflect.Value) {
-	valueUnwrapped := value.String()
-	concreteValue := valueUnwrapped
-	*x.list = append(*x.list, concreteValue)
-}
-
-func (x *_SubscriptionRequest_10_list) AppendMutable() protoreflect.Value {
-	panic(fmt.Errorf("AppendMutable can not be called on message SubscriptionRequest at list field Writers as it is not of Message kind"))
-}
-
-func (x *_SubscriptionRequest_10_list) Truncate(n int) {
-	*x.list = (*x.list)[:n]
-}
-
-func (x *_SubscriptionRequest_10_list) NewElement() protoreflect.Value {
-	v := ""
-	return protoreflect.ValueOfString(v)
-}
-
-func (x *_SubscriptionRequest_10_list) IsValid() bool {
-	return x.list != nil
-}
-
 var _ protoreflect.List = (*_SubscriptionRequest_11_list)(nil)
 
 type _SubscriptionRequest_11_list struct {
@@ -134,7 +42,7 @@ func (x *_SubscriptionRequest_11_list) Append(value protoreflect.Value) {
 }
 
 func (x *_SubscriptionRequest_11_list) AppendMutable() protoreflect.Value {
-	panic(fmt.Errorf("AppendMutable can not be called on message SubscriptionRequest at list field InitialFrontier as it is not of Message kind"))
+	panic(fmt.Errorf("AppendMutable can not be called on message SubscriptionRequest at list field DrpIds as it is not of Message kind"))
 }
 
 func (x *_SubscriptionRequest_11_list) Truncate(n int) {
@@ -180,7 +88,7 @@ func (x *_SubscriptionRequest_12_list) Append(value protoreflect.Value) {
 }
 
 func (x *_SubscriptionRequest_12_list) AppendMutable() protoreflect.Value {
-	panic(fmt.Errorf("AppendMutable can not be called on message SubscriptionRequest at list field SubscriptionIds as it is not of Message kind"))
+	panic(fmt.Errorf("AppendMutable can not be called on message SubscriptionRequest at list field Writers as it is not of Message kind"))
 }
 
 func (x *_SubscriptionRequest_12_list) Truncate(n int) {
@@ -196,6 +104,98 @@ func (x *_SubscriptionRequest_12_list) IsValid() bool {
 	return x.list != nil
 }
 
+var _ protoreflect.List = (*_SubscriptionRequest_13_list)(nil)
+
+type _SubscriptionRequest_13_list struct {
+	list *[]string
+}
+
+func (x *_SubscriptionRequest_13_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_SubscriptionRequest_13_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfString((*x.list)[i])
+}
+
+func (x *_SubscriptionRequest_13_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_SubscriptionRequest_13_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_SubscriptionRequest_13_list) AppendMutable() protoreflect.Value {
+	panic(fmt.Errorf("AppendMutable can not be called on message SubscriptionRequest at list field InitialFrontier as it is not of Message kind"))
+}
+
+func (x *_SubscriptionRequest_13_list) Truncate(n int) {
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_SubscriptionRequest_13_list) NewElement() protoreflect.Value {
+	v := ""
+	return protoreflect.ValueOfString(v)
+}
+
+func (x *_SubscriptionRequest_13_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_SubscriptionRequest_14_list)(nil)
+
+type _SubscriptionRequest_14_list struct {
+	list *[]string
+}
+
+func (x *_SubscriptionRequest_14_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_SubscriptionRequest_14_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfString((*x.list)[i])
+}
+
+func (x *_SubscriptionRequest_14_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_SubscriptionRequest_14_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.String()
+	concreteValue := valueUnwrapped
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_SubscriptionRequest_14_list) AppendMutable() protoreflect.Value {
+	panic(fmt.Errorf("AppendMutable can not be called on message SubscriptionRequest at list field SubscriptionIds as it is not of Message kind"))
+}
+
+func (x *_SubscriptionRequest_14_list) Truncate(n int) {
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_SubscriptionRequest_14_list) NewElement() protoreflect.Value {
+	v := ""
+	return protoreflect.ValueOfString(v)
+}
+
+func (x *_SubscriptionRequest_14_list) IsValid() bool {
+	return x.list != nil
+}
+
 var (
 	md_SubscriptionRequest                  protoreflect.MessageDescriptor
 	fd_SubscriptionRequest_id               protoreflect.FieldDescriptor
@@ -206,6 +206,8 @@ var (
 	fd_SubscriptionRequest_start_block      protoreflect.FieldDescriptor
 	fd_SubscriptionRequest_epoch_size       protoreflect.FieldDescriptor
 	fd_SubscriptionRequest_duration         protoreflect.FieldDescriptor
+	fd_SubscriptionRequest_start_epoch      protoreflect.FieldDescriptor
+	fd_SubscriptionRequest_end_epoch        protoreflect.FieldDescriptor
 	fd_SubscriptionRequest_drp_ids          protoreflect.FieldDescriptor
 	fd_SubscriptionRequest_writers          protoreflect.FieldDescriptor
 	fd_SubscriptionRequest_initial_frontier protoreflect.FieldDescriptor
@@ -223,6 +225,8 @@ func init() {
 	fd_SubscriptionRequest_start_block = md_SubscriptionRequest.Fields().ByName("start_block")
 	fd_SubscriptionRequest_epoch_size = md_SubscriptionRequest.Fields().ByName("epoch_size")
 	fd_SubscriptionRequest_duration = md_SubscriptionRequest.Fields().ByName("duration")
+	fd_SubscriptionRequest_start_epoch = md_SubscriptionRequest.Fields().ByName("start_epoch")
+	fd_SubscriptionRequest_end_epoch = md_SubscriptionRequest.Fields().ByName("end_epoch")
 	fd_SubscriptionRequest_drp_ids = md_SubscriptionRequest.Fields().ByName("drp_ids")
 	fd_SubscriptionRequest_writers = md_SubscriptionRequest.Fields().ByName("writers")
 	fd_SubscriptionRequest_initial_frontier = md_SubscriptionRequest.Fields().ByName("initial_frontier")
@@ -342,26 +346,38 @@ func (x *fastReflection_SubscriptionRequest) Range(f func(protoreflect.FieldDesc
 			return
 		}
 	}
+	if x.StartEpoch != int64(0) {
+		value := protoreflect.ValueOfInt64(x.StartEpoch)
+		if !f(fd_SubscriptionRequest_start_epoch, value) {
+			return
+		}
+	}
+	if x.EndEpoch != int64(0) {
+		value := protoreflect.ValueOfInt64(x.EndEpoch)
+		if !f(fd_SubscriptionRequest_end_epoch, value) {
+			return
+		}
+	}
 	if len(x.DrpIds) != 0 {
-		value := protoreflect.ValueOfList(&_SubscriptionRequest_9_list{list: &x.DrpIds})
+		value := protoreflect.ValueOfList(&_SubscriptionRequest_11_list{list: &x.DrpIds})
 		if !f(fd_SubscriptionRequest_drp_ids, value) {
 			return
 		}
 	}
 	if len(x.Writers) != 0 {
-		value := protoreflect.ValueOfList(&_SubscriptionRequest_10_list{list: &x.Writers})
+		value := protoreflect.ValueOfList(&_SubscriptionRequest_12_list{list: &x.Writers})
 		if !f(fd_SubscriptionRequest_writers, value) {
 			return
 		}
 	}
 	if len(x.InitialFrontier) != 0 {
-		value := protoreflect.ValueOfList(&_SubscriptionRequest_11_list{list: &x.InitialFrontier})
+		value := protoreflect.ValueOfList(&_SubscriptionRequest_13_list{list: &x.InitialFrontier})
 		if !f(fd_SubscriptionRequest_initial_frontier, value) {
 			return
 		}
 	}
 	if len(x.SubscriptionIds) != 0 {
-		value := protoreflect.ValueOfList(&_SubscriptionRequest_12_list{list: &x.SubscriptionIds})
+		value := protoreflect.ValueOfList(&_SubscriptionRequest_14_list{list: &x.SubscriptionIds})
 		if !f(fd_SubscriptionRequest_subscription_ids, value) {
 			return
 		}
@@ -397,6 +413,10 @@ func (x *fastReflection_SubscriptionRequest) Has(fd protoreflect.FieldDescriptor
 		return x.EpochSize != int64(0)
 	case "mandu.subscription.SubscriptionRequest.duration":
 		return x.Duration != int64(0)
+	case "mandu.subscription.SubscriptionRequest.start_epoch":
+		return x.StartEpoch != int64(0)
+	case "mandu.subscription.SubscriptionRequest.end_epoch":
+		return x.EndEpoch != int64(0)
 	case "mandu.subscription.SubscriptionRequest.drp_ids":
 		return len(x.DrpIds) != 0
 	case "mandu.subscription.SubscriptionRequest.writers":
@@ -437,6 +457,10 @@ func (x *fastReflection_SubscriptionRequest) Clear(fd protoreflect.FieldDescript
 		x.EpochSize = int64(0)
 	case "mandu.subscription.SubscriptionRequest.duration":
 		x.Duration = int64(0)
+	case "mandu.subscription.SubscriptionRequest.start_epoch":
+		x.StartEpoch = int64(0)
+	case "mandu.subscription.SubscriptionRequest.end_epoch":
+		x.EndEpoch = int64(0)
 	case "mandu.subscription.SubscriptionRequest.drp_ids":
 		x.DrpIds = nil
 	case "mandu.subscription.SubscriptionRequest.writers":
@@ -485,29 +509,35 @@ func (x *fastReflection_SubscriptionRequest) Get(descriptor protoreflect.FieldDe
 	case "mandu.subscription.SubscriptionRequest.duration":
 		value := x.Duration
 		return protoreflect.ValueOfInt64(value)
+	case "mandu.subscription.SubscriptionRequest.start_epoch":
+		value := x.StartEpoch
+		return protoreflect.ValueOfInt64(value)
+	case "mandu.subscription.SubscriptionRequest.end_epoch":
+		value := x.EndEpoch
+		return protoreflect.ValueOfInt64(value)
 	case "mandu.subscription.SubscriptionRequest.drp_ids":
 		if len(x.DrpIds) == 0 {
-			return protoreflect.ValueOfList(&_SubscriptionRequest_9_list{})
+			return protoreflect.ValueOfList(&_SubscriptionRequest_11_list{})
 		}
-		listValue := &_SubscriptionRequest_9_list{list: &x.DrpIds}
+		listValue := &_SubscriptionRequest_11_list{list: &x.DrpIds}
 		return protoreflect.ValueOfList(listValue)
 	case "mandu.subscription.SubscriptionRequest.writers":
 		if len(x.Writers) == 0 {
-			return protoreflect.ValueOfList(&_SubscriptionRequest_10_list{})
+			return protoreflect.ValueOfList(&_SubscriptionRequest_12_list{})
 		}
-		listValue := &_SubscriptionRequest_10_list{list: &x.Writers}
+		listValue := &_SubscriptionRequest_12_list{list: &x.Writers}
 		return protoreflect.ValueOfList(listValue)
 	case "mandu.subscription.SubscriptionRequest.initial_frontier":
 		if len(x.InitialFrontier) == 0 {
-			return protoreflect.ValueOfList(&_SubscriptionRequest_11_list{})
+			return protoreflect.ValueOfList(&_SubscriptionRequest_13_list{})
 		}
-		listValue := &_SubscriptionRequest_11_list{list: &x.InitialFrontier}
+		listValue := &_SubscriptionRequest_13_list{list: &x.InitialFrontier}
 		return protoreflect.ValueOfList(listValue)
 	case "mandu.subscription.SubscriptionRequest.subscription_ids":
 		if len(x.SubscriptionIds) == 0 {
-			return protoreflect.ValueOfList(&_SubscriptionRequest_12_list{})
+			return protoreflect.ValueOfList(&_SubscriptionRequest_14_list{})
 		}
-		listValue := &_SubscriptionRequest_12_list{list: &x.SubscriptionIds}
+		listValue := &_SubscriptionRequest_14_list{list: &x.SubscriptionIds}
 		return protoreflect.ValueOfList(listValue)
 	default:
 		if descriptor.IsExtension() {
@@ -545,21 +575,25 @@ func (x *fastReflection_SubscriptionRequest) Set(fd protoreflect.FieldDescriptor
 		x.EpochSize = value.Int()
 	case "mandu.subscription.SubscriptionRequest.duration":
 		x.Duration = value.Int()
+	case "mandu.subscription.SubscriptionRequest.start_epoch":
+		x.StartEpoch = value.Int()
+	case "mandu.subscription.SubscriptionRequest.end_epoch":
+		x.EndEpoch = value.Int()
 	case "mandu.subscription.SubscriptionRequest.drp_ids":
 		lv := value.List()
-		clv := lv.(*_SubscriptionRequest_9_list)
+		clv := lv.(*_SubscriptionRequest_11_list)
 		x.DrpIds = *clv.list
 	case "mandu.subscription.SubscriptionRequest.writers":
 		lv := value.List()
-		clv := lv.(*_SubscriptionRequest_10_list)
+		clv := lv.(*_SubscriptionRequest_12_list)
 		x.Writers = *clv.list
 	case "mandu.subscription.SubscriptionRequest.initial_frontier":
 		lv := value.List()
-		clv := lv.(*_SubscriptionRequest_11_list)
+		clv := lv.(*_SubscriptionRequest_13_list)
 		x.InitialFrontier = *clv.list
 	case "mandu.subscription.SubscriptionRequest.subscription_ids":
 		lv := value.List()
-		clv := lv.(*_SubscriptionRequest_12_list)
+		clv := lv.(*_SubscriptionRequest_14_list)
 		x.SubscriptionIds = *clv.list
 	default:
 		if fd.IsExtension() {
@@ -585,25 +619,25 @@ func (x *fastReflection_SubscriptionRequest) Mutable(fd protoreflect.FieldDescri
 		if x.DrpIds == nil {
 			x.DrpIds = []string{}
 		}
-		value := &_SubscriptionRequest_9_list{list: &x.DrpIds}
+		value := &_SubscriptionRequest_11_list{list: &x.DrpIds}
 		return protoreflect.ValueOfList(value)
 	case "mandu.subscription.SubscriptionRequest.writers":
 		if x.Writers == nil {
 			x.Writers = []string{}
 		}
-		value := &_SubscriptionRequest_10_list{list: &x.Writers}
+		value := &_SubscriptionRequest_12_list{list: &x.Writers}
 		return protoreflect.ValueOfList(value)
 	case "mandu.subscription.SubscriptionRequest.initial_frontier":
 		if x.InitialFrontier == nil {
 			x.InitialFrontier = []string{}
 		}
-		value := &_SubscriptionRequest_11_list{list: &x.InitialFrontier}
+		value := &_SubscriptionRequest_13_list{list: &x.InitialFrontier}
 		return protoreflect.ValueOfList(value)
 	case "mandu.subscription.SubscriptionRequest.subscription_ids":
 		if x.SubscriptionIds == nil {
 			x.SubscriptionIds = []string{}
 		}
-		value := &_SubscriptionRequest_12_list{list: &x.SubscriptionIds}
+		value := &_SubscriptionRequest_14_list{list: &x.SubscriptionIds}
 		return protoreflect.ValueOfList(value)
 	case "mandu.subscription.SubscriptionRequest.id":
 		panic(fmt.Errorf("field id of message mandu.subscription.SubscriptionRequest is not mutable"))
@@ -621,6 +655,10 @@ func (x *fastReflection_SubscriptionRequest) Mutable(fd protoreflect.FieldDescri
 		panic(fmt.Errorf("field epoch_size of message mandu.subscription.SubscriptionRequest is not mutable"))
 	case "mandu.subscription.SubscriptionRequest.duration":
 		panic(fmt.Errorf("field duration of message mandu.subscription.SubscriptionRequest is not mutable"))
+	case "mandu.subscription.SubscriptionRequest.start_epoch":
+		panic(fmt.Errorf("field start_epoch of message mandu.subscription.SubscriptionRequest is not mutable"))
+	case "mandu.subscription.SubscriptionRequest.end_epoch":
+		panic(fmt.Errorf("field end_epoch of message mandu.subscription.SubscriptionRequest is not mutable"))
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.SubscriptionRequest"))
@@ -650,18 +688,22 @@ func (x *fastReflection_SubscriptionRequest) NewField(fd protoreflect.FieldDescr
 		return protoreflect.ValueOfInt64(int64(0))
 	case "mandu.subscription.SubscriptionRequest.duration":
 		return protoreflect.ValueOfInt64(int64(0))
+	case "mandu.subscription.SubscriptionRequest.start_epoch":
+		return protoreflect.ValueOfInt64(int64(0))
+	case "mandu.subscription.SubscriptionRequest.end_epoch":
+		return protoreflect.ValueOfInt64(int64(0))
 	case "mandu.subscription.SubscriptionRequest.drp_ids":
 		list := []string{}
-		return protoreflect.ValueOfList(&_SubscriptionRequest_9_list{list: &list})
+		return protoreflect.ValueOfList(&_SubscriptionRequest_11_list{list: &list})
 	case "mandu.subscription.SubscriptionRequest.writers":
 		list := []string{}
-		return protoreflect.ValueOfList(&_SubscriptionRequest_10_list{list: &list})
+		return protoreflect.ValueOfList(&_SubscriptionRequest_12_list{list: &list})
 	case "mandu.subscription.SubscriptionRequest.initial_frontier":
 		list := []string{}
-		return protoreflect.ValueOfList(&_SubscriptionRequest_11_list{list: &list})
+		return protoreflect.ValueOfList(&_SubscriptionRequest_13_list{list: &list})
 	case "mandu.subscription.SubscriptionRequest.subscription_ids":
 		list := []string{}
-		return protoreflect.ValueOfList(&_SubscriptionRequest_12_list{list: &list})
+		return protoreflect.ValueOfList(&_SubscriptionRequest_14_list{list: &list})
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: mandu.subscription.SubscriptionRequest"))
@@ -757,6 +799,12 @@ func (x *fastReflection_SubscriptionRequest) ProtoMethods() *protoiface.Methods 
 		if x.Duration != 0 {
 			n += 1 + runtime.Sov(uint64(x.Duration))
 		}
+		if x.StartEpoch != 0 {
+			n += 1 + runtime.Sov(uint64(x.StartEpoch))
+		}
+		if x.EndEpoch != 0 {
+			n += 1 + runtime.Sov(uint64(x.EndEpoch))
+		}
 		if len(x.DrpIds) > 0 {
 			for _, s := range x.DrpIds {
 				l = len(s)
@@ -816,7 +864,7 @@ func (x *fastReflection_SubscriptionRequest) ProtoMethods() *protoiface.Methods 
 				copy(dAtA[i:], x.SubscriptionIds[iNdEx])
 				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.SubscriptionIds[iNdEx])))
 				i--
-				dAtA[i] = 0x62
+				dAtA[i] = 0x72
 			}
 		}
 		if len(x.InitialFrontier) > 0 {
@@ -825,7 +873,7 @@ func (x *fastReflection_SubscriptionRequest) ProtoMethods() *protoiface.Methods 
 				copy(dAtA[i:], x.InitialFrontier[iNdEx])
 				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.InitialFrontier[iNdEx])))
 				i--
-				dAtA[i] = 0x5a
+				dAtA[i] = 0x6a
 			}
 		}
 		if len(x.Writers) > 0 {
@@ -834,7 +882,7 @@ func (x *fastReflection_SubscriptionRequest) ProtoMethods() *protoiface.Methods 
 				copy(dAtA[i:], x.Writers[iNdEx])
 				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Writers[iNdEx])))
 				i--
-				dAtA[i] = 0x52
+				dAtA[i] = 0x62
 			}
 		}
 		if len(x.DrpIds) > 0 {
@@ -843,8 +891,18 @@ func (x *fastReflection_SubscriptionRequest) ProtoMethods() *protoiface.Methods 
 				copy(dAtA[i:], x.DrpIds[iNdEx])
 				i = runtime.EncodeVarint(dAtA, i, uint64(len(x.DrpIds[iNdEx])))
 				i--
-				dAtA[i] = 0x4a
+				dAtA[i] = 0x5a
 			}
+		}
+		if x.EndEpoch != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.EndEpoch))
+			i--
+			dAtA[i] = 0x50
+		}
+		if x.StartEpoch != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.StartEpoch))
+			i--
+			dAtA[i] = 0x48
 		}
 		if x.Duration != 0 {
 			i = runtime.EncodeVarint(dAtA, i, uint64(x.Duration))
@@ -1118,6 +1176,44 @@ func (x *fastReflection_SubscriptionRequest) ProtoMethods() *protoiface.Methods 
 					}
 				}
 			case 9:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field StartEpoch", wireType)
+				}
+				x.StartEpoch = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.StartEpoch |= int64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			case 10:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field EndEpoch", wireType)
+				}
+				x.EndEpoch = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.EndEpoch |= int64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			case 11:
 				if wireType != 2 {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field DrpIds", wireType)
 				}
@@ -1149,7 +1245,7 @@ func (x *fastReflection_SubscriptionRequest) ProtoMethods() *protoiface.Methods 
 				}
 				x.DrpIds = append(x.DrpIds, string(dAtA[iNdEx:postIndex]))
 				iNdEx = postIndex
-			case 10:
+			case 12:
 				if wireType != 2 {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Writers", wireType)
 				}
@@ -1181,7 +1277,7 @@ func (x *fastReflection_SubscriptionRequest) ProtoMethods() *protoiface.Methods 
 				}
 				x.Writers = append(x.Writers, string(dAtA[iNdEx:postIndex]))
 				iNdEx = postIndex
-			case 11:
+			case 13:
 				if wireType != 2 {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field InitialFrontier", wireType)
 				}
@@ -1213,7 +1309,7 @@ func (x *fastReflection_SubscriptionRequest) ProtoMethods() *protoiface.Methods 
 				}
 				x.InitialFrontier = append(x.InitialFrontier, string(dAtA[iNdEx:postIndex]))
 				iNdEx = postIndex
-			case 12:
+			case 14:
 				if wireType != 2 {
 					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field SubscriptionIds", wireType)
 				}
@@ -2011,10 +2107,12 @@ type SubscriptionRequest struct {
 	StartBlock      int64                      `protobuf:"varint,6,opt,name=start_block,json=startBlock,proto3" json:"start_block,omitempty"`                          // when does the request start
 	EpochSize       int64                      `protobuf:"varint,7,opt,name=epoch_size,json=epochSize,proto3" json:"epoch_size,omitempty"`                             // size of the epochs (number of blocks)
 	Duration        int64                      `protobuf:"varint,8,opt,name=duration,proto3" json:"duration,omitempty"`                                                // number of epochs where the deal is valid
-	DrpIds          []string                   `protobuf:"bytes,9,rep,name=drp_ids,json=drpIds,proto3" json:"drp_ids,omitempty"`                                       // all the DRPs that must be subscribed to
-	Writers         []string                   `protobuf:"bytes,10,rep,name=writers,proto3" json:"writers,omitempty"`                                                  // set of writers that will be counted towards progress
-	InitialFrontier []string                   `protobuf:"bytes,11,rep,name=initial_frontier,json=initialFrontier,proto3" json:"initial_frontier,omitempty"`           // minimal frontier that every subscriber must have in their hash graph
-	SubscriptionIds []string                   `protobuf:"bytes,12,rep,name=subscription_ids,json=subscriptionIds,proto3" json:"subscription_ids,omitempty"`           // list of all active subscriptions
+	StartEpoch      int64                      `protobuf:"varint,9,opt,name=start_epoch,json=startEpoch,proto3" json:"start_epoch,omitempty"`                          // epoch where the request started
+	EndEpoch        int64                      `protobuf:"varint,10,opt,name=end_epoch,json=endEpoch,proto3" json:"end_epoch,omitempty"`                               // epoch where the request ends
+	DrpIds          []string                   `protobuf:"bytes,11,rep,name=drp_ids,json=drpIds,proto3" json:"drp_ids,omitempty"`                                      // all the DRPs that must be subscribed to
+	Writers         []string                   `protobuf:"bytes,12,rep,name=writers,proto3" json:"writers,omitempty"`                                                  // set of writers that will be counted towards progress
+	InitialFrontier []string                   `protobuf:"bytes,13,rep,name=initial_frontier,json=initialFrontier,proto3" json:"initial_frontier,omitempty"`           // minimal frontier that every subscriber must have in their hash graph
+	SubscriptionIds []string                   `protobuf:"bytes,14,rep,name=subscription_ids,json=subscriptionIds,proto3" json:"subscription_ids,omitempty"`           // list of all active subscriptions
 }
 
 func (x *SubscriptionRequest) Reset() {
@@ -2089,6 +2187,20 @@ func (x *SubscriptionRequest) GetEpochSize() int64 {
 func (x *SubscriptionRequest) GetDuration() int64 {
 	if x != nil {
 		return x.Duration
+	}
+	return 0
+}
+
+func (x *SubscriptionRequest) GetStartEpoch() int64 {
+	if x != nil {
+		return x.StartEpoch
+	}
+	return 0
+}
+
+func (x *SubscriptionRequest) GetEndEpoch() int64 {
+	if x != nil {
+		return x.EndEpoch
 	}
 	return 0
 }
@@ -2194,7 +2306,7 @@ var file_mandu_subscription_subscription_proto_rawDesc = []byte{
 	0x0a, 0x25, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2f, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70,
 	0x74, 0x69, 0x6f, 0x6e, 0x2f, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f,
 	0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x12, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73,
-	0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0xad, 0x04, 0x0a, 0x13,
+	0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0xeb, 0x04, 0x0a, 0x13,
 	0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75,
 	0x65, 0x73, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
 	0x02, 0x69, 0x64, 0x12, 0x1c, 0x0a, 0x09, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x65, 0x72,
@@ -2214,45 +2326,49 @@ var file_mandu_subscription_subscription_proto_rawDesc = []byte{
 	0x68, 0x5f, 0x73, 0x69, 0x7a, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x03, 0x52, 0x09, 0x65, 0x70,
 	0x6f, 0x63, 0x68, 0x53, 0x69, 0x7a, 0x65, 0x12, 0x1a, 0x0a, 0x08, 0x64, 0x75, 0x72, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x18, 0x08, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x64, 0x75, 0x72, 0x61, 0x74,
-	0x69, 0x6f, 0x6e, 0x12, 0x17, 0x0a, 0x07, 0x64, 0x72, 0x70, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x09,
-	0x20, 0x03, 0x28, 0x09, 0x52, 0x06, 0x64, 0x72, 0x70, 0x49, 0x64, 0x73, 0x12, 0x18, 0x0a, 0x07,
-	0x77, 0x72, 0x69, 0x74, 0x65, 0x72, 0x73, 0x18, 0x0a, 0x20, 0x03, 0x28, 0x09, 0x52, 0x07, 0x77,
-	0x72, 0x69, 0x74, 0x65, 0x72, 0x73, 0x12, 0x29, 0x0a, 0x10, 0x69, 0x6e, 0x69, 0x74, 0x69, 0x61,
-	0x6c, 0x5f, 0x66, 0x72, 0x6f, 0x6e, 0x74, 0x69, 0x65, 0x72, 0x18, 0x0b, 0x20, 0x03, 0x28, 0x09,
-	0x52, 0x0f, 0x69, 0x6e, 0x69, 0x74, 0x69, 0x61, 0x6c, 0x46, 0x72, 0x6f, 0x6e, 0x74, 0x69, 0x65,
-	0x72, 0x12, 0x29, 0x0a, 0x10, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f,
-	0x6e, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x0c, 0x20, 0x03, 0x28, 0x09, 0x52, 0x0f, 0x73, 0x75, 0x62,
-	0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x73, 0x22, 0x6d, 0x0a, 0x06,
-	0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x0d, 0x0a, 0x09, 0x55, 0x4e, 0x44, 0x45, 0x46, 0x49,
-	0x4e, 0x45, 0x44, 0x10, 0x00, 0x12, 0x0d, 0x0a, 0x09, 0x53, 0x43, 0x48, 0x45, 0x44, 0x55, 0x4c,
-	0x45, 0x44, 0x10, 0x01, 0x12, 0x0f, 0x0a, 0x0b, 0x49, 0x4e, 0x49, 0x54, 0x49, 0x41, 0x4c, 0x49,
-	0x5a, 0x45, 0x44, 0x10, 0x02, 0x12, 0x0a, 0x0a, 0x06, 0x41, 0x43, 0x54, 0x49, 0x56, 0x45, 0x10,
-	0x03, 0x12, 0x0c, 0x0a, 0x08, 0x49, 0x4e, 0x41, 0x43, 0x54, 0x49, 0x56, 0x45, 0x10, 0x04, 0x12,
-	0x0d, 0x0a, 0x09, 0x43, 0x41, 0x4e, 0x43, 0x45, 0x4c, 0x4c, 0x45, 0x44, 0x10, 0x05, 0x12, 0x0b,
-	0x0a, 0x07, 0x45, 0x58, 0x50, 0x49, 0x52, 0x45, 0x44, 0x10, 0x06, 0x22, 0xb4, 0x01, 0x0a, 0x0c,
-	0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x0e, 0x0a, 0x02,
-	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x36, 0x0a, 0x17,
-	0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x72, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x15, 0x73,
-	0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x49, 0x64, 0x12, 0x1e, 0x0a, 0x0a, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62,
-	0x65, 0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72,
-	0x69, 0x62, 0x65, 0x72, 0x12, 0x1f, 0x0a, 0x0b, 0x73, 0x74, 0x61, 0x72, 0x74, 0x5f, 0x65, 0x70,
-	0x6f, 0x63, 0x68, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0a, 0x73, 0x74, 0x61, 0x72, 0x74,
-	0x45, 0x70, 0x6f, 0x63, 0x68, 0x12, 0x1b, 0x0a, 0x09, 0x65, 0x6e, 0x64, 0x5f, 0x65, 0x70, 0x6f,
-	0x63, 0x68, 0x18, 0x05, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x65, 0x6e, 0x64, 0x45, 0x70, 0x6f,
-	0x63, 0x68, 0x42, 0xb2, 0x01, 0x0a, 0x16, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75,
-	0x2e, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x42, 0x11, 0x53,
-	0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x72, 0x6f, 0x74, 0x6f,
-	0x50, 0x01, 0x5a, 0x1c, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x6d, 0x61,
-	0x6e, 0x64, 0x75, 0x2f, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e,
-	0xa2, 0x02, 0x03, 0x4d, 0x53, 0x58, 0xaa, 0x02, 0x12, 0x4d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x53,
-	0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0xca, 0x02, 0x12, 0x4d, 0x61,
-	0x6e, 0x64, 0x75, 0x5c, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e,
-	0xe2, 0x02, 0x1e, 0x4d, 0x61, 0x6e, 0x64, 0x75, 0x5c, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69,
-	0x70, 0x74, 0x69, 0x6f, 0x6e, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74,
-	0x61, 0xea, 0x02, 0x13, 0x4d, 0x61, 0x6e, 0x64, 0x75, 0x3a, 0x3a, 0x53, 0x75, 0x62, 0x73, 0x63,
-	0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x69, 0x6f, 0x6e, 0x12, 0x1f, 0x0a, 0x0b, 0x73, 0x74, 0x61, 0x72, 0x74, 0x5f, 0x65, 0x70, 0x6f,
+	0x63, 0x68, 0x18, 0x09, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0a, 0x73, 0x74, 0x61, 0x72, 0x74, 0x45,
+	0x70, 0x6f, 0x63, 0x68, 0x12, 0x1b, 0x0a, 0x09, 0x65, 0x6e, 0x64, 0x5f, 0x65, 0x70, 0x6f, 0x63,
+	0x68, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x65, 0x6e, 0x64, 0x45, 0x70, 0x6f, 0x63,
+	0x68, 0x12, 0x17, 0x0a, 0x07, 0x64, 0x72, 0x70, 0x5f, 0x69, 0x64, 0x73, 0x18, 0x0b, 0x20, 0x03,
+	0x28, 0x09, 0x52, 0x06, 0x64, 0x72, 0x70, 0x49, 0x64, 0x73, 0x12, 0x18, 0x0a, 0x07, 0x77, 0x72,
+	0x69, 0x74, 0x65, 0x72, 0x73, 0x18, 0x0c, 0x20, 0x03, 0x28, 0x09, 0x52, 0x07, 0x77, 0x72, 0x69,
+	0x74, 0x65, 0x72, 0x73, 0x12, 0x29, 0x0a, 0x10, 0x69, 0x6e, 0x69, 0x74, 0x69, 0x61, 0x6c, 0x5f,
+	0x66, 0x72, 0x6f, 0x6e, 0x74, 0x69, 0x65, 0x72, 0x18, 0x0d, 0x20, 0x03, 0x28, 0x09, 0x52, 0x0f,
+	0x69, 0x6e, 0x69, 0x74, 0x69, 0x61, 0x6c, 0x46, 0x72, 0x6f, 0x6e, 0x74, 0x69, 0x65, 0x72, 0x12,
+	0x29, 0x0a, 0x10, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x5f,
+	0x69, 0x64, 0x73, 0x18, 0x0e, 0x20, 0x03, 0x28, 0x09, 0x52, 0x0f, 0x73, 0x75, 0x62, 0x73, 0x63,
+	0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x73, 0x22, 0x6d, 0x0a, 0x06, 0x53, 0x74,
+	0x61, 0x74, 0x75, 0x73, 0x12, 0x0d, 0x0a, 0x09, 0x55, 0x4e, 0x44, 0x45, 0x46, 0x49, 0x4e, 0x45,
+	0x44, 0x10, 0x00, 0x12, 0x0d, 0x0a, 0x09, 0x53, 0x43, 0x48, 0x45, 0x44, 0x55, 0x4c, 0x45, 0x44,
+	0x10, 0x01, 0x12, 0x0f, 0x0a, 0x0b, 0x49, 0x4e, 0x49, 0x54, 0x49, 0x41, 0x4c, 0x49, 0x5a, 0x45,
+	0x44, 0x10, 0x02, 0x12, 0x0a, 0x0a, 0x06, 0x41, 0x43, 0x54, 0x49, 0x56, 0x45, 0x10, 0x03, 0x12,
+	0x0c, 0x0a, 0x08, 0x49, 0x4e, 0x41, 0x43, 0x54, 0x49, 0x56, 0x45, 0x10, 0x04, 0x12, 0x0d, 0x0a,
+	0x09, 0x43, 0x41, 0x4e, 0x43, 0x45, 0x4c, 0x4c, 0x45, 0x44, 0x10, 0x05, 0x12, 0x0b, 0x0a, 0x07,
+	0x45, 0x58, 0x50, 0x49, 0x52, 0x45, 0x44, 0x10, 0x06, 0x22, 0xb4, 0x01, 0x0a, 0x0c, 0x53, 0x75,
+	0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64, 0x12, 0x36, 0x0a, 0x17, 0x73, 0x75,
+	0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x72, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x15, 0x73, 0x75, 0x62,
+	0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x49, 0x64, 0x12, 0x1e, 0x0a, 0x0a, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62, 0x65, 0x72,
+	0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x62,
+	0x65, 0x72, 0x12, 0x1f, 0x0a, 0x0b, 0x73, 0x74, 0x61, 0x72, 0x74, 0x5f, 0x65, 0x70, 0x6f, 0x63,
+	0x68, 0x18, 0x04, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0a, 0x73, 0x74, 0x61, 0x72, 0x74, 0x45, 0x70,
+	0x6f, 0x63, 0x68, 0x12, 0x1b, 0x0a, 0x09, 0x65, 0x6e, 0x64, 0x5f, 0x65, 0x70, 0x6f, 0x63, 0x68,
+	0x18, 0x05, 0x20, 0x01, 0x28, 0x03, 0x52, 0x08, 0x65, 0x6e, 0x64, 0x45, 0x70, 0x6f, 0x63, 0x68,
+	0x42, 0xb2, 0x01, 0x0a, 0x16, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x73,
+	0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x42, 0x11, 0x53, 0x75, 0x62,
+	0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01,
+	0x5a, 0x1c, 0x6d, 0x61, 0x6e, 0x64, 0x75, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x6d, 0x61, 0x6e, 0x64,
+	0x75, 0x2f, 0x73, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0xa2, 0x02,
+	0x03, 0x4d, 0x53, 0x58, 0xaa, 0x02, 0x12, 0x4d, 0x61, 0x6e, 0x64, 0x75, 0x2e, 0x53, 0x75, 0x62,
+	0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0xca, 0x02, 0x12, 0x4d, 0x61, 0x6e, 0x64,
+	0x75, 0x5c, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0xe2, 0x02,
+	0x1e, 0x4d, 0x61, 0x6e, 0x64, 0x75, 0x5c, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
+	0x69, 0x6f, 0x6e, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea,
+	0x02, 0x13, 0x4d, 0x61, 0x6e, 0x64, 0x75, 0x3a, 0x3a, 0x53, 0x75, 0x62, 0x73, 0x63, 0x72, 0x69,
+	0x70, 0x74, 0x69, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (

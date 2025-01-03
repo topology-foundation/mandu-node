@@ -5,6 +5,7 @@ import (
 	"math"
 
 	manduTypes "mandu/types"
+	"mandu/utils"
 	"mandu/utils/validation"
 	"mandu/x/subscription/types"
 
@@ -15,15 +16,19 @@ import (
 	"github.com/google/uuid"
 )
 
-func validateMsgCreateSubscriptionRequest(msg *types.MsgCreateDeal) error {
-	if err := validation.ValidateBlockRange(msg.StartBlock, msg.EndBlock); err != nil {
+func validateMsgCreateSubscriptionRequest(msg *types.MsgCreateSubscriptionRequest) error {
+	startEpoch := utils.BlockToEpoch(msg.StartBlock, msg.EpochSize)
+	endEpoch := startEpoch + msg.Duration
+	if err := validation.ValidateEpochRange(startEpoch, endEpoch); err != nil {
 		return err
 	}
 	if err := validation.ValidatePositiveAmount(msg.Amount); err != nil {
 		return err
 	}
-	if err := validation.ValidateNonEmptyString(msg.CroId); err != nil {
-		return err
+	for _, v := range msg.DrpIds {
+		if err := validation.ValidateNonEmptyString(v); err != nil {
+			return err
+		}
 	}
 	if err := validation.ValidateAddress(msg.Requester); err != nil {
 		return err
@@ -31,25 +36,30 @@ func validateMsgCreateSubscriptionRequest(msg *types.MsgCreateDeal) error {
 	return nil
 }
 
-func (k msgServer) CreateDeal(goCtx context.Context, msg *types.MsgCreateDeal) (*types.MsgCreateDealResponse, error) {
-	err := validateMsgCreateDeal(msg)
+func (k msgServer) CreateSubscriptionRequest(goCtx context.Context, msg *types.MsgCreateSubscriptionRequest) (*types.MsgCreateSubscriptionRequestResponse, error) {
+	err := validateMsgCreateSubscriptionRequest(msg)
 	if err != nil {
 		return nil, err
 	}
 
 	ctx := sdk.UnwrapSDKContext(goCtx)
 	id := uuid.NewString()
-	deal := types.Deal{
+	startEpoch := utils.BlockToEpoch(msg.StartBlock, msg.EpochSize)
+	subReq := types.SubscriptionRequest{
 		Id:              id,
 		Requester:       msg.Requester,
-		CroId:           msg.CroId,
-		SubscriptionIds: []string{},
-		Status:          types.Deal_SCHEDULED,
+		Status:          types.SubscriptionRequest_SCHEDULED,
 		TotalAmount:     msg.Amount,
 		AvailableAmount: msg.Amount,
 		StartBlock:      msg.StartBlock,
-		EndBlock:        msg.EndBlock,
+		EpochSize:       msg.EpochSize,
+		Duration:        msg.Duration,
+		StartEpoch:      startEpoch,
+		EndEpoch:        startEpoch + msg.Duration,
+		DrpIds:          msg.DrpIds,
+		Writers:         msg.Writers,
 		InitialFrontier: msg.InitialFrontier,
+		SubscriptionIds: []string{},
 	}
 
 	requester, err := sdk.AccAddressFromBech32(msg.Requester)
@@ -62,13 +72,13 @@ func (k msgServer) CreateDeal(goCtx context.Context, msg *types.MsgCreateDeal) (
 		return nil, errorsmod.Wrap(err, "failed to send coins to module account")
 	}
 
-	k.SetDeal(ctx, deal)
+	k.SetSubscriptionRequest(ctx, subReq)
 
-	return &types.MsgCreateDealResponse{DealId: id}, nil
+	return &types.MsgCreateSubscriptionRequestResponse{SubscriptionRequestId: id}, nil
 }
 
-func validateMsgCancelDeal(msg *types.MsgCancelDeal) error {
-	if err := validation.ValidateNonEmptyString(msg.DealId); err != nil {
+func validateMsgCancelSubscriptionRequest(msg *types.MsgCancelSubscriptionRequest) error {
+	if err := validation.ValidateNonEmptyString(msg.SubscriptionRequestId); err != nil {
 		return err
 	}
 	if err := validation.ValidateAddress(msg.Requester); err != nil {
@@ -77,59 +87,56 @@ func validateMsgCancelDeal(msg *types.MsgCancelDeal) error {
 	return nil
 }
 
-func (k msgServer) CancelDeal(goCtx context.Context, msg *types.MsgCancelDeal) (*types.MsgCancelDealResponse, error) {
-	err := validateMsgCancelDeal(msg)
+func (k msgServer) CancelSubscriptionRequest(goCtx context.Context, msg *types.MsgCancelSubscriptionRequest) (*types.MsgCancelSubscriptionRequestResponse, error) {
+	err := validateMsgCancelSubscriptionRequest(msg)
 	if err != nil {
 		return nil, err
 	}
 
 	ctx := sdk.UnwrapSDKContext(goCtx)
-	deal, found := k.GetDeal(ctx, msg.DealId)
+	subReq, found := k.GetSubscriptionRequest(ctx, msg.SubscriptionRequestId)
 	if !found {
-		return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, "deal with id "+msg.DealId+" not found")
+		return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, "subReq with id "+msg.SubscriptionRequestId+" not found")
 	}
-	if msg.Requester != deal.Requester {
-		return nil, errorsmod.Wrap(sdkerrors.ErrUnauthorized, "only the requester can cancel the deal")
+	if msg.Requester != subReq.Requester {
+		return nil, errorsmod.Wrap(sdkerrors.ErrUnauthorized, "only the requester can cancel the subReq")
 	}
-	if deal.Status == types.Deal_SCHEDULED || deal.Status == types.Deal_INITIALIZED {
-		deal.Status = types.Deal_CANCELLED
-		k.SetDeal(ctx, deal)
+	if subReq.Status == types.SubscriptionRequest_SCHEDULED || subReq.Status == types.SubscriptionRequest_INITIALIZED {
+		subReq.Status = types.SubscriptionRequest_CANCELLED
+		k.SetSubscriptionRequest(ctx, subReq)
 		// return the remaining amount to the requester
-		err := k.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, sdk.AccAddress(deal.Requester), sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, int64(deal.AvailableAmount))))
+		err := k.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, sdk.AccAddress(subReq.Requester), sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, int64(subReq.AvailableAmount))))
 		if err != nil {
 			return nil, errorsmod.Wrap(err, "failed to send coins to module account")
 		}
-		return &types.MsgCancelDealResponse{}, nil
+		return &types.MsgCancelSubscriptionRequestResponse{}, nil
 	}
-	if deal.Status == types.Deal_INACTIVE || deal.Status == types.Deal_ACTIVE {
-		deal.Status = types.Deal_CANCELLED
-		k.SetDeal(ctx, deal)
-		for _, subscriptionId := range deal.SubscriptionIds {
+	if subReq.Status == types.SubscriptionRequest_INACTIVE || subReq.Status == types.SubscriptionRequest_ACTIVE {
+		subReq.Status = types.SubscriptionRequest_CANCELLED
+		k.SetSubscriptionRequest(ctx, subReq)
+		for _, subscriptionId := range subReq.SubscriptionIds {
 			subscription, found := k.GetSubscription(ctx, subscriptionId)
 			if !found {
 				return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, "SHOULD NOT HAPPEN: subscription with id "+subscriptionId+" not found")
 			}
-			subscription.EndBlock = uint64(ctx.BlockHeight())
+			subscription.EndEpoch = utils.BlockToEpoch(ctx.BlockHeight(), subReq.EpochSize)
 			k.SetSubscription(ctx, subscription)
 		}
 		// return the remaining amount to the requester
-		err := k.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, sdk.AccAddress(deal.Requester), sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, int64(deal.AvailableAmount))))
+		err := k.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, sdk.AccAddress(subReq.Requester), sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, int64(subReq.AvailableAmount))))
 		if err != nil {
 			return nil, errorsmod.Wrap(err, "failed to send coins to module account")
 		}
 	}
 
-	return &types.MsgCancelDealResponse{}, nil
+	return &types.MsgCancelSubscriptionRequestResponse{}, nil
 }
 
-func validateMsgUpdateDeal(msg *types.MsgUpdateDeal) error {
-	if err := validation.ValidateNonEmptyString(msg.DealId); err != nil {
+func validateMsgUpdateSubscriptionRequest(msg *types.MsgUpdateSubscriptionRequest) error {
+	if err := validation.ValidateNonEmptyString(msg.SubscriptionRequestId); err != nil {
 		return err
 	}
 	if err := validation.ValidateAddress(msg.Requester); err != nil {
-		return err
-	}
-	if err := validation.ValidateBlockRange(msg.StartBlock, msg.EndBlock); err != nil {
 		return err
 	}
 	if err := validation.ValidatePositiveAmount(msg.Amount); err != nil {
@@ -138,8 +145,8 @@ func validateMsgUpdateDeal(msg *types.MsgUpdateDeal) error {
 	return nil
 }
 
-func (k msgServer) UpdateDeal(goCtx context.Context, msg *types.MsgUpdateDeal) (*types.MsgUpdateDealResponse, error) {
-	err := validateMsgUpdateDeal(msg)
+func (k msgServer) UpdateSubscriptionRequest(goCtx context.Context, msg *types.MsgUpdateSubscriptionRequest) (*types.MsgUpdateSubscriptionRequestResponse, error) {
+	err := validateMsgUpdateSubscriptionRequest(msg)
 	if err != nil {
 		return nil, err
 	}
@@ -148,50 +155,45 @@ func (k msgServer) UpdateDeal(goCtx context.Context, msg *types.MsgUpdateDeal) (
 		return nil, errorsmod.Wrap(sdkerrors.ErrInvalidAddress, "invalid requester address")
 	}
 	ctx := sdk.UnwrapSDKContext(goCtx)
-	deal, found := k.GetDeal(ctx, msg.DealId)
+	subReq, found := k.GetSubscriptionRequest(ctx, msg.SubscriptionRequestId)
 	if !found {
-		return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, "deal with id "+msg.DealId+" not found")
+		return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, "subReq with id "+msg.SubscriptionRequestId+" not found")
 	}
-	if msg.Requester != deal.Requester {
-		return nil, errorsmod.Wrap(sdkerrors.ErrUnauthorized, "only the requester can update the deal")
+	if msg.Requester != subReq.Requester {
+		return nil, errorsmod.Wrap(sdkerrors.ErrUnauthorized, "only the requester can update the subReq")
 	}
+
 	// Amount, StartBlock, and EndBlock are optional arguments an default to 0 if not provided
-	if ctx.BlockHeight() < int64(deal.StartBlock) {
+	if ctx.BlockHeight() < int64(subReq.StartBlock) {
 		if msg.Amount != 0 {
-			if msg.Amount < deal.TotalAmount {
-				amountToReturn := deal.TotalAmount - msg.Amount
+			if msg.Amount < subReq.TotalAmount {
+				amountToReturn := subReq.TotalAmount - msg.Amount
 				err := k.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, requester, sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, int64(amountToReturn))))
 				if err != nil {
 					return nil, errorsmod.Wrap(err, "failed to send coins to module account")
 				}
-			} else if msg.Amount > deal.TotalAmount {
-				amountToDeposit := msg.Amount - deal.TotalAmount
+			} else if msg.Amount > subReq.TotalAmount {
+				amountToDeposit := msg.Amount - subReq.TotalAmount
 				sdkError := k.bankKeeper.SendCoinsFromAccountToModule(ctx, requester, types.ModuleName, sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, int64(amountToDeposit))))
 				if sdkError != nil {
 					return nil, errorsmod.Wrap(sdkError, "failed to send coins to module account")
 				}
 			}
-			deal.TotalAmount = msg.Amount
-			deal.AvailableAmount = msg.Amount
+			subReq.TotalAmount = msg.Amount
+			subReq.AvailableAmount = msg.Amount
 		}
 		if msg.StartBlock != 0 {
 			if int64(msg.StartBlock) < ctx.BlockHeight() {
 				return nil, errorsmod.Wrap(sdkerrors.ErrInvalidRequest, "start block must be greater than current block height")
 			}
-			deal.StartBlock = msg.StartBlock
-		}
-		if msg.EndBlock != 0 {
-			if int64(msg.EndBlock) < ctx.BlockHeight() {
-				return nil, errorsmod.Wrap(sdkerrors.ErrInvalidRequest, "end block must be greater than current block height")
-			}
-			deal.EndBlock = msg.EndBlock
+			subReq.StartBlock = msg.StartBlock
 		}
 	} else {
 		if msg.Amount != 0 {
-			if msg.Amount < deal.TotalAmount {
+			if msg.Amount < subReq.TotalAmount {
 				return nil, errorsmod.Wrap(sdkerrors.ErrInvalidRequest, "amount must be greater than initial amount")
 			}
-			amountToDeposit := msg.Amount - deal.TotalAmount
+			amountToDeposit := msg.Amount - subReq.TotalAmount
 			requester, err := sdk.AccAddressFromBech32(msg.Requester)
 			if err != nil {
 				return nil, errorsmod.Wrap(sdkerrors.ErrInvalidAddress, "invalid requester address")
@@ -200,30 +202,38 @@ func (k msgServer) UpdateDeal(goCtx context.Context, msg *types.MsgUpdateDeal) (
 			if sdkError != nil {
 				return nil, errorsmod.Wrap(sdkError, "failed to send coins to module account")
 			}
-			deal.TotalAmount = msg.Amount
-			deal.AvailableAmount += amountToDeposit
+			subReq.TotalAmount = msg.Amount
+			subReq.AvailableAmount += amountToDeposit
 		}
 		if msg.StartBlock != 0 {
-			return nil, errorsmod.Wrap(sdkerrors.ErrInvalidRequest, "cannot update start block after deal has started")
-		}
-		if msg.EndBlock != 0 {
-			if int64(msg.EndBlock) < ctx.BlockHeight() {
-				return nil, errorsmod.Wrap(sdkerrors.ErrInvalidRequest, "end block must be greater than current block height")
-			}
-			deal.EndBlock = msg.EndBlock
+			return nil, errorsmod.Wrap(sdkerrors.ErrInvalidRequest, "cannot update start block after subReq has started")
 		}
 	}
 
-	k.SetDeal(ctx, deal)
+	if msg.Duration != 0 {
+		endEpoch := subReq.StartEpoch + msg.Duration
+		currentEpoch := utils.BlockToEpoch(ctx.BlockHeight(), subReq.EpochSize)
+		if endEpoch <= currentEpoch {
+			return nil, errorsmod.Wrap(sdkerrors.ErrInvalidRequest, "end block must be greater than current block height")
+		}
+		subReq.Duration = msg.Duration
+		subReq.EndEpoch = endEpoch
+	}
 
-	return &types.MsgUpdateDealResponse{}, nil
+	if len(msg.Writers) != 0 {
+		subReq.Writers = msg.Writers
+	}
+
+	k.SetSubscriptionRequest(ctx, subReq)
+
+	return &types.MsgUpdateSubscriptionRequestResponse{}, nil
 }
 
-func validateMsgIncrementDealAmount(msg *types.MsgIncrementDealAmount) error {
+func validateMsgIncrementSubscriptionRequestAmount(msg *types.MsgIncrementSubscriptionRequestAmount) error {
 	if err := validation.ValidatePositiveAmount(msg.Amount); err != nil {
 		return err
 	}
-	if err := validation.ValidateNonEmptyString(msg.DealId); err != nil {
+	if err := validation.ValidateNonEmptyString(msg.SubscriptionRequestId); err != nil {
 		return err
 	}
 	if err := validation.ValidateAddress(msg.Requester); err != nil {
@@ -232,8 +242,8 @@ func validateMsgIncrementDealAmount(msg *types.MsgIncrementDealAmount) error {
 	return nil
 }
 
-func (k msgServer) IncrementDealAmount(goCtx context.Context, msg *types.MsgIncrementDealAmount) (*types.MsgIncrementDealAmountResponse, error) {
-	if err := validateMsgIncrementDealAmount(msg); err != nil {
+func (k msgServer) IncrementSubscriptionRequestAmount(goCtx context.Context, msg *types.MsgIncrementSubscriptionRequestAmount) (*types.MsgIncrementSubscriptionRequestAmountResponse, error) {
+	if err := validateMsgIncrementSubscriptionRequestAmount(msg); err != nil {
 		return nil, err
 	}
 
@@ -242,61 +252,61 @@ func (k msgServer) IncrementDealAmount(goCtx context.Context, msg *types.MsgIncr
 		return nil, errorsmod.Wrap(sdkerrors.ErrInvalidAddress, "invalid requester address")
 	}
 	ctx := sdk.UnwrapSDKContext(goCtx)
-	deal, found := k.GetDeal(ctx, msg.DealId)
+	subReq, found := k.GetSubscriptionRequest(ctx, msg.SubscriptionRequestId)
 	if !found {
-		return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, "deal with id "+msg.DealId+" not found")
+		return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, "subReq with id "+msg.SubscriptionRequestId+" not found")
 	}
-	if msg.Requester != deal.Requester {
-		return nil, errorsmod.Wrap(sdkerrors.ErrUnauthorized, "only the requester can increment the deal amount")
+	if msg.Requester != subReq.Requester {
+		return nil, errorsmod.Wrap(sdkerrors.ErrUnauthorized, "only the requester can increment the subReq amount")
 	}
 
-	if k.IsDealUnavailable(deal.Status) {
-		return nil, errorsmod.Wrap(sdkerrors.ErrInvalidRequest, "cannot topup the expired deal with id "+msg.DealId)
+	if k.IsSubscriptionRequestUnavailable(subReq.Status) {
+		return nil, errorsmod.Wrap(sdkerrors.ErrInvalidRequest, "cannot topup the expired subReq with id "+msg.SubscriptionRequestId)
 	}
 
 	err = k.bankKeeper.SendCoinsFromAccountToModule(ctx, requester, types.ModuleName, sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, int64(msg.Amount))))
 	if err != nil {
 		return nil, errorsmod.Wrap(err, "failed to send coins to module account")
 	}
-	deal.TotalAmount += msg.Amount
-	deal.AvailableAmount += msg.Amount
+	subReq.TotalAmount += msg.Amount
+	subReq.AvailableAmount += msg.Amount
 
-	k.SetDeal(ctx, deal)
-	return &types.MsgIncrementDealAmountResponse{}, nil
+	k.SetSubscriptionRequest(ctx, subReq)
+	return &types.MsgIncrementSubscriptionRequestAmountResponse{}, nil
 }
 
-func validateMsgJoinDeal(msg *types.MsgJoinDeal) error {
-	if err := validation.ValidateNonEmptyString(msg.DealId); err != nil {
+func validateMsgJoinSubscriptionRequest(msg *types.MsgJoinSubscriptionRequest) error {
+	if err := validation.ValidateNonEmptyString(msg.SubscriptionRequestId); err != nil {
 		return err
 	}
-	if err := validation.ValidateAddress(msg.Provider); err != nil {
+	if err := validation.ValidateAddress(msg.Subscriber); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (k msgServer) JoinDeal(goCtx context.Context, msg *types.MsgJoinDeal) (*types.MsgJoinDealResponse, error) {
-	err := validateMsgJoinDeal(msg)
+func (k msgServer) JoinSubscriptionRequest(goCtx context.Context, msg *types.MsgJoinSubscriptionRequest) (*types.MsgJoinSubscriptionRequestResponse, error) {
+	err := validateMsgJoinSubscriptionRequest(msg)
 	if err != nil {
 		return nil, err
 	}
 	ctx := sdk.UnwrapSDKContext(goCtx)
-	deal, found := k.GetDeal(ctx, msg.DealId)
+	subReq, found := k.GetSubscriptionRequest(ctx, msg.SubscriptionRequestId)
 	if !found {
-		return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, "deal with id "+msg.DealId+" not found")
+		return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, "subReq with id "+msg.SubscriptionRequestId+" not found")
 	}
 
-	if k.IsDealUnavailable(deal.Status) {
-		return nil, errorsmod.Wrap(sdkerrors.ErrInvalidVersion, "deal with id "+msg.DealId+"is not available to join")
+	if k.IsSubscriptionRequestUnavailable(subReq.Status) {
+		return nil, errorsmod.Wrap(sdkerrors.ErrInvalidVersion, "subReq with id "+msg.SubscriptionRequestId+"is not available to join")
 	}
 
-	if k.DealHasProvider(ctx, deal, msg.Provider) {
-		return nil, errorsmod.Wrap(sdkerrors.ErrInvalidVersion, "provider is already subscribed to the deal with id "+msg.DealId)
+	if k.SubscriptionRequestHasSubscriber(ctx, subReq, msg.Subscriber) {
+		return nil, errorsmod.Wrap(sdkerrors.ErrInvalidVersion, "subscriber is already subscribed to the subReq with id "+msg.SubscriptionRequestId)
 	}
 
-	delegations, err := k.stakingKeeper.GetDelegatorDelegations(ctx, sdk.AccAddress(msg.Provider), math.MaxUint16)
+	delegations, err := k.stakingKeeper.GetDelegatorDelegations(ctx, sdk.AccAddress(msg.Subscriber), math.MaxUint16)
 	if err != nil {
-		return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, "provider "+msg.Provider+" not found")
+		return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, "subscriber "+msg.Subscriber+" not found")
 	}
 
 	var totalStake int64 = 0
@@ -304,77 +314,77 @@ func (k msgServer) JoinDeal(goCtx context.Context, msg *types.MsgJoinDeal) (*typ
 		totalStake += delegation.GetShares().TruncateInt64()
 	}
 
-	// need a formula to determine the necessary amount to join the deal, currently always accepted
-	if totalStake < k.CalculateMinimumStake(ctx, deal) {
-		return nil, errorsmod.Wrap(sdkerrors.ErrInvalidRequest, "insufficient stake to join deal")
+	// need a formula to determine the necessary amount to join the subReq, currently always accepted
+	if totalStake < k.CalculateMinimumStake(ctx, subReq) {
+		return nil, errorsmod.Wrap(sdkerrors.ErrInvalidRequest, "insufficient stake to join subReq")
 	}
 
 	id := uuid.NewString()
-	var subscriptionStartBlock uint64
-	if deal.StartBlock < uint64(ctx.BlockHeight()) {
-		subscriptionStartBlock = uint64(ctx.BlockHeight())
-		deal.Status = types.Deal_ACTIVE
+	var subscriptionStartEpoch int64
+	if subReq.StartBlock < ctx.BlockHeight() {
+		subscriptionStartEpoch = utils.BlockToEpoch(ctx.BlockHeight(), subReq.EpochSize)
+		subReq.Status = types.SubscriptionRequest_ACTIVE
 	} else {
-		subscriptionStartBlock = deal.StartBlock
+		subscriptionStartEpoch = subReq.StartEpoch
 	}
 
 	subscription := types.Subscription{
-		Id:         id,
-		DealId:     msg.DealId,
-		Provider:   msg.Provider,
-		StartBlock: subscriptionStartBlock,
-		EndBlock:   deal.EndBlock,
+		Id:                    id,
+		SubscriptionRequestId: msg.SubscriptionRequestId,
+		Subscriber:            msg.Subscriber,
+		StartEpoch:            subscriptionStartEpoch,
+		EndEpoch:              subReq.EndEpoch,
 	}
 	k.SetSubscription(ctx, subscription)
-	deal.SubscriptionIds = append(deal.SubscriptionIds, subscription.Id)
+	subReq.SubscriptionIds = append(subReq.SubscriptionIds, subscription.Id)
 
-	k.SetDeal(ctx, deal)
+	k.SetSubscriptionRequest(ctx, subReq)
 
-	return &types.MsgJoinDealResponse{SubscriptionId: id}, nil
+	return &types.MsgJoinSubscriptionRequestResponse{SubscriptionId: id}, nil
 }
 
-func validateMsgLeaveDeal(msg *types.MsgLeaveDeal) error {
-	if err := validation.ValidateNonEmptyString(msg.DealId); err != nil {
+func validateMsgLeaveSubscriptionRequest(msg *types.MsgLeaveSubscriptionRequest) error {
+	if err := validation.ValidateNonEmptyString(msg.SubscriptionRequestId); err != nil {
 		return err
 	}
-	if err := validation.ValidateAddress(msg.Provider); err != nil {
+	if err := validation.ValidateAddress(msg.Subscriber); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (k msgServer) LeaveDeal(goCtx context.Context, msg *types.MsgLeaveDeal) (*types.MsgLeaveDealResponse, error) {
-	err := validateMsgLeaveDeal(msg)
+func (k msgServer) LeaveSubscriptionRequest(goCtx context.Context, msg *types.MsgLeaveSubscriptionRequest) (*types.MsgLeaveSubscriptionRequestResponse, error) {
+	err := validateMsgLeaveSubscriptionRequest(msg)
 	if err != nil {
 		return nil, err
 	}
 	ctx := sdk.UnwrapSDKContext(goCtx)
-	deal, found := k.GetDeal(ctx, msg.DealId)
+	subReq, found := k.GetSubscriptionRequest(ctx, msg.SubscriptionRequestId)
 	if !found {
-		return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, "deal with id "+msg.DealId+" not found")
+		return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, "subReq with id "+msg.SubscriptionRequestId+" not found")
 	}
 
 	isSubscribed := false
-	for _, subscriptionId := range deal.SubscriptionIds {
+	for _, subscriptionId := range subReq.SubscriptionIds {
 		subscription, found := k.GetSubscription(ctx, subscriptionId)
 		if !found {
 			return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, "SHOULD NOT HAPPEN: subscription with id "+subscriptionId+" not found")
 		}
-		if subscription.Provider == msg.Provider {
+		if subscription.Subscriber == msg.Subscriber {
 			isSubscribed = true
-			subscription.EndBlock = uint64(ctx.BlockHeight())
+			subscription.EndEpoch = utils.BlockToEpoch(ctx.BlockHeight(), subReq.EpochSize)
 			k.SetSubscription(ctx, subscription)
 		}
 	}
 
 	if !isSubscribed {
-		return nil, errorsmod.Wrap(sdkerrors.ErrUnauthorized, "provider must be subscribed to the deal with id "+msg.DealId+" to leave it")
+		return nil, errorsmod.Wrap(sdkerrors.ErrUnauthorized, "subscriber must be subscribed to the subReq with id "+msg.SubscriptionRequestId+" to leave it")
 	}
 
-	if !k.IsDealActive(ctx, deal) {
-		deal.Status = types.Deal_INACTIVE
-		k.SetDeal(ctx, deal)
+	if !k.IsSubscriptionRequestActive(ctx, subReq) {
+		subReq.Status = types.SubscriptionRequest_INACTIVE
+		k.SetSubscriptionRequest(ctx, subReq)
 	}
 
-	return &types.MsgLeaveDealResponse{}, nil
+	return &types.MsgLeaveSubscriptionRequestResponse{}, nil
 }

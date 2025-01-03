@@ -22,10 +22,12 @@ message SubscriptionRequest { // request made by anyone
   int64 start_block                = 6; // when does the request start
   int64 epoch_size                 = 7; // size of the epochs (number of blocks)
   int64 duration                   = 8; // number of epochs where the deal is valid
-  repeated string drp_ids          = 9; // all the DRPs that must be subscribed to
-  repeated string writers          = 10; // set of writers that will be counted towards progress
-  repeated string initial_frontier = 11; // minimal frontier that every subscriber must have in their hash graph
-  repeated string subscription_ids = 12; // list of all active subscriptions
+  int64 start_epoch                = 9; // epoch where the request started
+  int64 end_epoch                  = 10; // epoch where the request ends
+  repeated string drp_ids          = 11; // all the DRPs that must be subscribed to
+  repeated string writers          = 12; // set of writers that will be counted towards progress
+  repeated string initial_frontier = 13; // minimal frontier that every subscriber must have in their hash graph
+  repeated string subscription_ids = 14; // list of all active subscriptions
 }
 
 message Subscription { // metadata on the subscription made by a subscriber

@@ -15,7 +15,7 @@ func ValidateNonEmptyString(value string) error {
 	return nil
 }
 
-func ValidatePositiveAmount(amount uint64) error {
+func ValidatePositiveAmount(amount int64) error {
 	if amount <= 0 {
 		return errorsmod.Wrap(sdkerrors.ErrInvalidRequest, "amount must be greater than 0")
 	}
@@ -32,9 +32,16 @@ func ValidateAddress(address string) error {
 	return nil
 }
 
-func ValidateBlockRange(startBlock, endBlock uint64) error {
+func ValidateBlockRange(startBlock int64, endBlock int64) error {
 	if startBlock >= endBlock {
 		return errorsmod.Wrap(sdkerrors.ErrInvalidRequest, "start block must be less than end block")
+	}
+	return nil
+}
+
+func ValidateEpochRange(startEpoch int64, endEpoch int64) error {
+	if startEpoch >= endEpoch {
+		return errorsmod.Wrap(sdkerrors.ErrInvalidRequest, "start epoch must be less than end epoch")
 	}
 	return nil
 }
