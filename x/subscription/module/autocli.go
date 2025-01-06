@@ -18,6 +18,24 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Short:     "Shows the parameters of the module",
 				},
 				{
+					RpcMethod:      "SubscriptionRequest",
+					Use:            "sub-req [id]",
+					Short:          "Query subscription request",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}},
+				},
+				{
+					RpcMethod:      "SubscriptionRequestStatus",
+					Use:            "sub-req-status [id]",
+					Short:          "Query subscription request status",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "id"}},
+				},
+				{
+					RpcMethod:      "SubscriptionRequests",
+					Use:            "sub-reqs [requester]",
+					Short:          "Query deals",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "requester"}},
+				},
+				{
 					RpcMethod:      "Subscription",
 					Use:            "subscription [id]",
 					Short:          "Query subscription",
@@ -25,9 +43,9 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 				},
 				{
 					RpcMethod:      "Subscriptions",
-					Use:            "subscriptions [provider]",
+					Use:            "subscriptions [subscriber]",
 					Short:          "Query subscriptions",
-					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "provider"}},
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "subscriber"}},
 				},
 			},
 		},
@@ -38,6 +56,42 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 				{
 					RpcMethod: "UpdateParams",
 					Skip:      true, // skipped because authority gated
+				},
+				{
+					RpcMethod:      "CreateSubscriptionRequest",
+					Use:            "create-sub-req [cro_id] [amount] [start_block] [end_block] [initial_frontier]",
+					Short:          "Send a create-sub-req tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "amount"}, {ProtoField: "start_block"}, {ProtoField: "epoch_size"}, {ProtoField: "duration"}, {ProtoField: "drp_ids"}, {ProtoField: "writers"}, {ProtoField: "initial_frontier"}},
+				},
+				{
+					RpcMethod:      "CancelSubscriptionRequest",
+					Use:            "cancel-sub-req [subscription_request_id]",
+					Short:          "Send a cancel-sub-req tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "subscription_request_id"}},
+				},
+				{
+					RpcMethod:      "UpdateSubscriptionRequest",
+					Use:            "update-sub-req [subscription_request_id] [amount] [start_block] [end_block]",
+					Short:          "Send a update-sub-req tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "subscription_request_id"}, {ProtoField: "amount"}, {ProtoField: "start_block"}, {ProtoField: "duration"}, {ProtoField: "writers"}},
+				},
+				{
+					RpcMethod:      "IncrementSubscriptionRequestAmount",
+					Use:            "increment-sub-req-amount [subscription_request_id] [amount]",
+					Short:          "Send a increment-sub-req-amount tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "subscription_request_id"}, {ProtoField: "amount"}},
+				},
+				{
+					RpcMethod:      "JoinSubscriptionRequest",
+					Use:            "join-sub-req [subscription_request_id]",
+					Short:          "Send a join-sub-req tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "subscription_request_id"}},
+				},
+				{
+					RpcMethod:      "LeaveSubscriptionRequest",
+					Use:            "leave-sub-req [subscription_request_id]",
+					Short:          "Send a leave-sub-req tx",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "subscription_request_id"}},
 				},
 				{
 					RpcMethod:      "SubmitProgress",

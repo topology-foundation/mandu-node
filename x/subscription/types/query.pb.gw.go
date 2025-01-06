@@ -286,7 +286,7 @@ func local_request_Query_Subscription_0(ctx context.Context, marshaler runtime.M
 }
 
 var (
-	filter_Query_Subscriptions_0 = &utilities.DoubleArray{Encoding: map[string]int{"provider": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_Query_Subscriptions_0 = &utilities.DoubleArray{Encoding: map[string]int{"subscriber": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_Query_Subscriptions_0(ctx context.Context, marshaler runtime.Marshaler, client QueryClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -300,15 +300,15 @@ func request_Query_Subscriptions_0(ctx context.Context, marshaler runtime.Marsha
 		_   = err
 	)
 
-	val, ok = pathParams["provider"]
+	val, ok = pathParams["subscriber"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "provider")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "subscriber")
 	}
 
-	protoReq.Provider, err = runtime.String(val)
+	protoReq.Subscriber, err = runtime.String(val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "provider", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "subscriber", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -334,15 +334,15 @@ func local_request_Query_Subscriptions_0(ctx context.Context, marshaler runtime.
 		_   = err
 	)
 
-	val, ok = pathParams["provider"]
+	val, ok = pathParams["subscriber"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "provider")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "subscriber")
 	}
 
-	protoReq.Provider, err = runtime.String(val)
+	protoReq.Subscriber, err = runtime.String(val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "provider", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "subscriber", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -676,7 +676,7 @@ var (
 
 	pattern_Query_Subscription_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"mandu", "subscription", "id"}, "", runtime.AssumeColonVerbOpt(false)))
 
-	pattern_Query_Subscriptions_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"mandu", "subscription", "subscriptions", "provider"}, "", runtime.AssumeColonVerbOpt(false)))
+	pattern_Query_Subscriptions_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"mandu", "subscription", "subscriptions", "subscriber"}, "", runtime.AssumeColonVerbOpt(false)))
 )
 
 var (
