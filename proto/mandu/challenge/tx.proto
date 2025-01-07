@@ -49,7 +49,7 @@ message MsgUpdateParamsResponse {}
 message MsgChallenge {
   option (cosmos.msg.v1.signer) = "challenger";
   string challenger = 1;
-  string provider_id = 2;
+  string subscriber_id = 2;
   repeated string vertices_hashes = 3;
 }
 
@@ -58,8 +58,8 @@ message MsgChallengeResponse {
 }
 
 message MsgSubmitProof {
-  option (cosmos.msg.v1.signer) = "provider";
-  string provider = 1;
+  option (cosmos.msg.v1.signer) = "subscriber";
+  string subscriber = 1;
   string challenge_id = 2;
   repeated mandu.challenge.Vertex vertices = 3;
 }

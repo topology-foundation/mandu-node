@@ -16,8 +16,8 @@ func (k Keeper) SetSubscriptionRequest(ctx sdk.Context, subReq types.Subscriptio
 	appendedValue := k.cdc.MustMarshal(&subReq)
 	store.Set([]byte(subReq.Id), appendedValue)
 
-	providerStore := prefix.NewStore(storeAdapter, types.GetRequesterStoreKey(subReq.Requester))
-	providerStore.Set([]byte(subReq.Id), []byte{})
+	subscriberStore := prefix.NewStore(storeAdapter, types.GetRequesterStoreKey(subReq.Requester))
+	subscriberStore.Set([]byte(subReq.Id), []byte{})
 }
 
 func (k Keeper) GetSubscriptionRequest(ctx sdk.Context, subReqId string) (subReq types.SubscriptionRequest, found bool) {
@@ -48,7 +48,7 @@ func (k Keeper) IsSubscriptionRequestActive(ctx sdk.Context, subReq types.Subscr
 	return false
 }
 
-// returns a map of subscription to provider
+// returns a map of subscription to subscriber
 func (k Keeper) GetAllActiveSubscriptions(ctx sdk.Context, subReq types.SubscriptionRequest) map[string]string {
 	subscriptions := make(map[string]string)
 	for _, subscriptionId := range subReq.SubscriptionIds {
@@ -116,8 +116,8 @@ func (k Keeper) SetSubscription(ctx sdk.Context, subscription types.Subscription
 	appendedValue := k.cdc.MustMarshal(&subscription)
 	store.Set([]byte(subscription.Id), appendedValue)
 
-	providerStore := prefix.NewStore(storeAdapter, types.GetSubscriberStoreKey(subscription.Subscriber))
-	providerStore.Set([]byte(subscription.Id), []byte{})
+	subscriberStore := prefix.NewStore(storeAdapter, types.GetSubscriberStoreKey(subscription.Subscriber))
+	subscriberStore.Set([]byte(subscription.Id), []byte{})
 }
 
 func (k Keeper) GetSubscription(ctx sdk.Context, subscriptionId string) (subscription types.Subscription, found bool) {

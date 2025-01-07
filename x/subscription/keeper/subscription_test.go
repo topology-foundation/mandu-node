@@ -17,7 +17,7 @@ func TestGetSetSubscriptionRequest(t *testing.T) {
 	require.NotEmpty(t, k)
 
 	// Create a subReq
-	subReq := types.SubscriptionRequest{Id: "12345", CroId: "alicecro", Requester: Alice, Status: types.SubscriptionRequest_SCHEDULED, AvailableAmount: 1000, TotalAmount: 100, StartBlock: 10, EndBlock: 20}
+	subReq := types.SubscriptionRequest{Id: "12345", DrpId: "alicedrp", Requester: Alice, Status: types.SubscriptionRequest_SCHEDULED, AvailableAmount: 1000, TotalAmount: 100, StartBlock: 10, EndBlock: 20}
 	k.SetSubscriptionRequest(ctx, subReq)
 
 	subReqResponse, found := k.GetSubscriptionRequest(ctx, subReq.Id)
@@ -32,10 +32,10 @@ func TestSubscriptionRequestActive(t *testing.T) {
 	require.NotEmpty(t, k)
 
 	// create a subscription
-	sub := types.Subscription{Id: "123", SubscriptionRequestId: "12345", Provider: "provider1", StartBlock: 10, EndBlock: 15}
+	sub := types.Subscription{Id: "123", SubscriptionRequestId: "12345", Subscriber: "subscriber1", StartBlock: 10, EndBlock: 15}
 	k.SetSubscription(ctx, sub)
 	// Create a subReq
-	subReq := types.SubscriptionRequest{Id: "12345", CroId: "alicecro", Requester: Alice, Status: types.SubscriptionRequest_UNDEFINED, AvailableAmount: 1000, TotalAmount: 100, StartBlock: 10, EndBlock: 20, SubscriptionIds: []string{"123"}}
+	subReq := types.SubscriptionRequest{Id: "12345", DrpId: "alicedrp", Requester: Alice, Status: types.SubscriptionRequest_UNDEFINED, AvailableAmount: 1000, TotalAmount: 100, StartBlock: 10, EndBlock: 20, SubscriptionIds: []string{"123"}}
 	k.SetSubscriptionRequest(ctx, subReq)
 
 	// The subReq must be inactive at block number 0
@@ -56,17 +56,17 @@ func TestSubscriptionRequestActive(t *testing.T) {
 	require.False(t, isActive)
 }
 
-func TestGetAllActiveProviders(t *testing.T) {
+func TestGetAllActiveSubscribers(t *testing.T) {
 	k, ms, ctx, am := setupMsgServer(t)
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
 	// create a subscription
-	sub := types.Subscription{Id: "123", SubscriptionRequestId: "12345", Provider: "provider1", StartBlock: 10, EndBlock: 15}
+	sub := types.Subscription{Id: "123", SubscriptionRequestId: "12345", Subscriber: "subscriber1", StartBlock: 10, EndBlock: 15}
 	k.SetSubscription(ctx, sub)
 	// Create a subReq
-	subReq := types.SubscriptionRequest{Id: "12345", CroId: "alicecro", Requester: Alice, Status: types.SubscriptionRequest_UNDEFINED, AvailableAmount: 1000, TotalAmount: 100, StartBlock: 10, EndBlock: 20, SubscriptionIds: []string{"123"}}
+	subReq := types.SubscriptionRequest{Id: "12345", DrpId: "alicedrp", Requester: Alice, Status: types.SubscriptionRequest_UNDEFINED, AvailableAmount: 1000, TotalAmount: 100, StartBlock: 10, EndBlock: 20, SubscriptionIds: []string{"123"}}
 	k.SetSubscriptionRequest(ctx, subReq)
 
 	activeSubs := k.GetAllActiveSubscriptions(ctx, subReq)
@@ -101,36 +101,36 @@ func TestIsSubscriptionRequestUnavailable(t *testing.T) {
 	require.True(t, k.IsSubscriptionRequestUnavailable(types.SubscriptionRequest_EXPIRED))
 }
 
-func TestSubscriptionRequestHasProvider(t *testing.T) {
+func TestSubscriptionRequestHasSubscriber(t *testing.T) {
 	k, ms, ctx, am := setupMsgServer(t)
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
 	// create a subscription
-	sub := types.Subscription{Id: "123", SubscriptionRequestId: "12345", Provider: "provider1", StartBlock: 10, EndBlock: 15}
+	sub := types.Subscription{Id: "123", SubscriptionRequestId: "12345", Subscriber: "subscriber1", StartBlock: 10, EndBlock: 15}
 	k.SetSubscription(ctx, sub)
 	// Create a subReq
-	subReq := types.SubscriptionRequest{Id: "12345", CroId: "alicecro", Requester: Alice, Status: types.SubscriptionRequest_UNDEFINED, AvailableAmount: 1000, TotalAmount: 100, StartBlock: 10, EndBlock: 20, SubscriptionIds: []string{"123"}}
+	subReq := types.SubscriptionRequest{Id: "12345", DrpId: "alicedrp", Requester: Alice, Status: types.SubscriptionRequest_UNDEFINED, AvailableAmount: 1000, TotalAmount: 100, StartBlock: 10, EndBlock: 20, SubscriptionIds: []string{"123"}}
 	k.SetSubscriptionRequest(ctx, subReq)
 
-	hasProvider := k.SubscriptionRequestHasProvider(ctx, subReq, "provider1")
-	require.True(t, hasProvider)
+	hasSubscriber := k.SubscriptionRequestHasSubscriber(ctx, subReq, "subscriber1")
+	require.True(t, hasSubscriber)
 
-	hasProvider = k.SubscriptionRequestHasProvider(ctx, subReq, "provider2")
-	require.False(t, hasProvider)
+	hasSubscriber = k.SubscriptionRequestHasSubscriber(ctx, subReq, "subscriber2")
+	require.False(t, hasSubscriber)
 
 	// Jump to block 18
 	ctx = MockBlockHeight(ctx, am, 18)
-	hasProvider = k.SubscriptionRequestHasProvider(ctx, subReq, "provider1")
-	require.False(t, hasProvider)
+	hasSubscriber = k.SubscriptionRequestHasSubscriber(ctx, subReq, "subscriber1")
+	require.False(t, hasSubscriber)
 }
 
 func TestSubscription(t *testing.T) {
 	keeper, ctx, _ := MockSubscriptionKeeper(t)
 	subscription := types.Subscription{
-		Id:       "sub1",
-		Provider: "provider1",
+		Id:         "sub1",
+		Subscriber: "subscriber1",
 	}
 
 	keeper.SetSubscription(ctx, subscription)
@@ -145,23 +145,23 @@ func TestSubscription(t *testing.T) {
 func TestSubscriptions(t *testing.T) {
 	keeper, ctx, _ := MockSubscriptionKeeper(t)
 	subscription1 := types.Subscription{
-		Id:       "sub1",
-		Provider: "provider1",
+		Id:         "sub1",
+		Subscriber: "subscriber1",
 	}
 	subscription2 := types.Subscription{
-		Id:       "sub2",
-		Provider: "provider1",
+		Id:         "sub2",
+		Subscriber: "subscriber1",
 	}
 	subscription3 := types.Subscription{
-		Id:       "sub3",
-		Provider: "provider2",
+		Id:         "sub3",
+		Subscriber: "subscriber2",
 	}
 
 	keeper.SetSubscription(ctx, subscription1)
 	keeper.SetSubscription(ctx, subscription2)
 	keeper.SetSubscription(ctx, subscription3)
 
-	req := &types.QuerySubscriptionsRequest{Provider: "provider1"}
+	req := &types.QuerySubscriptionsRequest{Subscriber: "subscriber1"}
 	res, err := keeper.Subscriptions(ctx, req)
 	require.NoError(t, err)
 	require.Len(t, res.Subscriptions, 2)
@@ -172,28 +172,28 @@ func TestSubscriptions(t *testing.T) {
 func TestSubscriptionsWithPaginationOne(t *testing.T) {
 	keeper, ctx, _ := MockSubscriptionKeeper(t)
 	subscription1 := types.Subscription{
-		Id:       "sub1",
-		Provider: "provider1",
+		Id:         "sub1",
+		Subscriber: "subscriber1",
 	}
 	subscription2 := types.Subscription{
-		Id:       "sub2",
-		Provider: "provider1",
+		Id:         "sub2",
+		Subscriber: "subscriber1",
 	}
 	subscription3 := types.Subscription{
-		Id:       "sub3",
-		Provider: "provider2",
+		Id:         "sub3",
+		Subscriber: "subscriber2",
 	}
 
 	keeper.SetSubscription(ctx, subscription1)
 	keeper.SetSubscription(ctx, subscription2)
 	keeper.SetSubscription(ctx, subscription3)
 
-	req := &types.QuerySubscriptionsRequest{Provider: "provider1", Pagination: &query.PageRequest{Limit: 1}}
+	req := &types.QuerySubscriptionsRequest{Subscriber: "subscriber1", Pagination: &query.PageRequest{Limit: 1}}
 	res, err := keeper.Subscriptions(ctx, req)
 	require.NoError(t, err)
 	require.Len(t, res.Subscriptions, 1)
 	require.Contains(t, res.Subscriptions, subscription1)
-	req = &types.QuerySubscriptionsRequest{Provider: "provider1", Pagination: &query.PageRequest{Key: res.Pagination.NextKey, Limit: 1}}
+	req = &types.QuerySubscriptionsRequest{Subscriber: "subscriber1", Pagination: &query.PageRequest{Key: res.Pagination.NextKey, Limit: 1}}
 	res, err = keeper.Subscriptions(ctx, req)
 	require.NoError(t, err)
 

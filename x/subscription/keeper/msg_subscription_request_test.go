@@ -8,574 +8,574 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestMsgServerCreateDealMsg(t *testing.T) {
+func TestMsgServerCreateSubscriptionRequestMsg(t *testing.T) {
 	k, ms, ctx, _ := setupMsgServer(t)
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	response, err := ms.CreateDeal(ctx, &types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 10000, StartBlock: 10, EndBlock: 20})
+	response, err := ms.CreateSubscriptionRequest(ctx, &types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 10000, StartBlock: 10, EndBlock: 20})
 	require.NoError(t, err)
 
 	require.NotEmpty(t, response)
-	require.NotEmpty(t, response.DealId)
+	require.NotEmpty(t, response.SubscriptionRequestId)
 }
 
-func TestMsgServerCreateDealScheduled(t *testing.T) {
+func TestMsgServerCreateSubscriptionRequestScheduled(t *testing.T) {
 	k, ms, ctx, _ := setupMsgServer(t)
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	createDeal := types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 10000, StartBlock: 10, EndBlock: 20}
+	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 10000, StartBlock: 10, EndBlock: 20}
 
-	response, err := ms.CreateDeal(ctx, &createDeal)
+	response, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest)
 	require.NoError(t, err)
 
-	deal, found := k.GetDeal(ctx, response.DealId)
+	subReq, found := k.GetSubscriptionRequest(ctx, response.SubscriptionRequestId)
 	require.True(t, found)
 
-	require.EqualValues(t, response.DealId, deal.Id)
+	require.EqualValues(t, response.SubscriptionRequestId, subReq.Id)
 
-	require.EqualValues(t, createDeal, types.MsgCreateDeal{Requester: deal.Requester, CroId: deal.CroId, Amount: deal.TotalAmount, StartBlock: deal.StartBlock, EndBlock: deal.EndBlock})
+	require.EqualValues(t, createSubscriptionRequest, types.MsgCreateSubscriptionRequest{Requester: subReq.Requester, DrpId: subReq.DrpId, Amount: subReq.TotalAmount, StartBlock: subReq.StartBlock, EndBlock: subReq.EndBlock})
 
-	require.Equal(t, deal.Status, types.Deal_SCHEDULED)
+	require.Equal(t, subReq.Status, types.SubscriptionRequest_SCHEDULED)
 }
 
-func TestMsgServerCreateDealInitializedStatus(t *testing.T) {
+func TestMsgServerCreateSubscriptionRequestInitializedStatus(t *testing.T) {
 	k, ms, ctx, am := setupMsgServer(t)
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	createDeal := types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 10000, StartBlock: 10, EndBlock: 20}
-	response, err := ms.CreateDeal(ctx, &createDeal)
+	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 10000, StartBlock: 10, EndBlock: 20}
+	response, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest)
 	require.NoError(t, err)
 
-	// Get the deal from the storage
-	deal, found := k.GetDeal(ctx, response.DealId)
+	// Get the subReq from the storage
+	subReq, found := k.GetSubscriptionRequest(ctx, response.SubscriptionRequestId)
 	require.True(t, found)
 
 	// Jump to block number 11
 	ctx = MockBlockHeight(ctx, am, 10)
 
-	// The deal must be initialized after entering block 10
-	deal, _ = k.GetDeal(ctx, response.DealId)
+	// The subReq must be initialized after entering block 10
+	subReq, _ = k.GetSubscriptionRequest(ctx, response.SubscriptionRequestId)
 
-	require.Equal(t, deal.Status, types.Deal_INITIALIZED)
+	require.Equal(t, subReq.Status, types.SubscriptionRequest_INITIALIZED)
 }
 
-func TestMsgServerCancelDealCorrectRequester(t *testing.T) {
+func TestMsgServerCancelSubscriptionRequestCorrectRequester(t *testing.T) {
 	k, ms, ctx, _ := setupMsgServer(t)
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	createDeal := types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 10000, StartBlock: 10, EndBlock: 20}
-	createResponse, err := ms.CreateDeal(ctx, &createDeal)
+	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 10000, StartBlock: 10, EndBlock: 20}
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest)
 	require.NoError(t, err)
 
-	// Get the deal from the storage
-	_, found := k.GetDeal(ctx, createResponse.DealId)
+	// Get the subReq from the storage
+	_, found := k.GetSubscriptionRequest(ctx, createResponse.SubscriptionRequestId)
 	require.True(t, found)
 
 	// Now send a cancel message
-	cancelDeal := types.MsgCancelDeal{Requester: Alice, DealId: createResponse.DealId}
-	_, err = ms.CancelDeal(ctx, &cancelDeal)
+	cancelSubscriptionRequest := types.MsgCancelSubscriptionRequest{Requester: Alice, SubscriptionRequestId: createResponse.SubscriptionRequestId}
+	_, err = ms.CancelSubscriptionRequest(ctx, &cancelSubscriptionRequest)
 	require.NoError(t, err)
 
-	// Get the deal from the storage
-	deal, found := k.GetDeal(ctx, createResponse.DealId)
+	// Get the subReq from the storage
+	subReq, found := k.GetSubscriptionRequest(ctx, createResponse.SubscriptionRequestId)
 	if !found {
-		t.Fatalf("Deal not found")
+		t.Fatalf("SubscriptionRequest not found")
 	}
-	require.EqualValues(t, deal.Status, types.Deal_CANCELLED)
+	require.EqualValues(t, subReq.Status, types.SubscriptionRequest_CANCELLED)
 }
 
-func TestMsgServerCancelDealIncorrectRequester(t *testing.T) {
+func TestMsgServerCancelSubscriptionRequestIncorrectRequester(t *testing.T) {
 	k, ms, ctx, _ := setupMsgServer(t)
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	createDeal := types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 10000, StartBlock: 10, EndBlock: 20}
-	createResponse, err := ms.CreateDeal(ctx, &createDeal)
+	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 10000, StartBlock: 10, EndBlock: 20}
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest)
 	require.NoError(t, err)
 
-	// Get the deal from the storage
-	_, found := k.GetDeal(ctx, createResponse.DealId)
+	// Get the subReq from the storage
+	_, found := k.GetSubscriptionRequest(ctx, createResponse.SubscriptionRequestId)
 	require.True(t, found)
 
 	// Now send a cancel message
-	cancelDeal := types.MsgCancelDeal{Requester: Bob, DealId: createResponse.DealId}
-	_, err = ms.CancelDeal(ctx, &cancelDeal)
+	cancelSubscriptionRequest := types.MsgCancelSubscriptionRequest{Requester: Bob, SubscriptionRequestId: createResponse.SubscriptionRequestId}
+	_, err = ms.CancelSubscriptionRequest(ctx, &cancelSubscriptionRequest)
 
-	// The error should not be nil because the incorrect requester sends the CancelDeal message
+	// The error should not be nil because the incorrect requester sends the CancelSubscriptionRequest message
 	require.NotNil(t, err)
 }
 
-func TestMsgServerUpdateDealIncorrectRequesterMsg(t *testing.T) {}
-func TestMsgServerUpdateScheduledDealCorrectStartBlockMsg(t *testing.T) {
+func TestMsgServerUpdateSubscriptionRequestIncorrectRequesterMsg(t *testing.T) {}
+func TestMsgServerUpdateScheduledSubscriptionRequestCorrectStartBlockMsg(t *testing.T) {
 	k, ms, ctx, _ := setupMsgServer(t)
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	createResponse, err := ms.CreateDeal(ctx, &types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 10000, StartBlock: 10, EndBlock: 20})
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 10000, StartBlock: 10, EndBlock: 20})
 	require.NoError(t, err)
 
-	updateDeal := types.MsgUpdateDeal{Requester: Alice, DealId: createResponse.DealId, StartBlock: 11}
-	_, err = ms.UpdateDeal(ctx, &updateDeal)
+	updateSubscriptionRequest := types.MsgUpdateSubscriptionRequest{Requester: Alice, SubscriptionRequestId: createResponse.SubscriptionRequestId, StartBlock: 11}
+	_, err = ms.UpdateSubscriptionRequest(ctx, &updateSubscriptionRequest)
 	require.NoError(t, err)
 
-	deal, found := k.GetDeal(ctx, createResponse.DealId)
+	subReq, found := k.GetSubscriptionRequest(ctx, createResponse.SubscriptionRequestId)
 
 	require.True(t, found)
-	require.EqualValues(t, deal.StartBlock, 11)
+	require.EqualValues(t, subReq.StartBlock, 11)
 }
 
-func TestMsgServerUpdateScheduledDealIncorrectStartBlockMsg(t *testing.T) {
+func TestMsgServerUpdateScheduledSubscriptionRequestIncorrectStartBlockMsg(t *testing.T) {
 	k, ms, ctx, am := setupMsgServer(t)
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	createResponse, err := ms.CreateDeal(ctx, &types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 10000, StartBlock: 10, EndBlock: 20})
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 10000, StartBlock: 10, EndBlock: 20})
 	require.NoError(t, err)
 
 	// Jump to block 9
 	ctx = MockBlockHeight(ctx, am, 9)
 
-	updateDeal := types.MsgUpdateDeal{Requester: Alice, DealId: createResponse.DealId, StartBlock: 7}
-	_, err = ms.UpdateDeal(ctx, &updateDeal)
+	updateSubscriptionRequest := types.MsgUpdateSubscriptionRequest{Requester: Alice, SubscriptionRequestId: createResponse.SubscriptionRequestId, StartBlock: 7}
+	_, err = ms.UpdateSubscriptionRequest(ctx, &updateSubscriptionRequest)
 
 	require.NotNil(t, err)
 }
 
-func TestMsgServerUpdateInitiatedDealIncorrectStartBlockMsg(t *testing.T) {
+func TestMsgServerUpdateInitiatedSubscriptionRequestIncorrectStartBlockMsg(t *testing.T) {
 	k, ms, ctx, am := setupMsgServer(t)
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	createResponse, err := ms.CreateDeal(ctx, &types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 10000, StartBlock: 10, EndBlock: 20})
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 10000, StartBlock: 10, EndBlock: 20})
 	require.NoError(t, err)
 
 	// Jump to block 12
 	ctx = MockBlockHeight(ctx, am, 12)
 
-	updateDeal := types.MsgUpdateDeal{Requester: Alice, DealId: createResponse.DealId, StartBlock: 7}
-	_, err = ms.UpdateDeal(ctx, &updateDeal)
+	updateSubscriptionRequest := types.MsgUpdateSubscriptionRequest{Requester: Alice, SubscriptionRequestId: createResponse.SubscriptionRequestId, StartBlock: 7}
+	_, err = ms.UpdateSubscriptionRequest(ctx, &updateSubscriptionRequest)
 
-	// It should return an error because the StartBlock can't be updated once the deal is initiated.
+	// It should return an error because the StartBlock can't be updated once the subReq is initiated.
 	require.NotNil(t, err)
 }
 
-func TestMsgServerUpdateScheduledDealIncrementAmountMsg(t *testing.T) {
+func TestMsgServerUpdateScheduledSubscriptionRequestIncrementAmountMsg(t *testing.T) {
 	k, ms, ctx, _ := setupMsgServer(t)
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	createResponse, err := ms.CreateDeal(ctx, &types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 10000, StartBlock: 10, EndBlock: 20})
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 10000, StartBlock: 10, EndBlock: 20})
 	require.NoError(t, err)
 
-	updateDeal := types.MsgUpdateDeal{Requester: Alice, DealId: createResponse.DealId, Amount: 12000}
-	_, err = ms.UpdateDeal(ctx, &updateDeal)
+	updateSubscriptionRequest := types.MsgUpdateSubscriptionRequest{Requester: Alice, SubscriptionRequestId: createResponse.SubscriptionRequestId, Amount: 12000}
+	_, err = ms.UpdateSubscriptionRequest(ctx, &updateSubscriptionRequest)
 	require.NoError(t, err)
 
-	deal, found := k.GetDeal(ctx, createResponse.DealId)
+	subReq, found := k.GetSubscriptionRequest(ctx, createResponse.SubscriptionRequestId)
 	require.True(t, found)
-	require.EqualValues(t, deal.TotalAmount, 12000)
+	require.EqualValues(t, subReq.TotalAmount, 12000)
 }
 
-func TestMsgServerUpdateScheduledDealDecrementAmountMsg(t *testing.T) {
+func TestMsgServerUpdateScheduledSubscriptionRequestDecrementAmountMsg(t *testing.T) {
 	k, ms, ctx, _ := setupMsgServer(t)
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	createResponse, err := ms.CreateDeal(ctx, &types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 10000, StartBlock: 10, EndBlock: 20})
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 10000, StartBlock: 10, EndBlock: 20})
 	require.NoError(t, err)
 
-	_, err = ms.UpdateDeal(ctx, &types.MsgUpdateDeal{Requester: Alice, DealId: createResponse.DealId, Amount: 5000})
+	_, err = ms.UpdateSubscriptionRequest(ctx, &types.MsgUpdateSubscriptionRequest{Requester: Alice, SubscriptionRequestId: createResponse.SubscriptionRequestId, Amount: 5000})
 	require.NoError(t, err)
 
-	deal, found := k.GetDeal(ctx, createResponse.DealId)
+	subReq, found := k.GetSubscriptionRequest(ctx, createResponse.SubscriptionRequestId)
 	require.True(t, found)
-	require.EqualValues(t, deal.TotalAmount, 5000)
+	require.EqualValues(t, subReq.TotalAmount, 5000)
 }
 
-func TestMsgServerUpdateScheduledDealDecrementTotalAmountMsg(t *testing.T) {
+func TestMsgServerUpdateScheduledSubscriptionRequestDecrementTotalAmountMsg(t *testing.T) {
 	k, ms, ctx, _ := setupMsgServer(t)
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	createResponse, err := ms.CreateDeal(ctx, &types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 10000, StartBlock: 10, EndBlock: 20})
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 10000, StartBlock: 10, EndBlock: 20})
 	require.NoError(t, err)
 
-	_, err = ms.UpdateDeal(ctx, &types.MsgUpdateDeal{Requester: Alice, DealId: createResponse.DealId, Amount: 0})
+	_, err = ms.UpdateSubscriptionRequest(ctx, &types.MsgUpdateSubscriptionRequest{Requester: Alice, SubscriptionRequestId: createResponse.SubscriptionRequestId, Amount: 0})
 	require.NoError(t, err)
 
-	deal, found := k.GetDeal(ctx, createResponse.DealId)
+	subReq, found := k.GetSubscriptionRequest(ctx, createResponse.SubscriptionRequestId)
 	require.True(t, found)
-	// Amount should be unchanged because you cannot withdraw full amount while the deal is still active.
-	require.EqualValues(t, deal.TotalAmount, 10000)
+	// Amount should be unchanged because you cannot withdraw full amount while the subReq is still active.
+	require.EqualValues(t, subReq.TotalAmount, 10000)
 }
 
-func TestMsgServerUpdateInitiatedDealIncrementAmountMsg(t *testing.T) {
+func TestMsgServerUpdateInitiatedSubscriptionRequestIncrementAmountMsg(t *testing.T) {
 	k, ms, ctx, am := setupMsgServer(t)
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	createResponse, err := ms.CreateDeal(ctx, &types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 10000, StartBlock: 10, EndBlock: 20})
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 10000, StartBlock: 10, EndBlock: 20})
 	require.NoError(t, err)
 
-	// Jump to block 12 to initiate the deal
+	// Jump to block 12 to initiate the subReq
 	ctx = MockBlockHeight(ctx, am, 12)
 
-	_, err = ms.UpdateDeal(ctx, &types.MsgUpdateDeal{Requester: Alice, DealId: createResponse.DealId, Amount: 15000})
+	_, err = ms.UpdateSubscriptionRequest(ctx, &types.MsgUpdateSubscriptionRequest{Requester: Alice, SubscriptionRequestId: createResponse.SubscriptionRequestId, Amount: 15000})
 	require.NoError(t, err)
 
-	deal, found := k.GetDeal(ctx, createResponse.DealId)
+	subReq, found := k.GetSubscriptionRequest(ctx, createResponse.SubscriptionRequestId)
 	require.True(t, found)
-	require.EqualValues(t, deal.TotalAmount, 15000)
+	require.EqualValues(t, subReq.TotalAmount, 15000)
 }
 
-func TestMsgServerUpdateInitiatedDealDecrementAmountMsg(t *testing.T) {
+func TestMsgServerUpdateInitiatedSubscriptionRequestDecrementAmountMsg(t *testing.T) {
 	k, ms, ctx, am := setupMsgServer(t)
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	createResponse, err := ms.CreateDeal(ctx, &types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 10000, StartBlock: 10, EndBlock: 20})
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 10000, StartBlock: 10, EndBlock: 20})
 	require.NoError(t, err)
 
-	// Jump to block 12 to initiate the deal
+	// Jump to block 12 to initiate the subReq
 	ctx = MockBlockHeight(ctx, am, 12)
 
-	_, err = ms.UpdateDeal(ctx, &types.MsgUpdateDeal{Requester: Alice, DealId: createResponse.DealId, Amount: 9000})
-	// It should return an error because you're not allowed to decrease the amount after deal initiation
+	_, err = ms.UpdateSubscriptionRequest(ctx, &types.MsgUpdateSubscriptionRequest{Requester: Alice, SubscriptionRequestId: createResponse.SubscriptionRequestId, Amount: 9000})
+	// It should return an error because you're not allowed to decrease the amount after subReq initiation
 	require.NotNil(t, err)
 }
 
-func TestMsgServerJoinDealBeforeInitiationMsg(t *testing.T) {
+func TestMsgServerJoinSubscriptionRequestBeforeInitiationMsg(t *testing.T) {
 	k, ms, ctx, _ := setupMsgServer(t)
 
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	// Create a new deal
-	createDeal := types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 1000, StartBlock: 10, EndBlock: 20}
-	createResponse, err := ms.CreateDeal(ctx, &createDeal)
+	// Create a new subReq
+	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 1000, StartBlock: 10, EndBlock: 20}
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest)
 	require.NoError(t, err)
 
-	dealId := createResponse.DealId
+	subReqId := createResponse.SubscriptionRequestId
 
-	// Get the deal from the storage
-	deal, found := k.GetDeal(ctx, dealId)
+	// Get the subReq from the storage
+	subReq, found := k.GetSubscriptionRequest(ctx, subReqId)
 
 	require.True(t, found)
-	// Assert the status of the deal to be "SCHEDULED"
-	require.EqualValues(t, deal.Status, types.Deal_SCHEDULED)
+	// Assert the status of the subReq to be "SCHEDULED"
+	require.EqualValues(t, subReq.Status, types.SubscriptionRequest_SCHEDULED)
 
-	// Provider joins the deal before it is initiated
-	joinDeal := types.MsgJoinDeal{Provider: Bob, DealId: dealId}
-	joinResponse, err := ms.JoinDeal(ctx, &joinDeal)
+	// Subscriber joins the subReq before it is initiated
+	joinSubscriptionRequest := types.MsgJoinSubscriptionRequest{Subscriber: Bob, SubscriptionRequestId: subReqId}
+	joinResponse, err := ms.JoinSubscriptionRequest(ctx, &joinSubscriptionRequest)
 	require.NoError(t, err)
 
 	// Check if the subscription exists
 	sub, found := k.GetSubscription(ctx, joinResponse.SubscriptionId)
 
 	require.True(t, found)
-	require.EqualValues(t, sub.Provider, Bob)
+	require.EqualValues(t, sub.Subscriber, Bob)
 
-	// Check if the subscription exists in the deal's subscriptionIds
-	deal, _ = k.GetDeal(ctx, dealId)
+	// Check if the subscription exists in the subReq's subscriptionIds
+	subReq, _ = k.GetSubscriptionRequest(ctx, subReqId)
 
-	// Assert that the last id in deal's subscriptionIds' is sub's id
-	require.EqualValues(t, deal.SubscriptionIds[len(deal.SubscriptionIds)-1], sub.Id)
-	require.EqualValues(t, dealId, sub.DealId)
+	// Assert that the last id in subReq's subscriptionIds' is sub's id
+	require.EqualValues(t, subReq.SubscriptionIds[len(subReq.SubscriptionIds)-1], sub.Id)
+	require.EqualValues(t, subReqId, sub.SubscriptionRequestId)
 }
 
-func TestMsgServerJoinInitiatedDealMsg(t *testing.T) {
+func TestMsgServerJoinInitiatedSubscriptionRequestMsg(t *testing.T) {
 	k, ms, ctx, am := setupMsgServer(t)
 
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	// Create a new deal
-	createDeal := types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 1000, StartBlock: 10, EndBlock: 20}
-	createResponse, err := ms.CreateDeal(ctx, &createDeal)
+	// Create a new subReq
+	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 1000, StartBlock: 10, EndBlock: 20}
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest)
 	require.NoError(t, err)
 
-	dealId := createResponse.DealId
+	subReqId := createResponse.SubscriptionRequestId
 
-	// Get the deal from the storage
-	deal, found := k.GetDeal(ctx, dealId)
+	// Get the subReq from the storage
+	subReq, found := k.GetSubscriptionRequest(ctx, subReqId)
 
 	require.True(t, found)
-	// Assert the status of the deal to be "SCHEDULED"
-	require.EqualValues(t, deal.Status, types.Deal_SCHEDULED)
+	// Assert the status of the subReq to be "SCHEDULED"
+	require.EqualValues(t, subReq.Status, types.SubscriptionRequest_SCHEDULED)
 
 	// Jump to block 12
 	ctx = MockBlockHeight(ctx, am, 12)
-	// Provider joins the deal after it is initiated
-	joinDeal := types.MsgJoinDeal{Provider: Bob, DealId: dealId}
-	joinResponse, err := ms.JoinDeal(ctx, &joinDeal)
+	// Subscriber joins the subReq after it is initiated
+	joinSubscriptionRequest := types.MsgJoinSubscriptionRequest{Subscriber: Bob, SubscriptionRequestId: subReqId}
+	joinResponse, err := ms.JoinSubscriptionRequest(ctx, &joinSubscriptionRequest)
 	require.NoError(t, err)
 
 	// Check if the subscription exists
 	sub, found := k.GetSubscription(ctx, joinResponse.SubscriptionId)
 
 	require.True(t, found)
-	require.EqualValues(t, sub.Provider, Bob)
+	require.EqualValues(t, sub.Subscriber, Bob)
 
-	// Check if the subscription exists in the deal's subscriptionIds
-	deal, _ = k.GetDeal(ctx, dealId)
+	// Check if the subscription exists in the subReq's subscriptionIds
+	subReq, _ = k.GetSubscriptionRequest(ctx, subReqId)
 
-	// Assert that the last id in deal's subscriptionIds' is sub's id
-	require.EqualValues(t, deal.SubscriptionIds[len(deal.SubscriptionIds)-1], sub.Id)
-	require.EqualValues(t, dealId, sub.DealId)
+	// Assert that the last id in subReq's subscriptionIds' is sub's id
+	require.EqualValues(t, subReq.SubscriptionIds[len(subReq.SubscriptionIds)-1], sub.Id)
+	require.EqualValues(t, subReqId, sub.SubscriptionRequestId)
 
-	// Check if the deal's status has changed to ACTIVE
-	require.EqualValues(t, deal.Status, types.Deal_ACTIVE)
+	// Check if the subReq's status has changed to ACTIVE
+	require.EqualValues(t, subReq.Status, types.SubscriptionRequest_ACTIVE)
 }
 
-func TestMsgServerJoinCancelledDealMsg(t *testing.T) {
+func TestMsgServerJoinCancelledSubscriptionRequestMsg(t *testing.T) {
 	k, ms, ctx, _ := setupMsgServer(t)
 
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	// Create a new deal
-	createDeal := types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 1000, StartBlock: 10, EndBlock: 20}
-	createResponse, err := ms.CreateDeal(ctx, &createDeal)
+	// Create a new subReq
+	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 1000, StartBlock: 10, EndBlock: 20}
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest)
 	require.NoError(t, err)
 
-	dealId := createResponse.DealId
+	subReqId := createResponse.SubscriptionRequestId
 
-	// Get the deal from the storage
-	_, found := k.GetDeal(ctx, dealId)
+	// Get the subReq from the storage
+	_, found := k.GetSubscriptionRequest(ctx, subReqId)
 	require.True(t, found)
 
-	// Cancel the deal
-	cancelDeal := types.MsgCancelDeal{Requester: Alice, DealId: dealId}
-	_, err = ms.CancelDeal(ctx, &cancelDeal)
+	// Cancel the subReq
+	cancelSubscriptionRequest := types.MsgCancelSubscriptionRequest{Requester: Alice, SubscriptionRequestId: subReqId}
+	_, err = ms.CancelSubscriptionRequest(ctx, &cancelSubscriptionRequest)
 	require.NoError(t, err)
 
 	// Check if the status is changed to CANCELLED
-	deal, _ := k.GetDeal(ctx, dealId)
-	require.EqualValues(t, deal.Status, types.Deal_CANCELLED)
+	subReq, _ := k.GetSubscriptionRequest(ctx, subReqId)
+	require.EqualValues(t, subReq.Status, types.SubscriptionRequest_CANCELLED)
 
-	// Provider joins the deal before it is initiated
-	joinDeal := types.MsgJoinDeal{Provider: Bob, DealId: dealId}
-	_, err = ms.JoinDeal(ctx, &joinDeal)
+	// Subscriber joins the subReq before it is initiated
+	joinSubscriptionRequest := types.MsgJoinSubscriptionRequest{Subscriber: Bob, SubscriptionRequestId: subReqId}
+	_, err = ms.JoinSubscriptionRequest(ctx, &joinSubscriptionRequest)
 
 	require.NotNil(t, err)
 }
 
-func TestMsgServerJoinSameDealMoreThanOnceMsg(t *testing.T) {
+func TestMsgServerJoinSameSubscriptionRequestMoreThanOnceMsg(t *testing.T) {
 	k, ms, ctx, _ := setupMsgServer(t)
 
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	// Create a new deal
-	createDeal := types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 1000, StartBlock: 10, EndBlock: 20}
-	createResponse, err := ms.CreateDeal(ctx, &createDeal)
+	// Create a new subReq
+	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 1000, StartBlock: 10, EndBlock: 20}
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest)
 	require.NoError(t, err)
 
-	dealId := createResponse.DealId
+	subReqId := createResponse.SubscriptionRequestId
 
-	// Provider joins the deal
-	joinDeal := types.MsgJoinDeal{Provider: Bob, DealId: dealId}
-	_, err = ms.JoinDeal(ctx, &joinDeal)
+	// Subscriber joins the subReq
+	joinSubscriptionRequest := types.MsgJoinSubscriptionRequest{Subscriber: Bob, SubscriptionRequestId: subReqId}
+	_, err = ms.JoinSubscriptionRequest(ctx, &joinSubscriptionRequest)
 	require.NoError(t, err)
 
-	// Provider tries to join the same deal again
-	_, err = ms.JoinDeal(ctx, &joinDeal)
+	// Subscriber tries to join the same subReq again
+	_, err = ms.JoinSubscriptionRequest(ctx, &joinSubscriptionRequest)
 
-	// It is disallowed to join a deal already subscribed to
+	// It is disallowed to join a subReq already subscribed to
 	require.NotNil(t, err)
 }
 
-func TestMsgServerIncrementDealAmount(t *testing.T) {
+func TestMsgServerIncrementSubscriptionRequestAmount(t *testing.T) {
 	k, ms, ctx, _ := setupMsgServer(t)
 
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	// Create a new deal
-	createDeal := types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 1000, StartBlock: 10, EndBlock: 20}
-	createResponse, err := ms.CreateDeal(ctx, &createDeal)
+	// Create a new subReq
+	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 1000, StartBlock: 10, EndBlock: 20}
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest)
 	require.NoError(t, err)
 
-	dealId := createResponse.DealId
+	subReqId := createResponse.SubscriptionRequestId
 
-	// topup the deal amount
-	incrementDeal := types.MsgIncrementDealAmount{Requester: Alice, DealId: dealId, Amount: 1000}
-	_, err = ms.IncrementDealAmount(ctx, &incrementDeal)
+	// topup the subReq amount
+	incrementSubscriptionRequest := types.MsgIncrementSubscriptionRequestAmount{Requester: Alice, SubscriptionRequestId: subReqId, Amount: 1000}
+	_, err = ms.IncrementSubscriptionRequestAmount(ctx, &incrementSubscriptionRequest)
 
 	require.NoError(t, err)
 }
 
-func TestMsgServerIncrementDealAmountIncorrectRequester(t *testing.T) {
+func TestMsgServerIncrementSubscriptionRequestAmountIncorrectRequester(t *testing.T) {
 	k, ms, ctx, _ := setupMsgServer(t)
 
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	// Create a new deal
-	createDeal := types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 1000, StartBlock: 10, EndBlock: 20}
-	createResponse, err := ms.CreateDeal(ctx, &createDeal)
+	// Create a new subReq
+	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 1000, StartBlock: 10, EndBlock: 20}
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest)
 	require.NoError(t, err)
 
-	dealId := createResponse.DealId
+	subReqId := createResponse.SubscriptionRequestId
 
-	// topup the deal amount
-	incrementDeal := types.MsgIncrementDealAmount{Requester: Bob, DealId: dealId, Amount: 1000}
-	_, err = ms.IncrementDealAmount(ctx, &incrementDeal)
+	// topup the subReq amount
+	incrementSubscriptionRequest := types.MsgIncrementSubscriptionRequestAmount{Requester: Bob, SubscriptionRequestId: subReqId, Amount: 1000}
+	_, err = ms.IncrementSubscriptionRequestAmount(ctx, &incrementSubscriptionRequest)
 
 	require.NotNil(t, err)
 }
 
-func TestMsgServerIncrementCancelledDealAmount(t *testing.T) {
+func TestMsgServerIncrementCancelledSubscriptionRequestAmount(t *testing.T) {
 	k, ms, ctx, _ := setupMsgServer(t)
 
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	// Create a new deal
-	createDeal := types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 1000, StartBlock: 10, EndBlock: 20}
-	createResponse, err := ms.CreateDeal(ctx, &createDeal)
+	// Create a new subReq
+	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 1000, StartBlock: 10, EndBlock: 20}
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest)
 	require.NoError(t, err)
 
-	dealId := createResponse.DealId
+	subReqId := createResponse.SubscriptionRequestId
 
-	// cancel the deal
-	cancelDeal := types.MsgCancelDeal{Requester: Alice, DealId: dealId}
-	_, err = ms.CancelDeal(ctx, &cancelDeal)
+	// cancel the subReq
+	cancelSubscriptionRequest := types.MsgCancelSubscriptionRequest{Requester: Alice, SubscriptionRequestId: subReqId}
+	_, err = ms.CancelSubscriptionRequest(ctx, &cancelSubscriptionRequest)
 	require.NoError(t, err)
 
-	// topup the deal amount
-	incrementDeal := types.MsgIncrementDealAmount{Requester: Alice, DealId: dealId, Amount: 1000}
-	_, err = ms.IncrementDealAmount(ctx, &incrementDeal)
+	// topup the subReq amount
+	incrementSubscriptionRequest := types.MsgIncrementSubscriptionRequestAmount{Requester: Alice, SubscriptionRequestId: subReqId, Amount: 1000}
+	_, err = ms.IncrementSubscriptionRequestAmount(ctx, &incrementSubscriptionRequest)
 
 	require.NotNil(t, err)
 }
 
-func TestMsgServerIncrementExpiredDealAmount(t *testing.T) {
+func TestMsgServerIncrementExpiredSubscriptionRequestAmount(t *testing.T) {
 	k, ms, ctx, am := setupMsgServer(t)
 
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	// Create a new deal
-	createDeal := types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 1000, StartBlock: 10, EndBlock: 20}
-	createResponse, err := ms.CreateDeal(ctx, &createDeal)
+	// Create a new subReq
+	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 1000, StartBlock: 10, EndBlock: 20}
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest)
 	require.NoError(t, err)
 
-	dealId := createResponse.DealId
+	subReqId := createResponse.SubscriptionRequestId
 
-	// Jump to block 12 to initialize the deal
+	// Jump to block 12 to initialize the subReq
 	ctx = MockBlockHeight(ctx, am, 12)
-	// Jump to block 25 to expire the deal
+	// Jump to block 25 to expire the subReq
 	ctx = MockBlockHeight(ctx, am, 25)
 
-	// topup the deal amount
-	incrementDeal := types.MsgIncrementDealAmount{Requester: Alice, DealId: dealId, Amount: 1000}
-	_, err = ms.IncrementDealAmount(ctx, &incrementDeal)
+	// topup the subReq amount
+	incrementSubscriptionRequest := types.MsgIncrementSubscriptionRequestAmount{Requester: Alice, SubscriptionRequestId: subReqId, Amount: 1000}
+	_, err = ms.IncrementSubscriptionRequestAmount(ctx, &incrementSubscriptionRequest)
 
 	require.NotNil(t, err)
 }
 
-func TestMsgServerLeaveJoinedDealMsg(t *testing.T) {
+func TestMsgServerLeaveJoinedSubscriptionRequestMsg(t *testing.T) {
 	k, ms, ctx, _ := setupMsgServer(t)
 
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	// Create a new deal
-	createDeal := types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 1000, StartBlock: 10, EndBlock: 20}
-	createResponse, err := ms.CreateDeal(ctx, &createDeal)
+	// Create a new subReq
+	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 1000, StartBlock: 10, EndBlock: 20}
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest)
 	require.NoError(t, err)
 
-	dealId := createResponse.DealId
+	subReqId := createResponse.SubscriptionRequestId
 
-	// Provider joins the deal
-	joinDeal := types.MsgJoinDeal{Provider: Bob, DealId: dealId}
-	_, err = ms.JoinDeal(ctx, &joinDeal)
+	// Subscriber joins the subReq
+	joinSubscriptionRequest := types.MsgJoinSubscriptionRequest{Subscriber: Bob, SubscriptionRequestId: subReqId}
+	_, err = ms.JoinSubscriptionRequest(ctx, &joinSubscriptionRequest)
 
 	require.NoError(t, err)
 
-	leaveDeal := types.MsgLeaveDeal{Provider: Bob, DealId: dealId}
-	// Provider tries to leave the deal
-	_, err = ms.LeaveDeal(ctx, &leaveDeal)
+	leaveSubscriptionRequest := types.MsgLeaveSubscriptionRequest{Subscriber: Bob, SubscriptionRequestId: subReqId}
+	// Subscriber tries to leave the subReq
+	_, err = ms.LeaveSubscriptionRequest(ctx, &leaveSubscriptionRequest)
 
 	require.NoError(t, err)
 }
 
-func TestMsgServerLeaveNotJoinedDealMsg(t *testing.T) {
+func TestMsgServerLeaveNotJoinedSubscriptionRequestMsg(t *testing.T) {
 	k, ms, ctx, _ := setupMsgServer(t)
 
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	// Create a new deal
-	createDeal := types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 1000, StartBlock: 10, EndBlock: 20}
-	createResponse, err := ms.CreateDeal(ctx, &createDeal)
+	// Create a new subReq
+	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 1000, StartBlock: 10, EndBlock: 20}
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest)
 	require.NoError(t, err)
 
-	dealId := createResponse.DealId
+	subReqId := createResponse.SubscriptionRequestId
 
-	leaveDeal := types.MsgLeaveDeal{Provider: Bob, DealId: dealId}
-	// Provider tries to leave the deal it has not joined
-	_, err = ms.LeaveDeal(ctx, &leaveDeal)
+	leaveSubscriptionRequest := types.MsgLeaveSubscriptionRequest{Subscriber: Bob, SubscriptionRequestId: subReqId}
+	// Subscriber tries to leave the subReq it has not joined
+	_, err = ms.LeaveSubscriptionRequest(ctx, &leaveSubscriptionRequest)
 
-	// It should error because you can't leave a deal you did not join
+	// It should error because you can't leave a subReq you did not join
 	require.NotNil(t, err)
 }
 
-func TestMsgServerJoinLeaveJoinDeallMsg(t *testing.T) {
+func TestMsgServerJoinLeaveJoinSubscriptionRequestlMsg(t *testing.T) {
 	k, ms, ctx, am := setupMsgServer(t)
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 
-	// Create a new deal
-	createDeal := types.MsgCreateDeal{Requester: Alice, CroId: "alicecro", Amount: 1000, StartBlock: 10, EndBlock: 20}
-	createResponse, err := ms.CreateDeal(ctx, &createDeal)
+	// Create a new subReq
+	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 1000, StartBlock: 10, EndBlock: 20}
+	createResponse, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest)
 	require.NoError(t, err)
 
-	dealId := createResponse.DealId
+	subReqId := createResponse.SubscriptionRequestId
 
-	// Provider joins the deal
-	joinDeal := types.MsgJoinDeal{Provider: Bob, DealId: dealId}
-	_, err = ms.JoinDeal(ctx, &joinDeal)
+	// Subscriber joins the subReq
+	joinSubscriptionRequest := types.MsgJoinSubscriptionRequest{Subscriber: Bob, SubscriptionRequestId: subReqId}
+	_, err = ms.JoinSubscriptionRequest(ctx, &joinSubscriptionRequest)
 	require.NoError(t, err)
 
-	leaveDeal := types.MsgLeaveDeal{Provider: Bob, DealId: dealId}
-	// Provider tries to leave the deal it has not joined
-	_, err = ms.LeaveDeal(ctx, &leaveDeal)
+	leaveSubscriptionRequest := types.MsgLeaveSubscriptionRequest{Subscriber: Bob, SubscriptionRequestId: subReqId}
+	// Subscriber tries to leave the subReq it has not joined
+	_, err = ms.LeaveSubscriptionRequest(ctx, &leaveSubscriptionRequest)
 	require.NoError(t, err)
 
 	// Jump one block forward
 	ctx = MockBlockHeight(ctx, am, 1)
-	// Provider joins the deal again
-	_, err = ms.JoinDeal(ctx, &joinDeal)
+	// Subscriber joins the subReq again
+	_, err = ms.JoinSubscriptionRequest(ctx, &joinSubscriptionRequest)
 
 	require.NoError(t, err)
 }

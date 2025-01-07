@@ -42,9 +42,9 @@ func (k Keeper) RemoveChallenge(ctx sdk.Context, challengeId string) {
 	store.Delete([]byte(challengeId))
 }
 
-func (k Keeper) GetHashSubmissionBlock(ctx sdk.Context, provider string, hash string) (block int64, found bool) {
+func (k Keeper) GetHashSubmissionBlock(ctx sdk.Context, subscriber string, hash string) (block int64, found bool) {
 	storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
-	store := prefix.NewStore(storeAdapter, sTypes.GetHashSubmissionBlockStoreKey(provider))
+	store := prefix.NewStore(storeAdapter, sTypes.GetHashSubmissionBlockStoreKey(subscriber))
 
 	blockBytes := store.Get([]byte(hash))
 	if blockBytes == nil {
@@ -68,7 +68,7 @@ func (k Keeper) IterateChallenges(ctx sdk.Context, shouldBreak func(challenge ty
 	}
 }
 
-func (k Keeper) PricePerVertexChallenge(ctx sdk.Context, challenger_address string, provider_id string) int64 {
+func (k Keeper) PricePerVertexChallenge(ctx sdk.Context, challenger_address string, subscriber_id string) int64 {
 	return 1
 }
 

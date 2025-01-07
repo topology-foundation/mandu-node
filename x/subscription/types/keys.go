@@ -26,7 +26,7 @@ func KeyPrefix(p string) []byte {
 	return []byte(p)
 }
 
-// GetProviderStoreKey returns the key for the provider store for the given provider.
+// GetSubscriberStoreKey returns the key for the subscriber store for the given subscriber.
 func GetSubscriberStoreKey(subscriber string) []byte {
 	return KeyPrefix(SubscriptionSubscriberKeyPrefix + "/" + subscriber)
 }
@@ -40,6 +40,6 @@ func GetProgressSizeStoreKey(subscription string) []byte {
 	return KeyPrefix(ProgressSizeKeyPrefix + "/" + subscription)
 }
 
-func GetHashSubmissionBlockStoreKey(provider string) []byte {
-	return KeyPrefix(HashSubmissionBlockKeyPrefix + "/" + provider)
+func GetHashSubmissionBlockStoreKey(subscriber string) []byte {
+	return KeyPrefix(HashSubmissionBlockKeyPrefix + "/" + subscriber)
 }

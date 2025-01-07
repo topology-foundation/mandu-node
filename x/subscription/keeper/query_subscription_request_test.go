@@ -16,7 +16,7 @@ func TestQuerySubscriptionRequest(t *testing.T) {
 	require.NotEmpty(t, k)
 
 	// Create a subReq
-	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, CroId: "alicecro", Amount: 1000, StartBlock: 10, EndBlock: 20}
+	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 1000, StartBlock: 10, EndBlock: 20}
 	createResponse, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest)
 	require.Nil(t, err)
 
@@ -24,7 +24,7 @@ func TestQuerySubscriptionRequest(t *testing.T) {
 	queryResponse, err := k.SubscriptionRequest(ctx, &types.QuerySubscriptionRequestRequest{Id: createResponse.SubscriptionRequestId})
 	require.Nil(t, err)
 
-	require.EqualValues(t, createSubscriptionRequest, types.MsgCreateSubscriptionRequest{Requester: queryResponse.SubscriptionRequest.Requester, CroId: queryResponse.SubscriptionRequest.CroId, Amount: queryResponse.SubscriptionRequest.TotalAmount, StartBlock: queryResponse.SubscriptionRequest.StartBlock, EndBlock: queryResponse.SubscriptionRequest.EndBlock})
+	require.EqualValues(t, createSubscriptionRequest, types.MsgCreateSubscriptionRequest{Requester: queryResponse.SubscriptionRequest.Requester, DrpId: queryResponse.SubscriptionRequest.DrpId, Amount: queryResponse.SubscriptionRequest.TotalAmount, StartBlock: queryResponse.SubscriptionRequest.StartBlock, EndBlock: queryResponse.SubscriptionRequest.EndBlock})
 }
 
 func TestQuerySubscriptionRequestStatus(t *testing.T) {
@@ -34,7 +34,7 @@ func TestQuerySubscriptionRequestStatus(t *testing.T) {
 	require.NotEmpty(t, k)
 
 	// Create a subReq
-	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, CroId: "alicecro", Amount: 1000, StartBlock: 10, EndBlock: 20}
+	createSubscriptionRequest := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 1000, StartBlock: 10, EndBlock: 20}
 	createResponse, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest)
 	require.Nil(t, err)
 
@@ -52,7 +52,7 @@ func TestQuerySubscriptionRequests(t *testing.T) {
 	require.NotEmpty(t, k)
 
 	// Create a first subReq
-	createSubscriptionRequest1 := types.MsgCreateSubscriptionRequest{Requester: Alice, CroId: "alicecro1", Amount: 1000, StartBlock: 10, EndBlock: 20}
+	createSubscriptionRequest1 := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp1", Amount: 1000, StartBlock: 10, EndBlock: 20}
 	createResponse1, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest1)
 	require.Nil(t, err)
 
@@ -60,7 +60,7 @@ func TestQuerySubscriptionRequests(t *testing.T) {
 	require.True(t, found)
 
 	// Create a second subReq
-	createSubscriptionRequest2 := types.MsgCreateSubscriptionRequest{Requester: Alice, CroId: "alicecro2", Amount: 1000, StartBlock: 20, EndBlock: 30}
+	createSubscriptionRequest2 := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp2", Amount: 1000, StartBlock: 20, EndBlock: 30}
 	createResponse2, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest2)
 	require.Nil(t, err)
 
@@ -68,7 +68,7 @@ func TestQuerySubscriptionRequests(t *testing.T) {
 	require.True(t, found)
 
 	// Create a third subReq
-	createSubscriptionRequest3 := types.MsgCreateSubscriptionRequest{Requester: Alice, CroId: "alicecro", Amount: 1000, StartBlock: 10, EndBlock: 20}
+	createSubscriptionRequest3 := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 1000, StartBlock: 10, EndBlock: 20}
 	createResponse3, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest3)
 	require.Nil(t, err)
 
@@ -91,7 +91,7 @@ func TestQuerySubscriptionRequestsWithPagination(t *testing.T) {
 	require.NotEmpty(t, k)
 
 	// Create a first subReq
-	createSubscriptionRequest1 := types.MsgCreateSubscriptionRequest{Requester: Alice, CroId: "alicecro1", Amount: 1000, StartBlock: 10, EndBlock: 20}
+	createSubscriptionRequest1 := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp1", Amount: 1000, StartBlock: 10, EndBlock: 20}
 	createResponse1, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest1)
 	require.Nil(t, err)
 
@@ -99,7 +99,7 @@ func TestQuerySubscriptionRequestsWithPagination(t *testing.T) {
 	require.True(t, found)
 
 	// Create a second subReq
-	createSubscriptionRequest2 := types.MsgCreateSubscriptionRequest{Requester: Alice, CroId: "alicecro2", Amount: 1000, StartBlock: 20, EndBlock: 30}
+	createSubscriptionRequest2 := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp2", Amount: 1000, StartBlock: 20, EndBlock: 30}
 	createResponse2, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest2)
 	require.Nil(t, err)
 
@@ -107,7 +107,7 @@ func TestQuerySubscriptionRequestsWithPagination(t *testing.T) {
 	require.True(t, found)
 
 	// Create a third subReq
-	createSubscriptionRequest3 := types.MsgCreateSubscriptionRequest{Requester: Alice, CroId: "alicecro", Amount: 1000, StartBlock: 10, EndBlock: 20}
+	createSubscriptionRequest3 := types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 1000, StartBlock: 10, EndBlock: 20}
 	createResponse3, err := ms.CreateSubscriptionRequest(ctx, &createSubscriptionRequest3)
 	require.Nil(t, err)
 

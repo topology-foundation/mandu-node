@@ -21,7 +21,7 @@ message SubscriptionRequest { // request made by anyone
   int64 available_amount           = 5; // total amount - rewards already provided
   int64 start_block                = 6; // when does the request start
   int64 epoch_size                 = 7; // size of the epochs (number of blocks)
-  int64 duration                   = 8; // number of epochs where the deal is valid
+  int64 duration                   = 8; // number of epochs where the subscription request is valid
   int64 start_epoch                = 9; // epoch where the request started
   int64 end_epoch                  = 10; // epoch where the request ends
   repeated string drp_ids          = 11; // all the DRPs that must be subscribed to

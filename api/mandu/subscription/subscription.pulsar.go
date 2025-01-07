@@ -2106,7 +2106,7 @@ type SubscriptionRequest struct {
 	AvailableAmount int64                      `protobuf:"varint,5,opt,name=available_amount,json=availableAmount,proto3" json:"available_amount,omitempty"`           // total amount - rewards already provided
 	StartBlock      int64                      `protobuf:"varint,6,opt,name=start_block,json=startBlock,proto3" json:"start_block,omitempty"`                          // when does the request start
 	EpochSize       int64                      `protobuf:"varint,7,opt,name=epoch_size,json=epochSize,proto3" json:"epoch_size,omitempty"`                             // size of the epochs (number of blocks)
-	Duration        int64                      `protobuf:"varint,8,opt,name=duration,proto3" json:"duration,omitempty"`                                                // number of epochs where the deal is valid
+	Duration        int64                      `protobuf:"varint,8,opt,name=duration,proto3" json:"duration,omitempty"`                                                // number of epochs where the subscription request is valid
 	StartEpoch      int64                      `protobuf:"varint,9,opt,name=start_epoch,json=startEpoch,proto3" json:"start_epoch,omitempty"`                          // epoch where the request started
 	EndEpoch        int64                      `protobuf:"varint,10,opt,name=end_epoch,json=endEpoch,proto3" json:"end_epoch,omitempty"`                               // epoch where the request ends
 	DrpIds          []string                   `protobuf:"bytes,11,rep,name=drp_ids,json=drpIds,proto3" json:"drp_ids,omitempty"`                                      // all the DRPs that must be subscribed to

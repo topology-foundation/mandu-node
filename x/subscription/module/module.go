@@ -172,7 +172,7 @@ func (am AppModule) EndBlock(goCtx context.Context) error {
 
 			if am.keeper.IsSubscriptionRequestActive(ctx, subReq) {
 				subReq.Status = types.SubscriptionRequest_ACTIVE
-				updatedSubscriptionRequest, err := am.PayActiveProvidersPerBlock(ctx, subReq)
+				updatedSubscriptionRequest, err := am.PayActiveSubscribersPerBlock(ctx, subReq)
 				if err != nil {
 					return true, err
 				}
@@ -198,7 +198,7 @@ func (am AppModule) EndBlock(goCtx context.Context) error {
 					return true, err
 				}
 			} else {
-				updatedSubscriptionRequest, err := am.PayActiveProvidersPerBlock(ctx, subReq)
+				updatedSubscriptionRequest, err := am.PayActiveSubscribersPerBlock(ctx, subReq)
 				if err != nil {
 					return true, err
 				}
@@ -223,27 +223,27 @@ func (am AppModule) EndBlock(goCtx context.Context) error {
 	return err
 }
 
-func (am AppModule) PayActiveProvidersPerBlock(ctx sdk.Context, subReq types.SubscriptionRequest) (*types.SubscriptionRequest, error) {
+func (am AppModule) PayActiveSubscribersPerBlock(ctx sdk.Context, subReq types.SubscriptionRequest) (*types.SubscriptionRequest, error) {
 	activeSubscriptions := am.keeper.GetAllActiveSubscriptions(ctx, subReq)
 	blockReward := am.keeper.CalculateBlockReward(ctx, subReq)
 	currentBlock := ctx.BlockHeight()
-	// iterate through the progress to get the total while recording the progress of each provider
-	providerProgress := make(map[string]int)
+	// iterate through the progress to get the total while recording the progress of each subscriber
+	subscriberProgress := make(map[string]int)
 	totalProgress := 0
-	for subscription, provider := range activeSubscriptions {
+	for subscription, subscriber := range activeSubscriptions {
 		progress, found := am.keeper.GetProgressSize(ctx, subscription, currentBlock)
 		if !found {
-			providerProgress[provider] = 0
+			subscriberProgress[subscriber] = 0
 		}
-		providerProgress[provider] = progress
+		subscriberProgress[subscriber] = progress
 		totalProgress += progress
 	}
 
 	totalRewardSent := int64(0)
-	for subscription, provider := range activeSubscriptions {
+	for subscription, subscriber := range activeSubscriptions {
 		// reward based on the progress size
-		reward := int64(float64(blockReward) * float64(providerProgress[activeSubscriptions[subscription]]) / float64(totalProgress))
-		err := am.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, sdk.AccAddress(provider), sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, reward)))
+		reward := int64(float64(blockReward) * float64(subscriberProgress[activeSubscriptions[subscription]]) / float64(totalProgress))
+		err := am.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, sdk.AccAddress(subscriber), sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, reward)))
 		if err != nil {
 			return nil, err
 		}

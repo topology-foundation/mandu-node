@@ -41,9 +41,9 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 				},
 				{
 					RpcMethod:      "Challenge",
-					Use:            "challenge [provider_id] [vertices_hashes]",
+					Use:            "challenge [subscriber_id] [vertices_hashes]",
 					Short:          "Send a challenge tx",
-					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "provider_id"}, {ProtoField: "vertices_hashes"}},
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "subscriber_id"}, {ProtoField: "vertices_hashes"}},
 				},
 				{
 					RpcMethod:      "SubmitProof",

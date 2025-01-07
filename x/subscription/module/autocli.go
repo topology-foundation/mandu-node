@@ -32,7 +32,7 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 				{
 					RpcMethod:      "SubscriptionRequests",
 					Use:            "subscription-requests [requester]",
-					Short:          "Query deals",
+					Short:          "Query subReqs",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "requester"}},
 				},
 				{
