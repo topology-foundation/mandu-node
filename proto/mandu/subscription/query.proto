@@ -35,7 +35,7 @@ service Query {
   }
 
   rpc Subscriptions(QuerySubscriptionsRequest) returns (QuerySubscriptionsResponse) {
-    option (google.api.http).get = "/mandu/subscription/subscriptions/{provider}";
+    option (google.api.http).get = "/mandu/subscription/subscriptions/{subscriber}";
   }
 }
 
@@ -86,7 +86,7 @@ message QuerySubscriptionResponse {
 }
 
 message QuerySubscriptionsRequest {
-  string provider = 1;
+  string subscriber = 1;
   cosmos.base.query.v1beta1.PageRequest pagination = 2;
 }
 
