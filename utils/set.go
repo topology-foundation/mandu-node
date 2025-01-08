@@ -5,7 +5,7 @@ package utils
 // Set is the set type
 type Set[T comparable] map[T]struct{}
 
-// Add returns the current Set by adding a new element.
+// Add returns the current Set after adding a new element.
 func (s Set[T]) Add(e T) Set[T] {
 	s[e] = struct{}{}
 	return s
