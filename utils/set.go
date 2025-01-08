@@ -11,7 +11,7 @@ func (s Set[T]) Add(e T) Set[T] {
 	return s
 }
 
-// Remove returns the current Set by removing an element.
+// Remove returns the current Set after removing an element.
 func (s Set[T]) Remove(e T) Set[T] {
 	delete(s, e)
 	return s
