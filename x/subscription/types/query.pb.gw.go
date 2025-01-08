@@ -51,8 +51,8 @@ func local_request_Query_Params_0(ctx context.Context, marshaler runtime.Marshal
 
 }
 
-func request_Query_Deal_0(ctx context.Context, marshaler runtime.Marshaler, client QueryClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq QueryDealRequest
+func request_Query_SubscriptionRequest_0(ctx context.Context, marshaler runtime.Marshaler, client QueryClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq QuerySubscriptionRequestRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -73,13 +73,13 @@ func request_Query_Deal_0(ctx context.Context, marshaler runtime.Marshaler, clie
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id", err)
 	}
 
-	msg, err := client.Deal(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.SubscriptionRequest(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Query_Deal_0(ctx context.Context, marshaler runtime.Marshaler, server QueryServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq QueryDealRequest
+func local_request_Query_SubscriptionRequest_0(ctx context.Context, marshaler runtime.Marshaler, server QueryServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq QuerySubscriptionRequestRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -100,13 +100,13 @@ func local_request_Query_Deal_0(ctx context.Context, marshaler runtime.Marshaler
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id", err)
 	}
 
-	msg, err := server.Deal(ctx, &protoReq)
+	msg, err := server.SubscriptionRequest(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
-func request_Query_DealStatus_0(ctx context.Context, marshaler runtime.Marshaler, client QueryClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq QueryDealStatusRequest
+func request_Query_SubscriptionRequestStatus_0(ctx context.Context, marshaler runtime.Marshaler, client QueryClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq QuerySubscriptionRequestStatusRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -127,13 +127,13 @@ func request_Query_DealStatus_0(ctx context.Context, marshaler runtime.Marshaler
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id", err)
 	}
 
-	msg, err := client.DealStatus(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.SubscriptionRequestStatus(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Query_DealStatus_0(ctx context.Context, marshaler runtime.Marshaler, server QueryServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq QueryDealStatusRequest
+func local_request_Query_SubscriptionRequestStatus_0(ctx context.Context, marshaler runtime.Marshaler, server QueryServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq QuerySubscriptionRequestStatusRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -154,17 +154,17 @@ func local_request_Query_DealStatus_0(ctx context.Context, marshaler runtime.Mar
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "id", err)
 	}
 
-	msg, err := server.DealStatus(ctx, &protoReq)
+	msg, err := server.SubscriptionRequestStatus(ctx, &protoReq)
 	return msg, metadata, err
 
 }
 
 var (
-	filter_Query_Deals_0 = &utilities.DoubleArray{Encoding: map[string]int{"requester": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_Query_SubscriptionRequests_0 = &utilities.DoubleArray{Encoding: map[string]int{"requester": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
-func request_Query_Deals_0(ctx context.Context, marshaler runtime.Marshaler, client QueryClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq QueryDealsRequest
+func request_Query_SubscriptionRequests_0(ctx context.Context, marshaler runtime.Marshaler, client QueryClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq QuerySubscriptionRequestsRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -188,17 +188,17 @@ func request_Query_Deals_0(ctx context.Context, marshaler runtime.Marshaler, cli
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Query_Deals_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Query_SubscriptionRequests_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := client.Deals(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.SubscriptionRequests(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 
 }
 
-func local_request_Query_Deals_0(ctx context.Context, marshaler runtime.Marshaler, server QueryServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq QueryDealsRequest
+func local_request_Query_SubscriptionRequests_0(ctx context.Context, marshaler runtime.Marshaler, server QueryServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq QuerySubscriptionRequestsRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -222,11 +222,11 @@ func local_request_Query_Deals_0(ctx context.Context, marshaler runtime.Marshale
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Query_Deals_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_Query_SubscriptionRequests_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
 
-	msg, err := server.Deals(ctx, &protoReq)
+	msg, err := server.SubscriptionRequests(ctx, &protoReq)
 	return msg, metadata, err
 
 }
@@ -286,7 +286,7 @@ func local_request_Query_Subscription_0(ctx context.Context, marshaler runtime.M
 }
 
 var (
-	filter_Query_Subscriptions_0 = &utilities.DoubleArray{Encoding: map[string]int{"provider": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+	filter_Query_Subscriptions_0 = &utilities.DoubleArray{Encoding: map[string]int{"subscriber": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 )
 
 func request_Query_Subscriptions_0(ctx context.Context, marshaler runtime.Marshaler, client QueryClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
@@ -300,15 +300,15 @@ func request_Query_Subscriptions_0(ctx context.Context, marshaler runtime.Marsha
 		_   = err
 	)
 
-	val, ok = pathParams["provider"]
+	val, ok = pathParams["subscriber"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "provider")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "subscriber")
 	}
 
-	protoReq.Provider, err = runtime.String(val)
+	protoReq.Subscriber, err = runtime.String(val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "provider", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "subscriber", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -334,15 +334,15 @@ func local_request_Query_Subscriptions_0(ctx context.Context, marshaler runtime.
 		_   = err
 	)
 
-	val, ok = pathParams["provider"]
+	val, ok = pathParams["subscriber"]
 	if !ok {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "provider")
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "subscriber")
 	}
 
-	protoReq.Provider, err = runtime.String(val)
+	protoReq.Subscriber, err = runtime.String(val)
 
 	if err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "provider", err)
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "subscriber", err)
 	}
 
 	if err := req.ParseForm(); err != nil {
@@ -386,7 +386,7 @@ func RegisterQueryHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 
 	})
 
-	mux.Handle("GET", pattern_Query_Deal_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_Query_SubscriptionRequest_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -397,7 +397,7 @@ func RegisterQueryHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Query_Deal_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Query_SubscriptionRequest_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -405,11 +405,11 @@ func RegisterQueryHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_Query_Deal_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Query_SubscriptionRequest_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Query_DealStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_Query_SubscriptionRequestStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -420,7 +420,7 @@ func RegisterQueryHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Query_DealStatus_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Query_SubscriptionRequestStatus_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -428,11 +428,11 @@ func RegisterQueryHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_Query_DealStatus_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Query_SubscriptionRequestStatus_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Query_Deals_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_Query_SubscriptionRequests_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
@@ -443,7 +443,7 @@ func RegisterQueryHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_Query_Deals_0(rctx, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_Query_SubscriptionRequests_0(rctx, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
@@ -451,7 +451,7 @@ func RegisterQueryHandlerServer(ctx context.Context, mux *runtime.ServeMux, serv
 			return
 		}
 
-		forward_Query_Deals_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Query_SubscriptionRequests_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -562,7 +562,7 @@ func RegisterQueryHandlerClient(ctx context.Context, mux *runtime.ServeMux, clie
 
 	})
 
-	mux.Handle("GET", pattern_Query_Deal_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_Query_SubscriptionRequest_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -571,18 +571,18 @@ func RegisterQueryHandlerClient(ctx context.Context, mux *runtime.ServeMux, clie
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Query_Deal_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Query_SubscriptionRequest_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Query_Deal_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Query_SubscriptionRequest_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Query_DealStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_Query_SubscriptionRequestStatus_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -591,18 +591,18 @@ func RegisterQueryHandlerClient(ctx context.Context, mux *runtime.ServeMux, clie
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Query_DealStatus_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Query_SubscriptionRequestStatus_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Query_DealStatus_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Query_SubscriptionRequestStatus_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
-	mux.Handle("GET", pattern_Query_Deals_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle("GET", pattern_Query_SubscriptionRequests_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
@@ -611,14 +611,14 @@ func RegisterQueryHandlerClient(ctx context.Context, mux *runtime.ServeMux, clie
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_Query_Deals_0(rctx, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_Query_SubscriptionRequests_0(rctx, inboundMarshaler, client, req, pathParams)
 		ctx = runtime.NewServerMetadataContext(ctx, md)
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
 
-		forward_Query_Deals_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_Query_SubscriptionRequests_0(ctx, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 
 	})
 
@@ -668,25 +668,25 @@ func RegisterQueryHandlerClient(ctx context.Context, mux *runtime.ServeMux, clie
 var (
 	pattern_Query_Params_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"mandu", "subscription", "params"}, "", runtime.AssumeColonVerbOpt(false)))
 
-	pattern_Query_Deal_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"mandu", "subscription", "deal", "id"}, "", runtime.AssumeColonVerbOpt(false)))
+	pattern_Query_SubscriptionRequest_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"mandu", "subscription", "subscription_request", "id"}, "", runtime.AssumeColonVerbOpt(false)))
 
-	pattern_Query_DealStatus_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"mandu", "subscription", "deal_status", "id"}, "", runtime.AssumeColonVerbOpt(false)))
+	pattern_Query_SubscriptionRequestStatus_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"mandu", "subscription", "subscription_request_status", "id"}, "", runtime.AssumeColonVerbOpt(false)))
 
-	pattern_Query_Deals_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"mandu", "subscription", "deals", "requester"}, "", runtime.AssumeColonVerbOpt(false)))
+	pattern_Query_SubscriptionRequests_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"mandu", "subscription", "subscription_requests", "requester"}, "", runtime.AssumeColonVerbOpt(false)))
 
 	pattern_Query_Subscription_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 1, 1, 0, 4, 1, 5, 2}, []string{"mandu", "subscription", "id"}, "", runtime.AssumeColonVerbOpt(false)))
 
-	pattern_Query_Subscriptions_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"mandu", "subscription", "subscriptions", "provider"}, "", runtime.AssumeColonVerbOpt(false)))
+	pattern_Query_Subscriptions_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"mandu", "subscription", "subscriptions", "subscriber"}, "", runtime.AssumeColonVerbOpt(false)))
 )
 
 var (
 	forward_Query_Params_0 = runtime.ForwardResponseMessage
 
-	forward_Query_Deal_0 = runtime.ForwardResponseMessage
+	forward_Query_SubscriptionRequest_0 = runtime.ForwardResponseMessage
 
-	forward_Query_DealStatus_0 = runtime.ForwardResponseMessage
+	forward_Query_SubscriptionRequestStatus_0 = runtime.ForwardResponseMessage
 
-	forward_Query_Deals_0 = runtime.ForwardResponseMessage
+	forward_Query_SubscriptionRequests_0 = runtime.ForwardResponseMessage
 
 	forward_Query_Subscription_0 = runtime.ForwardResponseMessage
 

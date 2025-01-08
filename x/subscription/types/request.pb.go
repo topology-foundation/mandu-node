@@ -48,7 +48,7 @@ func (Request_Status) EnumDescriptor() ([]byte, []int) {
 type Request struct {
 	Id              string         `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Requester       string         `protobuf:"bytes,2,opt,name=requester,proto3" json:"requester,omitempty"`
-	CroId           string         `protobuf:"bytes,3,opt,name=cro_id,json=croId,proto3" json:"cro_id,omitempty"`
+	DrpId           string         `protobuf:"bytes,3,opt,name=drp_id,json=drpId,proto3" json:"drp_id,omitempty"`
 	SubscriptionIds []string       `protobuf:"bytes,4,rep,name=subscription_ids,json=subscriptionIds,proto3" json:"subscription_ids,omitempty"`
 	Status          Request_Status `protobuf:"varint,5,opt,name=status,proto3,enum=mandu.subscription.Request_Status" json:"status,omitempty"`
 	InitialAmount   uint64         `protobuf:"varint,6,opt,name=initial_amount,json=initialAmount,proto3" json:"initial_amount,omitempty"`
@@ -104,9 +104,9 @@ func (m *Request) GetRequester() string {
 	return ""
 }
 
-func (m *Request) GetCroId() string {
+func (m *Request) GetDrpId() string {
 	if m != nil {
-		return m.CroId
+		return m.DrpId
 	}
 	return ""
 }
@@ -241,10 +241,10 @@ func (m *Request) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			dAtA[i] = 0x22
 		}
 	}
-	if len(m.CroId) > 0 {
-		i -= len(m.CroId)
-		copy(dAtA[i:], m.CroId)
-		i = encodeVarintRequest(dAtA, i, uint64(len(m.CroId)))
+	if len(m.DrpId) > 0 {
+		i -= len(m.DrpId)
+		copy(dAtA[i:], m.DrpId)
+		i = encodeVarintRequest(dAtA, i, uint64(len(m.DrpId)))
 		i--
 		dAtA[i] = 0x1a
 	}
@@ -290,7 +290,7 @@ func (m *Request) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovRequest(uint64(l))
 	}
-	l = len(m.CroId)
+	l = len(m.DrpId)
 	if l > 0 {
 		n += 1 + l + sovRequest(uint64(l))
 	}
@@ -419,7 +419,7 @@ func (m *Request) Unmarshal(dAtA []byte) error {
 			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field CroId", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field DrpId", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -447,7 +447,7 @@ func (m *Request) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.CroId = string(dAtA[iNdEx:postIndex])
+			m.DrpId = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 4:
 			if wireType != 2 {

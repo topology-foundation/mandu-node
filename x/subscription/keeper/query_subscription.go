@@ -2,6 +2,7 @@ package keeper
 
 import (
 	"context"
+
 	"mandu/x/subscription/types"
 
 	"cosmossdk.io/store/prefix"
@@ -33,7 +34,7 @@ func (k Keeper) Subscriptions(goCtx context.Context, req *types.QuerySubscriptio
 	}
 	ctx := sdk.UnwrapSDKContext(goCtx)
 	storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
-	store := prefix.NewStore(storeAdapter, types.GetProviderStoreKey(req.Provider))
+	store := prefix.NewStore(storeAdapter, types.GetSubscriberStoreKey(req.Subscriber))
 
 	var subscriptions []types.Subscription
 	pageRes, err := query.Paginate(store, req.Pagination, func(key []byte, _ []byte) error {

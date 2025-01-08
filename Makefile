@@ -9,6 +9,9 @@ build:
 clean:
 	rm -rf ./build
 
+test:
+	go test -v ./...
+
 config-devnet:
 	rm -rf $(home)
 	./build/$(bin) init $(chain_name) --home $(home)

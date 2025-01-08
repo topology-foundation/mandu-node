@@ -6,7 +6,6 @@ import "amino/amino.proto";
 import "cosmos/base/query/v1beta1/pagination.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
-import "mandu/subscription/deal.proto";
 import "mandu/subscription/params.proto";
 import "mandu/subscription/subscription.proto";
 
@@ -19,16 +18,16 @@ service Query {
     option (google.api.http).get = "/mandu/subscription/params";
   }
 
-  rpc Deal(QueryDealRequest) returns (QueryDealResponse) {
-    option (google.api.http).get = "/mandu/subscription/deal/{id}";
+  rpc SubscriptionRequest(QuerySubscriptionRequestRequest) returns (QuerySubscriptionRequestResponse) {
+    option (google.api.http).get = "/mandu/subscription/subscription_request/{id}";
   }
 
-  rpc DealStatus(QueryDealStatusRequest) returns (QueryDealStatusResponse) {
-    option (google.api.http).get = "/mandu/subscription/deal_status/{id}";
+  rpc SubscriptionRequestStatus(QuerySubscriptionRequestStatusRequest) returns (QuerySubscriptionRequestStatusResponse) {
+    option (google.api.http).get = "/mandu/subscription/subscription_request_status/{id}";
   }
 
-  rpc Deals(QueryDealsRequest) returns (QueryDealsResponse) {
-    option (google.api.http).get = "/mandu/subscription/deals/{requester}";
+  rpc SubscriptionRequests(QuerySubscriptionRequestsRequest) returns (QuerySubscriptionRequestsResponse) {
+    option (google.api.http).get = "/mandu/subscription/subscription_requests/{requester}";
   }
 
   rpc Subscription(QuerySubscriptionRequest) returns (QuerySubscriptionResponse) {
@@ -36,7 +35,7 @@ service Query {
   }
 
   rpc Subscriptions(QuerySubscriptionsRequest) returns (QuerySubscriptionsResponse) {
-    option (google.api.http).get = "/mandu/subscription/subscriptions/{provider}";
+    option (google.api.http).get = "/mandu/subscription/subscriptions/{subscriber}";
   }
 }
 
@@ -52,29 +51,29 @@ message QueryParamsResponse {
   ];
 }
 
-message QueryDealRequest {
+message QuerySubscriptionRequestRequest {
   string id = 1;
 }
 
-message QueryDealResponse {
-  mandu.subscription.Deal deal = 1 [(gogoproto.nullable) = false];
+message QuerySubscriptionRequestResponse {
+  mandu.subscription.SubscriptionRequest subscription_request = 1 [(gogoproto.nullable) = false];
 }
 
-message QueryDealStatusRequest {
+message QuerySubscriptionRequestStatusRequest {
   string id = 1;
 }
 
-message QueryDealStatusResponse {
-  mandu.subscription.Deal.Status status = 1;
+message QuerySubscriptionRequestStatusResponse {
+  mandu.subscription.SubscriptionRequest.Status status = 1;
 }
 
-message QueryDealsRequest {
+message QuerySubscriptionRequestsRequest {
   string requester = 1;
   cosmos.base.query.v1beta1.PageRequest pagination = 2;
 }
 
-message QueryDealsResponse {
-  repeated mandu.subscription.Deal deals = 1 [(gogoproto.nullable) = false];
+message QuerySubscriptionRequestsResponse {
+  repeated mandu.subscription.SubscriptionRequest subscription_requests = 1 [(gogoproto.nullable) = false];
   cosmos.base.query.v1beta1.PageResponse pagination = 2;
 }
 
@@ -87,7 +86,7 @@ message QuerySubscriptionResponse {
 }
 
 message QuerySubscriptionsRequest {
-  string provider = 1;
+  string subscriber = 1;
   cosmos.base.query.v1beta1.PageRequest pagination = 2;
 }
 

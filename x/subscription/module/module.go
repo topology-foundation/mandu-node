@@ -21,6 +21,7 @@ import (
 
 	modulev1 "mandu/api/mandu/subscription/module"
 	manduTypes "mandu/types"
+	"mandu/utils"
 	"mandu/x/subscription/keeper"
 	"mandu/x/subscription/types"
 )
@@ -156,58 +157,58 @@ func (am AppModule) BeginBlock(_ context.Context) error {
 // The end block implementation is optional.
 func (am AppModule) EndBlock(goCtx context.Context) error {
 	ctx := sdk.UnwrapSDKContext(goCtx)
-	err := am.keeper.IterateDeals(ctx, func(deal types.Deal) (bool, error) {
-		// deal status updates
+	err := am.keeper.IterateSubscriptionRequests(ctx, func(subReq types.SubscriptionRequest) (bool, error) {
+		// subReq status updates
 		// return false to callback to continue iteration
-		switch deal.Status {
-		case types.Deal_EXPIRED:
+		switch subReq.Status {
+		case types.SubscriptionRequest_EXPIRED:
 			return false, nil
-		case types.Deal_CANCELLED:
+		case types.SubscriptionRequest_CANCELLED:
 			return false, nil
-		case types.Deal_SCHEDULED:
-			if uint64(ctx.BlockHeight()) < deal.StartBlock {
+		case types.SubscriptionRequest_SCHEDULED:
+			if utils.BlockToEpoch(ctx.BlockHeight(), subReq.EpochSize) < subReq.StartEpoch {
 				return false, nil
 			}
 
-			if am.keeper.IsDealActive(ctx, deal) {
-				deal.Status = types.Deal_ACTIVE
-				updatedDeal, err := am.PayActiveProvidersPerBlock(ctx, deal)
+			if am.keeper.IsSubscriptionRequestActive(ctx, subReq) {
+				subReq.Status = types.SubscriptionRequest_ACTIVE
+				updatedSubscriptionRequest, err := am.PayActiveSubscribersPerBlock(ctx, subReq)
 				if err != nil {
 					return true, err
 				}
-				deal = *updatedDeal
+				subReq = *updatedSubscriptionRequest
 			} else {
-				deal.Status = types.Deal_INITIALIZED
+				subReq.Status = types.SubscriptionRequest_INITIALIZED
 			}
-		case types.Deal_INITIALIZED:
-			if uint64(ctx.BlockHeight()) > deal.EndBlock {
-				deal.Status = types.Deal_EXPIRED
+		case types.SubscriptionRequest_INITIALIZED:
+			if utils.BlockToEpoch(ctx.BlockHeight(), subReq.EpochSize) > subReq.EndEpoch {
+				subReq.Status = types.SubscriptionRequest_EXPIRED
 				// return the remaining amount to the requester
-				err := am.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, sdk.AccAddress(deal.Requester), sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, int64(deal.AvailableAmount))))
+				err := am.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, sdk.AccAddress(subReq.Requester), sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, int64(subReq.AvailableAmount))))
 				if err != nil {
 					return true, err
 				}
 			}
-		case types.Deal_ACTIVE:
-			if uint64(ctx.BlockHeight()) > deal.EndBlock {
-				deal.Status = types.Deal_EXPIRED
+		case types.SubscriptionRequest_ACTIVE:
+			if utils.BlockToEpoch(ctx.BlockHeight(), subReq.EpochSize) > subReq.EndEpoch {
+				subReq.Status = types.SubscriptionRequest_EXPIRED
 				// return the remaining amount to the requester
-				err := am.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, sdk.AccAddress(deal.Requester), sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, int64(deal.AvailableAmount))))
+				err := am.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, sdk.AccAddress(subReq.Requester), sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, int64(subReq.AvailableAmount))))
 				if err != nil {
 					return true, err
 				}
 			} else {
-				updatedDeal, err := am.PayActiveProvidersPerBlock(ctx, deal)
+				updatedSubscriptionRequest, err := am.PayActiveSubscribersPerBlock(ctx, subReq)
 				if err != nil {
 					return true, err
 				}
-				deal = *updatedDeal
+				subReq = *updatedSubscriptionRequest
 			}
-		case types.Deal_INACTIVE:
-			if uint64(ctx.BlockHeight()) > deal.EndBlock {
-				deal.Status = types.Deal_EXPIRED
+		case types.SubscriptionRequest_INACTIVE:
+			if utils.BlockToEpoch(ctx.BlockHeight(), subReq.EpochSize) > subReq.EndEpoch {
+				subReq.Status = types.SubscriptionRequest_EXPIRED
 				// return the remaining amount to the requester
-				err := am.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, sdk.AccAddress(deal.Requester), sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, int64(deal.AvailableAmount))))
+				err := am.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, sdk.AccAddress(subReq.Requester), sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, int64(subReq.AvailableAmount))))
 				if err != nil {
 					return true, err
 				}
@@ -216,41 +217,41 @@ func (am AppModule) EndBlock(goCtx context.Context) error {
 			return false, nil
 		}
 
-		am.keeper.SetDeal(ctx, deal)
+		am.keeper.SetSubscriptionRequest(ctx, subReq)
 		return false, nil
 	})
 	return err
 }
 
-func (am AppModule) PayActiveProvidersPerBlock(ctx sdk.Context, deal types.Deal) (*types.Deal, error) {
-	activeSubscriptions := am.keeper.GetAllActiveSubscriptions(ctx, deal)
-	blockReward := am.keeper.CalculateBlockReward(ctx, deal)
+func (am AppModule) PayActiveSubscribersPerBlock(ctx sdk.Context, subReq types.SubscriptionRequest) (*types.SubscriptionRequest, error) {
+	activeSubscriptions := am.keeper.GetAllActiveSubscriptions(ctx, subReq)
+	blockReward := am.keeper.CalculateBlockReward(ctx, subReq)
 	currentBlock := ctx.BlockHeight()
-	// iterate through the progress to get the total while recording the progress of each provider
-	providerProgress := make(map[string]int)
+	// iterate through the progress to get the total while recording the progress of each subscriber
+	subscriberProgress := make(map[string]int)
 	totalProgress := 0
-	for subscription, provider := range activeSubscriptions {
+	for subscription, subscriber := range activeSubscriptions {
 		progress, found := am.keeper.GetProgressSize(ctx, subscription, currentBlock)
 		if !found {
-			providerProgress[provider] = 0
+			subscriberProgress[subscriber] = 0
 		}
-		providerProgress[provider] = progress
+		subscriberProgress[subscriber] = progress
 		totalProgress += progress
 	}
 
 	totalRewardSent := int64(0)
-	for subscription, provider := range activeSubscriptions {
+	for subscription, subscriber := range activeSubscriptions {
 		// reward based on the progress size
-		reward := int64(float64(blockReward) * float64(providerProgress[activeSubscriptions[subscription]]) / float64(totalProgress))
-		err := am.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, sdk.AccAddress(provider), sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, reward)))
+		reward := int64(float64(blockReward) * float64(subscriberProgress[activeSubscriptions[subscription]]) / float64(totalProgress))
+		err := am.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, sdk.AccAddress(subscriber), sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, reward)))
 		if err != nil {
 			return nil, err
 		}
 		totalRewardSent += reward
 	}
 
-	deal.AvailableAmount -= uint64(totalRewardSent)
-	return &deal, nil
+	subReq.AvailableAmount -= totalRewardSent
+	return &subReq, nil
 }
 
 // IsOnePerModuleType implements the depinject.OnePerModuleType interface.

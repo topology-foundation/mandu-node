@@ -14,7 +14,7 @@ func TestSettleChallenge(t *testing.T) {
 	require.NotNil(t, ctx)
 
 	ctx = MockBlockHeight(ctx, am, 10)
-	response, err := ms.Challenge(ctx, &types.MsgChallenge{Challenger: Alice, ProviderId: Bob, VerticesHashes: []string{}})
+	response, err := ms.Challenge(ctx, &types.MsgChallenge{Challenger: Alice, SubscriberId: Bob, VerticesHashes: []string{}})
 	require.NoError(t, err)
 
 	challengeId := response.ChallengeId
