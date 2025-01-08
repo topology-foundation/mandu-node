@@ -19,11 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	Msg_UpdateParams_FullMethodName        = "/mandu.challenge.Msg/UpdateParams"
-	Msg_Challenge_FullMethodName           = "/mandu.challenge.Msg/Challenge"
-	Msg_SubmitProof_FullMethodName         = "/mandu.challenge.Msg/SubmitProof"
-	Msg_RequestDependencies_FullMethodName = "/mandu.challenge.Msg/RequestDependencies"
-	Msg_SettleChallenge_FullMethodName     = "/mandu.challenge.Msg/SettleChallenge"
+	Msg_UpdateParams_FullMethodName    = "/mandu.challenge.Msg/UpdateParams"
+	Msg_Challenge_FullMethodName       = "/mandu.challenge.Msg/Challenge"
+	Msg_SubmitProof_FullMethodName     = "/mandu.challenge.Msg/SubmitProof"
+	Msg_SettleChallenge_FullMethodName = "/mandu.challenge.Msg/SettleChallenge"
 )
 
 // MsgClient is the client API for Msg service.
@@ -37,7 +36,7 @@ type MsgClient interface {
 	UpdateParams(ctx context.Context, in *MsgUpdateParams, opts ...grpc.CallOption) (*MsgUpdateParamsResponse, error)
 	Challenge(ctx context.Context, in *MsgChallenge, opts ...grpc.CallOption) (*MsgChallengeResponse, error)
 	SubmitProof(ctx context.Context, in *MsgSubmitProof, opts ...grpc.CallOption) (*MsgSubmitProofResponse, error)
-	RequestDependencies(ctx context.Context, in *MsgRequestDependencies, opts ...grpc.CallOption) (*MsgRequestDependenciesResponse, error)
+	// rpc RequestDependencies(MsgRequestDependencies) returns (MsgRequestDependenciesResponse);
 	SettleChallenge(ctx context.Context, in *MsgSettleChallenge, opts ...grpc.CallOption) (*MsgSettleChallengeResponse, error)
 }
 
@@ -79,16 +78,6 @@ func (c *msgClient) SubmitProof(ctx context.Context, in *MsgSubmitProof, opts ..
 	return out, nil
 }
 
-func (c *msgClient) RequestDependencies(ctx context.Context, in *MsgRequestDependencies, opts ...grpc.CallOption) (*MsgRequestDependenciesResponse, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(MsgRequestDependenciesResponse)
-	err := c.cc.Invoke(ctx, Msg_RequestDependencies_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *msgClient) SettleChallenge(ctx context.Context, in *MsgSettleChallenge, opts ...grpc.CallOption) (*MsgSettleChallengeResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(MsgSettleChallengeResponse)
@@ -110,7 +99,7 @@ type MsgServer interface {
 	UpdateParams(context.Context, *MsgUpdateParams) (*MsgUpdateParamsResponse, error)
 	Challenge(context.Context, *MsgChallenge) (*MsgChallengeResponse, error)
 	SubmitProof(context.Context, *MsgSubmitProof) (*MsgSubmitProofResponse, error)
-	RequestDependencies(context.Context, *MsgRequestDependencies) (*MsgRequestDependenciesResponse, error)
+	// rpc RequestDependencies(MsgRequestDependencies) returns (MsgRequestDependenciesResponse);
 	SettleChallenge(context.Context, *MsgSettleChallenge) (*MsgSettleChallengeResponse, error)
 	mustEmbedUnimplementedMsgServer()
 }
@@ -130,9 +119,6 @@ func (UnimplementedMsgServer) Challenge(context.Context, *MsgChallenge) (*MsgCha
 }
 func (UnimplementedMsgServer) SubmitProof(context.Context, *MsgSubmitProof) (*MsgSubmitProofResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SubmitProof not implemented")
-}
-func (UnimplementedMsgServer) RequestDependencies(context.Context, *MsgRequestDependencies) (*MsgRequestDependenciesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RequestDependencies not implemented")
 }
 func (UnimplementedMsgServer) SettleChallenge(context.Context, *MsgSettleChallenge) (*MsgSettleChallengeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SettleChallenge not implemented")
@@ -212,24 +198,6 @@ func _Msg_SubmitProof_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Msg_RequestDependencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(MsgRequestDependencies)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MsgServer).RequestDependencies(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: Msg_RequestDependencies_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MsgServer).RequestDependencies(ctx, req.(*MsgRequestDependencies))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Msg_SettleChallenge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MsgSettleChallenge)
 	if err := dec(in); err != nil {
@@ -266,10 +234,6 @@ var Msg_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SubmitProof",
 			Handler:    _Msg_SubmitProof_Handler,
-		},
-		{
-			MethodName: "RequestDependencies",
-			Handler:    _Msg_RequestDependencies_Handler,
 		},
 		{
 			MethodName: "SettleChallenge",

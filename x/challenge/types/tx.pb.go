@@ -180,11 +180,11 @@ func (m *MsgChallenge) GetSubscriberId() string {
 	return ""
 }
 
-func (m *MsgChallenge) GetVerticesHashes() []string {
+func (m *MsgChallenge) GetEpoch() uint64 {
 	if m != nil {
-		return m.VerticesHashes
+		return m.Epoch
 	}
-	return nil
+	return 0
 }
 
 type MsgChallengeResponse struct {
@@ -327,102 +327,6 @@ func (m *MsgSubmitProofResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_MsgSubmitProofResponse proto.InternalMessageInfo
 
-type MsgRequestDependencies struct {
-	Challenger     string   `protobuf:"bytes,1,opt,name=challenger,proto3" json:"challenger,omitempty"`
-	ChallengeId    string   `protobuf:"bytes,2,opt,name=challenge_id,json=challengeId,proto3" json:"challenge_id,omitempty"`
-	VerticesHashes []string `protobuf:"bytes,3,rep,name=vertices_hashes,json=verticesHashes,proto3" json:"vertices_hashes,omitempty"`
-}
-
-func (m *MsgRequestDependencies) Reset()         { *m = MsgRequestDependencies{} }
-func (m *MsgRequestDependencies) String() string { return proto.CompactTextString(m) }
-func (*MsgRequestDependencies) ProtoMessage()    {}
-func (*MsgRequestDependencies) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7a1f7d416f43be8b, []int{6}
-}
-func (m *MsgRequestDependencies) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *MsgRequestDependencies) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_MsgRequestDependencies.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *MsgRequestDependencies) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MsgRequestDependencies.Merge(m, src)
-}
-func (m *MsgRequestDependencies) XXX_Size() int {
-	return m.Size()
-}
-func (m *MsgRequestDependencies) XXX_DiscardUnknown() {
-	xxx_messageInfo_MsgRequestDependencies.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_MsgRequestDependencies proto.InternalMessageInfo
-
-func (m *MsgRequestDependencies) GetChallenger() string {
-	if m != nil {
-		return m.Challenger
-	}
-	return ""
-}
-
-func (m *MsgRequestDependencies) GetChallengeId() string {
-	if m != nil {
-		return m.ChallengeId
-	}
-	return ""
-}
-
-func (m *MsgRequestDependencies) GetVerticesHashes() []string {
-	if m != nil {
-		return m.VerticesHashes
-	}
-	return nil
-}
-
-type MsgRequestDependenciesResponse struct {
-}
-
-func (m *MsgRequestDependenciesResponse) Reset()         { *m = MsgRequestDependenciesResponse{} }
-func (m *MsgRequestDependenciesResponse) String() string { return proto.CompactTextString(m) }
-func (*MsgRequestDependenciesResponse) ProtoMessage()    {}
-func (*MsgRequestDependenciesResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7a1f7d416f43be8b, []int{7}
-}
-func (m *MsgRequestDependenciesResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *MsgRequestDependenciesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_MsgRequestDependenciesResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *MsgRequestDependenciesResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MsgRequestDependenciesResponse.Merge(m, src)
-}
-func (m *MsgRequestDependenciesResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *MsgRequestDependenciesResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_MsgRequestDependenciesResponse.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_MsgRequestDependenciesResponse proto.InternalMessageInfo
-
 type MsgSettleChallenge struct {
 	Requester   string `protobuf:"bytes,1,opt,name=requester,proto3" json:"requester,omitempty"`
 	ChallengeId string `protobuf:"bytes,2,opt,name=challenge_id,json=challengeId,proto3" json:"challenge_id,omitempty"`
@@ -432,7 +336,7 @@ func (m *MsgSettleChallenge) Reset()         { *m = MsgSettleChallenge{} }
 func (m *MsgSettleChallenge) String() string { return proto.CompactTextString(m) }
 func (*MsgSettleChallenge) ProtoMessage()    {}
 func (*MsgSettleChallenge) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7a1f7d416f43be8b, []int{8}
+	return fileDescriptor_7a1f7d416f43be8b, []int{6}
 }
 func (m *MsgSettleChallenge) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -482,7 +386,7 @@ func (m *MsgSettleChallengeResponse) Reset()         { *m = MsgSettleChallengeRe
 func (m *MsgSettleChallengeResponse) String() string { return proto.CompactTextString(m) }
 func (*MsgSettleChallengeResponse) ProtoMessage()    {}
 func (*MsgSettleChallengeResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7a1f7d416f43be8b, []int{9}
+	return fileDescriptor_7a1f7d416f43be8b, []int{7}
 }
 func (m *MsgSettleChallengeResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -518,8 +422,6 @@ func init() {
 	proto.RegisterType((*MsgChallengeResponse)(nil), "mandu.challenge.MsgChallengeResponse")
 	proto.RegisterType((*MsgSubmitProof)(nil), "mandu.challenge.MsgSubmitProof")
 	proto.RegisterType((*MsgSubmitProofResponse)(nil), "mandu.challenge.MsgSubmitProofResponse")
-	proto.RegisterType((*MsgRequestDependencies)(nil), "mandu.challenge.MsgRequestDependencies")
-	proto.RegisterType((*MsgRequestDependenciesResponse)(nil), "mandu.challenge.MsgRequestDependenciesResponse")
 	proto.RegisterType((*MsgSettleChallenge)(nil), "mandu.challenge.MsgSettleChallenge")
 	proto.RegisterType((*MsgSettleChallengeResponse)(nil), "mandu.challenge.MsgSettleChallengeResponse")
 }
@@ -587,7 +489,7 @@ type MsgClient interface {
 	UpdateParams(ctx context.Context, in *MsgUpdateParams, opts ...grpc.CallOption) (*MsgUpdateParamsResponse, error)
 	Challenge(ctx context.Context, in *MsgChallenge, opts ...grpc.CallOption) (*MsgChallengeResponse, error)
 	SubmitProof(ctx context.Context, in *MsgSubmitProof, opts ...grpc.CallOption) (*MsgSubmitProofResponse, error)
-	RequestDependencies(ctx context.Context, in *MsgRequestDependencies, opts ...grpc.CallOption) (*MsgRequestDependenciesResponse, error)
+	// rpc RequestDependencies(MsgRequestDependencies) returns (MsgRequestDependenciesResponse);
 	SettleChallenge(ctx context.Context, in *MsgSettleChallenge, opts ...grpc.CallOption) (*MsgSettleChallengeResponse, error)
 }
 
@@ -626,15 +528,6 @@ func (c *msgClient) SubmitProof(ctx context.Context, in *MsgSubmitProof, opts ..
 	return out, nil
 }
 
-func (c *msgClient) RequestDependencies(ctx context.Context, in *MsgRequestDependencies, opts ...grpc.CallOption) (*MsgRequestDependenciesResponse, error) {
-	out := new(MsgRequestDependenciesResponse)
-	err := c.cc.Invoke(ctx, "/mandu.challenge.Msg/RequestDependencies", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *msgClient) SettleChallenge(ctx context.Context, in *MsgSettleChallenge, opts ...grpc.CallOption) (*MsgSettleChallengeResponse, error) {
 	out := new(MsgSettleChallengeResponse)
 	err := c.cc.Invoke(ctx, "/mandu.challenge.Msg/SettleChallenge", in, out, opts...)
@@ -651,7 +544,7 @@ type MsgServer interface {
 	UpdateParams(context.Context, *MsgUpdateParams) (*MsgUpdateParamsResponse, error)
 	Challenge(context.Context, *MsgChallenge) (*MsgChallengeResponse, error)
 	SubmitProof(context.Context, *MsgSubmitProof) (*MsgSubmitProofResponse, error)
-	RequestDependencies(context.Context, *MsgRequestDependencies) (*MsgRequestDependenciesResponse, error)
+	// rpc RequestDependencies(MsgRequestDependencies) returns (MsgRequestDependenciesResponse);
 	SettleChallenge(context.Context, *MsgSettleChallenge) (*MsgSettleChallengeResponse, error)
 }
 
@@ -667,9 +560,6 @@ func (*UnimplementedMsgServer) Challenge(ctx context.Context, req *MsgChallenge)
 }
 func (*UnimplementedMsgServer) SubmitProof(ctx context.Context, req *MsgSubmitProof) (*MsgSubmitProofResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SubmitProof not implemented")
-}
-func (*UnimplementedMsgServer) RequestDependencies(ctx context.Context, req *MsgRequestDependencies) (*MsgRequestDependenciesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RequestDependencies not implemented")
 }
 func (*UnimplementedMsgServer) SettleChallenge(ctx context.Context, req *MsgSettleChallenge) (*MsgSettleChallengeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SettleChallenge not implemented")
@@ -733,24 +623,6 @@ func _Msg_SubmitProof_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Msg_RequestDependencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(MsgRequestDependencies)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MsgServer).RequestDependencies(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/mandu.challenge.Msg/RequestDependencies",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MsgServer).RequestDependencies(ctx, req.(*MsgRequestDependencies))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Msg_SettleChallenge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MsgSettleChallenge)
 	if err := dec(in); err != nil {
@@ -785,10 +657,6 @@ var _Msg_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SubmitProof",
 			Handler:    _Msg_SubmitProof_Handler,
-		},
-		{
-			MethodName: "RequestDependencies",
-			Handler:    _Msg_RequestDependencies_Handler,
 		},
 		{
 			MethodName: "SettleChallenge",
@@ -882,14 +750,10 @@ func (m *MsgChallenge) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
-	if len(m.VerticesHashes) > 0 {
-		for iNdEx := len(m.VerticesHashes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.VerticesHashes[iNdEx])
-			copy(dAtA[i:], m.VerticesHashes[iNdEx])
-			i = encodeVarintTx(dAtA, i, uint64(len(m.VerticesHashes[iNdEx])))
-			i--
-			dAtA[i] = 0x1a
-		}
+	if m.Epoch != 0 {
+		i = encodeVarintTx(dAtA, i, uint64(m.Epoch))
+		i--
+		dAtA[i] = 0x18
 	}
 	if len(m.SubscriberId) > 0 {
 		i -= len(m.SubscriberId)
@@ -1012,75 +876,6 @@ func (m *MsgSubmitProofResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) 
 	return len(dAtA) - i, nil
 }
 
-func (m *MsgRequestDependencies) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *MsgRequestDependencies) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *MsgRequestDependencies) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.VerticesHashes) > 0 {
-		for iNdEx := len(m.VerticesHashes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.VerticesHashes[iNdEx])
-			copy(dAtA[i:], m.VerticesHashes[iNdEx])
-			i = encodeVarintTx(dAtA, i, uint64(len(m.VerticesHashes[iNdEx])))
-			i--
-			dAtA[i] = 0x1a
-		}
-	}
-	if len(m.ChallengeId) > 0 {
-		i -= len(m.ChallengeId)
-		copy(dAtA[i:], m.ChallengeId)
-		i = encodeVarintTx(dAtA, i, uint64(len(m.ChallengeId)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.Challenger) > 0 {
-		i -= len(m.Challenger)
-		copy(dAtA[i:], m.Challenger)
-		i = encodeVarintTx(dAtA, i, uint64(len(m.Challenger)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
-}
-
-func (m *MsgRequestDependenciesResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *MsgRequestDependenciesResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *MsgRequestDependenciesResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
 func (m *MsgSettleChallenge) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -1190,11 +985,8 @@ func (m *MsgChallenge) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovTx(uint64(l))
 	}
-	if len(m.VerticesHashes) > 0 {
-		for _, s := range m.VerticesHashes {
-			l = len(s)
-			n += 1 + l + sovTx(uint64(l))
-		}
+	if m.Epoch != 0 {
+		n += 1 + sovTx(uint64(m.Epoch))
 	}
 	return n
 }
@@ -1236,38 +1028,6 @@ func (m *MsgSubmitProof) Size() (n int) {
 }
 
 func (m *MsgSubmitProofResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *MsgRequestDependencies) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Challenger)
-	if l > 0 {
-		n += 1 + l + sovTx(uint64(l))
-	}
-	l = len(m.ChallengeId)
-	if l > 0 {
-		n += 1 + l + sovTx(uint64(l))
-	}
-	if len(m.VerticesHashes) > 0 {
-		for _, s := range m.VerticesHashes {
-			l = len(s)
-			n += 1 + l + sovTx(uint64(l))
-		}
-	}
-	return n
-}
-
-func (m *MsgRequestDependenciesResponse) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -1567,10 +1327,10 @@ func (m *MsgChallenge) Unmarshal(dAtA []byte) error {
 			m.SubscriberId = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field VerticesHashes", wireType)
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Epoch", wireType)
 			}
-			var stringLen uint64
+			m.Epoch = 0
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowTx
@@ -1580,24 +1340,11 @@ func (m *MsgChallenge) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
+				m.Epoch |= uint64(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
 			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthTx
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthTx
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.VerticesHashes = append(m.VerticesHashes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
 			skippy, err := skipTx(dAtA[iNdEx:])
@@ -1876,202 +1623,6 @@ func (m *MsgSubmitProofResponse) Unmarshal(dAtA []byte) error {
 		}
 		if fieldNum <= 0 {
 			return fmt.Errorf("proto: MsgSubmitProofResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipTx(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthTx
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *MsgRequestDependencies) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowTx
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: MsgRequestDependencies: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: MsgRequestDependencies: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Challenger", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowTx
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthTx
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthTx
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Challenger = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ChallengeId", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowTx
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthTx
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthTx
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ChallengeId = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field VerticesHashes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowTx
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthTx
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthTx
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.VerticesHashes = append(m.VerticesHashes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipTx(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthTx
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *MsgRequestDependenciesResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowTx
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: MsgRequestDependenciesResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: MsgRequestDependenciesResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		default:
