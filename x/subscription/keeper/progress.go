@@ -88,6 +88,7 @@ func (k Keeper) GetProgressSize(ctx sdk.Context, subscription string, block int6
 	return int(sdk.BigEndianToUint64(sizeBytes)), true
 }
 
+// Sets the block for which a given hash was submitted
 func (k Keeper) SetHashSubmissionBlock(ctx sdk.Context, subscriber string, hash string, block int64) {
 	storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
 	store := prefix.NewStore(storeAdapter, types.GetHashSubmissionBlockStoreKey(subscriber))
@@ -95,6 +96,7 @@ func (k Keeper) SetHashSubmissionBlock(ctx sdk.Context, subscriber string, hash 
 	store.Set([]byte(hash), sdk.Uint64ToBigEndian(uint64(block)))
 }
 
+// Gets the block for which a hash has been submitted
 func (k Keeper) GetHashSubmissionBlock(ctx sdk.Context, subscriber string, hash string) (block int64, found bool) {
 	storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
 	store := prefix.NewStore(storeAdapter, types.GetHashSubmissionBlockStoreKey(subscriber))
@@ -105,4 +107,24 @@ func (k Keeper) GetHashSubmissionBlock(ctx sdk.Context, subscriber string, hash 
 	}
 
 	return int64(sdk.BigEndianToUint64(blockBytes)), true
+}
+
+// Get all the hashes submitted by a subscriber in a given epoch
+func (k Keeper) GetHashesSubmittedInEpoch(ctx sdk.Context, subscriber string, epoch int64) (hashes types.Set[string]) {
+	hashes = types.NewSet[string]()
+	storeAdapter := runtime.KVStoreAdapter(k.storeService.OpenKVStore(ctx))
+	store := prefix.NewStore(storeAdapter, types.GetHashSubmissionBlockStoreKey(subscriber))
+
+	iterator := store.Iterator(nil, nil)
+	defer iterator.Close()
+
+	for ; iterator.Valid(); iterator.Next() {
+		hash := string(iterator.Key())
+		block := sdk.BigEndianToUint64(iterator.Value())
+		if block >= uint64(epoch*EPOCH_SIZE) && block < uint64((epoch+1)*EPOCH_SIZE) {
+			hashes.Add(hash)
+		}
+	}
+
+	return hashes
 }

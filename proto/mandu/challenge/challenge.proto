@@ -9,5 +9,5 @@ message Challenge {
   string subscriber = 3;
   uint64 amount = 4;
   uint64 last_active = 5;
-  bytes challenged_hashes = 6;
+  int64 challenged_epoch = 6;
 }

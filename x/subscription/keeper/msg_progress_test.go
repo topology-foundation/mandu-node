@@ -65,7 +65,7 @@ func TestSubmitProgressWithIncorrectObfuscatedHash(t *testing.T) {
 	require.NotNil(t, ms)
 	require.NotNil(t, ctx)
 
-	response, err := ms.CreateSubscriptionRequest(ctx, &types.MsgCreateSubscriptionRequest{Requester: Alice, DrpId: "alicedrp", Amount: 10000, StartBlock: 10, EndBlock: 20})
+	response, err := ms.CreateSubscriptionRequest(ctx, &types.MsgCreateSubscriptionRequest{Requester: Alice, DrpIds: []string{"alicedrp"}, Amount: 10000, StartBlock: 10})
 	require.NoError(t, err)
 
 	subReqId := response.SubscriptionRequestId

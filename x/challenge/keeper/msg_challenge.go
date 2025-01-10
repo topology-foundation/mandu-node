@@ -29,7 +29,11 @@ func (k msgServer) Challenge(goCtx context.Context, msg *types.MsgChallenge) (*t
 	currentBlock := ctx.BlockHeight()
 	var hashes sTypes.Set[string]
 
-	for _, hash := range msg.VerticesHashes {
+	// TODO: Create a method that gets verticesHahses from message epoch
+
+	verticesHashses, err := k.GetEpochVerticesHashes(ctx, msg.SubscriberId, msg.Epoch)
+
+	for _, hash := range verticesHashes {
 		block, found := k.GetHashSubmissionBlock(ctx, msg.SubscriberId, hash)
 		if !found {
 			return nil, errorsmod.Wrap(sdkerrors.ErrKeyNotFound, fmt.Sprintf("hash %s not found", hash))
@@ -56,7 +60,7 @@ func (k msgServer) Challenge(goCtx context.Context, msg *types.MsgChallenge) (*t
 	k.SetChallenge(ctx, types.Challenge{
 		Id:               id,
 		Challenger:       msg.Challenger,
-		Subscriber:         msg.SubscriberId,
+		Subscriber:       msg.SubscriberId,
 		Amount:           uint64(totalChallengePrice),
 		LastActive:       uint64(currentBlock),
 		ChallengedHashes: buf.Bytes(),
@@ -139,7 +143,9 @@ func (k msgServer) RequestDependencies(goCtx context.Context, msg *types.MsgRequ
 		return nil, errorsmod.Wrap(sdkerrors.ErrInvalidAddress, "invalid challenger address")
 	}
 
-	fee := k.PricePerVertexChallenge(ctx, msg.Challenger, challenge.Subscriber) * int64(len(msg.VerticesHashes))
+	// TODO: Create a method that gets the reward rate for the subscription rather than the whole subscription directly from the keepr
+	subReq := k.subscriptionKeeper.GetSubscription(ctx, challenge.Subscriber)
+	fee := subReq.rewardRate
 	err = k.bankKeeper.SendCoinsFromAccountToModule(ctx, requester, types.ModuleName, sdk.NewCoins(sdk.NewInt64Coin(manduTypes.TokenDenom, fee)))
 	if err != nil {
 		return nil, errorsmod.Wrap(err, "failed to send coins to module account")

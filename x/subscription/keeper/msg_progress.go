@@ -37,6 +37,7 @@ func (k msgServer) SubmitProgress(goCtx context.Context, msg *types.MsgSubmitPro
 
 	// Validate that the obfuscated vertex hashes submitted in the previous epoch match the current vertex hashes
 	obfuscatedProgressData, _ := k.GetObfuscatedProgress(ctx, subscriptionId)
+	// TODO: But wait this function checks that the epoch number of the obfuscatedProgressData must be equal to the current epoch number? So confusing
 	err := validateObfuscatedProgress(obfuscatedProgressData, submittedHashes, subscriber, epochNumber)
 	if err != nil {
 		return nil, errorsmod.Wrap(err, "vertices hashes / obfuscated data validation failed")

@@ -68,10 +68,6 @@ func (k Keeper) IterateChallenges(ctx sdk.Context, shouldBreak func(challenge ty
 	}
 }
 
-func (k Keeper) PricePerVertexChallenge(ctx sdk.Context, challenger_address string, subscriber_id string) int64 {
-	return 1
-}
-
 func (k Keeper) isChallengeExpired(ctx sdk.Context, challenge types.Challenge) bool {
 	return challenge.LastActive+InactivityPeriod >= uint64(ctx.BlockHeight())
 }

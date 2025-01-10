@@ -22,8 +22,9 @@ type (
 		authority     string
 		moduleAddress string
 
-		accountKeeper types.AccountKeeper
-		bankKeeper    types.BankKeeper
+		accountKeeper      types.AccountKeeper
+		bankKeeper         types.BankKeeper
+		subscriptionKeeper types.SubscriptionKeeper
 	}
 )
 
@@ -35,6 +36,7 @@ func NewKeeper(
 	moduleAddress string,
 	accountKeeper types.AccountKeeper,
 	bankKeeper types.BankKeeper,
+	subscriptionKeeper types.SubscriptionKeeper,
 
 ) Keeper {
 	if _, err := sdk.AccAddressFromBech32(authority); err != nil {
@@ -42,13 +44,14 @@ func NewKeeper(
 	}
 
 	return Keeper{
-		cdc:           cdc,
-		storeService:  storeService,
-		logger:        logger,
-		authority:     authority,
-		moduleAddress: moduleAddress,
-		accountKeeper: accountKeeper,
-		bankKeeper:    bankKeeper,
+		cdc:                cdc,
+		storeService:       storeService,
+		logger:             logger,
+		authority:          authority,
+		moduleAddress:      moduleAddress,
+		accountKeeper:      accountKeeper,
+		bankKeeper:         bankKeeper,
+		subscriptionKeeper: subscriptionKeeper,
 	}
 }
 
@@ -61,3 +64,5 @@ func (k Keeper) GetAuthority() string {
 func (k Keeper) Logger() log.Logger {
 	return k.logger.With("module", fmt.Sprintf("x/%s", types.ModuleName))
 }
+
+// TODO: Implement method to get reward from subscription request (from the subscription keeper)
