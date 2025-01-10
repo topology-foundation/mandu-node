@@ -20,7 +20,7 @@ service Msg {
 
   rpc Challenge(MsgChallenge) returns (MsgChallengeResponse);
   rpc SubmitProof(MsgSubmitProof) returns (MsgSubmitProofResponse);
-  rpc RequestDependencies(MsgRequestDependencies) returns (MsgRequestDependenciesResponse);
+  // rpc RequestDependencies(MsgRequestDependencies) returns (MsgRequestDependenciesResponse);
   rpc SettleChallenge(MsgSettleChallenge) returns (MsgSettleChallengeResponse);
 }
 
@@ -50,7 +50,7 @@ message MsgChallenge {
   option (cosmos.msg.v1.signer) = "challenger";
   string challenger = 1;
   string subscriber_id = 2;
-  repeated string vertices_hashes = 3;
+  uint64 epoch = 3; // Maybe we should use uint32, depends on expected epoch duration
 }
 
 message MsgChallengeResponse {
@@ -66,14 +66,14 @@ message MsgSubmitProof {
 
 message MsgSubmitProofResponse {}
 
-message MsgRequestDependencies {
-  option (cosmos.msg.v1.signer) = "challenger";
-  string challenger = 1;
-  string challenge_id = 2;
-  repeated string vertices_hashes = 3;
-}
+// message MsgRequestDependencies {
+//   option (cosmos.msg.v1.signer) = "challenger";
+//   string challenger = 1;
+//   string challenge_id = 2;
+//   repeated string vertices_hashes = 3;
+// }
 
-message MsgRequestDependenciesResponse {}
+// message MsgRequestDependenciesResponse {}
 
 message MsgSettleChallenge {
   option (cosmos.msg.v1.signer) = "requester";

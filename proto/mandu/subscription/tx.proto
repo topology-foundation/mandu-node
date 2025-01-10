@@ -118,7 +118,6 @@ message MsgSubmitProgress {
   string subscriber = 1;
   string subscription_id = 2;
   repeated string previous_vertices_hashes = 3;
-  string obfuscated_vertices_hash = 4;
 }
 
 message MsgSubmitProgressResponse {}

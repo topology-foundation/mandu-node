@@ -128,9 +128,9 @@ func (m *MsgUpdateParamsResponse) XXX_DiscardUnknown() {
 var xxx_messageInfo_MsgUpdateParamsResponse proto.InternalMessageInfo
 
 type MsgChallenge struct {
-	Challenger     string   `protobuf:"bytes,1,opt,name=challenger,proto3" json:"challenger,omitempty"`
-	SubscriberId   string   `protobuf:"bytes,2,opt,name=subscriber_id,json=subscriberId,proto3" json:"subscriber_id,omitempty"`
-	VerticesHashes []string `protobuf:"bytes,3,rep,name=vertices_hashes,json=verticesHashes,proto3" json:"vertices_hashes,omitempty"`
+	Challenger   string `protobuf:"bytes,1,opt,name=challenger,proto3" json:"challenger,omitempty"`
+	SubscriberId string `protobuf:"bytes,2,opt,name=subscriber_id,json=subscriberId,proto3" json:"subscriber_id,omitempty"`
+	Epoch        uint64 `protobuf:"varint,3,opt,name=epoch,proto3" json:"epoch,omitempty"`
 }
 
 func (m *MsgChallenge) Reset()         { *m = MsgChallenge{} }
@@ -180,11 +180,11 @@ func (m *MsgChallenge) GetSubscriberId() string {
 	return ""
 }
 
-func (m *MsgChallenge) GetVerticesHashes() []string {
+func (m *MsgChallenge) GetEpoch() uint64 {
 	if m != nil {
-		return m.VerticesHashes
+		return m.Epoch
 	}
-	return nil
+	return 0
 }
 
 type MsgChallengeResponse struct {
@@ -327,102 +327,6 @@ func (m *MsgSubmitProofResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_MsgSubmitProofResponse proto.InternalMessageInfo
 
-type MsgRequestDependencies struct {
-	Challenger     string   `protobuf:"bytes,1,opt,name=challenger,proto3" json:"challenger,omitempty"`
-	ChallengeId    string   `protobuf:"bytes,2,opt,name=challenge_id,json=challengeId,proto3" json:"challenge_id,omitempty"`
-	VerticesHashes []string `protobuf:"bytes,3,rep,name=vertices_hashes,json=verticesHashes,proto3" json:"vertices_hashes,omitempty"`
-}
-
-func (m *MsgRequestDependencies) Reset()         { *m = MsgRequestDependencies{} }
-func (m *MsgRequestDependencies) String() string { return proto.CompactTextString(m) }
-func (*MsgRequestDependencies) ProtoMessage()    {}
-func (*MsgRequestDependencies) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7a1f7d416f43be8b, []int{6}
-}
-func (m *MsgRequestDependencies) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *MsgRequestDependencies) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_MsgRequestDependencies.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *MsgRequestDependencies) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MsgRequestDependencies.Merge(m, src)
-}
-func (m *MsgRequestDependencies) XXX_Size() int {
-	return m.Size()
-}
-func (m *MsgRequestDependencies) XXX_DiscardUnknown() {
-	xxx_messageInfo_MsgRequestDependencies.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_MsgRequestDependencies proto.InternalMessageInfo
-
-func (m *MsgRequestDependencies) GetChallenger() string {
-	if m != nil {
-		return m.Challenger
-	}
-	return ""
-}
-
-func (m *MsgRequestDependencies) GetChallengeId() string {
-	if m != nil {
-		return m.ChallengeId
-	}
-	return ""
-}
-
-func (m *MsgRequestDependencies) GetVerticesHashes() []string {
-	if m != nil {
-		return m.VerticesHashes
-	}
-	return nil
-}
-
-type MsgRequestDependenciesResponse struct {
-}
-
-func (m *MsgRequestDependenciesResponse) Reset()         { *m = MsgRequestDependenciesResponse{} }
-func (m *MsgRequestDependenciesResponse) String() string { return proto.CompactTextString(m) }
-func (*MsgRequestDependenciesResponse) ProtoMessage()    {}
-func (*MsgRequestDependenciesResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7a1f7d416f43be8b, []int{7}
-}
-func (m *MsgRequestDependenciesResponse) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *MsgRequestDependenciesResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_MsgRequestDependenciesResponse.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *MsgRequestDependenciesResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_MsgRequestDependenciesResponse.Merge(m, src)
-}
-func (m *MsgRequestDependenciesResponse) XXX_Size() int {
-	return m.Size()
-}
-func (m *MsgRequestDependenciesResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_MsgRequestDependenciesResponse.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_MsgRequestDependenciesResponse proto.InternalMessageInfo
-
 type MsgSettleChallenge struct {
 	Requester   string `protobuf:"bytes,1,opt,name=requester,proto3" json:"requester,omitempty"`
 	ChallengeId string `protobuf:"bytes,2,opt,name=challenge_id,json=challengeId,proto3" json:"challenge_id,omitempty"`
@@ -432,7 +336,7 @@ func (m *MsgSettleChallenge) Reset()         { *m = MsgSettleChallenge{} }
 func (m *MsgSettleChallenge) String() string { return proto.CompactTextString(m) }
 func (*MsgSettleChallenge) ProtoMessage()    {}
 func (*MsgSettleChallenge) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7a1f7d416f43be8b, []int{8}
+	return fileDescriptor_7a1f7d416f43be8b, []int{6}
 }
 func (m *MsgSettleChallenge) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -482,7 +386,7 @@ func (m *MsgSettleChallengeResponse) Reset()         { *m = MsgSettleChallengeRe
 func (m *MsgSettleChallengeResponse) String() string { return proto.CompactTextString(m) }
 func (*MsgSettleChallengeResponse) ProtoMessage()    {}
 func (*MsgSettleChallengeResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7a1f7d416f43be8b, []int{9}
+	return fileDescriptor_7a1f7d416f43be8b, []int{7}
 }
 func (m *MsgSettleChallengeResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -518,8 +422,6 @@ func init() {
 	proto.RegisterType((*MsgChallengeResponse)(nil), "mandu.challenge.MsgChallengeResponse")
 	proto.RegisterType((*MsgSubmitProof)(nil), "mandu.challenge.MsgSubmitProof")
 	proto.RegisterType((*MsgSubmitProofResponse)(nil), "mandu.challenge.MsgSubmitProofResponse")
-	proto.RegisterType((*MsgRequestDependencies)(nil), "mandu.challenge.MsgRequestDependencies")
-	proto.RegisterType((*MsgRequestDependenciesResponse)(nil), "mandu.challenge.MsgRequestDependenciesResponse")
 	proto.RegisterType((*MsgSettleChallenge)(nil), "mandu.challenge.MsgSettleChallenge")
 	proto.RegisterType((*MsgSettleChallengeResponse)(nil), "mandu.challenge.MsgSettleChallengeResponse")
 }
@@ -527,47 +429,44 @@ func init() {
 func init() { proto.RegisterFile("mandu/challenge/tx.proto", fileDescriptor_7a1f7d416f43be8b) }
 
 var fileDescriptor_7a1f7d416f43be8b = []byte{
-	// 636 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x94, 0xbf, 0x6e, 0xd3, 0x50,
-	0x14, 0xc6, 0xe3, 0x46, 0x54, 0xf8, 0x34, 0x34, 0xc2, 0x54, 0xc4, 0xb5, 0x8a, 0x9b, 0xba, 0x42,
-	0x8d, 0x8a, 0x88, 0xd5, 0x16, 0x21, 0x91, 0x8d, 0xc2, 0x40, 0x87, 0x48, 0xc5, 0x15, 0x20, 0x75,
-	0x89, 0x1c, 0xfb, 0xe2, 0x58, 0x8a, 0x7d, 0x8d, 0xef, 0x4d, 0xd5, 0x6e, 0x88, 0x11, 0x09, 0x89,
-	0x85, 0x81, 0x37, 0x60, 0xcc, 0xc0, 0xc6, 0x0b, 0x74, 0xac, 0x98, 0x98, 0x10, 0x4a, 0x86, 0x48,
-	0x3c, 0x05, 0xf2, 0xbf, 0x6b, 0xc7, 0x31, 0x24, 0x62, 0x69, 0xe3, 0xef, 0x7c, 0xe7, 0x9c, 0xdf,
-	0xf1, 0x3d, 0xbe, 0x20, 0x3a, 0xba, 0x6b, 0x0e, 0x54, 0xa3, 0xa7, 0xf7, 0xfb, 0xc8, 0xb5, 0x90,
-	0x4a, 0xcf, 0x9b, 0x9e, 0x8f, 0x29, 0x16, 0xaa, 0x61, 0xa4, 0xc9, 0x22, 0xd2, 0x4d, 0xdd, 0xb1,
-	0x5d, 0xac, 0x86, 0x7f, 0x23, 0x8f, 0x54, 0x33, 0x30, 0x71, 0x30, 0x51, 0x1d, 0x62, 0xa9, 0x67,
-	0x7b, 0xc1, 0xbf, 0x38, 0xb0, 0x1e, 0x05, 0x3a, 0xe1, 0x93, 0x1a, 0x3d, 0xc4, 0xa1, 0x35, 0x0b,
-	0x5b, 0x38, 0xd2, 0x83, 0x5f, 0xb1, 0xba, 0x91, 0xe7, 0xf0, 0x74, 0x5f, 0x77, 0xc8, 0xdf, 0xa2,
-	0x67, 0xc8, 0xa7, 0x28, 0x26, 0x55, 0xbe, 0x71, 0x50, 0x6d, 0x13, 0xeb, 0x85, 0x67, 0xea, 0x14,
-	0x1d, 0x87, 0x79, 0xc2, 0x43, 0xe0, 0xf5, 0x01, 0xed, 0x61, 0xdf, 0xa6, 0x17, 0x22, 0x57, 0xe7,
-	0x1a, 0xfc, 0xa1, 0xf8, 0xfd, 0xeb, 0xfd, 0xb5, 0x18, 0xe5, 0xb1, 0x69, 0xfa, 0x88, 0x90, 0x13,
-	0xea, 0xdb, 0xae, 0xa5, 0xa5, 0x56, 0xa1, 0x05, 0xcb, 0x51, 0x67, 0x71, 0xa9, 0xce, 0x35, 0x56,
-	0xf6, 0x6b, 0xcd, 0xdc, 0x6b, 0x68, 0x46, 0x0d, 0x0e, 0xf9, 0xcb, 0x9f, 0x9b, 0xa5, 0x2f, 0x93,
-	0xe1, 0x2e, 0xa7, 0xc5, 0x19, 0xad, 0x07, 0xef, 0x26, 0xc3, 0xdd, 0xb4, 0xd6, 0xfb, 0xc9, 0x70,
-	0x77, 0x2b, 0x02, 0x3f, 0xcf, 0xa0, 0xe7, 0x48, 0x95, 0x75, 0xa8, 0xe5, 0x24, 0x0d, 0x11, 0x0f,
-	0xbb, 0x04, 0x29, 0x1f, 0x38, 0xa8, 0xb4, 0x89, 0xf5, 0x24, 0xc9, 0x15, 0x64, 0x00, 0x56, 0xc8,
-	0x8f, 0xc6, 0xd2, 0x32, 0x8a, 0xb0, 0x0d, 0x37, 0xc8, 0xa0, 0x4b, 0x0c, 0xdf, 0xee, 0x22, 0xbf,
-	0x63, 0x9b, 0xe1, 0x10, 0xbc, 0x56, 0x49, 0xc5, 0x23, 0x53, 0xd8, 0x81, 0x6a, 0xf0, 0xfa, 0x6c,
-	0x03, 0x91, 0x4e, 0x4f, 0x27, 0x3d, 0x44, 0xc4, 0x72, 0xbd, 0xdc, 0xe0, 0xb5, 0xd5, 0x44, 0x7e,
-	0x16, 0xaa, 0xad, 0x6a, 0x30, 0x4f, 0xa6, 0xbc, 0xf2, 0x08, 0xd6, 0xb2, 0x38, 0x09, 0xa7, 0xb0,
-	0x05, 0x15, 0xe6, 0x0a, 0xba, 0x46, 0x60, 0x2b, 0x4c, 0x3b, 0x32, 0x95, 0xcf, 0x1c, 0xac, 0xb6,
-	0x89, 0x75, 0x32, 0xe8, 0x3a, 0x36, 0x3d, 0xf6, 0x31, 0x7e, 0x1d, 0x0c, 0x93, 0x72, 0x25, 0xc3,
-	0xa4, 0xca, 0x4c, 0xd5, 0xa5, 0x99, 0xaa, 0xc2, 0x01, 0x5c, 0x4f, 0x98, 0xc3, 0x19, 0x8a, 0xce,
-	0xeb, 0x65, 0xb8, 0x2a, 0x1a, 0x33, 0xc6, 0x63, 0xa5, 0x8d, 0x14, 0x11, 0x6e, 0x4f, 0xa3, 0xb1,
-	0x03, 0xf8, 0xc4, 0x85, 0x21, 0x0d, 0xbd, 0x19, 0x20, 0x42, 0x9f, 0x22, 0x0f, 0xb9, 0x26, 0x72,
-	0x0d, 0x1b, 0x91, 0xb9, 0x47, 0xb1, 0x00, 0xfd, 0xff, 0x1f, 0x44, 0x1d, 0xe4, 0x62, 0x2c, 0x46,
-	0x8e, 0x40, 0x08, 0x66, 0x42, 0x94, 0xf6, 0x51, 0xba, 0x3f, 0x1b, 0xc0, 0xfb, 0x51, 0x12, 0x63,
-	0x4e, 0x85, 0x05, 0x90, 0x5b, 0xab, 0xe1, 0x8a, 0xb3, 0x14, 0x65, 0x03, 0xa4, 0xd9, 0x36, 0x09,
-	0xc4, 0xfe, 0xef, 0x32, 0x94, 0xdb, 0xc4, 0x12, 0x4e, 0xa1, 0x32, 0xf5, 0x71, 0xd6, 0x67, 0x0e,
-	0x29, 0xf7, 0x05, 0x48, 0x8d, 0x79, 0x0e, 0xb6, 0x7b, 0xcf, 0x81, 0x4f, 0xe7, 0xbb, 0x53, 0x94,
-	0xc6, 0xc2, 0xd2, 0xdd, 0x7f, 0x86, 0x59, 0xc9, 0x57, 0xb0, 0x92, 0xdd, 0xd3, 0xcd, 0xa2, 0xac,
-	0x8c, 0x41, 0xda, 0x99, 0x63, 0x60, 0x85, 0x31, 0xdc, 0x2a, 0x5a, 0xa5, 0xc2, 0xfc, 0x02, 0xa3,
-	0xa4, 0x2e, 0x68, 0x64, 0x0d, 0x0d, 0xa8, 0xe6, 0x57, 0x60, 0xbb, 0x10, 0x76, 0xda, 0x24, 0xdd,
-	0x5b, 0xc0, 0x94, 0x34, 0x91, 0xae, 0xbd, 0x0d, 0x6e, 0xc1, 0xc3, 0xbd, 0xcb, 0x91, 0xcc, 0x5d,
-	0x8d, 0x64, 0xee, 0xd7, 0x48, 0xe6, 0x3e, 0x8e, 0xe5, 0xd2, 0xd5, 0x58, 0x2e, 0xfd, 0x18, 0xcb,
-	0xa5, 0xd3, 0xda, 0xec, 0x25, 0x48, 0x2f, 0x3c, 0x44, 0xba, 0xcb, 0xe1, 0xfd, 0x7d, 0xf0, 0x27,
-	0x00, 0x00, 0xff, 0xff, 0x3a, 0xd6, 0xf4, 0x16, 0x85, 0x06, 0x00, 0x00,
+	// 582 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x54, 0xbf, 0x6f, 0xd3, 0x40,
+	0x14, 0x8e, 0x1b, 0x5a, 0xe1, 0x97, 0xd0, 0x08, 0x2b, 0x22, 0xae, 0x15, 0xdc, 0xd4, 0x15, 0x22,
+	0x0a, 0x22, 0x56, 0x5b, 0x84, 0x44, 0x36, 0xc2, 0xd4, 0x21, 0x52, 0x71, 0x05, 0x48, 0x5d, 0x2a,
+	0xc7, 0x3e, 0x1c, 0x4b, 0x71, 0xce, 0xdc, 0x5d, 0xaa, 0x96, 0x09, 0x31, 0x32, 0xb1, 0xf2, 0x1f,
+	0x30, 0x66, 0x60, 0xe3, 0x1f, 0xe8, 0x58, 0x31, 0x31, 0x21, 0x94, 0x0c, 0xf9, 0x1b, 0xd8, 0x90,
+	0x7f, 0xe4, 0xec, 0xd8, 0x81, 0x76, 0x49, 0x72, 0xdf, 0xf7, 0xbd, 0xf7, 0xbe, 0x77, 0xef, 0x5d,
+	0x40, 0xf6, 0xcc, 0x91, 0x3d, 0xd6, 0xad, 0x81, 0x39, 0x1c, 0xa2, 0x91, 0x83, 0x74, 0x76, 0xde,
+	0xf6, 0x09, 0x66, 0x58, 0xaa, 0x84, 0x4c, 0x9b, 0x33, 0xca, 0x5d, 0xd3, 0x73, 0x47, 0x58, 0x0f,
+	0x3f, 0x23, 0x8d, 0x52, 0xb3, 0x30, 0xf5, 0x30, 0xd5, 0x3d, 0xea, 0xe8, 0x67, 0x7b, 0xc1, 0x57,
+	0x4c, 0x6c, 0x45, 0xc4, 0x69, 0x78, 0xd2, 0xa3, 0x43, 0x4c, 0x55, 0x1d, 0xec, 0xe0, 0x08, 0x0f,
+	0x7e, 0xc5, 0x68, 0x3d, 0xeb, 0xc3, 0x37, 0x89, 0xe9, 0xd1, 0x7f, 0xb1, 0x67, 0x88, 0x30, 0x14,
+	0x3b, 0xd5, 0xbe, 0x0b, 0x50, 0xe9, 0x51, 0xe7, 0x95, 0x6f, 0x9b, 0x0c, 0x1d, 0x85, 0x71, 0xd2,
+	0x53, 0x10, 0xcd, 0x31, 0x1b, 0x60, 0xe2, 0xb2, 0x0b, 0x59, 0x68, 0x08, 0x4d, 0xb1, 0x2b, 0xff,
+	0xf8, 0xf6, 0xb8, 0x1a, 0x5b, 0x79, 0x6e, 0xdb, 0x04, 0x51, 0x7a, 0xcc, 0x88, 0x3b, 0x72, 0x8c,
+	0x44, 0x2a, 0x75, 0x60, 0x23, 0xaa, 0x2c, 0xaf, 0x35, 0x84, 0x66, 0x69, 0xbf, 0xd6, 0xce, 0x5c,
+	0x43, 0x3b, 0x2a, 0xd0, 0x15, 0x2f, 0x7f, 0x6d, 0x17, 0xbe, 0xce, 0x27, 0x2d, 0xc1, 0x88, 0x23,
+	0x3a, 0x4f, 0x3e, 0xce, 0x27, 0xad, 0x24, 0xd7, 0xa7, 0xf9, 0xa4, 0xb5, 0x13, 0x19, 0x3f, 0x4f,
+	0x59, 0xcf, 0x38, 0xd5, 0xb6, 0xa0, 0x96, 0x81, 0x0c, 0x44, 0x7d, 0x3c, 0xa2, 0x48, 0x7b, 0x0f,
+	0xe5, 0x1e, 0x75, 0x5e, 0x2c, 0x42, 0x25, 0x15, 0x80, 0xe7, 0x21, 0x51, 0x57, 0x46, 0x0a, 0x91,
+	0x76, 0xe1, 0x0e, 0x1d, 0xf7, 0xa9, 0x45, 0xdc, 0x3e, 0x22, 0xa7, 0xae, 0x1d, 0xf6, 0x20, 0x1a,
+	0xe5, 0x04, 0x3c, 0xb4, 0xa5, 0x2a, 0xac, 0x23, 0x1f, 0x5b, 0x03, 0xb9, 0xd8, 0x10, 0x9a, 0xb7,
+	0x8c, 0xe8, 0xd0, 0xa9, 0x04, 0xde, 0x53, 0xb9, 0xb4, 0x67, 0x50, 0x4d, 0xd7, 0x5e, 0x78, 0x92,
+	0x76, 0xa0, 0xcc, 0x55, 0x41, 0x89, 0xc8, 0x45, 0x89, 0x63, 0x87, 0xb6, 0xf6, 0x45, 0x80, 0xcd,
+	0x1e, 0x75, 0x8e, 0xc7, 0x7d, 0xcf, 0x65, 0x47, 0x04, 0xe3, 0xb7, 0x81, 0xf3, 0xc4, 0xc4, 0xc2,
+	0x79, 0x82, 0xe4, 0xb2, 0xae, 0xe5, 0xb2, 0x4a, 0x07, 0x70, 0x3b, 0x98, 0xba, 0x6b, 0x21, 0x2a,
+	0x17, 0x1b, 0xc5, 0x95, 0xb3, 0x79, 0x1d, 0xae, 0x85, 0xc1, 0x85, 0x71, 0x5b, 0x49, 0x21, 0x4d,
+	0x86, 0x7b, 0xcb, 0xd6, 0xf8, 0x65, 0x23, 0x90, 0x02, 0x06, 0x31, 0x36, 0x44, 0xc9, 0x95, 0xd7,
+	0x41, 0x24, 0xe8, 0xdd, 0x18, 0x51, 0xc6, 0x7d, 0x27, 0xc0, 0x0d, 0x6c, 0x77, 0x36, 0xc3, 0xa5,
+	0xe0, 0x21, 0x5a, 0x1d, 0x94, 0x7c, 0x99, 0x85, 0x89, 0xfd, 0x3f, 0x6b, 0x50, 0xec, 0x51, 0x47,
+	0x3a, 0x81, 0xf2, 0xd2, 0x3a, 0x37, 0x72, 0xad, 0x66, 0x76, 0x46, 0x69, 0x5e, 0xa7, 0xe0, 0x13,
+	0x7c, 0x09, 0x62, 0xd2, 0xdf, 0xfd, 0x55, 0x61, 0x9c, 0x56, 0x1e, 0xfc, 0x97, 0xe6, 0x29, 0xdf,
+	0x40, 0x29, 0x3d, 0xed, 0xed, 0x55, 0x51, 0x29, 0x81, 0xf2, 0xf0, 0x1a, 0x01, 0x4f, 0x6c, 0x41,
+	0x25, 0x3b, 0x91, 0xdd, 0x95, 0xb1, 0xcb, 0x22, 0xe5, 0xd1, 0x0d, 0x44, 0x8b, 0x22, 0xca, 0xfa,
+	0x87, 0xe0, 0x19, 0x77, 0xf7, 0x2e, 0xa7, 0xaa, 0x70, 0x35, 0x55, 0x85, 0xdf, 0x53, 0x55, 0xf8,
+	0x3c, 0x53, 0x0b, 0x57, 0x33, 0xb5, 0xf0, 0x73, 0xa6, 0x16, 0x4e, 0x6a, 0xf9, 0x57, 0xcc, 0x2e,
+	0x7c, 0x44, 0xfb, 0x1b, 0xe1, 0x1f, 0xd0, 0xc1, 0xdf, 0x00, 0x00, 0x00, 0xff, 0xff, 0x88, 0x6f,
+	0xd9, 0x0a, 0x46, 0x05, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -587,7 +486,7 @@ type MsgClient interface {
 	UpdateParams(ctx context.Context, in *MsgUpdateParams, opts ...grpc.CallOption) (*MsgUpdateParamsResponse, error)
 	Challenge(ctx context.Context, in *MsgChallenge, opts ...grpc.CallOption) (*MsgChallengeResponse, error)
 	SubmitProof(ctx context.Context, in *MsgSubmitProof, opts ...grpc.CallOption) (*MsgSubmitProofResponse, error)
-	RequestDependencies(ctx context.Context, in *MsgRequestDependencies, opts ...grpc.CallOption) (*MsgRequestDependenciesResponse, error)
+	// rpc RequestDependencies(MsgRequestDependencies) returns (MsgRequestDependenciesResponse);
 	SettleChallenge(ctx context.Context, in *MsgSettleChallenge, opts ...grpc.CallOption) (*MsgSettleChallengeResponse, error)
 }
 
@@ -626,15 +525,6 @@ func (c *msgClient) SubmitProof(ctx context.Context, in *MsgSubmitProof, opts ..
 	return out, nil
 }
 
-func (c *msgClient) RequestDependencies(ctx context.Context, in *MsgRequestDependencies, opts ...grpc.CallOption) (*MsgRequestDependenciesResponse, error) {
-	out := new(MsgRequestDependenciesResponse)
-	err := c.cc.Invoke(ctx, "/mandu.challenge.Msg/RequestDependencies", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *msgClient) SettleChallenge(ctx context.Context, in *MsgSettleChallenge, opts ...grpc.CallOption) (*MsgSettleChallengeResponse, error) {
 	out := new(MsgSettleChallengeResponse)
 	err := c.cc.Invoke(ctx, "/mandu.challenge.Msg/SettleChallenge", in, out, opts...)
@@ -651,7 +541,7 @@ type MsgServer interface {
 	UpdateParams(context.Context, *MsgUpdateParams) (*MsgUpdateParamsResponse, error)
 	Challenge(context.Context, *MsgChallenge) (*MsgChallengeResponse, error)
 	SubmitProof(context.Context, *MsgSubmitProof) (*MsgSubmitProofResponse, error)
-	RequestDependencies(context.Context, *MsgRequestDependencies) (*MsgRequestDependenciesResponse, error)
+	// rpc RequestDependencies(MsgRequestDependencies) returns (MsgRequestDependenciesResponse);
 	SettleChallenge(context.Context, *MsgSettleChallenge) (*MsgSettleChallengeResponse, error)
 }
 
@@ -667,9 +557,6 @@ func (*UnimplementedMsgServer) Challenge(ctx context.Context, req *MsgChallenge)
 }
 func (*UnimplementedMsgServer) SubmitProof(ctx context.Context, req *MsgSubmitProof) (*MsgSubmitProofResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SubmitProof not implemented")
-}
-func (*UnimplementedMsgServer) RequestDependencies(ctx context.Context, req *MsgRequestDependencies) (*MsgRequestDependenciesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method RequestDependencies not implemented")
 }
 func (*UnimplementedMsgServer) SettleChallenge(ctx context.Context, req *MsgSettleChallenge) (*MsgSettleChallengeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SettleChallenge not implemented")
@@ -733,24 +620,6 @@ func _Msg_SubmitProof_Handler(srv interface{}, ctx context.Context, dec func(int
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Msg_RequestDependencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(MsgRequestDependencies)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(MsgServer).RequestDependencies(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/mandu.challenge.Msg/RequestDependencies",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(MsgServer).RequestDependencies(ctx, req.(*MsgRequestDependencies))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _Msg_SettleChallenge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(MsgSettleChallenge)
 	if err := dec(in); err != nil {
@@ -785,10 +654,6 @@ var _Msg_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "SubmitProof",
 			Handler:    _Msg_SubmitProof_Handler,
-		},
-		{
-			MethodName: "RequestDependencies",
-			Handler:    _Msg_RequestDependencies_Handler,
 		},
 		{
 			MethodName: "SettleChallenge",
@@ -882,14 +747,10 @@ func (m *MsgChallenge) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
-	if len(m.VerticesHashes) > 0 {
-		for iNdEx := len(m.VerticesHashes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.VerticesHashes[iNdEx])
-			copy(dAtA[i:], m.VerticesHashes[iNdEx])
-			i = encodeVarintTx(dAtA, i, uint64(len(m.VerticesHashes[iNdEx])))
-			i--
-			dAtA[i] = 0x1a
-		}
+	if m.Epoch != 0 {
+		i = encodeVarintTx(dAtA, i, uint64(m.Epoch))
+		i--
+		dAtA[i] = 0x18
 	}
 	if len(m.SubscriberId) > 0 {
 		i -= len(m.SubscriberId)
@@ -1012,75 +873,6 @@ func (m *MsgSubmitProofResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) 
 	return len(dAtA) - i, nil
 }
 
-func (m *MsgRequestDependencies) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *MsgRequestDependencies) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *MsgRequestDependencies) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.VerticesHashes) > 0 {
-		for iNdEx := len(m.VerticesHashes) - 1; iNdEx >= 0; iNdEx-- {
-			i -= len(m.VerticesHashes[iNdEx])
-			copy(dAtA[i:], m.VerticesHashes[iNdEx])
-			i = encodeVarintTx(dAtA, i, uint64(len(m.VerticesHashes[iNdEx])))
-			i--
-			dAtA[i] = 0x1a
-		}
-	}
-	if len(m.ChallengeId) > 0 {
-		i -= len(m.ChallengeId)
-		copy(dAtA[i:], m.ChallengeId)
-		i = encodeVarintTx(dAtA, i, uint64(len(m.ChallengeId)))
-		i--
-		dAtA[i] = 0x12
-	}
-	if len(m.Challenger) > 0 {
-		i -= len(m.Challenger)
-		copy(dAtA[i:], m.Challenger)
-		i = encodeVarintTx(dAtA, i, uint64(len(m.Challenger)))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
-}
-
-func (m *MsgRequestDependenciesResponse) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *MsgRequestDependenciesResponse) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *MsgRequestDependenciesResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
 func (m *MsgSettleChallenge) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -1190,11 +982,8 @@ func (m *MsgChallenge) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovTx(uint64(l))
 	}
-	if len(m.VerticesHashes) > 0 {
-		for _, s := range m.VerticesHashes {
-			l = len(s)
-			n += 1 + l + sovTx(uint64(l))
-		}
+	if m.Epoch != 0 {
+		n += 1 + sovTx(uint64(m.Epoch))
 	}
 	return n
 }
@@ -1236,38 +1025,6 @@ func (m *MsgSubmitProof) Size() (n int) {
 }
 
 func (m *MsgSubmitProofResponse) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *MsgRequestDependencies) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	l = len(m.Challenger)
-	if l > 0 {
-		n += 1 + l + sovTx(uint64(l))
-	}
-	l = len(m.ChallengeId)
-	if l > 0 {
-		n += 1 + l + sovTx(uint64(l))
-	}
-	if len(m.VerticesHashes) > 0 {
-		for _, s := range m.VerticesHashes {
-			l = len(s)
-			n += 1 + l + sovTx(uint64(l))
-		}
-	}
-	return n
-}
-
-func (m *MsgRequestDependenciesResponse) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -1567,10 +1324,10 @@ func (m *MsgChallenge) Unmarshal(dAtA []byte) error {
 			m.SubscriberId = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field VerticesHashes", wireType)
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Epoch", wireType)
 			}
-			var stringLen uint64
+			m.Epoch = 0
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowTx
@@ -1580,24 +1337,11 @@ func (m *MsgChallenge) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
+				m.Epoch |= uint64(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
 			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthTx
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthTx
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.VerticesHashes = append(m.VerticesHashes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
 			skippy, err := skipTx(dAtA[iNdEx:])
@@ -1876,202 +1620,6 @@ func (m *MsgSubmitProofResponse) Unmarshal(dAtA []byte) error {
 		}
 		if fieldNum <= 0 {
 			return fmt.Errorf("proto: MsgSubmitProofResponse: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipTx(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthTx
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *MsgRequestDependencies) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowTx
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: MsgRequestDependencies: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: MsgRequestDependencies: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Challenger", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowTx
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthTx
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthTx
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.Challenger = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field ChallengeId", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowTx
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthTx
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthTx
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.ChallengeId = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field VerticesHashes", wireType)
-			}
-			var stringLen uint64
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowTx
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthTx
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthTx
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.VerticesHashes = append(m.VerticesHashes, string(dAtA[iNdEx:postIndex]))
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipTx(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if (skippy < 0) || (iNdEx+skippy) < 0 {
-				return ErrInvalidLengthTx
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *MsgRequestDependenciesResponse) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowTx
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: MsgRequestDependenciesResponse: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: MsgRequestDependenciesResponse: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		default:

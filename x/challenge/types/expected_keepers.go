@@ -4,6 +4,7 @@ import (
 	"context"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	subscriptiontypes "mandu/x/subscription/types"
 )
 
 // AccountKeeper defines the expected interface for the Account module.
@@ -23,4 +24,10 @@ type BankKeeper interface {
 type ParamSubspace interface {
 	Get(context.Context, []byte, interface{})
 	Set(context.Context, []byte, interface{})
+}
+
+// SubscriptionKeeper defines the expected subscription keeper
+type SubscriptionKeeper interface {
+	GetSubscriptionRequest(ctx sdk.Context, id string) (subscriptiontypes.SubscriptionRequest, error)
+	// Add other methods you need from subscription keeper
 }

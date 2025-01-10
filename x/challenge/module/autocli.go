@@ -17,6 +17,8 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Use:       "params",
 					Short:     "Shows the parameters of the module",
 				},
+				// Is this the proof for a single vertex hash? Are they submitted independently? Or is this the hash of the vertices in the epoch?
+				// If it is the latter, we don't need this method, and the QueryProofs method can simply replace this one.
 				{
 					RpcMethod:      "Proof",
 					Use:            "proof [challenge_id] [hash]",
@@ -41,21 +43,15 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 				},
 				{
 					RpcMethod:      "Challenge",
-					Use:            "challenge [subscriber_id] [vertices_hashes]",
+					Use:            "challenge [subscriber_id] [epoch]",
 					Short:          "Send a challenge tx",
-					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "subscriber_id"}, {ProtoField: "vertices_hashes"}},
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "subscriber_id"}, {ProtoField: "epoch"}},
 				},
 				{
 					RpcMethod:      "SubmitProof",
 					Use:            "submit-proof [challenge_id] [vertices]",
 					Short:          "Submit a submit-proof tx",
 					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "challenge_id"}, {ProtoField: "vertices"}},
-				},
-				{
-					RpcMethod:      "RequestDependencies",
-					Use:            "request-dependencies [challenge_id] [vertices_hashes]",
-					Short:          "Send a request-dependencies tx",
-					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "challenge_id"}, {ProtoField: "vertices_hashes"}},
 				},
 				{
 					RpcMethod:      "SettleChallenge",

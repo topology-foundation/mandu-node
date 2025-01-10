@@ -31,3 +31,8 @@ func SetFrom[T comparable](elms ...T) Set[T] {
 	}
 	return s
 }
+
+// Returns an empty new set
+func NewSet[T comparable]() Set[T] {
+	return make(Set[T])
+}
